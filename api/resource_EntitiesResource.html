@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>TypesResource</title>
+  <title>EntitiesResource</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
   <div class="container">
     <header>
       <div id="header" class="column first last span-20">
-        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">TypesResource</a></div>
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">EntitiesResource</a></div>
         <div id="primary" class="column span-18 append-1 prepend-1 first last">
           <ul class="navigation">
             <li id="nav-rest"><a href="rest.html">REST</a></li>
@@ -50,7 +50,7 @@
               </ul>
             </li>
             <li class="current">
-              <a href="resource_TypesResource.html">TypesResource</a>
+              <a href="resource_EntitiesResource.html">EntitiesResource</a>
               <ul>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_EntitiesResource.html">EntitiesResource</a></li>
@@ -66,30 +66,23 @@
       </div>
     </header>
     <div id="main" class="column first last span-20">
-      <h1>TypesResource</h1>
+      <h1>EntitiesResource</h1>
 
-      <p>This class provides RESTful API for Types.
-
-A type is the description of any representable item;
-e.g. a Hive table
-
-You could represent any meta model representing any domain using these types.</p>
+      <p></p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__types.html">/types</a>
-        </li>
-        <li>
-        <a href="#path__types_-typeName-.html">/types/{typeName}</a>
+        <a href="#path__entities.html">/entities</a>
         </li>
       </ul>
-        <a name="path__types.html"></a>
-      <h1>/types</h1>
+        <a name="path__entities.html"></a>
+      <h1>/entities</h1>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
-            Submits a type definition corresponding to a given type representing a meta model of a
-domain. Could represent things like Hive Database, Hive Table, etc.
+            Submits the entity definitions (instances).
+The body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any
+unique attribute for the give type.
           </p>
       <h3>Response Body</h3>
       <table>
@@ -106,7 +99,7 @@ domain. Could represent things like Hive Database, Hive Table, etc.
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Gets the list of trait type names registered in the type system.
+            Gets the list of entities for a given entity type.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -119,47 +112,9 @@ domain. Could represent things like Hive Database, Hive Table, etc.
         <tr>
           <td>type</td>
           <td>
-            type should be the name of enum
-org.apache.atlas.typesystem.types.DataTypes.TypeCategory
-Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT
+            name of a type which is unique
           </td>
           <td>query</td>
-          <td>all</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>entity names response payload as json</p>
-        <a name="path__types_-typeName-.html"></a>
-      <h1>/types/{typeName}</h1>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Fetch the complete definition of a given type name which is unique.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>typeName</td>
-          <td>
-            name of a type which is unique.
-          </td>
-          <td>path</td>
           <td></td>
         </tr>
       </table>

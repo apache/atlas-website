@@ -53,6 +53,7 @@
               <a href="resource_EntityResource.html">EntityResource</a>
               <ul>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
+                <li><a href="resource_EntitiesResource.html">EntitiesResource</a></li>
                 <li><a href="resource_EntityResource.html">EntityResource</a></li>
                 <li><a href="resource_HiveLineageResource.html">HiveLineageResource</a></li>
                 <li><a href="resource_MetadataDiscoveryResource.html">MetadataDiscoveryResource</a></li>
@@ -74,41 +75,24 @@ of the Type they correspond with.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__entities.html">/entities</a>
+        <a href="#path__entity.html">/entity</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-.html">/entities/{guid}</a>
+        <a href="#path__entity_-guid-.html">/entity/{guid}</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-_traits.html">/entities/{guid}/traits</a>
+        <a href="#path__entity_-guid-_traits.html">/entity/{guid}/traits</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-_traits_-traitName-.html">/entities/{guid}/traits/{traitName}</a>
+        <a href="#path__entity_-guid-_traits_-traitName-.html">/entity/{guid}/traits/{traitName}</a>
         </li>
       </ul>
-        <a name="path__entities.html"></a>
-      <h1>/entities</h1>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Submits an entity definition (instance) corresponding to a given type.
-          </p>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
+        <a name="path__entity.html"></a>
+      <h1>/entity</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Gets the list of entities for a given entity type.
+            Fetch the complete definition of an entity given its qualified name.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -121,7 +105,23 @@ of the Type they correspond with.</p>
         <tr>
           <td>type</td>
           <td>
-            name of a type which is unique
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>property</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>
+            (no documentation provided)
           </td>
           <td>query</td>
           <td></td>
@@ -139,8 +139,8 @@ of the Type they correspond with.</p>
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-.html"></a>
-      <h1>/entities/{guid}</h1>
+        <a name="path__entity_-guid-.html"></a>
+      <h1>/entity/{guid}</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -225,8 +225,8 @@ of the Type they correspond with.</p>
         </tr>
       </table>
       <p>response payload as json</p>
-        <a name="path__entities_-guid-_traits.html"></a>
-      <h1>/entities/{guid}/traits</h1>
+        <a name="path__entity_-guid-_traits.html"></a>
+      <h1>/entity/{guid}/traits</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
@@ -295,8 +295,8 @@ of the Type they correspond with.</p>
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-_traits_-traitName-.html"></a>
-      <h1>/entities/{guid}/traits/{traitName}</h1>
+        <a name="path__entity_-guid-_traits_-traitName-.html"></a>
+      <h1>/entity/{guid}/traits/{traitName}</h1>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
       <p>

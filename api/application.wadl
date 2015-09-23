@@ -6,7 +6,9 @@
     <wadl:resource path="/api/atlas/entities">
       <wadl:method name="POST">
         <wadl:doc>
-          <![CDATA[Submits an entity definition (instance) corresponding to a given type.]]>
+          <![CDATA[Submits the entity definitions (instances).
+The body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any
+unique attribute for the give type.]]>
         </wadl:doc>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -22,6 +24,21 @@
               <![CDATA[name of a type which is unique]]>
             </wadl:doc>
           </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/entity">
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Fetch the complete definition of an entity given its qualified name.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="type" style="query"/>
+          <wadl:param name="property" style="query"/>
+          <wadl:param name="value" style="query"/>
         </wadl:request>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -105,7 +122,7 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entities/{guid}">
+    <wadl:resource path="/api/atlas/entity/{guid}">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[GUID for the entity]]>
@@ -237,7 +254,7 @@ graph.getVertices(key, value);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entities/{guid}/traits">
+    <wadl:resource path="/api/atlas/entity/{guid}/traits">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[globally unique identifier for the entity]]>
@@ -295,7 +312,7 @@ graph.getVertex(id);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entities/{guid}/traits/{traitName}">
+    <wadl:resource path="/api/atlas/entity/{guid}/traits/{traitName}">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[globally unique identifier for the entity]]>

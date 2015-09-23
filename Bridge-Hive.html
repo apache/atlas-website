@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20150923" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>Apache Atlas - Architecture</title>
+    <title>Apache Atlas - Hive Atlas Bridge</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -179,7 +179,7 @@
         Atlas</a>
         </li>
       <li class="divider ">/</li>
-        <li class="">Architecture</li>
+        <li class="">Hive Atlas Bridge</li>
         
                 
                     
@@ -194,21 +194,90 @@
         <div id="bodyColumn" >
                                   
             <div class="section">
-<h2>Architecture<a name="Architecture"></a></h2></div>
+<h2>Hive Atlas Bridge<a name="Hive_Atlas_Bridge"></a></h2></div>
 <div class="section">
-<h3>Introduction<a name="Introduction"></a></h3></div>
+<h3>Hive Model<a name="Hive_Model"></a></h3>
+<p>The default hive modelling is available in org.apache.atlas.hive.model.HiveDataModelGenerator. It defines the following types:</p>
+<div class="source">
+<pre>
+hive_object_type(EnumType) - values [GLOBAL, DATABASE, TABLE, PARTITION, COLUMN]
+hive_resource_type(EnumType) - values [JAR, FILE, ARCHIVE]
+hive_principal_type(EnumType) - values [USER, ROLE, GROUP]
+hive_db(ClassType) - super types [Referenceable] - attributes [name, clusterName, description, locationUri, parameters, ownerName, ownerType]
+hive_order(StructType) - attributes [col, order]
+hive_resourceuri(StructType) - attributes [resourceType, uri]
+hive_serde(StructType) - attributes [name, serializationLib, parameters]
+hive_type(ClassType) - super types [] - attributes [name, type1, type2, fields]
+hive_storagedesc(ClassType) - super types [Referenceable] - attributes [cols, location, inputFormat, outputFormat, compressed, numBuckets, serdeInfo, bucketCols, sortCols, parameters, storedAsSubDirectories]
+hive_role(ClassType) - super types [] - attributes [roleName, createTime, ownerName]
+hive_column(ClassType) - super types [Referenceable] - attributes [name, type, comment]
+hive_table(ClassType) - super types [DataSet] - attributes [tableName, db, owner, createTime, lastAccessTime, comment, retention, sd, partitionKeys, columns, parameters, viewOriginalText, viewExpandedText, tableType, temporary]
+hive_partition(ClassType) - super types [Referenceable] - attributes [values, table, createTime, lastAccessTime, sd, columns, parameters]
+hive_process(ClassType) - super types [Process] - attributes [startTime, endTime, userName, operationType, queryText, queryPlan, queryId, queryGraph]
+
+</pre></div>
+<p>The entities are created and de-duped using unique qualified name. They provide namespace and can be used for querying as well: hive_db - attribute qualifiedName - clustername.dbname hive_table - attribute name - clustername.dbname.tablename hive_partition - attribute qualifiedName - clustername.dbname.tablename.partitionvalues hive_process - attribute qualifiedName - queryText</p></div>
 <div class="section">
-<h3>Atlas High Level Architecture - Overview<a name="Atlas_High_Level_Architecture_-_Overview"></a></h3>
-<p><img src="images/twiki/architecture.png" alt="" /></p></div>
+<h3>Importing Hive Metadata<a name="Importing_Hive_Metadata"></a></h3>
+<p>org.apache.atlas.hive.bridge.HiveMetaStoreBridge imports the hive metadata into Atlas using the model defined in org.apache.atlas.hive.model.HiveDataModelGenerator. import-hive.sh command can be used to facilitate this. Set-up the following configs in hive-site.xml of your hive set-up and set environment variable HIVE_CONFIG to the hive conf directory:</p>
+<ul>
+<li>Atlas endpoint - Add the following property with the Atlas endpoint for your set-up</li></ul>
+<div class="source">
+<pre>
+&lt;property&gt;
+  &lt;name&gt;atlas.rest.address&lt;/name&gt;
+  &lt;value&gt;http://localhost:21000/&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;atlas.cluster.name&lt;/name&gt;
+  &lt;value&gt;primary&lt;/value&gt;
+&lt;/property&gt;
+
+</pre></div>
+<p>Usage: &lt;atlas package&gt;/bin/hive/import-hive.sh. The logs are in &lt;atlas package&gt;/logs/import-hive.log</p></div>
 <div class="section">
-<h3>Bridges<a name="Bridges"></a></h3>
-<p>External components like hive/sqoop/storm/falcon should model their taxonomy using typesystem and register the types with Atlas. For every entity created in this external component, the corresponding entity should be registered in Atlas as well. This is typically done in a hook which runs in the external component and is called for every entity operation. Hook generally processes the entity asynchronously using a thread pool to avoid adding latency to the main operation. The hook can then build the entity and register the entity using Atlas REST APIs. Howerver, any failure in APIs because of network issue etc can in result entity not registered in Atlas and hence inconsistent metadata.</p>
-<p>Atlas exposes notification interface and can be used for reliable entity registration by hook as well. The hook can send notification message containing the list of entities to be registered.  Atlas service contains hook consumer that listens to these messages and registers the entities.</p>
-<p>Available bridges are: * <a href="./Hive/Bridge-Hive.html">Hive Bridge</a></p></div>
+<h3>Hive Hook<a name="Hive_Hook"></a></h3>
+<p>Hive supports listeners on hive command execution using hive hooks. This is used to add/update/remove entities in Atlas using the model defined in org.apache.atlas.hive.model.HiveDataModelGenerator. The hook submits the request to a thread pool executor to avoid blocking the command execution. The thread submits the entities as message to the notification server and atlas server reads these messages and registers the entities. Follow these instructions in your hive set-up to add hive hook for Atlas:</p>
+<ul>
+<li>Set-up atlas hook and atlas endpoint in hive-site.xml:</li></ul>
+<div class="source">
+<pre>
+&lt;property&gt;
+  &lt;name&gt;hive.exec.post.hooks&lt;/name&gt;
+  &lt;value&gt;org.apache.atlas.hive.hook.HiveHook&lt;/value&gt;
+&lt;/property&gt;
+
+</pre></div>
+<div class="source">
+<pre>
+&lt;property&gt;
+  &lt;name&gt;atlas.rest.address&lt;/name&gt;
+  &lt;value&gt;http://localhost:21000/&lt;/value&gt;
+&lt;/property&gt;
+&lt;property&gt;
+  &lt;name&gt;atlas.cluster.name&lt;/name&gt;
+  &lt;value&gt;primary&lt;/value&gt;
+&lt;/property&gt;
+
+</pre></div>
+<p></p>
+<ul>
+<li>Add 'export HIVE_AUX_JARS_PATH=&lt;atlas package&gt;/hook/hive' in hive-env.sh</li>
+<li>Copy &lt;atlas package&gt;/conf/application.properties to hive conf directory &lt;hive package&gt;/conf</li></ul>
+<p>The following properties in hive-site.xml control the thread pool and notification details:</p>
+<ul>
+<li>atlas.hook.hive.synchronous - boolean, true to run the hook synchronously. default false</li>
+<li>atlas.hook.hive.numRetries - number of retries for notification failure. default 3</li>
+<li>atlas.hook.hive.minThreads - core number of threads. default 5</li>
+<li>atlas.hook.hive.maxThreads - maximum number of threads. default 5</li>
+<li>atlas.hook.hive.keepAliveTime - keep alive time in msecs. default 10</li></ul>
+<p>Refer <a href="./Configuration.html">Configuration</a> for notification related configurations</p></div>
 <div class="section">
-<h3>Notification<a name="Notification"></a></h3>
-<p>Notification is used for reliable entity registration from hooks and for entity/type change notifications. Atlas, by default, provides kafka integration, but its possible to provide other implementations as well. Atlas service starts embedded kafka server by default.</p>
-<p>Atlas also provides <a href="./NotificationHookConsumer.html">NotificationHookConsumer</a> that runs in Atlas Service and listens to messages from hook and registers the entities in Atlas. <img src="images/twiki/notification.png" alt="" /></p></div>
+<h3>Limitations<a name="Limitations"></a></h3>
+<p></p>
+<ul>
+<li>Since database name, table name and column names are case insensitive in hive, the corresponding names in entities are lowercase. So, any search APIs should use lowercase while querying on the entity names</li>
+<li>Only the following hive operations are captured by hive hook currently - create database, create table, create view, CTAS, load, import, export, query, alter table rename and alter view rename</li></ul></div>
                   </div>
           </div>
 
