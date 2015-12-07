@@ -15,26 +15,6 @@ unique attribute for the give type.]]>
         </wadl:response>
       </wadl:method>
       <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[Gets the list of entities for a given entity type.]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:param name="type" style="query">
-            <wadl:doc>
-              <![CDATA[name of a type which is unique]]>
-            </wadl:doc>
-          </wadl:param>
-        </wadl:request>
-        <wadl:response>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
-    <wadl:resource path="/api/atlas/entity">
-      <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[Fetch the complete definition of an entity given its qualified name.]]>
-        </wadl:doc>
         <wadl:request>
           <wadl:param name="type" style="query"/>
           <wadl:param name="property" style="query"/>
@@ -50,6 +30,18 @@ unique attribute for the give type.]]>
         <wadl:doc>
           <![CDATA[Submits a type definition corresponding to a given type representing a meta model of a
 domain. Could represent things like Hive Database, Hive Table, etc.]]>
+        </wadl:doc>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="PUT">
+        <wadl:doc>
+          <![CDATA[Update of existing types - if the given type doesn't exist, creates new type
+Allowed updates are:
+1. Add optional attribute
+2. Change required to optional attribute
+3. Add super types - super types shouldn't contain any required attributes]]>
         </wadl:doc>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -122,7 +114,7 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entity/{guid}">
+    <wadl:resource path="/api/atlas/entities/{guid}">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[GUID for the entity]]>
@@ -254,7 +246,7 @@ graph.getVertices(key, value);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entity/{guid}/traits">
+    <wadl:resource path="/api/atlas/entities/{guid}/traits">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[globally unique identifier for the entity]]>
@@ -312,7 +304,7 @@ graph.getVertex(id);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/entity/{guid}/traits/{traitName}">
+    <wadl:resource path="/api/atlas/entities/{guid}/traits/{traitName}">
       <wadl:param name="guid" style="template">
         <wadl:doc>
           <![CDATA[globally unique identifier for the entity]]>

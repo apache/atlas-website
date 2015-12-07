@@ -53,7 +53,6 @@
               <a href="resource_TypesResource.html">TypesResource</a>
               <ul>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
-                <li><a href="resource_EntitiesResource.html">EntitiesResource</a></li>
                 <li><a href="resource_EntityResource.html">EntityResource</a></li>
                 <li><a href="resource_HiveLineageResource.html">HiveLineageResource</a></li>
                 <li><a href="resource_MetadataDiscoveryResource.html">MetadataDiscoveryResource</a></li>
@@ -85,11 +84,40 @@ You could represent any meta model representing any domain using these types.</p
       </ul>
         <a name="path__types.html"></a>
       <h1>/types</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#POST">POST</a></li>
+        <li><a href="#PUT">PUT</a></li>
+        <li><a href="#GET">GET</a></li>
+      </ul>
       <a name="POST"></a>
       <h2>POST</h2>
       <p>
             Submits a type definition corresponding to a given type representing a meta model of a
 domain. Could represent things like Hive Database, Hive Table, etc.
+          </p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <p>
+            Update of existing types - if the given type doesn't exist, creates new type
+Allowed updates are:
+1. Add optional attribute
+2. Change required to optional attribute
+3. Add super types - super types shouldn't contain any required attributes
           </p>
       <h3>Response Body</h3>
       <table>
