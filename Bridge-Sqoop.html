@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20160105" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>Apache Atlas &#x2013; Source Repository</title>
+    <title>Apache Atlas &#x2013; Sqoop Atlas Bridge</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -185,7 +185,7 @@
         Atlas</a>
         </li>
       <li class="divider ">/</li>
-        <li class="">Source Repository</li>
+        <li class="">Sqoop Atlas Bridge</li>
         
                 
                     
@@ -200,26 +200,36 @@
         <div id="bodyColumn" >
                                   
             <div class="section">
-<h2><a name="Overview"></a>Overview</h2><a name="Overview"></a>
-<p>This project uses a Source Content Management System to manage its source code.</p></div>
+<h2><a name="Sqoop_Atlas_Bridge"></a>Sqoop Atlas Bridge</h2></div>
 <div class="section">
-<h2><a name="Web_Access"></a>Web Access</h2><a name="Web_Access"></a>
-<p>The following is a link to the online source repository.</p>
+<h3><a name="Sqoop_Model"></a>Sqoop Model</h3>
+<p>The default Sqoop modelling is available in org.apache.atlas.sqoop.model.SqoopDataModelGenerator. It defines the following types:</p>
 <div class="source">
-<pre><a class="externalLink" href="https://git-wip-us.apache.org/repos/asf/incubator-atlas.git/atlas-docs">https://git-wip-us.apache.org/repos/asf/incubator-atlas.git/atlas-docs</a></pre></div></div>
+<pre>
+sqoop_operation_type(EnumType) - values [IMPORT, EXPORT, EVAL]
+sqoop_dbstore_usage(EnumType) - values [TABLE, QUERY, PROCEDURE, OTHER]
+sqoop_process(ClassType) - super types [Process] - attributes [name, operation, dbStore, hiveTable, commandlineOpts, startTime, endTime, userName]
+sqoop_dbdatastore(ClassType) - super types [DataSet] - attributes [name, dbStoreType, storeUse, storeUri, source, description, ownerName]
+
+</pre></div>
+<p>The entities are created and de-duped using unique qualified name. They provide namespace and can be used for querying as well: sqoop_process - attribute name - sqoop-dbStoreType-storeUri-endTime sqoop_dbdatastore - attribute name - dbStoreType-connectorUrl-source</p></div>
 <div class="section">
-<h2><a name="Anonymous_access"></a>Anonymous access</h2><a name="Anonymous_access"></a>
-<p>Refer to the documentation of the SCM used for more information about anonymously check out. The connection url is:</p>
-<div class="source">
-<pre>https://git-wip-us.apache.org/repos/asf/incubator-atlas.git/atlas-docs</pre></div></div>
+<h3><a name="Sqoop_Hook"></a>Sqoop Hook</h3>
+<p>Sqoop added a <a href="./SqoopJobDataPublisher.html">SqoopJobDataPublisher</a> that publishes data to Atlas after completion of import Job. Today, only hiveImport is supported in sqoopHook. This is used to add entities in Atlas using the model defined in org.apache.atlas.sqoop.model.SqoopDataModelGenerator. Follow these instructions in your sqoop set-up to add sqoop hook for Atlas in &lt;sqoop-conf&gt;/sqoop-site.xml:</p>
+<p></p>
+<ul>
+<li>Sqoop Job publisher class.  Currently only one publishing class is supported</li></ul><property>      <name>sqoop.job.data.publish.class</name>      <value>org.apache.atlas.sqoop.hook.SqoopHook</value>    </property>
+<ul>
+<li>Atlas cluster name</li></ul><property>      <name>atlas.cluster.name</name>      <value><clustername></value>    </property>
+<ul>
+<li>Copy &lt;atlas-conf&gt;/atlas-application.properties and &lt;atlas-conf&gt;/client.properties to to the sqoop conf directory &lt;sqoop-conf&gt;/</li>
+<li>Link &lt;atlas-home&gt;/hook/sqoop/*.jar in sqoop lib</li></ul>
+<p>Refer <a href="./Configuration.html">Configuration</a> for notification related configurations</p></div>
 <div class="section">
-<h2><a name="Developer_access"></a>Developer access</h2><a name="Developer_access"></a>
-<p>Refer to the documentation of the SCM used for more information about developer check out. The connection url is:</p>
-<div class="source">
-<pre>https://git-wip-us.apache.org/repos/asf/incubator-atlas.git/atlas-docs</pre></div></div>
-<div class="section">
-<h2><a name="Access_from_behind_a_firewall"></a>Access from behind a firewall</h2><a name="Access_from_behind_a_firewall"></a>
-<p>Refer to the documentation of the SCM used for more information about access behind a firewall.</p></div>
+<h3><a name="Limitations"></a>Limitations</h3>
+<p></p>
+<ul>
+<li>Only the following sqoop operations are captured by sqoop hook currently - hiveImport</li></ul></div>
                   </div>
           </div>
 
