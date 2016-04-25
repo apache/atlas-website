@@ -26,6 +26,42 @@ Adds/Updates given entities identified by its GUID or unique attribute]]>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
+      <wadl:method name="DELETE">
+        <wadl:doc>
+          <![CDATA[Delete entities from the repository identified by their guids (including their composite references)
+or
+Deletes a single entity identified by its type and unique attribute value from the repository (including their composite references)]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="guid" style="query">
+            <wadl:doc>
+              <![CDATA[list of deletion candidate guids
+or]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="type" style="query">
+            <wadl:doc>
+              <![CDATA[the entity type]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="property" style="query">
+            <wadl:doc>
+              <![CDATA[the unique attribute used to identify the entity]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="value" style="query">
+            <wadl:doc>
+              <![CDATA[the unique attribute value used to identify the entity]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc>
+            <![CDATA[response payload as json - including guids of entities(including composite references from that entity) that were deleted]]>
+          </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
       <wadl:method name="GET">
         <wadl:request>
           <wadl:param name="type" style="query"/>
@@ -90,6 +126,13 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
             <![CDATA[json representing the thread stack dump.]]>
           </wadl:doc>
           <wadl:representation mediaType="text/plain"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/admin/status">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
@@ -274,6 +317,36 @@ graph.getVertices(key, value);]]>
           <wadl:doc>
             <![CDATA[JSON representing the type and results.]]>
           </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/entities/{guid}/audit">
+      <wadl:param name="guid" style="template">
+        <wadl:doc>
+          <![CDATA[entity id]]>
+        </wadl:doc>
+      </wadl:param>
+      <wadl:method name="GET">
+        <wadl:doc>
+          <![CDATA[Returns the entity audit events for a given entity id. The events are returned in the decreasing order of timestamp.]]>
+        </wadl:doc>
+        <wadl:request>
+          <wadl:param name="startKey" style="query">
+            <wadl:doc>
+              <![CDATA[used for pagination. Startkey is inclusive, the returned results contain the event with the given startkey.
+First time getAuditEvents() is called for an entity, startKey should be null,
+with count = (number of events required + 1). Next time getAuditEvents() is called for the same entity,
+startKey should be equal to the entityKey of the last event returned in the previous call.]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="count" style="query">
+            <wadl:doc>
+              <![CDATA[number of events required]]>
+            </wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>

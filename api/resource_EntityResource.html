@@ -80,6 +80,9 @@ of the Type they correspond with.</p>
         <a href="#path__entities_-guid-.html">/entities/{guid}</a>
         </li>
         <li>
+        <a href="#path__entities_-guid-_audit.html">/entities/{guid}/audit</a>
+        </li>
+        <li>
         <a href="#path__entities_-guid-_traits.html">/entities/{guid}/traits</a>
         </li>
         <li>
@@ -97,6 +100,7 @@ of the Type they correspond with.</p>
       <ul>
         <li><a href="#POST">POST</a></li>
         <li><a href="#PUT">PUT</a></li>
+        <li><a href="#DELETE">DELETE</a></li>
         <li><a href="#GET">GET</a></li>
       </ul>
       <a name="POST"></a>
@@ -136,6 +140,67 @@ Adds/Updates given entities identified by its GUID or unique attribute
         </tr>
       </table>
       <p>response payload as json</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <p>
+            Delete entities from the repository identified by their guids (including their composite references)
+or
+Deletes a single entity identified by its type and unique attribute value from the repository (including their composite references)
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>guid</td>
+          <td>
+            list of deletion candidate guids
+or
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>type</td>
+          <td>
+            the entity type
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>property</td>
+          <td>
+            the unique attribute used to identify the entity
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td>
+            the unique attribute value used to identify the entity
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>response payload as json - including guids of entities(including composite references from that entity) that were deleted</p>
       <a name="GET"></a>
       <h2>GET</h2>
       <h3>Parameters</h3>
@@ -249,6 +314,61 @@ Does not support removal of attribute values
           </td>
           <td>path</td>
           <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__entities_-guid-_audit.html"></a>
+      <h1>/entities/{guid}/audit</h1>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <p>
+            Returns the entity audit events for a given entity id. The events are returned in the decreasing order of timestamp.
+          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>guid</td>
+          <td>
+            entity id
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>startKey</td>
+          <td>
+            used for pagination. Startkey is inclusive, the returned results contain the event with the given startkey.
+First time getAuditEvents() is called for an entity, startKey should be null,
+with count = (number of events required + 1). Next time getAuditEvents() is called for the same entity,
+startKey should be equal to the entityKey of the last event returned in the previous call.
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>count</td>
+          <td>
+            number of events required
+          </td>
+          <td>query</td>
+          <td>100</td>
         </tr>
       </table>
       <h3>Response Body</h3>
