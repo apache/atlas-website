@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>RexsterGraphResource</title>
+  <title>LineageResource</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,11 +30,12 @@
   <div class="container">
     <header>
       <div id="header" class="column first last span-20">
-        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">RexsterGraphResource</a></div>
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">LineageResource</a></div>
         <div id="primary" class="column span-18 append-1 prepend-1 first last">
           <ul class="navigation">
             <li id="nav-rest"><a href="rest.html">REST</a></li>
             <li id="nav-data"><a href="model.html">Data Model</a></li>
+            <li id="nav-downloads"><a href="downloads.html">Files and Libraries</a></li>
           </ul>
         </div>
         <div>
@@ -47,16 +48,19 @@
               <ul>
                 <li><a href="model.html">Data Model</a></li>
                 <li><a href="rest.html">REST</a></li>
+                <li><a href="downloads.html">Files and Libraries</a></li>
               </ul>
             </li>
             <li class="current">
-              <a href="resource_RexsterGraphResource.html">RexsterGraphResource</a>
+              <a href="resource_LineageResource.html">LineageResource</a>
               <ul>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
+                <li><a href="resource_DataSetLineageResource.html">DataSetLineageResource</a></li>
                 <li><a href="resource_EntityResource.html">EntityResource</a></li>
-                <li><a href="resource_HiveLineageResource.html">HiveLineageResource</a></li>
+                <li><a href="resource_EntityService.html">EntityService</a></li>
+                <li><a href="resource_LineageResource.html">LineageResource</a></li>
                 <li><a href="resource_MetadataDiscoveryResource.html">MetadataDiscoveryResource</a></li>
-                <li><a href="resource_RexsterGraphResource.html">RexsterGraphResource</a></li>
+                <li><a href="resource_TaxonomyService.html">TaxonomyService</a></li>
                 <li><a href="resource_TypesResource.html">TypesResource</a></li>
               </ul>
             </li>
@@ -65,41 +69,27 @@
       </div>
     </header>
     <div id="main" class="column first last span-20">
-      <h1>RexsterGraphResource</h1>
+      <h1>LineageResource</h1>
 
-      <p>Jersey Resource for lineage metadata operations.
-Implements most of the GET operations of Rexster API with out the indexes.
-https://github.com/tinkerpop/rexster/wiki/Basic-REST-API
-
-This is a subset of Rexster's REST API, designed to provide only read-only methods
-for accessing the backend graph.</p>
+      <p></p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__graph_edges_-id-.html">/graph/edges/{id}</a>
+        <a href="#path__lineage_-guid-_inputs_graph.html">/lineage/{guid}/inputs/graph</a>
         </li>
         <li>
-        <a href="#path__graph_vertices.html">/graph/vertices</a>
+        <a href="#path__lineage_-guid-_outputs_graph.html">/lineage/{guid}/outputs/graph</a>
         </li>
         <li>
-        <a href="#path__graph_vertices_-id-.html">/graph/vertices/{id}</a>
-        </li>
-        <li>
-        <a href="#path__graph_vertices_-id-_-direction-.html">/graph/vertices/{id}/{direction}</a>
-        </li>
-        <li>
-        <a href="#path__graph_vertices_properties_-id-.html">/graph/vertices/properties/{id}</a>
+        <a href="#path__lineage_-guid-_schema.html">/lineage/{guid}/schema</a>
         </li>
       </ul>
-        <a name="path__graph_edges_-id-.html"></a>
-      <h1>/graph/edges/{id}</h1>
+        <a name="path__lineage_-guid-_inputs_graph.html"></a>
+      <h1>/lineage/{guid}/inputs/graph</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Get a single edge with a unique id.
-
-GET http://host/metadata/lineage/edges/id
-graph.getEdge(id);
+            Returns input lineage graph for the given entity id.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -110,9 +100,9 @@ graph.getEdge(id);
           <th>default</th>
         </tr>
         <tr>
-          <td>id</td>
+          <td>guid</td>
           <td>
-            (no documentation provided)
+            dataset entity id
           </td>
           <td>path</td>
           <td></td>
@@ -130,15 +120,12 @@ graph.getEdge(id);
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__graph_vertices.html"></a>
-      <h1>/graph/vertices</h1>
+        <a name="path__lineage_-guid-_outputs_graph.html"></a>
+      <h1>/lineage/{guid}/outputs/graph</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Get a list of vertices matching a property key and a value.
-<p/>
-GET http://host/metadata/lineage/vertices?key=<key>&value=<value>
-graph.getVertices(key, value);
+            Returns the outputs graph for a given entity id.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -149,56 +136,9 @@ graph.getVertices(key, value);
           <th>default</th>
         </tr>
         <tr>
-          <td>key</td>
+          <td>guid</td>
           <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>value</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__graph_vertices_-id-.html"></a>
-      <h1>/graph/vertices/{id}</h1>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Get a single vertex with a unique id.
-
-GET http://host/metadata/lineage/vertices/id
-graph.getVertex(id);
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
+            dataset entity id
           </td>
           <td>path</td>
           <td></td>
@@ -216,16 +156,12 @@ graph.getVertex(id);
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__graph_vertices_-id-_-direction-.html"></a>
-      <h1>/graph/vertices/{id}/{direction}</h1>
+        <a name="path__lineage_-guid-_schema.html"></a>
+      <h1>/lineage/{guid}/schema</h1>
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Get a list of adjacent edges with a direction.
-
-GET http://host/metadata/lineage/vertices/id/direction
-graph.getVertex(id).get{Direction}Edges();
-direction: {(?!outE)(?!bothE)(?!inE)(?!out)(?!both)(?!in)(?!query).+}
+            Returns the schema for the given dataset id.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -236,67 +172,12 @@ direction: {(?!outE)(?!bothE)(?!inE)(?!out)(?!both)(?!in)(?!query).+}
           <th>default</th>
         </tr>
         <tr>
-          <td>id</td>
+          <td>guid</td>
           <td>
-            (no documentation provided)
+            dataset entity id
           </td>
           <td>path</td>
           <td></td>
-        </tr>
-        <tr>
-          <td>direction</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__graph_vertices_properties_-id-.html"></a>
-      <h1>/graph/vertices/properties/{id}</h1>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Get properties for a single vertex with a unique id.
-This is NOT a rexster API.
-<p/>
-GET http://host/metadata/lineage/vertices/properties/id
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>id</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>relationships</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td>false</td>
         </tr>
       </table>
       <h3>Response Body</h3>

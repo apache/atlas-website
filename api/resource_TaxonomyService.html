@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>EntityResource</title>
+  <title>TaxonomyService</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,7 @@
   <div class="container">
     <header>
       <div id="header" class="column first last span-20">
-        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">EntityResource</a></div>
+        <div id="site-name" class="column span-18 append-1 prepend-1 first last"><a href="index.html">TaxonomyService</a></div>
         <div id="primary" class="column span-18 append-1 prepend-1 first last">
           <ul class="navigation">
             <li id="nav-rest"><a href="rest.html">REST</a></li>
@@ -52,7 +52,7 @@
               </ul>
             </li>
             <li class="current">
-              <a href="resource_EntityResource.html">EntityResource</a>
+              <a href="resource_TaxonomyService.html">TaxonomyService</a>
               <ul>
                 <li><a href="resource_AdminResource.html">AdminResource</a></li>
                 <li><a href="resource_DataSetLineageResource.html">DataSetLineageResource</a></li>
@@ -69,51 +69,119 @@
       </div>
     </header>
     <div id="main" class="column first last span-20">
-      <h1>EntityResource</h1>
+      <h1>TaxonomyService</h1>
 
-      <p>Entity management operations as REST API.
-
-An entity is an "instance" of a Type.  Entities conform to the definition
-of the Type they correspond with.</p>
+      <p>Service which handles API requests for taxonomy and term resources.</p>
       <p>The following resources are applicable:</p>
       <ul>
         <li>
-        <a href="#path__entities.html">/entities</a>
+        <a href="#path__v1_taxonomies.html">/v1/taxonomies</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-.html">/entities/{guid}</a>
+        <a href="#path__v1_taxonomies_-taxonomyName-.html">/v1/taxonomies/{taxonomyName}</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-_audit.html">/entities/{guid}/audit</a>
+        <a href="#path__v1_taxonomies_-taxonomyName-_terms.html">/v1/taxonomies/{taxonomyName}/terms</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-_traits.html">/entities/{guid}/traits</a>
+        <a href="#path__v1_taxonomies_-taxonomyName-_terms_-rootTerm-_-remainder-.html">/v1/taxonomies/{taxonomyName}/terms/{rootTerm}/{remainder}</a>
         </li>
         <li>
-        <a href="#path__entities_-guid-_traits_-traitName-.html">/entities/{guid}/traits/{traitName}</a>
+        <a href="#path__v1_taxonomies_-taxonomyName-_terms_-termName-.html">/v1/taxonomies/{taxonomyName}/terms/{termName}</a>
         </li>
         <li>
-        <a href="#path__entities_qualifiedName.html">/entities/qualifiedName</a>
+        <a href="#path__v1_taxonomies_-taxonomyName-_terms_-termName-_-remainder-.html">/v1/taxonomies/{taxonomyName}/terms/{termName}/{remainder}</a>
         </li>
       </ul>
-        <a name="path__entities.html"></a>
-      <h1>/entities</h1>
+        <a name="path__v1_taxonomies.html"></a>
+      <h1>/v1/taxonomies</h1>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__v1_taxonomies_-taxonomyName-.html"></a>
+      <h1>/v1/taxonomies/{taxonomyName}</h1>
       <p>
         The following operations are supported on this resource:
       </p>
       <ul>
+        <li><a href="#GET">GET</a></li>
         <li><a href="#POST">POST</a></li>
         <li><a href="#PUT">PUT</a></li>
         <li><a href="#DELETE">DELETE</a></li>
-        <li><a href="#GET">GET</a></li>
       </ul>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <a name="POST"></a>
       <h2>POST</h2>
-      <p>
-            Submits the entity definitions (instances).
-The body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any
-unique attribute for the give type.
-          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -128,10 +196,35 @@ unique attribute for the give type.
       <p>(no documentation provided)</p>
       <a name="PUT"></a>
       <h2>PUT</h2>
-      <p>
-            Complete update of a set of entities - the values not specified will be replaced with null/removed
-Adds/Updates given entities identified by its GUID or unique attribute
-          </p>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -143,14 +236,9 @@ Adds/Updates given entities identified by its GUID or unique attribute
           <td>application/json</td>
         </tr>
       </table>
-      <p>response payload as json</p>
+      <p>(no documentation provided)</p>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
-      <p>
-            Delete entities from the repository identified by their guids (including their composite references)
-or
-Deletes a single entity identified by its type and unique attribute value from the repository (including their composite references)
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -160,83 +248,11 @@ Deletes a single entity identified by its type and unique attribute value from t
           <th>default</th>
         </tr>
         <tr>
-          <td>guid</td>
-          <td>
-            list of deletion candidate guids
-or
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>type</td>
-          <td>
-            the entity type
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>property</td>
-          <td>
-            the unique attribute used to identify the entity
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>value</td>
-          <td>
-            the unique attribute value used to identify the entity
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>response payload as json - including guids of entities(including composite references from that entity) that were deleted</p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>type</td>
+          <td>taxonomyName</td>
           <td>
             (no documentation provided)
           </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>property</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>value</td>
-          <td>
-            (no documentation provided)
-          </td>
-          <td>query</td>
+          <td>path</td>
           <td></td>
         </tr>
       </table>
@@ -252,15 +268,140 @@ or
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-.html"></a>
-      <h1>/entities/{guid}</h1>
+        <a name="path__v1_taxonomies_-taxonomyName-_terms.html"></a>
+      <h1>/v1/taxonomies/{taxonomyName}/terms</h1>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__v1_taxonomies_-taxonomyName-_terms_-rootTerm-_-remainder-.html"></a>
+      <h1>/v1/taxonomies/{taxonomyName}/terms/{rootTerm}/{remainder}</h1>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rootTerm</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>remainder</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+        <a name="path__v1_taxonomies_-taxonomyName-_terms_-termName-.html"></a>
+      <h1>/v1/taxonomies/{taxonomyName}/terms/{termName}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#GET">GET</a></li>
+        <li><a href="#POST">POST</a></li>
+        <li><a href="#PUT">PUT</a></li>
+        <li><a href="#DELETE">DELETE</a></li>
+      </ul>
+      <a name="GET"></a>
+      <h2>GET</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>termName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <a name="POST"></a>
       <h2>POST</h2>
-      <p>
-            Updates entity identified by its GUID
-Support Partial update of an entity - Adds/updates any new values specified
-Does not support removal of attribute values
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -270,7 +411,7 @@ Does not support removal of attribute values
           <th>default</th>
         </tr>
         <tr>
-          <td>guid</td>
+          <td>taxonomyName</td>
           <td>
             (no documentation provided)
           </td>
@@ -278,14 +419,26 @@ Does not support removal of attribute values
           <td></td>
         </tr>
         <tr>
-          <td>property</td>
+          <td>termName</td>
           <td>
             (no documentation provided)
           </td>
-          <td>query</td>
+          <td>path</td>
           <td></td>
         </tr>
       </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -298,11 +451,8 @@ Does not support removal of attribute values
         </tr>
       </table>
       <p>(no documentation provided)</p>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Fetch the complete definition of an entity given its GUID.
-          </p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -312,14 +462,34 @@ Does not support removal of attribute values
           <th>default</th>
         </tr>
         <tr>
-          <td>guid</td>
+          <td>taxonomyName</td>
           <td>
-            GUID for the entity
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>termName</td>
+          <td>
+            (no documentation provided)
           </td>
           <td>path</td>
           <td></td>
         </tr>
       </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
       <h3>Response Body</h3>
       <table>
         <tr>
@@ -332,138 +502,8 @@ Does not support removal of attribute values
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-_audit.html"></a>
-      <h1>/entities/{guid}/audit</h1>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Returns the entity audit events for a given entity id. The events are returned in the decreasing order of timestamp.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>guid</td>
-          <td>
-            entity id
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>startKey</td>
-          <td>
-            used for pagination. Startkey is inclusive, the returned results contain the event with the given startkey.
-First time getAuditEvents() is called for an entity, startKey should be null,
-with count = (number of events required + 1). Next time getAuditEvents() is called for the same entity,
-startKey should be equal to the entityKey of the last event returned in the previous call.
-          </td>
-          <td>query</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>count</td>
-          <td>
-            number of events required
-          </td>
-          <td>query</td>
-          <td>100</td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-_traits.html"></a>
-      <h1>/entities/{guid}/traits</h1>
-      <a name="GET"></a>
-      <h2>GET</h2>
-      <p>
-            Gets the list of trait names for a given entity represented by a guid.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>guid</td>
-          <td>
-            globally unique identifier for the entity
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>a list of trait names for the given entity guid</p>
-      <a name="POST"></a>
-      <h2>POST</h2>
-      <p>
-            Adds a new trait to an existing entity represented by a guid.
-          </p>
-      <h3>Parameters</h3>
-      <table>
-        <tr>
-          <th>name</th>
-          <th>description</th>
-          <th>type</th>
-          <th>default</th>
-        </tr>
-        <tr>
-          <td>guid</td>
-          <td>
-            globally unique identifier for the entity
-          </td>
-          <td>path</td>
-          <td></td>
-        </tr>
-      </table>
-      <h3>Response Body</h3>
-      <table>
-        <tr>
-          <td align="right">element:</td>
-          <td>(custom)</td>
-        </tr>
-        <tr>
-          <td align="right">media types:</td>
-          <td>application/json</td>
-        </tr>
-      </table>
-      <p>(no documentation provided)</p>
-        <a name="path__entities_-guid-_traits_-traitName-.html"></a>
-      <h1>/entities/{guid}/traits/{traitName}</h1>
       <a name="DELETE"></a>
       <h2>DELETE</h2>
-      <p>
-            Deletes a given trait from an existing entity represented by a guid.
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -473,17 +513,17 @@ startKey should be equal to the entityKey of the last event returned in the prev
           <th>default</th>
         </tr>
         <tr>
-          <td>guid</td>
+          <td>taxonomyName</td>
           <td>
-            globally unique identifier for the entity
+            (no documentation provided)
           </td>
           <td>path</td>
           <td></td>
         </tr>
         <tr>
-          <td>traitName</td>
+          <td>termName</td>
           <td>
-            name of the trait
+            (no documentation provided)
           </td>
           <td>path</td>
           <td></td>
@@ -501,15 +541,18 @@ startKey should be equal to the entityKey of the last event returned in the prev
         </tr>
       </table>
       <p>(no documentation provided)</p>
-        <a name="path__entities_qualifiedName.html"></a>
-      <h1>/entities/qualifiedName</h1>
+        <a name="path__v1_taxonomies_-taxonomyName-_terms_-termName-_-remainder-.html"></a>
+      <h1>/v1/taxonomies/{taxonomyName}/terms/{termName}/{remainder}</h1>
+      <p>
+        The following operations are supported on this resource:
+      </p>
+      <ul>
+        <li><a href="#POST">POST</a></li>
+        <li><a href="#PUT">PUT</a></li>
+        <li><a href="#DELETE">DELETE</a></li>
+      </ul>
       <a name="POST"></a>
       <h2>POST</h2>
-      <p>
-            Adds/Updates given entity identified by its unique attribute( entityType, attributeName and value)
-Updates support only partial update of an entity - Adds/updates any new values specified
-Updates do not support removal of attribute values
-          </p>
       <h3>Parameters</h3>
       <table>
         <tr>
@@ -519,27 +562,145 @@ Updates do not support removal of attribute values
           <th>default</th>
         </tr>
         <tr>
-          <td>type</td>
+          <td>taxonomyName</td>
           <td>
-            the entity type
+            (no documentation provided)
           </td>
-          <td>query</td>
+          <td>path</td>
           <td></td>
         </tr>
         <tr>
-          <td>property</td>
+          <td>termName</td>
           <td>
-            the unique attribute used to identify the entity
+            (no documentation provided)
           </td>
-          <td>query</td>
+          <td>path</td>
           <td></td>
         </tr>
         <tr>
-          <td>value</td>
+          <td>remainder</td>
           <td>
-            the unique attributes value
+            (no documentation provided)
           </td>
-          <td>query</td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="PUT"></a>
+      <h2>PUT</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>termName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>remainder</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+      </table>
+      <h3>Request Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+            <td>body</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>*/*<br/>application/xml<br/></td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <h3>Response Body</h3>
+      <table>
+        <tr>
+          <td align="right">element:</td>
+          <td>(custom)</td>
+        </tr>
+        <tr>
+          <td align="right">media types:</td>
+          <td>application/json</td>
+        </tr>
+      </table>
+      <p>(no documentation provided)</p>
+      <a name="DELETE"></a>
+      <h2>DELETE</h2>
+      <h3>Parameters</h3>
+      <table>
+        <tr>
+          <th>name</th>
+          <th>description</th>
+          <th>type</th>
+          <th>default</th>
+        </tr>
+        <tr>
+          <td>taxonomyName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>termName</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>remainder</td>
+          <td>
+            (no documentation provided)
+          </td>
+          <td>path</td>
           <td></td>
         </tr>
       </table>
@@ -554,9 +715,7 @@ Updates do not support removal of attribute values
           <td>application/json</td>
         </tr>
       </table>
-      <p>response payload as json
-The body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any
-unique attribute for the give type.</p>
+      <p>(no documentation provided)</p>
 
       <div class="clear" />
     </div>

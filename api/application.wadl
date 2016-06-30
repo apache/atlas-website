@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wadl:application xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <wadl:doc xmlns:enunciate="http://enunciate.codehaus.org/" enunciate:generatedBy="Enunciate-1.29"/>
-  <wadl:grammars/>
+  <wadl:grammars>
+    <wadl:include href="ns0.xsd"/>
+  </wadl:grammars>
   <wadl:resources base="http://localhost:8080/atlas-webapp">
     <wadl:resource path="/api/atlas/entities">
       <wadl:method name="POST">
@@ -112,6 +114,13 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
           <wadl:doc>
             <![CDATA[entity names response payload as json]]>
           </wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/admin/session">
+      <wadl:method name="GET">
+        <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
@@ -228,23 +237,6 @@ Does not support removal of attribute values]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/graph/vertices">
-      <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[Get a list of vertices matching a property key and a value.
-<p/>
-GET http://host/metadata/lineage/vertices?key=<key>&value=<value>
-graph.getVertices(key, value);]]>
-        </wadl:doc>
-        <wadl:request>
-          <wadl:param name="key" style="query"/>
-          <wadl:param name="value" style="query"/>
-        </wadl:request>
-        <wadl:response>
-          <wadl:representation mediaType="application/json"/>
-        </wadl:response>
-      </wadl:method>
-    </wadl:resource>
     <wadl:resource path="/api/atlas/types/{typeName}">
       <wadl:param name="typeName" style="template">
         <wadl:doc>
@@ -256,6 +248,29 @@ graph.getVertices(key, value);]]>
           <![CDATA[Fetch the complete definition of a given type name which is unique.]]>
         </wadl:doc>
         <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/entities">
+      <wadl:method name="GET">
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies">
+      <wadl:method name="GET">
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -379,14 +394,15 @@ startKey should be equal to the entityKey of the last event returned in the prev
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/graph/edges/{id}">
-      <wadl:param name="id" style="template"/>
+    <wadl:resource path="/api/atlas/lineage/{guid}/schema">
+      <wadl:param name="guid" style="template">
+        <wadl:doc>
+          <![CDATA[dataset entity id]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Get a single edge with a unique id.
-
-GET http://host/metadata/lineage/edges/id
-graph.getEdge(id);]]>
+          <![CDATA[Returns the schema for the given dataset id.]]>
         </wadl:doc>
         <wadl:request/>
         <wadl:response>
@@ -394,15 +410,42 @@ graph.getEdge(id);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/graph/vertices/{id}">
-      <wadl:param name="id" style="template"/>
+    <wadl:resource path="/api/atlas/v1/entities/{entityId}">
+      <wadl:param name="entityId" style="template"/>
       <wadl:method name="GET">
-        <wadl:doc>
-          <![CDATA[Get a single vertex with a unique id.
-
-GET http://host/metadata/lineage/vertices/id
-graph.getVertex(id);]]>
-        </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies/{taxonomyName}">
+      <wadl:param name="taxonomyName" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="PUT">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="DELETE">
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -430,34 +473,50 @@ graph.getVertex(id);]]>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/graph/vertices/properties/{id}">
-      <wadl:param name="id" style="template"/>
+    <wadl:resource path="/api/atlas/lineage/{guid}/inputs/graph">
+      <wadl:param name="guid" style="template">
+        <wadl:doc>
+          <![CDATA[dataset entity id]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Get properties for a single vertex with a unique id.
-This is NOT a rexster API.
-<p/>
-GET http://host/metadata/lineage/vertices/properties/id]]>
+          <![CDATA[Returns input lineage graph for the given entity id.]]>
         </wadl:doc>
-        <wadl:request>
-          <wadl:param name="relationships" style="query"/>
-        </wadl:request>
+        <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
       </wadl:method>
     </wadl:resource>
-    <wadl:resource path="/api/atlas/graph/vertices/{id}/{direction}">
-      <wadl:param name="id" style="template"/>
-      <wadl:param name="direction" style="template"/>
+    <wadl:resource path="/api/atlas/lineage/{guid}/outputs/graph">
+      <wadl:param name="guid" style="template">
+        <wadl:doc>
+          <![CDATA[dataset entity id]]>
+        </wadl:doc>
+      </wadl:param>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Get a list of adjacent edges with a direction.
-
-GET http://host/metadata/lineage/vertices/id/direction
-graph.getVertex(id).get{Direction}Edges();
-direction: {(?!outE)(?!bothE)(?!inE)(?!out)(?!both)(?!in)(?!query).+}]]>
+          <![CDATA[Returns the outputs graph for a given entity id.]]>
         </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/entities/{entityId}/tags">
+      <wadl:param name="entityId" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies/{taxonomyName}/terms">
+      <wadl:param name="taxonomyName" style="template"/>
+      <wadl:method name="GET">
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -474,6 +533,65 @@ direction: {(?!outE)(?!bothE)(?!inE)(?!out)(?!both)(?!in)(?!query).+}]]>
         <wadl:doc>
           <![CDATA[Return the schema for the given tableName.]]>
         </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/entities/{entityId}/tags/{tag}">
+      <wadl:param name="entityId" style="template"/>
+      <wadl:param name="tag" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="DELETE">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies/{taxonomyName}/terms/{termName}">
+      <wadl:param name="taxonomyName" style="template"/>
+      <wadl:param name="termName" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="PUT">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="DELETE">
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
@@ -506,6 +624,46 @@ direction: {(?!outE)(?!bothE)(?!inE)(?!out)(?!both)(?!in)(?!query).+}]]>
         <wadl:doc>
           <![CDATA[Returns the outputs graph for a given entity.]]>
         </wadl:doc>
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies/{taxonomyName}/terms/{rootTerm}/{remainder}">
+      <wadl:param name="taxonomyName" style="template"/>
+      <wadl:param name="rootTerm" style="template"/>
+      <wadl:param name="remainder" style="template"/>
+      <wadl:method name="GET">
+        <wadl:request/>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+    <wadl:resource path="/api/atlas/v1/taxonomies/{taxonomyName}/terms/{termName}/{remainder}">
+      <wadl:param name="taxonomyName" style="template"/>
+      <wadl:param name="termName" style="template"/>
+      <wadl:param name="remainder" style="template"/>
+      <wadl:method name="POST">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="PUT">
+        <wadl:request>
+          <wadl:representation mediaType="*/*"/>
+          <wadl:representation mediaType="application/xml"/>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:method name="DELETE">
         <wadl:request/>
         <wadl:response>
           <wadl:representation mediaType="application/json"/>
