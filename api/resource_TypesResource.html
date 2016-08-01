@@ -138,7 +138,7 @@ Allowed updates are:
       <a name="GET"></a>
       <h2>GET</h2>
       <p>
-            Gets the list of trait type names registered in the type system.
+            Return the list of type names in the type system which match the specified filter.
           </p>
       <h3>Parameters</h3>
       <table>
@@ -151,12 +151,30 @@ Allowed updates are:
         <tr>
           <td>type</td>
           <td>
-            type should be the name of enum
-org.apache.atlas.typesystem.types.DataTypes.TypeCategory
-Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT
+            returns types whose category is the given typeCategory
           </td>
           <td>query</td>
-          <td>all</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>supertype</td>
+          <td>
+            returns types which contain the given supertype
+          </td>
+          <td>query</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>notsupertype</td>
+          <td>
+            returns types which do not contain the given supertype
+
+Its possible to specify combination of these filters in one request and the conditions are combined with AND
+For example, typeCategory = TRAIT && supertype contains 'X' && supertype !contains 'Y'
+If there is no filter, all the types are returned
+          </td>
+          <td>query</td>
+          <td></td>
         </tr>
       </table>
       <h3>Response Body</h3>
@@ -170,7 +188,7 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT
           <td>application/json</td>
         </tr>
       </table>
-      <p>entity names response payload as json</p>
+      <p>list of type names</p>
         <a name="path__types_-typeName-.html"></a>
       <h1>/types/{typeName}</h1>
       <a name="GET"></a>

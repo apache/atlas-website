@@ -105,10 +105,26 @@
         <tr>
           <td>query</td>
           <td>
-            search query in raw gremlin or DSL format falling back to full text.
+            search query in DSL format falling back to full text.
           </td>
           <td>query</td>
           <td></td>
+        </tr>
+        <tr>
+          <td>limit</td>
+          <td>
+            number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>offset</td>
+          <td>
+            offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0
+          </td>
+          <td>query</td>
+          <td>-1</td>
         </tr>
       </table>
       <h3>Response Body</h3>
@@ -146,6 +162,25 @@
           <td>query</td>
           <td></td>
         </tr>
+        <tr>
+          <td>limit</td>
+          <td>
+            number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>offset</td>
+          <td>
+            offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0
+Limit and offset in API are used in conjunction with limit and offset in DSL query
+Final limit = min(API limit, max(query limit - API offset, 0))
+Final offset = API offset + query offset
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
       </table>
       <h3>Response Body</h3>
       <table>
@@ -181,6 +216,22 @@
           </td>
           <td>query</td>
           <td></td>
+        </tr>
+        <tr>
+          <td>limit</td>
+          <td>
+            number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value
+          </td>
+          <td>query</td>
+          <td>-1</td>
+        </tr>
+        <tr>
+          <td>offset</td>
+          <td>
+            offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0
+          </td>
+          <td>query</td>
+          <td>-1</td>
         </tr>
       </table>
       <h3>Response Body</h3>

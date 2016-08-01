@@ -99,20 +99,32 @@ Allowed updates are:
       </wadl:method>
       <wadl:method name="GET">
         <wadl:doc>
-          <![CDATA[Gets the list of trait type names registered in the type system.]]>
+          <![CDATA[Return the list of type names in the type system which match the specified filter.]]>
         </wadl:doc>
         <wadl:request>
           <wadl:param name="type" style="query">
             <wadl:doc>
-              <![CDATA[type should be the name of enum
-org.apache.atlas.typesystem.types.DataTypes.TypeCategory
-Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
+              <![CDATA[returns types whose category is the given typeCategory]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="supertype" style="query">
+            <wadl:doc>
+              <![CDATA[returns types which contain the given supertype]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="notsupertype" style="query">
+            <wadl:doc>
+              <![CDATA[returns types which do not contain the given supertype
+
+Its possible to specify combination of these filters in one request and the conditions are combined with AND
+For example, typeCategory = TRAIT && supertype contains 'X' && supertype !contains 'Y'
+If there is no filter, all the types are returned]]>
             </wadl:doc>
           </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc>
-            <![CDATA[entity names response payload as json]]>
+            <![CDATA[list of type names]]>
           </wadl:doc>
           <wadl:representation mediaType="application/json"/>
         </wadl:response>
@@ -166,7 +178,17 @@ Typically, would be one of all, TRAIT, CLASS, ENUM, STRUCT]]>
         <wadl:request>
           <wadl:param name="query" style="query">
             <wadl:doc>
-              <![CDATA[search query in raw gremlin or DSL format falling back to full text.]]>
+              <![CDATA[search query in DSL format falling back to full text.]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc>
+              <![CDATA[number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc>
+              <![CDATA[offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0]]>
             </wadl:doc>
           </wadl:param>
         </wadl:request>
@@ -287,6 +309,19 @@ Does not support removal of attribute values]]>
               <![CDATA[search query in DSL format.]]>
             </wadl:doc>
           </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc>
+              <![CDATA[number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc>
+              <![CDATA[offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0
+Limit and offset in API are used in conjunction with limit and offset in DSL query
+Final limit = min(API limit, max(query limit - API offset, 0))
+Final offset = API offset + query offset]]>
+            </wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc>
@@ -305,6 +340,16 @@ Does not support removal of attribute values]]>
           <wadl:param name="query" style="query">
             <wadl:doc>
               <![CDATA[search query.]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc>
+              <![CDATA[number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value]]>
+            </wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc>
+              <![CDATA[offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0]]>
             </wadl:doc>
           </wadl:param>
         </wadl:request>
