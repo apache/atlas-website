@@ -159,7 +159,7 @@
             }
           },
       "example" : {
-  "category" : "ENTITY",
+  "category" : "MAP",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -222,7 +222,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -263,7 +263,7 @@
       }
     } ]
   } ],
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "CLASSIFICATION",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -369,20 +369,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -390,7 +376,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
@@ -409,20 +395,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -451,20 +423,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -473,7 +431,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
@@ -492,20 +450,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -560,25 +504,13 @@
 "items" : {
   "$ref" : "#/definitions/json_AtlasClassification"
 }
-            },
-            "unassigned" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "assigned" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "atlasObjectId" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasObjectId"
             }
           }
         }
       ],
       "example" : {
   "guid" : "...",
-  "status" : "DELETED",
+  "status" : "ACTIVE",
   "createdBy" : "...",
   "updatedBy" : "...",
   "createTime" : 12345,
@@ -597,20 +529,6 @@
       "property2" : { }
     }
   } ],
-  "unassigned" : true,
-  "assigned" : true,
-  "atlasObjectId" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
-    "validGuid" : true,
-    "assignedGuid" : true,
-    "unAssignedGuid" : true,
-    "valid" : true
-  },
   "typeName" : "...",
   "attributes" : {
     "property1" : { },
@@ -686,7 +604,7 @@
       }
     } ]
   } ],
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -739,20 +657,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -780,20 +684,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -832,31 +722,15 @@
 "items" : {
   "type" : "string"
 }
-            },
-            "atlasObjectId" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasObjectId"
             }
           }
         }
       ],
       "example" : {
   "guid" : "...",
-  "status" : "DELETED",
+  "status" : "ACTIVE",
   "displayText" : "...",
   "classificationNames" : [ "...", "..." ],
-  "atlasObjectId" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
-    "validGuid" : true,
-    "assignedGuid" : true,
-    "unAssignedGuid" : true,
-    "valid" : true
-  },
   "typeName" : "...",
   "attributes" : {
     "property1" : { },
@@ -885,7 +759,7 @@
       "example" : {
   "entity" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
@@ -904,20 +778,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -946,20 +806,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -968,7 +814,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
@@ -987,20 +833,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -1046,7 +878,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ENUM",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -1108,18 +940,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -1167,21 +987,9 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -1193,18 +1001,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -1219,61 +1015,10 @@
     "fromEntityId" : "...",
     "toEntityId" : "..."
   } ],
-  "lineageDirection" : "BOTH",
+  "lineageDirection" : "INPUT",
   "lineageDepth" : 12345
 },
       "description" : ""
-    }
-    ,
-    "json_AtlasObjectId" : {
-      "type" : "object",
-      "title" : "AtlasObjectId",
-          "properties" : {
-            "guid" : {
-"description" : "",
-"type" : "string"
-            },
-            "typeName" : {
-"description" : "",
-"type" : "string"
-            },
-            "uniqueAttributes" : {
-"description" : "",
-"type" : "object",
-"additionalProperties" : {
-  "type" : "object"
-}
-            },
-            "validGuid" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "assignedGuid" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "unAssignedGuid" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "valid" : {
-"description" : "",
-"type" : "boolean"
-            }
-          },
-      "example" : {
-  "guid" : "...",
-  "typeName" : "...",
-  "uniqueAttributes" : {
-    "property1" : { },
-    "property2" : { }
-  },
-  "validGuid" : true,
-  "assignedGuid" : true,
-  "unAssignedGuid" : true,
-  "valid" : true
-},
-      "description" : "Reference to an object-instance of an Atlas type - like entity."
     }
     ,
     "json_AtlasQueryType" : {
@@ -1320,24 +1065,12 @@
           },
       "example" : {
   "queryText" : "...",
-  "queryType" : "GREMLIN",
+  "queryType" : "DSL",
   "entities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -1348,18 +1081,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -1373,10 +1094,9 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -1390,7 +1110,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -1453,7 +1172,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -1494,7 +1213,7 @@
       }
     } ]
   } ],
-  "category" : "ENTITY",
+  "category" : "MAP",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -1532,7 +1251,7 @@
       "example" : {
   "guid" : "...",
   "name" : "...",
-  "category" : "ARRAY"
+  "category" : "MAP"
 },
       "description" : ""
     }
@@ -1586,7 +1305,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENUM",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1611,7 +1330,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENTITY",
+    "category" : "OBJECT_ID_TYPE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1631,7 +1350,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1641,14 +1360,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1667,7 +1386,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1677,7 +1396,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1705,7 +1424,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1715,14 +1434,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1742,7 +1461,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1759,7 +1478,7 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "MAP",
+    "category" : "ENUM",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1780,7 +1499,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -1790,14 +1509,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ARRAY",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1986,21 +1705,9 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2011,18 +1718,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2031,21 +1726,9 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2053,21 +1736,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2084,18 +1755,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2103,21 +1762,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2126,66 +1773,9 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  }, {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  } ],
-  "partialUpdatedEntities" : [ {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2196,18 +1786,27 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "partialUpdatedEntities" : [ {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2219,18 +1818,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2241,18 +1828,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2261,21 +1836,9 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2284,21 +1847,9 @@
   },
   "firstEntityUpdated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2307,21 +1858,9 @@
   },
   "firstEntityPartialUpdated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2573,6 +2112,900 @@
           ],
       "description" : "to specify whether the result should be sorted? If yes, whether asc or desc."
     }
+    ,
+    "xml_ns0_typeCategory" : {
+      "type" : "string",
+      "title" : "typeCategory",
+          "enum" : [
+            "PRIMITIVE",
+            "OBJECT_ID_TYPE",
+            "ENUM",
+            "STRUCT",
+            "CLASSIFICATION",
+            "ENTITY",
+            "ARRAY",
+            "MAP"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasSearchResult" : {
+      "type" : "object",
+      "title" : "atlasSearchResult",
+      "allOf" : [
+        {
+          "properties" : {
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_attributeSearchResult"
+            },
+            "entities" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasEntityHeader"
+            },
+            "fullTextResult" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasFullTextResult"
+            },
+            "queryText" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "queryType" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasQueryType"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasFullTextResult" : {
+      "type" : "object",
+      "title" : "atlasFullTextResult",
+      "allOf" : [
+        {
+          "properties" : {
+            "entity" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasEntityHeader"
+            },
+            "score" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasQueryType" : {
+      "type" : "string",
+      "title" : "atlasQueryType",
+          "enum" : [
+            "DSL",
+            "FULL_TEXT",
+            "GREMLIN"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_attributeSearchResult" : {
+      "type" : "object",
+      "title" : "attributeSearchResult",
+      "allOf" : [
+        {
+          "properties" : {
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "values" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasClassification" : {
+      "type" : "object",
+      "title" : "atlasClassification",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+        }
+      ],
+      "description" : "An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity."
+    }
+    ,
+    "xml_ns0_atlasEntity" : {
+      "type" : "object",
+      "title" : "atlasEntity",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "classifications" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasClassification"
+            },
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_status"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "xml_ns0_status" : {
+      "type" : "string",
+      "title" : "status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : "Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store."
+    }
+    ,
+    "xml_ns0_atlasEntityHeader" : {
+      "type" : "object",
+      "title" : "atlasEntityHeader",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "classificationNames" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "displayText" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_status"
+            }
+          }
+        }
+      ],
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "xml_ns0_atlasObjectId" : {
+      "type" : "object",
+      "title" : "atlasObjectId",
+      "allOf" : [
+        {
+          "properties" : {
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "typeName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "uniqueAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : "Reference to an object-instance of an Atlas type - like entity."
+    }
+    ,
+    "xml_ns0_atlasStruct" : {
+      "type" : "object",
+      "title" : "atlasStruct",
+      "allOf" : [
+        {
+          "properties" : {
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            },
+            "typeName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification."
+    }
+    ,
+    "xml_ns0_classificationAssociateRequest" : {
+      "type" : "object",
+      "title" : "classificationAssociateRequest",
+      "allOf" : [
+        {
+          "properties" : {
+            "classification" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasClassification"
+            },
+            "entityGuids" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_entityMutationResponse" : {
+      "type" : "object",
+      "title" : "entityMutationResponse",
+      "allOf" : [
+        {
+          "properties" : {
+            "guidAssignments" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            },
+            "mutatedEntities" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_entityMutations" : {
+      "type" : "object",
+      "title" : "entityMutations",
+      "allOf" : [
+        {
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_entityOperation" : {
+      "type" : "string",
+      "title" : "entityOperation",
+          "enum" : [
+            "CREATE",
+            "UPDATE",
+            "PARTIAL_UPDATE",
+            "DELETE"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_guidMapping" : {
+      "type" : "object",
+      "title" : "guidMapping",
+      "allOf" : [
+        {
+          "properties" : {
+            "guidAssignments" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : "This stores a mapping of guid assignments that were made during the processing\nof a create or update entity request.\n."
+    }
+    ,
+    "xml_ns0_atlasLineageInfo" : {
+      "type" : "object",
+      "title" : "atlasLineageInfo",
+      "allOf" : [
+        {
+          "properties" : {
+            "baseEntityGuid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "guidEntityMap" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            },
+            "lineageDepth" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "lineageDirection" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_lineageDirection"
+            },
+            "relations" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_lineageRelation"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_lineageDirection" : {
+      "type" : "string",
+      "title" : "lineageDirection",
+          "enum" : [
+            "INPUT",
+            "OUTPUT",
+            "BOTH"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_lineageRelation" : {
+      "type" : "object",
+      "title" : "lineageRelation",
+      "allOf" : [
+        {
+          "properties" : {
+            "fromEntityId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "toEntityId" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasBaseTypeDef" : {
+      "type" : "object",
+      "title" : "atlasBaseTypeDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "options" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            },
+            "typeVersion" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "Base class that captures common-attributes for all Atlas types."
+    }
+    ,
+    "xml_ns0_atlasClassificationDef" : {
+      "type" : "object",
+      "title" : "atlasClassificationDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStructDef"
+        },
+        {
+          "properties" : {
+            "superTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of a classification-type."
+    }
+    ,
+    "xml_ns0_atlasEntityDef" : {
+      "type" : "object",
+      "title" : "atlasEntityDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStructDef"
+        },
+        {
+          "properties" : {
+            "superTypes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of a entity-type."
+    }
+    ,
+    "xml_ns0_atlasEnumDef" : {
+      "type" : "object",
+      "title" : "atlasEnumDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasBaseTypeDef"
+        },
+        {
+          "properties" : {
+            "defaultValue" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "elementDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasEnumElementDef"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of an enum-type."
+    }
+    ,
+    "xml_ns0_atlasEnumElementDef" : {
+      "type" : "object",
+      "title" : "atlasEnumElementDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "ordinal" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "value" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of an enum-element."
+    }
+    ,
+    "xml_ns0_atlasStructDef" : {
+      "type" : "object",
+      "title" : "atlasStructDef",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasBaseTypeDef"
+        },
+        {
+          "properties" : {
+            "attributeDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasAttributeDef"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of a struct-type."
+    }
+    ,
+    "xml_ns0_atlasAttributeDef" : {
+      "type" : "object",
+      "title" : "atlasAttributeDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "cardinality" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_cardinality"
+            },
+            "constraints" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasConstraintDef"
+            },
+            "isIndexable" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "boolean"
+            },
+            "isOptional" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "boolean"
+            },
+            "isUnique" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "boolean"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "typeName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "valuesMaxCount" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            },
+            "valuesMinCount" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "number"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of a struct-attribute."
+    }
+    ,
+    "xml_ns0_cardinality" : {
+      "type" : "string",
+      "title" : "cardinality",
+          "enum" : [
+            "SINGLE",
+            "LIST",
+            "SET"
+          ],
+      "description" : "single-valued attribute or multi-valued attribute."
+    }
+    ,
+    "xml_ns0_atlasConstraintDef" : {
+      "type" : "object",
+      "title" : "atlasConstraintDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "params" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "object"
+            },
+            "type" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "class that captures details of a constraint."
+    }
+    ,
+    "xml_ns0_atlasTypeDefHeader" : {
+      "type" : "object",
+      "title" : "atlasTypeDefHeader",
+      "allOf" : [
+        {
+          "properties" : {
+            "category" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_typeCategory"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasTypesDef" : {
+      "type" : "object",
+      "title" : "atlasTypesDef",
+      "allOf" : [
+        {
+          "properties" : {
+            "classificationDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasClassificationDef"
+            },
+            "entityDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasEntityDef"
+            },
+            "enumDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasEnumDef"
+            },
+            "structDefs" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"$ref" : "#/definitions/xml_ns0_atlasStructDef"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
   },
   "paths": {
     "\/v2/search/dsl" : {
@@ -2613,24 +3046,12 @@
             "examples" : {
               "application/json" : {
   "queryText" : "...",
-  "queryType" : "GREMLIN",
+  "queryType" : "FULL_TEXT",
   "entities" : [ {
     "guid" : "...",
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2638,21 +3059,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2666,10 +3075,9 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2683,7 +3091,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2702,24 +3109,12 @@
             "examples" : {
               "application/json" : {
   "queryText" : "...",
-  "queryType" : "DSL",
+  "queryType" : "FULL_TEXT",
   "entities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2727,21 +3122,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2758,7 +3141,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2769,10 +3151,9 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2827,24 +3208,12 @@
             "examples" : {
               "application/json" : {
   "queryText" : "...",
-  "queryType" : "GREMLIN",
+  "queryType" : "DSL",
   "entities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2855,18 +3224,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2880,10 +3237,9 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2897,7 +3253,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2916,24 +3271,12 @@
             "examples" : {
               "application/json" : {
   "queryText" : "...",
-  "queryType" : "DSL",
+  "queryType" : "FULL_TEXT",
   "entities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2941,21 +3284,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -2972,7 +3303,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -2986,7 +3316,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : { },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3035,21 +3364,9 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3060,18 +3377,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3080,21 +3385,9 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3102,21 +3395,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3133,18 +3414,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3155,18 +3424,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3178,18 +3435,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3197,21 +3442,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3220,21 +3453,9 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3245,18 +3466,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3265,21 +3474,9 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3290,18 +3487,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3313,18 +3498,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3336,18 +3509,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3356,21 +3517,9 @@
   },
   "firstEntityPartialUpdated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3417,21 +3566,9 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3439,21 +3576,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3462,21 +3587,9 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3487,18 +3600,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3515,18 +3616,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3537,18 +3626,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3560,63 +3637,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  }, {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  } ],
-  "partialUpdatedEntities" : [ {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3627,18 +3647,27 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "partialUpdatedEntities" : [ {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3647,21 +3676,9 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3669,21 +3686,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3692,21 +3697,9 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3718,18 +3711,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3738,21 +3719,9 @@
   },
   "firstEntityPartialUpdated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3815,20 +3784,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3855,20 +3810,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -3897,20 +3838,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3938,20 +3865,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -3997,21 +3910,9 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4019,21 +3920,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4042,21 +3931,9 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4064,21 +3941,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4092,21 +3957,9 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4117,18 +3970,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4140,18 +3981,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4162,18 +3991,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4182,21 +3999,9 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4204,21 +4009,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4230,18 +4023,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4252,18 +4033,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4272,21 +4041,9 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4298,18 +4055,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4318,21 +4063,9 @@
   },
   "firstEntityPartialUpdated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4409,18 +4142,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4431,18 +4152,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4454,18 +4163,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4473,21 +4170,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4501,21 +4186,9 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4523,21 +4196,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4549,18 +4210,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4571,18 +4220,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4591,21 +4228,9 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4616,18 +4241,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4636,21 +4249,9 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4661,18 +4262,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4684,18 +4273,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4707,18 +4284,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4730,18 +4295,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4782,7 +4335,7 @@
               "application/json" : {
   "entity" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
@@ -4801,20 +4354,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -4843,20 +4382,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4865,7 +4390,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
@@ -4884,20 +4409,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -4943,7 +4454,7 @@
   "startIndex" : 12345,
   "pageSize" : 12345,
   "totalCount" : 12345,
-  "sortType" : "ASC",
+  "sortType" : "NONE",
   "sortBy" : "..."
 }
             },
@@ -5061,18 +4572,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5083,18 +4582,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5103,21 +4590,9 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5128,18 +4603,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5153,21 +4616,9 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5175,21 +4626,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5198,21 +4637,9 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5220,21 +4647,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5246,63 +4661,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  }, {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  } ],
-  "deletedEntities" : [ {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5313,18 +4671,27 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "deletedEntities" : [ {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "ACTIVE",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5336,18 +4703,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5359,18 +4714,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5382,18 +4725,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5434,7 +4765,7 @@
               "application/json" : {
   "entity" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
@@ -5453,20 +4784,6 @@
         "property2" : { }
       }
     } ],
-    "unassigned" : true,
-    "assigned" : true,
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5476,7 +4793,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
@@ -5495,20 +4812,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5536,20 +4839,6 @@
           "property2" : { }
         }
       } ],
-      "unassigned" : true,
-      "assigned" : true,
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5605,18 +4894,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5624,21 +4901,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5650,18 +4915,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5669,21 +4922,9 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -5700,18 +4941,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5719,21 +4948,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5745,18 +4962,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5764,21 +4969,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5790,18 +4983,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5809,21 +4990,9 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5835,18 +5004,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5857,18 +5014,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5877,21 +5022,9 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5903,18 +5036,6 @@
     "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -5926,18 +5047,6 @@
     "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
-    "atlasObjectId" : {
-      "guid" : "...",
-      "typeName" : "...",
-      "uniqueAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
-      "validGuid" : true,
-      "assignedGuid" : true,
-      "unAssignedGuid" : true,
-      "valid" : true
-    },
     "typeName" : "...",
     "attributes" : {
       "property1" : { },
@@ -6075,21 +5184,9 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6101,18 +5198,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6127,7 +5212,7 @@
     "fromEntityId" : "...",
     "toEntityId" : "..."
   } ],
-  "lineageDirection" : "BOTH",
+  "lineageDirection" : "OUTPUT",
   "lineageDepth" : 12345
 }
             },
@@ -6142,21 +5227,9 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6168,18 +5241,6 @@
       "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6209,21 +5270,9 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6235,18 +5284,6 @@
       "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
-      "atlasObjectId" : {
-        "guid" : "...",
-        "typeName" : "...",
-        "uniqueAttributes" : {
-          "property1" : { },
-          "property2" : { }
-        },
-        "validGuid" : true,
-        "assignedGuid" : true,
-        "unAssignedGuid" : true,
-        "valid" : true
-      },
       "typeName" : "...",
       "attributes" : {
         "property1" : { },
@@ -6361,7 +5398,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "MAP",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6417,45 +5454,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "STRUCT",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "classificationDefs" : [ {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6486,13 +5485,14 @@
       "property1" : "...",
       "property2" : "..."
     }
-  }, {
+  } ],
+  "classificationDefs" : [ {
     "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6502,14 +5502,51 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "ENUM",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  }, {
+    "superTypes" : [ "...", "..." ],
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "LIST",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6530,7 +5567,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6540,14 +5577,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6567,7 +5604,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6577,14 +5614,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6646,7 +5683,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ARRAY",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6671,7 +5708,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "PRIMITIVE",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6701,14 +5738,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "STRUCT",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6727,7 +5764,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6737,14 +5774,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
+    "category" : "CLASSIFICATION",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6782,7 +5819,7 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "CLASSIFICATION",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -6802,6 +5839,44 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "ENTITY",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  } ],
+  "entityDefs" : [ {
+    "superTypes" : [ "...", "..." ],
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
       "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
@@ -6812,7 +5887,253 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
+      "cardinality" : "LIST",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "ARRAY",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  }, {
+    "superTypes" : [ "...", "..." ],
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
       "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "PRIMITIVE",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  } ],
+  "empty" : true
+}
+            },
+            "description" : "On successful update of requested type definitions"
+          },
+          "400" : {
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "enumDefs" : [ {
+    "elementDefs" : [ {
+      "value" : "...",
+      "description" : "...",
+      "ordinal" : 12345
+    }, {
+      "value" : "...",
+      "description" : "...",
+      "ordinal" : 12345
+    } ],
+    "defaultValue" : "...",
+    "category" : "ENTITY",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  }, {
+    "elementDefs" : [ {
+      "value" : "...",
+      "description" : "...",
+      "ordinal" : 12345
+    }, {
+      "value" : "...",
+      "description" : "...",
+      "ordinal" : 12345
+    } ],
+    "defaultValue" : "...",
+    "category" : "ENTITY",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  } ],
+  "structDefs" : [ {
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "LIST",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "PRIMITIVE",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  }, {
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "ENTITY",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  } ],
+  "classificationDefs" : [ {
+    "superTypes" : [ "...", "..." ],
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    } ],
+    "category" : "PRIMITIVE",
+    "guid" : "...",
+    "createdBy" : "...",
+    "updatedBy" : "...",
+    "createTime" : 12345,
+    "updateTime" : 12345,
+    "version" : 12345,
+    "name" : "...",
+    "description" : "...",
+    "typeVersion" : "...",
+    "options" : {
+      "property1" : "...",
+      "property2" : "..."
+    }
+  }, {
+    "superTypes" : [ "...", "..." ],
+    "attributeDefs" : [ {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -6857,252 +6178,6 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENUM",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "ARRAY",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "empty" : true
-}
-            },
-            "description" : "On successful update of requested type definitions"
-          },
-          "400" : {
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "enumDefs" : [ {
-    "elementDefs" : [ {
-      "value" : "...",
-      "description" : "...",
-      "ordinal" : 12345
-    }, {
-      "value" : "...",
-      "description" : "...",
-      "ordinal" : 12345
-    } ],
-    "defaultValue" : "...",
-    "category" : "MAP",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "elementDefs" : [ {
-      "value" : "...",
-      "description" : "...",
-      "ordinal" : 12345
-    }, {
-      "value" : "...",
-      "description" : "...",
-      "ordinal" : 12345
-    } ],
-    "defaultValue" : "...",
-    "category" : "MAP",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "structDefs" : [ {
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "PRIMITIVE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "MAP",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "classificationDefs" : [ {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "ENUM",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
     "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
@@ -7117,8 +6192,7 @@
       "property1" : "...",
       "property2" : "..."
     }
-  } ],
-  "entityDefs" : [ {
+  }, {
     "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
       "name" : "...",
@@ -7134,51 +6208,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "CLASSIFICATION",
+    "category" : "OBJECT_ID_TYPE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7240,7 +6277,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ARRAY",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7265,7 +6302,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENUM",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7295,14 +6332,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "CLASSIFICATION",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7331,7 +6368,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7376,7 +6413,7 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7406,14 +6443,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7434,7 +6471,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7444,14 +6481,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7471,7 +6508,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7481,14 +6518,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "STRUCT",
+    "category" : "OBJECT_ID_TYPE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7524,7 +6561,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7549,7 +6586,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENTITY",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7569,7 +6606,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7579,14 +6616,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENUM",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7605,7 +6642,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7622,7 +6659,7 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "MAP",
+    "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7643,7 +6680,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7653,14 +6690,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7680,7 +6717,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7690,7 +6727,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7718,7 +6755,7 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
@@ -7728,14 +6765,14 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7772,7 +6809,7 @@
       "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7820,7 +6857,7 @@
               "application/json" : {
   "guid" : "...",
   "name" : "...",
-  "category" : "ENUM"
+  "category" : "STRUCT"
 }
             },
             "description" : "Returns a list of AtlasTypeDefHeader matching the search criteria\nor an empty list if no match."
@@ -7882,7 +6919,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -7901,7 +6938,7 @@
       }
     } ]
   } ],
-  "category" : "ARRAY",
+  "category" : "MAP",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -7929,7 +6966,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -7951,7 +6988,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -7970,7 +7007,7 @@
       }
     } ]
   } ],
-  "category" : "ENTITY",
+  "category" : "CLASSIFICATION",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8023,7 +7060,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8045,7 +7082,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8114,7 +7151,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8133,7 +7170,7 @@
       }
     } ]
   } ],
-  "category" : "CLASSIFICATION",
+  "category" : "ENUM",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8186,7 +7223,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8208,7 +7245,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8227,7 +7264,7 @@
       }
     } ]
   } ],
-  "category" : "ARRAY",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8277,7 +7314,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8296,7 +7333,7 @@
       }
     } ]
   } ],
-  "category" : "ARRAY",
+  "category" : "CLASSIFICATION",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8349,7 +7386,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8390,7 +7427,7 @@
       }
     } ]
   } ],
-  "category" : "STRUCT",
+  "category" : "ENUM",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8418,7 +7455,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8440,7 +7477,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8459,7 +7496,7 @@
       }
     } ]
   } ],
-  "category" : "MAP",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8517,7 +7554,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8550,7 +7587,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ENUM",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8608,7 +7645,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ENTITY",
+  "category" : "OBJECT_ID_TYPE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8641,7 +7678,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ENUM",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8693,6 +7730,74 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
+    "cardinality" : "SET",
+    "valuesMinCount" : 12345,
+    "valuesMaxCount" : 12345,
+    "isUnique" : true,
+    "isIndexable" : true,
+    "constraints" : [ {
+      "type" : "...",
+      "params" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    }, {
+      "type" : "...",
+      "params" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    } ]
+  }, {
+    "name" : "...",
+    "typeName" : "...",
+    "isOptional" : true,
+    "cardinality" : "SINGLE",
+    "valuesMinCount" : 12345,
+    "valuesMaxCount" : 12345,
+    "isUnique" : true,
+    "isIndexable" : true,
+    "constraints" : [ {
+      "type" : "...",
+      "params" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    }, {
+      "type" : "...",
+      "params" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    } ]
+  } ],
+  "category" : "ENTITY",
+  "guid" : "...",
+  "createdBy" : "...",
+  "updatedBy" : "...",
+  "createTime" : 12345,
+  "updateTime" : 12345,
+  "version" : 12345,
+  "name" : "...",
+  "description" : "...",
+  "typeVersion" : "...",
+  "options" : {
+    "property1" : "...",
+    "property2" : "..."
+  }
+}
+            },
+            "description" : "On successful lookup of the the struct definition by it's guid"
+          },
+          "404" : {
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "attributeDefs" : [ {
+    "name" : "...",
+    "typeName" : "...",
+    "isOptional" : true,
     "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
@@ -8735,74 +7840,6 @@
     } ]
   } ],
   "category" : "ENUM",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-}
-            },
-            "description" : "On successful lookup of the the struct definition by it's guid"
-          },
-          "404" : {
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "CLASSIFICATION",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -8854,7 +7891,7 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
@@ -8895,7 +7932,7 @@
       }
     } ]
   } ],
-  "category" : "ENUM",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9010,7 +8047,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "CLASSIFICATION",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9033,7 +8070,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "ENTITY",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9081,7 +8118,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "ENUM",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9104,7 +8141,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "ARRAY",
+  "category" : "ENUM",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",

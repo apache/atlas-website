@@ -5,6 +5,30 @@
 
   <xs:element name="PList" type="PList"/>
   <xs:element name="searchFilter" type="searchFilter"/>
+  <xs:element name="atlasSearchResult" type="atlasSearchResult"/>
+  <xs:element name="atlasFullTextResult" type="atlasFullTextResult"/>
+  <xs:element name="attributeSearchResult" type="attributeSearchResult"/>
+  <xs:element name="atlasClassification" type="atlasClassification"/>
+  <xs:element name="atlasEntity" type="atlasEntity"/>
+  <xs:element name="atlasEntityHeader" type="atlasEntityHeader"/>
+  <xs:element name="atlasObjectId" type="atlasObjectId"/>
+  <xs:element name="atlasStruct" type="atlasStruct"/>
+  <xs:element name="classificationAssociateRequest" type="classificationAssociateRequest"/>
+  <xs:element name="entityMutationResponse" type="entityMutationResponse"/>
+  <xs:element name="entityMutations" type="entityMutations"/>
+  <xs:element name="guidMapping" type="guidMapping"/>
+  <xs:element name="atlasLineageInfo" type="atlasLineageInfo"/>
+  <xs:element name="lineageRelation" type="lineageRelation"/>
+  <xs:element name="atlasBaseTypeDef" type="atlasBaseTypeDef"/>
+  <xs:element name="atlasClassificationDef" type="atlasClassificationDef"/>
+  <xs:element name="atlasEntityDef" type="atlasEntityDef"/>
+  <xs:element name="atlasEnumDef" type="atlasEnumDef"/>
+  <xs:element name="atlasEnumElementDef" type="atlasEnumElementDef"/>
+  <xs:element name="atlasStructDef" type="atlasStructDef"/>
+  <xs:element name="atlasAttributeDef" type="atlasAttributeDef"/>
+  <xs:element name="atlasConstraintDef" type="atlasConstraintDef"/>
+  <xs:element name="atlasTypeDefHeader" type="atlasTypeDefHeader"/>
+  <xs:element name="atlasTypesDef" type="atlasTypesDef"/>
 <xs:complexType name="PList">
   <xs:annotation>
     <xs:documentation>
@@ -76,5 +100,551 @@
     <xs:enumeration value="DESC"/>
   </xs:restriction>
 </xs:simpleType>
+
+<xs:simpleType name="typeCategory">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="PRIMITIVE"/>
+ 
+    <xs:enumeration value="OBJECT_ID_TYPE"/>
+ 
+    <xs:enumeration value="ENUM"/>
+ 
+    <xs:enumeration value="STRUCT"/>
+ 
+    <xs:enumeration value="CLASSIFICATION"/>
+ 
+    <xs:enumeration value="ENTITY"/>
+ 
+    <xs:enumeration value="ARRAY"/>
+ 
+    <xs:enumeration value="MAP"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="atlasSearchResult">
+       <xs:sequence>
+              <xs:element name="queryText" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="queryType" type="atlasQueryType" minOccurs="0">
+              </xs:element>
+              <xs:element name="entities" type="atlasEntityHeader" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="attributes" type="attributeSearchResult" minOccurs="0">
+              </xs:element>
+              <xs:element name="fullTextResult" type="atlasFullTextResult" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasFullTextResult">
+       <xs:sequence>
+              <xs:element name="entity" type="atlasEntityHeader" minOccurs="0">
+              </xs:element>
+              <xs:element name="score" type="xs:double" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="atlasQueryType">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="DSL"/>
+ 
+    <xs:enumeration value="FULL_TEXT"/>
+ 
+    <xs:enumeration value="GREMLIN"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="attributeSearchResult">
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="values" type="xs:anyType" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasClassification">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasStruct">
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasEntity">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[An instance of an entity - like hive_table, hive_database.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasStruct">
+      <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="status" type="status" minOccurs="0">
+              </xs:element>
+              <xs:element name="createdBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="updatedBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="version" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="classifications" type="atlasClassification" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:simpleType name="status">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ACTIVE"/>
+ 
+    <xs:enumeration value="DELETED"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="atlasEntityHeader">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[An instance of an entity - like hive_table, hive_database.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasStruct">
+      <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="status" type="status" minOccurs="0">
+              </xs:element>
+              <xs:element name="displayText" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="classificationNames" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasObjectId">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Reference to an object-instance of an Atlas type - like entity.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="typeName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="uniqueAttributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasStruct">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="typeName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="attributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="classificationAssociateRequest">
+       <xs:sequence>
+              <xs:element name="classification" type="atlasClassification" minOccurs="0">
+              </xs:element>
+              <xs:element name="entityGuids" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="entityMutationResponse">
+       <xs:sequence>
+              <xs:element name="mutatedEntities" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="entityOperation"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="guidAssignments" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="entityMutations">
+ </xs:complexType>
+
+<xs:simpleType name="entityOperation">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="CREATE"/>
+ 
+    <xs:enumeration value="UPDATE"/>
+ 
+    <xs:enumeration value="PARTIAL_UPDATE"/>
+ 
+    <xs:enumeration value="DELETE"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="guidMapping">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[This stores a mapping of guid assignments that were made during the processing
+of a create or update entity request.
+.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="guidAssignments" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasLineageInfo">
+       <xs:sequence>
+              <xs:element name="baseEntityGuid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="guidEntityMap" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="atlasEntityHeader"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="relations" type="lineageRelation" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="lineageDirection" type="lineageDirection" minOccurs="0">
+              </xs:element>
+              <xs:element name="lineageDepth" type="xs:int" minOccurs="1">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="lineageDirection">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="INPUT"/>
+ 
+    <xs:enumeration value="OUTPUT"/>
+ 
+    <xs:enumeration value="BOTH"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="lineageRelation">
+       <xs:sequence>
+              <xs:element name="fromEntityId" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="toEntityId" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasBaseTypeDef" abstract="true">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Base class that captures common-attributes for all Atlas types.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createdBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="updatedBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="createTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="updateTime" type="xs:dateTime" minOccurs="0">
+              </xs:element>
+              <xs:element name="version" type="xs:long" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="typeVersion" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="options" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasClassificationDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of a classification-type.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasStructDef">
+      <xs:sequence>
+              <xs:element name="superTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasEntityDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of a entity-type.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasStructDef">
+      <xs:sequence>
+              <xs:element name="superTypes" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasEnumDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of an enum-type.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasBaseTypeDef">
+      <xs:sequence>
+              <xs:element name="elementDefs" type="atlasEnumElementDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="defaultValue" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasEnumElementDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of an enum-element.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="value" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="description" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="ordinal" type="xs:int" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasStructDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of a struct-type.]]>
+    </xs:documentation>
+  </xs:annotation>
+   <xs:complexContent>
+    <xs:extension base="atlasBaseTypeDef">
+      <xs:sequence>
+              <xs:element name="attributeDefs" type="atlasAttributeDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasAttributeDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of a struct-attribute.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="typeName" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="isOptional" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="cardinality" type="cardinality" minOccurs="0">
+              </xs:element>
+              <xs:element name="valuesMinCount" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="valuesMaxCount" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="isUnique" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="isIndexable" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="constraints" type="atlasConstraintDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="cardinality">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[single-valued attribute or multi-valued attribute.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="SINGLE"/>
+ 
+    <xs:enumeration value="LIST"/>
+ 
+    <xs:enumeration value="SET"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="atlasConstraintDef">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[class that captures details of a constraint.]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="type" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="params" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasTypeDefHeader">
+       <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="name" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="category" type="typeCategory" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="atlasTypesDef">
+       <xs:sequence>
+              <xs:element name="enumDefs" type="atlasEnumDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="structDefs" type="atlasStructDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="classificationDefs" type="atlasClassificationDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="entityDefs" type="atlasEntityDef" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
 
 </xs:schema>
