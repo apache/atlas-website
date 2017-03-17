@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Atlas REST API: XML</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Atlas REST API: XML</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="dropdown"><a href="syntax_xml.html">XML</a></li>
+        </ol>
+
+  <h1 class="page-header">XML</h1>
+
+  <table class="table table-hover datatypes">
+  <caption>Default Namespace  (<a href="ns0.xsd">schema</a>)</caption>
+  <thead>
+    <tr>
+      <th align="center">type</th>
+      <th align="center">description</th>
+    </tr>
+  </thead>
+  <tbody data-link="row" class="rowlink">
+    <tr class="clickable-row" data-href="xml_ns0_PList.html">
+      <td>  <span class="datatype-name">PList</span>
+</td>
+      <td>  <span class="datatype-description">Paginated-list, for returning search results.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_searchFilter.html">
+      <td>  <span class="datatype-name">searchFilter</span>
+</td>
+      <td>  <span class="datatype-description">Generic filter, to specify search criteria using name/value pairs.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_sortType.html">
+      <td>  <span class="datatype-name">sortType</span>
+</td>
+      <td>  <span class="datatype-description">to specify whether the result should be sorted? If yes, whether asc or desc.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_typeCategory.html">
+      <td>  <span class="datatype-name">typeCategory</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasSearchResult.html">
+      <td>  <span class="datatype-name">atlasSearchResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasFullTextResult.html">
+      <td>  <span class="datatype-name">atlasFullTextResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasQueryType.html">
+      <td>  <span class="datatype-name">atlasQueryType</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_attributeSearchResult.html">
+      <td>  <span class="datatype-name">attributeSearchResult</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasClassification.html">
+      <td>  <span class="datatype-name">atlasClassification</span>
+</td>
+      <td>  <span class="datatype-description">An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasEntity.html">
+      <td>  <span class="datatype-name">atlasEntity</span>
+</td>
+      <td>  <span class="datatype-description">An instance of an entity - like hive_table, hive_database.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_status.html">
+      <td>  <span class="datatype-name">status</span>
+</td>
+      <td>  <span class="datatype-description">Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasEntityHeader.html">
+      <td>  <span class="datatype-name">atlasEntityHeader</span>
+</td>
+      <td>  <span class="datatype-description">An instance of an entity - like hive_table, hive_database.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasObjectId.html">
+      <td>  <span class="datatype-name">atlasObjectId</span>
+</td>
+      <td>  <span class="datatype-description">Reference to an object-instance of an Atlas type - like entity.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasStruct.html">
+      <td>  <span class="datatype-name">atlasStruct</span>
+</td>
+      <td>  <span class="datatype-description">Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_classificationAssociateRequest.html">
+      <td>  <span class="datatype-name">classificationAssociateRequest</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_entityMutationResponse.html">
+      <td>  <span class="datatype-name">entityMutationResponse</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_entityMutations.html">
+      <td>  <span class="datatype-name">entityMutations</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_entityOperation.html">
+      <td>  <span class="datatype-name">entityOperation</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_guidMapping.html">
+      <td>  <span class="datatype-name">guidMapping</span>
+</td>
+      <td>  <span class="datatype-description">This stores a mapping of guid assignments that were made during the processing
+of a create or update entity request.
+.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasLineageInfo.html">
+      <td>  <span class="datatype-name">atlasLineageInfo</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lineageDirection.html">
+      <td>  <span class="datatype-name">lineageDirection</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_lineageRelation.html">
+      <td>  <span class="datatype-name">lineageRelation</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasBaseTypeDef.html">
+      <td>  <span class="datatype-name">atlasBaseTypeDef</span>
+</td>
+      <td>  <span class="datatype-description">Base class that captures common-attributes for all Atlas types.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasClassificationDef.html">
+      <td>  <span class="datatype-name">atlasClassificationDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a classification-type.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasEntityDef.html">
+      <td>  <span class="datatype-name">atlasEntityDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a entity-type.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasEnumDef.html">
+      <td>  <span class="datatype-name">atlasEnumDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of an enum-type.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasEnumElementDef.html">
+      <td>  <span class="datatype-name">atlasEnumElementDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of an enum-element.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasStructDef.html">
+      <td>  <span class="datatype-name">atlasStructDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a struct-type.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasAttributeDef.html">
+      <td>  <span class="datatype-name">atlasAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a struct-attribute.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_cardinality.html">
+      <td>  <span class="datatype-name">cardinality</span>
+</td>
+      <td>  <span class="datatype-description">single-valued attribute or multi-valued attribute.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasConstraintDef.html">
+      <td>  <span class="datatype-name">atlasConstraintDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a constraint.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasTypeDefHeader.html">
+      <td>  <span class="datatype-name">atlasTypeDefHeader</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="xml_ns0_atlasTypesDef.html">
+      <td>  <span class="datatype-name">atlasTypesDef</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+  </tbody>
+  </table>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>
