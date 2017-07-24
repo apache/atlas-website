@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Date-Revision-yyyymmdd" content="20170724" />
     <meta http-equiv="Content-Language" content="en" />
-    <title>Apache Atlas &#x2013; Data Governance and Metadata framework for Hadoop</title>
+    <title>Apache Atlas &#x2013; Import API</title>
     <link rel="stylesheet" href="./css/apache-maven-fluido-1.3.0.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
     <link rel="stylesheet" href="./css/print.css" media="print" />
@@ -200,7 +200,7 @@
         Atlas</a>
         </li>
       <li class="divider ">/</li>
-        <li class="">Data Governance and Metadata framework for Hadoop</li>
+        <li class="">Import API</li>
         
                 
                     
@@ -215,82 +215,159 @@
         <div id="bodyColumn" >
                                   
             <div class="section">
-<h2><a name="Data_Governance_and_Metadata_framework_for_Hadoop"></a>Data Governance and Metadata framework for Hadoop</h2></div>
+<h2><a name="Import_API"></a>Import API</h2>
+<p>The general approach is:</p>
+<ul>
+<li>Consumer makes a ZIP file available for import operation. See details below for the 2 flavors of the API.</li>
+<li>The API if successful, will return the results of the operation.</li>
+<li>Error will be returned on failure of the call.</li></ul></div>
 <div class="section">
-<h3><a name="Overview"></a>Overview</h3>
-<p>Atlas is a scalable and extensible set of core foundational governance services &#x2013; enabling enterprises to effectively and efficiently meet their compliance requirements within Hadoop and allows integration with the whole enterprise data ecosystem.</p></div>
-<div class="section">
-<h3><a name="Features"></a>Features</h3></div>
-<div class="section">
-<h4><a name="Data_Classification"></a>Data Classification</h4>
+<h4><a name="Import_ZIP_File_Using_POST"></a>Import ZIP File Using POST</h4>
 <p></p>
-<ul>
-<li>Import or define taxonomy business-oriented annotations for data</li>
-<li>Define, annotate, and automate capture of relationships between data sets and underlying elements including source, target, and derivation processes</li>
-<li>Export metadata to third-party systems</li></ul></div>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Title</th>
+<th>Import API</th></tr>
+<tr class="b">
+<td><i>Example</i></td>
+<td>See Examples sections below.</td></tr>
+<tr class="a">
+<td><i>Description</i></td>
+<td>Provide the contents of the file to be imported in the request body.</td></tr>
+<tr class="b">
+<td><i>URL</i></td>
+<td><i>api/atlas/admin/import</i></td></tr>
+<tr class="a">
+<td><i>Method</i></td>
+<td><i>POST</i></td></tr>
+<tr class="b">
+<td><i>URL Parameters</i></td>
+<td><i>None</i></td></tr>
+<tr class="a">
+<td><i>Data Parameters</i></td>
+<td><i>None</i></td></tr>
+<tr class="b">
+<td><i>Success Response</i></td>
+<td><i>AtlasImporResult</i> is returned as JSON. See details below.</td></tr>
+<tr class="a">
+<td><i>Error Response</i></td>
+<td>Errors that are handled within the system will be returned as <i>AtlasBaseException</i>.</td></tr></table></div>
 <div class="section">
-<h4><a name="Centralized_Auditing"></a>Centralized Auditing</h4>
+<h4><a name="Import_ZIP_File_Available_on_Server"></a>Import ZIP File Available on Server</h4>
 <p></p>
+<table border="0" class="table table-striped">
+<tr class="a">
+<th>Title</th>
+<th>Import API</th></tr>
+<tr class="b">
+<td><i>Example</i></td>
+<td>See Examples sections below.</td></tr>
+<tr class="a">
+<td><i>Description</i></td>
+<td>Provide the path of the file to be imported.</td></tr>
+<tr class="b">
+<td><i>URL</i></td>
+<td><i>api/atlas/admin/importfile</i></td></tr>
+<tr class="a">
+<td><i>Method</i></td>
+<td><i>POST</i></td></tr>
+<tr class="b">
+<td><i>URL Parameters</i></td>
+<td><i>None</i></td></tr>
+<tr class="a">
+<td><i>Data Parameters</i></td>
+<td><i>None</i></td></tr>
+<tr class="b">
+<td><i>Success Response</i></td>
+<td><i>AtlasImporResult</i> is returned as JSON. See details below.</td></tr>
+<tr class="a">
+<td><i>Error Response</i></td>
+<td>Errors that are handled within the system will be returned as <i>AtlasBaseException</i>.</td></tr>
+<tr class="b">
+<td><i>Notes</i></td>
+<td>The file to be imported needs to be present on the server at the location specified by the <i>FILENAME</i> parameter.</td></tr></table><b><i>Method Signature for Import</i></b>
+<div class="source">
+<pre>
+@POST
+@Path(&quot;/import&quot;)
+@Produces(&quot;application/json; charset=UTF-8&quot;)
+@Consumes(&quot;multipart/form-data&quot;)
+
+</pre></div>
+<p><b><i>Method Signature for Import File</i></b></p>
+<div class="source">
+<pre>
+@POST
+@Path(&quot;/importfile&quot;)
+@Produces(&quot;application/json; charset=UTF-8&quot;)
+@Consumes(&quot;application/json&quot;)
+
+</pre></div>
+<p><b><i>Import Options</i></b> Please see <b><i><a href="./Import-API-Options.html">here</a></i></b> for the available options during import process.</p>
+<p><b><i>AtlasImportResult Response</i></b> The API will return the results of the import operation in the format defined by the <i>AtlasImportResult</i>:</p>
 <ul>
-<li>Capture security access information for every application, process, and interaction with data</li>
-<li>Capture the operational information for execution, steps, and activities</li></ul></div>
+<li><i>AtlasImportParameters</i>: This contains a collection of name value pair of the options that are applied during the import operation.</li>
+<li><i>Metrics</i>: Operation metrics. These include details on the number of types imported, number of entities imported, etc.</li>
+<li><i>Processed Entities</i>: Contains list of GUIDs for the entities that were processed.</li>
+<li><i>Operation Status</i>: Overall status of the operation. Values are <i>SUCCESS</i>, PARTIAL_SUCCESS, <i>FAIL</i>.</li></ul></div>
 <div class="section">
-<h4><a name="Search__Lineage_Browse"></a>Search &amp; Lineage (Browse)</h4>
-<p></p>
-<ul>
-<li>Pre-defined navigation paths to explore the data classification and audit information</li>
-<li>Text-based search features locates relevant data and audit event across Data Lake quickly and accurately</li>
-<li>Browse visualization of data set lineage allowing users to drill-down into operational, security, and provenance related information</li></ul></div>
-<div class="section">
-<h4><a name="Security__Policy_Engine"></a>Security &amp; Policy Engine</h4>
-<p></p>
-<ul>
-<li>Rationalize compliance policy at runtime based on data classification schemes, attributes and roles.</li>
-<li>Advanced definition of policies for preventing data derivation based on classification (i.e. re-identification) &#x2013; Prohibitions</li>
-<li>Column and Row level masking based on cell values and attibutes.</li></ul></div>
-<div class="section">
-<h3><a name="Getting_Started"></a>Getting Started</h3>
-<p></p>
-<ul>
-<li><a href="./InstallationSteps.html">Install Steps</a></li>
-<li><a href="./QuickStart.html">Quick Start Guide</a></li></ul></div>
-<div class="section">
-<h3><a name="Documentation"></a>Documentation</h3>
-<p></p>
-<ul>
-<li><a href="./Architecture.html">High Level Architecture</a></li>
-<li><a href="./TypeSystem.html">Type System</a></li>
-<li><a href="./Repository.html">Metadata Repository</a></li>
-<li><a href="./Search.html">Search</a></li>
-<li><a href="./Security.html">Security</a></li>
-<li><a href="./Authentication-Authorization.html">Authentication and Authorization</a></li>
-<li><a href="./Configuration.html">Configuration</a></li>
-<li>Notification
-<ul>
-<li><a href="./Notification-Entity.html">Entity Notification</a></li></ul></li>
-<li>Bridges
-<ul>
-<li><a href="./Bridge-Hive.html">Hive Bridge</a></li>
-<li><a href="./Bridge-Sqoop.html">Sqoop Bridge</a></li>
-<li><a href="./Bridge-Falcon.html">Falcon Bridge</a></li>
-<li><a href="./StormAtlasHook.html">Storm Bridge</a></li></ul></li>
-<li><a href="./HighAvailability.html">Fault Tolerance And High Availability Options</a></li></ul></div>
-<div class="section">
-<h3><a name="API_Documentation"></a>API Documentation</h3>
-<p></p>
-<ul>
-<li><a href="api/v2/index.html">REST API Documentation</a></li>
-<li><a href="./Import-Export-API.html">Export &amp; Import REST API Documentation</a></li>
-<li><a href="api/rest.html">Legacy API Documentation</a></li></ul></div>
-<div class="section">
-<h3><a name="Developer_Setup_Documentation"></a>Developer Setup Documentation</h3>
-<p></p>
-<ul>
-<li><a href="./EclipseSetup.html">Developer Setup: Eclipse</a></li></ul>
-<p><a name="LicenseInfo"></a></p></div>
-<div class="section">
-<h2><a name="Licensing_Information"></a>Licensing Information</h2>
-<p>Atlas is distributed under <a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>.</p></div>
+<h4><a name="Examples_Using_CURL_Calls"></a>Examples Using CURL Calls</h4>
+<p>The call below performs Import of <i>QuickStart</i> database using POST.</p>
+<div class="source">
+<pre>
+curl -g -X POST -u adminuser:password -H &quot;Content-Type: multipart/form-data&quot;
+            -H &quot;Cache-Control: no-cache&quot;
+            -F request=@importOptions.json
+            -F data=@quickStartDB.zip
+            &quot;http://localhost:21000/api/atlas/admin/import&quot;
+
+</pre></div>
+<p>The call below performs Import of <i>QuickStart</i> database using a ZIP file available on server.</p>
+<div class="source">
+<pre>
+curl -X POST -u adminuser:password -H &quot;Cache-Control: no-cache&quot; -d ./importOptions.json
+&quot;http://localhost:21000/api/atlas/admin/importFile&quot; &gt; quickStartDB-import-result.json
+
+</pre></div>
+<p>Below is the <i>AtlasImportResult</i> JSON for an import that contains <i>hive</i>db_.</p>
+<p>The <i>processedEntities</i> contains the <i>guids</i> of all the entities imported.</p>
+<p>The <i>metrics</i> contain a breakdown of the types and entities imported along with the operation performed on them viz. <i>created</i> or <i>updated</i>.</p>
+<div class="source">
+<pre>
+{
+    &quot;request&quot;: {
+        &quot;options&quot;: {}
+    },
+    &quot;userName&quot;: &quot;admin&quot;,
+    &quot;clientIpAddress&quot;: &quot;10.0.2.2&quot;,
+    &quot;hostName&quot;: &quot;10.0.2.15&quot;,
+    &quot;timeStamp&quot;: 1491285622823,
+    &quot;metrics&quot;: {
+        &quot;duration&quot;: 9143,
+        &quot;typedef:enum&quot;: 0,
+        &quot;typedef:struct&quot;: 0,
+        &quot;entity:hive_column:created&quot;: 461,
+        &quot;entity:hive_storagedesc:created&quot;: 20,
+        &quot;entity:hive_process:created&quot;: 12,
+        &quot;entity:hive_db:created&quot;: 5,
+        &quot;entity:hive_table:created&quot;: 20,
+        &quot;entity:hdfs_path:created&quot;: 2,
+        &quot;typedef:entitydef&quot;: 0,
+        &quot;typedef:classification&quot;: 3
+    },
+    &quot;processedEntities&quot;: [
+        &quot;2c4aa713-030b-4fb3-98b1-1cab23d9ac81&quot;,
+        &quot;e4aa71ed-70fd-4fa7-9dfb-8250a573e293&quot;,
+
+       ...
+
+        &quot;ea0f9bdb-1dfc-4e48-9848-a006129929f9&quot;,
+        &quot;b5e2cb41-3e7d-4468-84e1-d87c320e75f9&quot;
+    ],
+    &quot;operationStatus&quot;: &quot;SUCCESS&quot;
+}
+
+</pre></div></div>
                   </div>
           </div>
 
