@@ -73,13 +73,13 @@
     <tr class="clickable-row" data-href="json_AtlasAttributeDef.html">
       <td>  <span class="datatype-name">AtlasAttributeDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of a struct-attribute.</span>
+      <td>  <span class="datatype-description">class that captures details of a struct-attribute.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasBaseTypeDef.html">
       <td>  <span class="datatype-name">AtlasBaseTypeDef</span>
 </td>
-      <td>  <span class="datatype-description">Common-attributes for all Atlas types.</span>
+      <td>  <span class="datatype-description">Base class that captures common-attributes for all Atlas types.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasClassification.html">
@@ -91,7 +91,7 @@
     <tr class="clickable-row" data-href="json_AtlasClassificationDef.html">
       <td>  <span class="datatype-name">AtlasClassificationDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of a classification-type.</span>
+      <td>  <span class="datatype-description">class that captures details of a classification-type.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasClassifications.html">
@@ -103,31 +103,31 @@
     <tr class="clickable-row" data-href="json_AtlasConstraintDef.html">
       <td>  <span class="datatype-name">AtlasConstraintDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of a constraint.</span>
+      <td>  <span class="datatype-description">class that captures details of a constraint.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEntitiesWithExtInfo.html">
       <td>  <span class="datatype-name">AtlasEntitiesWithExtInfo</span>
 </td>
-      <td>  <span class="datatype-description">List of Atlas entity along with the referred entities</span>
+      <td>  <span class="datatype-description">An instance of an entity along with extended info - like hive_table, hive_database.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEntity.html">
       <td>  <span class="datatype-name">AtlasEntity</span>
 </td>
-      <td>  <span class="datatype-description">Atlas entity representation</span>
+      <td>  <span class="datatype-description">An instance of an entity - like hive_table, hive_database.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEntityDef.html">
       <td>  <span class="datatype-name">AtlasEntityDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of an entity-type.</span>
+      <td>  <span class="datatype-description">class that captures details of a entity-type.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEntityExtInfo.html">
       <td>  <span class="datatype-name">AtlasEntityExtInfo</span>
 </td>
-      <td>  <span class="datatype-description">Entity representation along with extended info which included the entities being referred to</span>
+      <td>  <span class="datatype-description">An instance of an entity along with extended info - like hive_table, hive_database.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEntityHeader.html">
@@ -139,109 +139,179 @@
     <tr class="clickable-row" data-href="json_AtlasEntityWithExtInfo.html">
       <td>  <span class="datatype-name">AtlasEntityWithExtInfo</span>
 </td>
-      <td>  <span class="datatype-description">Entity with information about the referred entities</span>
+      <td>  <span class="datatype-description">An instance of an entity along with extended info - like hive_table, hive_database.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEnumDef.html">
       <td>  <span class="datatype-name">AtlasEnumDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of an enum-type.</span>
+      <td>  <span class="datatype-description">class that captures details of an enum-type.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasEnumElementDef.html">
       <td>  <span class="datatype-name">AtlasEnumElementDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of an enum-element.</span>
+      <td>  <span class="datatype-description">class that captures details of an enum-element.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasFullTextResult.html">
       <td>  <span class="datatype-name">AtlasFullTextResult</span>
 </td>
-      <td>  <span class="datatype-description">Search results for FullText APIs</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasLineageInfo.html">
       <td>  <span class="datatype-name">AtlasLineageInfo</span>
 </td>
-      <td>  <span class="datatype-description">Lineage information for a single entity</span>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AtlasObjectId.html">
+      <td>  <span class="datatype-name">AtlasObjectId</span>
+</td>
+      <td>  <span class="datatype-description">Reference to an object-instance of an Atlas type - like entity.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasQueryType.html">
       <td>  <span class="datatype-name">AtlasQueryType</span>
 </td>
-      <td>  <span class="datatype-description">Various querying mechanisms supported by Atlas</span>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AtlasRelationship.html">
+      <td>  <span class="datatype-name">AtlasRelationship</span>
+</td>
+      <td>  <span class="datatype-description">Atlas relationship instance.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AtlasRelationshipDef.html">
+      <td>  <span class="datatype-name">AtlasRelationshipDef</span>
+</td>
+      <td>  <span class="datatype-description">AtlasRelationshipDef is a TypeDef that defines a relationship.
+
+As with other typeDefs the AtlasRelationshipDef has a name. Once created the RelationshipDef has a guid.
+The name and the guid are the 2 ways that the RelationshipDef is identified.
+
+RelationshipDefs have 2 ends, each of which specify cardinality, an EntityDef type name and name and optionally
+whether the end is a container.
+RelationshipDefs can have AttributeDefs - though only primitive types are allowed.
+RelationshipDefs have a relationshipCategory specifying the UML type of relationship required
+RelationshipDefs also have a PropogateTag - indicating which way tags could flow over the relationships.
+
+The way EntityDefs and RelationshipDefs are intended to be used is that EntityDefs will define AttributeDefs these AttributeDefs
+will not specify an EntityDef type name as their types.
+
+RelationshipDefs introduce new atributes to the entity instances. For example
+EntityDef A might have attributes attr1,attr2,attr3
+EntityDef B might have attributes attr4,attr5,attr6
+RelationshipDef AtoB might define 2 ends
+end1:  type A, name attr7
+end1:  type B, name attr8
+
+When an instance of EntityDef A is created, it will have attributes attr1,attr2,attr3,attr7
+When an instance of EntityDef B is created, it will have attributes attr4,attr5,attr6,attr8
+
+In this way relationshipDefs can be authored separately from entityDefs and can inject relationship attributes into
+the entity instances</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_AtlasRelationshipEndDef.html">
+      <td>  <span class="datatype-name">AtlasRelationshipEndDef</span>
+</td>
+      <td>  <span class="datatype-description">The relationshipEndDef represents an end of the relationship. The end of the relationship is defined by a type, an
+attribute name, cardinality and whether it  is the container end of the relationship.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasSearchResult.html">
       <td>  <span class="datatype-name">AtlasSearchResult</span>
 </td>
-      <td>  <span class="datatype-description">Search results of the Discovery APIs</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasStruct.html">
       <td>  <span class="datatype-name">AtlasStruct</span>
 </td>
-      <td>  <span class="datatype-description">Details of a struct. Not instantiated directly, used only via AtlasEntity, AtlasClassification.</span>
+      <td>  <span class="datatype-description">Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasStructDef.html">
       <td>  <span class="datatype-name">AtlasStructDef</span>
 </td>
-      <td>  <span class="datatype-description">Details of a struct-type.</span>
+      <td>  <span class="datatype-description">class that captures details of a struct-type.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasTypeDefHeader.html">
       <td>  <span class="datatype-name">AtlasTypeDefHeader</span>
 </td>
-      <td>  <span class="datatype-description">Minimal set of information about a type definition</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AtlasTypesDef.html">
       <td>  <span class="datatype-name">AtlasTypesDef</span>
 </td>
-      <td>  <span class="datatype-description">A collection of atlas enum, struct, classification and entity definitions (models).</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_AttributeSearchResult.html">
       <td>  <span class="datatype-name">AttributeSearchResult</span>
 </td>
-      <td>  <span class="datatype-description">Search results for attribute(s)</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_Cardinality.html">
       <td>  <span class="datatype-name">Cardinality</span>
 </td>
-      <td>  <span class="datatype-description">Cardinality of an attribute i.e. single-valued or multi-valued.</span>
+      <td>  <span class="datatype-description">single-valued attribute or multi-valued attribute.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_ClassificationAssociateRequest.html">
       <td>  <span class="datatype-name">ClassificationAssociateRequest</span>
 </td>
-      <td>  <span class="datatype-description">Tag association request for a list of entities</span>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Condition.html">
+      <td>  <span class="datatype-name">Condition</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EntityMutationResponse.html">
       <td>  <span class="datatype-name">EntityMutationResponse</span>
 </td>
-      <td>  <span class="datatype-description">Entity modification response. Contains entity headers for each successful modification (create/update/delete)</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_EntityOperation.html">
       <td>  <span class="datatype-name">EntityOperation</span>
 </td>
-      <td>  <span class="datatype-description">Entity operations supported by Atlas via REST</span>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_FilterCriteria.html">
+      <td>  <span class="datatype-name">FilterCriteria</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_LineageDirection.html">
       <td>  <span class="datatype-name">LineageDirection</span>
 </td>
-      <td>  <span class="datatype-description">Lineage direction</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_LineageRelation.html">
       <td>  <span class="datatype-name">LineageRelation</span>
 </td>
-      <td>  <span class="datatype-description">Lineage relation between two entities</span>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Operator.html">
+      <td>  <span class="datatype-name">Operator</span>
+</td>
+      <td>  <span class="datatype-description">Supported search operations
+Logical comparision operators can only be used with numbers or dates
+IN, LIKE, startsWith, endsWith, CONTAINS can only be used with strings or text</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_PList.html">
@@ -250,22 +320,65 @@
       <td>  <span class="datatype-description">Paginated-list, for returning search results.</span>
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_PropagateTags.html">
+      <td>  <span class="datatype-name">PropagateTags</span>
+</td>
+      <td>  <span class="datatype-description">PropagateTags indicates whether tags should propagate across the relationship instance.
+Tags can propagate:
+NONE - not at all
+ONE_TO_TWO - from end 1 to 2
+TWO_TO_ONE - from end 2 to 1
+BOTH - both ways
+
+Care needs to be taken when specifying. The use cases we are aware of where this flag is useful:
+
+- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here
+- propagating classifications around Glossary synonyms - BOTH could be used here.
+
+There is an expectation that further enhancements will allow more granular control of tag propagation and will
+address how to resolve conflicts.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_RelationshipCategory.html">
+      <td>  <span class="datatype-name">RelationshipCategory</span>
+</td>
+      <td>  <span class="datatype-description">The Relationship category determines the style of relationship around containment and lifecycle.
+UML terminology is used for the values.
+ASSOCIATION is a relationship with no containment.
+COMPOSITION and AGGREGATION are containment relationships.
+The difference being in the lifecycles of the container and its children. In the COMPOSITION case,
+the children cannot exist without the container. For AGGREGATION, the life cycles
+of the container and children are totally independant.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_SearchParameters.html">
+      <td>  <span class="datatype-name">SearchParameters</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_SortType.html">
       <td>  <span class="datatype-name">SortType</span>
 </td>
-      <td>  <span class="datatype-description">Type of sorting to be applied on the result set, defaults to NONE</span>
+      <td>  <span class="datatype-description">to specify whether the result should be sorted? If yes, whether asc or desc.</span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_Status.html">
       <td>  <span class="datatype-name">Status</span>
 </td>
-      <td>  <span class="datatype-description">Status of the entity - can be active or deleted.</span>
+      <td>  <span class="datatype-description">Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store.</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="json_Status_AtlasRelationship.html">
+      <td>  <span class="datatype-name">Status</span>
+</td>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="json_TypeCategory.html">
       <td>  <span class="datatype-name">TypeCategory</span>
 </td>
-      <td>  <span class="datatype-description">Category of a defined type</span>
+      <td>  <span class="datatype-description"></span>
 </td>
     </tr>
   </tbody>

@@ -63,7 +63,7 @@
 
       <h1 class="page-header">AtlasEntitiesWithExtInfo <small>Data Type</small></h1>
 
-      <p>List of Atlas entity along with the referred entities</p>
+      <p>An instance of an entity along with extended info - like hive_table, hive_database.</p>
 
       <dl class="dl-horizontal">
       </dl>
@@ -106,12 +106,16 @@
       <pre class="prettyprint language-js example">{
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
     &quot;createTime&quot; : 12345,
     &quot;updateTime&quot; : 12345,
     &quot;version&quot; : 12345,
+    &quot;relationshipAttributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
     &quot;classifications&quot; : [ {
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;attributes&quot; : {
@@ -132,12 +136,16 @@
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
     &quot;createTime&quot; : 12345,
     &quot;updateTime&quot; : 12345,
     &quot;version&quot; : 12345,
+    &quot;relationshipAttributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
     &quot;classifications&quot; : [ {
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;attributes&quot; : {
@@ -166,6 +174,10 @@
       &quot;createTime&quot; : 12345,
       &quot;updateTime&quot; : 12345,
       &quot;version&quot; : 12345,
+      &quot;relationshipAttributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
       &quot;classifications&quot; : [ {
         &quot;typeName&quot; : &quot;...&quot;,
         &quot;attributes&quot; : {
@@ -193,6 +205,10 @@
       &quot;createTime&quot; : 12345,
       &quot;updateTime&quot; : 12345,
       &quot;version&quot; : 12345,
+      &quot;relationshipAttributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
       &quot;classifications&quot; : [ {
         &quot;typeName&quot; : &quot;...&quot;,
         &quot;attributes&quot; : {

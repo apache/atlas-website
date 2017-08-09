@@ -84,11 +84,13 @@
     <tr class="clickable-row" data-href="resource_DiscoveryREST.html">
       <td>  <span class="resource-name">DiscoveryREST</span>
 </td>
-      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/v2/search/basic</span>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/v2/search/attribute</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/basic</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/search/dsl</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/search/fulltext</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
@@ -110,7 +112,7 @@
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
@@ -127,6 +129,18 @@
       <td>  <span class="resource-description">REST interface for an entity's lineage information</span>
 </td>
     </tr>
+    <tr class="clickable-row" data-href="resource_RelationshipREST.html">
+      <td>  <span class="resource-name">RelationshipREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/v2/relationship</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/relationship/guid/{guid}</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description">REST interface for entity relationships.</span>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="resource_TypesREST.html">
       <td>  <span class="resource-name">TypesREST</span>
 </td>
@@ -138,12 +152,16 @@
 </samp></li><li><samp>  <span class="resource-path">/v2/types/entitydef/name/{name}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/enumdef/guid/{guid}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/enumdef/name/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/types/relationshipdef/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/types/relationshipdef/name/{name}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/structdef/guid/{guid}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/structdef/name/{name}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/typedef/guid/{guid}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/types/typedef/name/{name}</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 

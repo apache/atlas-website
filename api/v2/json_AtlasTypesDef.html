@@ -63,7 +63,7 @@
 
       <h1 class="page-header">AtlasTypesDef <small>Data Type</small></h1>
 
-      <p>A collection of atlas enum, struct, classification and entity definitions (models).</p>
+      <p></p>
 
       <dl class="dl-horizontal">
       </dl>
@@ -115,6 +115,15 @@
 </td>
         </tr>
         <tr>
+          <td>  <span class="property-name">relationshipDefs</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasRelationshipDef.html">AtlasRelationshipDef</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
           <td>  <span class="property-name">empty</span>
 </td>
           <td>  <span class="datatype-reference">boolean
@@ -140,7 +149,7 @@
       &quot;ordinal&quot; : 12345
     } ],
     &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;category&quot; : &quot;PRIMITIVE&quot;,
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -165,7 +174,7 @@
       &quot;ordinal&quot; : 12345
     } ],
     &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;category&quot; : &quot;ARRAY&quot;,
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -185,11 +194,12 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     }, {
       &quot;name&quot; : &quot;...&quot;,
@@ -200,9 +210,10 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
-    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
+    &quot;category&quot; : &quot;RELATIONSHIP&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -221,24 +232,26 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     }, {
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -259,21 +272,23 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     }, {
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
     &quot;category&quot; : &quot;STRUCT&quot;,
@@ -301,6 +316,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     }, {
       &quot;name&quot; : &quot;...&quot;,
@@ -311,9 +327,10 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
-    &quot;category&quot; : &quot;ENUM&quot;,
+    &quot;category&quot; : &quot;ENTITY&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -334,11 +351,12 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     }, {
       &quot;name&quot; : &quot;...&quot;,
@@ -349,9 +367,10 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
-    &quot;category&quot; : &quot;ARRAY&quot;,
+    &quot;category&quot; : &quot;ENTITY&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,
@@ -371,13 +390,59 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;valuesMinCount&quot; : 12345,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;isUnique&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;constraints&quot; : [ { }, { } ]
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;isOptional&quot; : true,
       &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;valuesMinCount&quot; : 12345,
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
-    }, {
+    } ],
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;updateTime&quot; : 12345,
+    &quot;version&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    }
+  } ],
+  &quot;relationshipDefs&quot; : [ {
+    &quot;relationshipCategory&quot; : &quot;ASSOCIATION&quot;,
+    &quot;propagateTags&quot; : &quot;ONE_TO_TWO&quot;,
+    &quot;endDef1&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;isLegacyAttribute&quot; : true
+    },
+    &quot;endDef2&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;isLegacyAttribute&quot; : true
+    },
+    &quot;relationshipLabel&quot; : &quot;...&quot;,
+    &quot;attributeDefs&quot; : [ {
       &quot;name&quot; : &quot;...&quot;,
       &quot;typeName&quot; : &quot;...&quot;,
       &quot;isOptional&quot; : true,
@@ -386,9 +451,76 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
       &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;constraints&quot; : [ { }, { } ]
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;isOptional&quot; : true,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;valuesMinCount&quot; : 12345,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;isUnique&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;constraints&quot; : [ { }, { } ]
     } ],
     &quot;category&quot; : &quot;ENTITY&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;updateTime&quot; : 12345,
+    &quot;version&quot; : 12345,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    }
+  }, {
+    &quot;relationshipCategory&quot; : &quot;COMPOSITION&quot;,
+    &quot;propagateTags&quot; : &quot;NONE&quot;,
+    &quot;endDef1&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;isLegacyAttribute&quot; : true
+    },
+    &quot;endDef2&quot; : {
+      &quot;type&quot; : &quot;...&quot;,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;isLegacyAttribute&quot; : true
+    },
+    &quot;relationshipLabel&quot; : &quot;...&quot;,
+    &quot;attributeDefs&quot; : [ {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;isOptional&quot; : true,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;valuesMinCount&quot; : 12345,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;isUnique&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;constraints&quot; : [ { }, { } ]
+    }, {
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;isOptional&quot; : true,
+      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;valuesMinCount&quot; : 12345,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;isUnique&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;constraints&quot; : [ { }, { } ]
+    } ],
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
     &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;updatedBy&quot; : &quot;...&quot;,

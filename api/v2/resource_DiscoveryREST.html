@@ -50,7 +50,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#resource_DiscoveryREST_searchUsingAttribute_GET">GET /v2/search/attribute</a></li>
           <li><a href="#resource_DiscoveryREST_searchUsingBasic_GET">GET /v2/search/basic</a></li>
+          <li><a href="#resource_DiscoveryREST_searchWithParameters_POST">POST /v2/search/basic</a></li>
           <li><a href="#resource_DiscoveryREST_searchUsingDSL_GET">GET /v2/search/dsl</a></li>
           <li><a href="#resource_DiscoveryREST_searchUsingFullText_GET">GET /v2/search/fulltext</a></li>
           <li class="divider"></li>
@@ -68,6 +70,225 @@
       <h1 class="page-header">DiscoveryREST <small>Resource</small></h1>
 
       <p>REST interface for data discovery using dsl or full text search</p>
+
+      <div id="resource_DiscoveryREST_searchUsingAttribute_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/attribute <a href="../v2/search/attribute" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Retrieve data for the specified attribute search query</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">attrName</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">Attribute name</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">attrValuePrefix</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">Attibute value to search on</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">limit the result set to only include the specified number of entries</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">start offset of the result set (useful for pagination)</span></td>
+            <td><span class="parameter-constraints">int</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">typeName</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">limit the result to only entities of specified type or its sub-types</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">On successful FullText lookup with some results, might return an empty list if execution succeeded
+without any results</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Invalid wildcard or query parameters</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasSearchResult.html">AtlasSearchResult</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Search results</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/search/attribute
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;queryType&quot; : &quot;GREMLIN&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LIKE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;queryText&quot; : &quot;...&quot;,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;entities&quot; : [ {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  }, {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  } ],
+  &quot;attributes&quot; : {
+    &quot;name&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : [ ]
+  },
+  &quot;fullTextResult&quot; : [ {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div id="resource_DiscoveryREST_searchUsingBasic_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/basic <a href="../v2/search/basic" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
@@ -90,6 +311,12 @@
             <td>query</td>
             <td><span class="parameter-description">limit the result to only entities tagged with the given classification or or its sub-types</span></td>
             <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">excludeDeletedEntities</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           <tr>
             <td><span class="parameter-name">limit</span></td>
@@ -178,12 +405,35 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 {
   &quot;queryType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;IN&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
   &quot;queryText&quot; : &quot;...&quot;,
   &quot;type&quot; : &quot;...&quot;,
   &quot;classification&quot; : &quot;...&quot;,
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -222,7 +472,7 @@ Content-Type: application/json
   }, {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -232,7 +482,250 @@ Content-Type: application/json
       }
     },
     &quot;score&quot; : 12345.0
-  } ]
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_searchWithParameters_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/search/basic <a href="../v2/search/basic" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Attribute based search for entities satisfying the search parameters</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_SearchParameters.html">SearchParameters</a>
+ (JSON)</span></td>
+            <td><span class="request-description">Search parameters</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">On successful search</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">Tag/Entity doesn't exist or Tag/entity filter is present without tag/type name</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasSearchResult.html">AtlasSearchResult</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Atlas search result</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/search/basic
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;query&quot; : &quot;...&quot;,
+  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;excludeDeletedEntities&quot; : true,
+  &quot;limit&quot; : 12345,
+  &quot;offset&quot; : 12345,
+  &quot;entityFilters&quot; : {
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;operator&quot; : &quot;NEQ&quot;,
+    &quot;attributeValue&quot; : &quot;...&quot;,
+    &quot;condition&quot; : &quot;OR&quot;,
+    &quot;criterion&quot; : [ { }, { } ]
+  },
+  &quot;tagFilters&quot; : {
+    &quot;attributeName&quot; : &quot;...&quot;,
+    &quot;operator&quot; : &quot;GTE&quot;,
+    &quot;attributeValue&quot; : &quot;...&quot;,
+    &quot;condition&quot; : &quot;OR&quot;,
+    &quot;criterion&quot; : [ { }, { } ]
+  },
+  &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;queryType&quot; : &quot;DSL&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;IN&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;CONTAINS&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;queryText&quot; : &quot;...&quot;,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;entities&quot; : [ {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  }, {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  } ],
+  &quot;attributes&quot; : {
+    &quot;name&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : [ ]
+  },
+  &quot;fullTextResult&quot; : [ {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
 }
                 </code>
               </pre>
@@ -349,7 +842,30 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
-  &quot;queryType&quot; : &quot;DSL&quot;,
+  &quot;queryType&quot; : &quot;GREMLIN&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;NEQ&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;CONTAINS&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
   &quot;queryText&quot; : &quot;...&quot;,
   &quot;type&quot; : &quot;...&quot;,
   &quot;classification&quot; : &quot;...&quot;,
@@ -365,7 +881,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -381,7 +897,7 @@ Content-Type: application/json
   &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -404,7 +920,31 @@ Content-Type: application/json
       }
     },
     &quot;score&quot; : 12345.0
-  } ]
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
 }
                 </code>
               </pre>
@@ -429,6 +969,12 @@ Content-Type: application/json
           </tr>
           </thead>
           <tbody>
+          <tr>
+            <td><span class="parameter-name">excludeDeletedEntities</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+          </tr>
           <tr>
             <td><span class="parameter-name">limit</span></td>
             <td>query</td>
@@ -509,7 +1055,30 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
-  &quot;queryType&quot; : &quot;BASIC&quot;,
+  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
   &quot;queryText&quot; : &quot;...&quot;,
   &quot;type&quot; : &quot;...&quot;,
   &quot;classification&quot; : &quot;...&quot;,
@@ -525,7 +1094,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -541,7 +1110,7 @@ Content-Type: application/json
   &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -564,7 +1133,31 @@ Content-Type: application/json
       }
     },
     &quot;score&quot; : 12345.0
-  } ]
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
 }
                 </code>
               </pre>

@@ -63,7 +63,7 @@
 
       <h1 class="page-header">AtlasSearchResult <small>Data Type</small></h1>
 
-      <p>Search results of the Discovery APIs</p>
+      <p></p>
 
       <dl class="dl-horizontal">
       </dl>
@@ -82,6 +82,15 @@
           <td>  <span class="property-name">queryType</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_AtlasQueryType.html">AtlasQueryType</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">searchParameters</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_SearchParameters.html">SearchParameters</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -141,19 +150,51 @@
           <td>  <span class="property-description"></span>
 </td>
         </tr>
+        <tr>
+          <td>  <span class="property-name">referredEntities</span>
+</td>
+          <td>  <span class="datatype-reference">map of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;queryType&quot; : &quot;BASIC&quot;,
+  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
   &quot;queryText&quot; : &quot;...&quot;,
   &quot;type&quot; : &quot;...&quot;,
   &quot;classification&quot; : &quot;...&quot;,
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -163,7 +204,7 @@
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -202,7 +243,31 @@
       }
     },
     &quot;score&quot; : 12345.0
-  } ]
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
 }</pre>
 
         <footer class="footer">

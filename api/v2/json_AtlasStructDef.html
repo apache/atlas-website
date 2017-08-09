@@ -63,11 +63,11 @@
 
       <h1 class="page-header">AtlasStructDef <small>Data Type</small></h1>
 
-      <p>Details of a struct-type.</p>
+      <p>class that captures details of a struct-type.</p>
 
       <dl class="dl-horizontal">
         <dt>Subtypes</dt>
-        <dd><a href="json_AtlasEntityDef.html">AtlasEntityDef</a>, <a href="json_AtlasClassificationDef.html">AtlasClassificationDef</a></dd>
+        <dd><a href="json_AtlasEntityDef.html">AtlasEntityDef</a>, <a href="json_AtlasRelationshipDef.html">AtlasRelationshipDef</a>, <a href="json_AtlasClassificationDef.html">AtlasClassificationDef</a></dd>
       </dl>
 
       <table class="table datatype-properties">
@@ -170,11 +170,12 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
     &quot;isOptional&quot; : true,
-    &quot;cardinality&quot; : &quot;LIST&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
     &quot;valuesMinCount&quot; : 12345,
     &quot;valuesMaxCount&quot; : 12345,
     &quot;isUnique&quot; : true,
     &quot;isIndexable&quot; : true,
+    &quot;defaultValue&quot; : &quot;...&quot;,
     &quot;constraints&quot; : [ {
       &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
@@ -192,11 +193,12 @@
     &quot;name&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
     &quot;isOptional&quot; : true,
-    &quot;cardinality&quot; : &quot;SET&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
     &quot;valuesMinCount&quot; : 12345,
     &quot;valuesMaxCount&quot; : 12345,
     &quot;isUnique&quot; : true,
     &quot;isIndexable&quot; : true,
+    &quot;defaultValue&quot; : &quot;...&quot;,
     &quot;constraints&quot; : [ {
       &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
@@ -211,7 +213,7 @@
       }
     } ]
   } ],
-  &quot;category&quot; : &quot;ENUM&quot;,
+  &quot;category&quot; : &quot;RELATIONSHIP&quot;,
   &quot;guid&quot; : &quot;...&quot;,
   &quot;createdBy&quot; : &quot;...&quot;,
   &quot;updatedBy&quot; : &quot;...&quot;,
