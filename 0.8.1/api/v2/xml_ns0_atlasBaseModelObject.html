@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Atlas REST API: SearchParameters</title>
+  <title>Atlas REST API: atlasBaseModelObject</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Atlas REST API: SearchParameters</a>
+        <a class="navbar-brand" href="index.html">Atlas REST API: atlasBaseModelObject</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -57,15 +57,21 @@
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <ol class="breadcrumb" id="top">
           <li class="active dropdown"><a href="index.html">Home</a></li>
-          <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
-          <li class="dropdown"><a href="json_SearchParameters.html">SearchParameters</a></li>
+          <li class="active dropdown"><a href="syntax_xml.html">XML</a></li>
+          <li class="dropdown"><a href="xml_ns0_atlasBaseModelObject.html">atlasBaseModelObject</a></li>
         </ol>
 
-      <h1 class="page-header">SearchParameters <small>Data Type</small></h1>
+      <h1 class="page-header">atlasBaseModelObject <small>Data Type</small></h1>
 
       <p></p>
 
       <dl class="dl-horizontal">
+        <dt>Namespace</dt>
+        <dd>(Default)</dd>
+        <dt>Schema</dt>
+        <dd><a href="ns0.xsd">ns0.xsd</a></dd>
+        <dt>Abstract Type</dt>
+        <dd></dd>
       </dl>
 
       <table class="table datatype-properties">
@@ -74,119 +80,42 @@
         <tr>
           <th>name</th>
           <th>data type</th>
+          <th>type</th>
+          <th>namespace</th>
+          <th>min/max occurs</th>
           <th>description</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">query</span>
+          <td>  <span class="property-name">guid</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
 </td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">typeName</span>
-</td>
-          <td>  <span class="datatype-reference">string
+          <td>  <span class="property-type">element
 </span>
 </td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">classification</span>
-</td>
-          <td>  <span class="datatype-reference">string
+          <td>  <span class="property-namespaceInfo">
 </span>
 </td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">excludeDeletedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
+          <td>  <span class="property-minMaxOccurs">0/1
 </span>
 </td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">limit</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">offset</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">entityFilters</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
-</span>
-</td>
-          <td>  <span class="property-description">Entity attribute filters for the type (if type name is specified)</span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">tagFilters</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
-</span>
-</td>
-          <td>  <span class="property-description">Tag attribute filters for the classification/tag (if tag name is specified)</span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">attributes</span>
-</td>
-          <td>  <span class="datatype-reference">array of string
-</span>
-</td>
-          <td>  <span class="property-description">Attribute values included in the results</span>
+          <td>  <span class="property-description">&nbsp;</span>
 </td>
         </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
+
+      <div class="alert alert-warning">This data type is abstract. The example below may be incomplete. More accurate examples can be found in subtypes pages.</div>
       
-      <pre class="prettyprint language-js example">{
-  &quot;query&quot; : &quot;...&quot;,
-  &quot;typeName&quot; : &quot;...&quot;,
-  &quot;classification&quot; : &quot;...&quot;,
-  &quot;excludeDeletedEntities&quot; : true,
-  &quot;limit&quot; : 12345,
-  &quot;offset&quot; : 12345,
-  &quot;entityFilters&quot; : {
-    &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;GTE&quot;,
-    &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
-  },
-  &quot;tagFilters&quot; : {
-    &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;CONTAINS_ANY&quot;,
-    &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
-  },
-  &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
-}</pre>
+      <pre class="prettyprint language-xml example">&lt;atlasBaseModelObject&gt;
+  &lt;guid&gt;...&lt;/guid&gt;
+&lt;/atlasBaseModelObject&gt;
+</pre>
 
         <footer class="footer">
           <div class="container">

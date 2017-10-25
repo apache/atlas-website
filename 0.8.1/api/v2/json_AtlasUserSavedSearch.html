@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Atlas REST API: SearchParameters</title>
+  <title>Atlas REST API: AtlasUserSavedSearch</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Atlas REST API: SearchParameters</a>
+        <a class="navbar-brand" href="index.html">Atlas REST API: AtlasUserSavedSearch</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -58,10 +58,10 @@
         <ol class="breadcrumb" id="top">
           <li class="active dropdown"><a href="index.html">Home</a></li>
           <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
-          <li class="dropdown"><a href="json_SearchParameters.html">SearchParameters</a></li>
+          <li class="dropdown"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a></li>
         </ol>
 
-      <h1 class="page-header">SearchParameters <small>Data Type</small></h1>
+      <h1 class="page-header">AtlasUserSavedSearch <small>Data Type</small></h1>
 
       <p></p>
 
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">query</span>
+          <td>  <span class="property-name">ownerName</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,7 +88,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">typeName</span>
+          <td>  <span class="property-name">name</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -97,67 +97,33 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">classification</span>
+          <td>  <span class="property-name">searchType</span>
 </td>
-          <td>  <span class="datatype-reference">string
+          <td>  <span class="datatype-reference"><a href="json_SavedSearchType.html">SavedSearchType</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">excludeDeletedEntities</span>
+          <td>  <span class="property-name">searchParameters</span>
 </td>
-          <td>  <span class="datatype-reference">boolean
+          <td>  <span class="datatype-reference"><a href="json_SearchParameters.html">SearchParameters</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
+        </tbody>
         <tr>
-          <td>  <span class="property-name">limit</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
+          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_AtlasBaseModelObject.html">AtlasBaseModelObject</a></h5></td>
         </tr>
+        <tbody>
         <tr>
-          <td>  <span class="property-name">offset</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">entityFilters</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
-</span>
-</td>
-          <td>  <span class="property-description">Entity attribute filters for the type (if type name is specified)</span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">tagFilters</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
-</span>
-</td>
-          <td>  <span class="property-description">Tag attribute filters for the classification/tag (if tag name is specified)</span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">attributes</span>
-</td>
-          <td>  <span class="datatype-reference">array of string
-</span>
-</td>
-          <td>  <span class="property-description">Attribute values included in the results</span>
-</td>
+          <td><span class="property-name">guid</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
         </tr>
         </tbody>
       </table>
@@ -165,27 +131,33 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;query&quot; : &quot;...&quot;,
-  &quot;typeName&quot; : &quot;...&quot;,
-  &quot;classification&quot; : &quot;...&quot;,
-  &quot;excludeDeletedEntities&quot; : true,
-  &quot;limit&quot; : 12345,
-  &quot;offset&quot; : 12345,
-  &quot;entityFilters&quot; : {
-    &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;GTE&quot;,
-    &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;CONTAINS_ALL&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;NEQ&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
   },
-  &quot;tagFilters&quot; : {
-    &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;CONTAINS_ANY&quot;,
-    &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
-  },
-  &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  &quot;guid&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

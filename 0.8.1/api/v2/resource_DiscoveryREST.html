@@ -56,6 +56,13 @@
           <li><a href="#resource_DiscoveryREST_searchUsingDSL_GET">GET /v2/search/dsl</a></li>
           <li><a href="#resource_DiscoveryREST_searchUsingFullText_GET">GET /v2/search/fulltext</a></li>
           <li><a href="#resource_DiscoveryREST_searchRelatedEntities_GET">GET /v2/search/relationship</a></li>
+          <li><a href="#resource_DiscoveryREST_getSavedSearches_GET">GET /v2/search/saved</a></li>
+          <li><a href="#resource_DiscoveryREST_addSavedSearch_POST">POST /v2/search/saved</a></li>
+          <li><a href="#resource_DiscoveryREST_updateSavedSearch_PUT">PUT /v2/search/saved</a></li>
+          <li><a href="#resource_DiscoveryREST_deleteSavedSearch_DELETE">DELETE /v2/search/saved/{guid}</a></li>
+          <li><a href="#resource_DiscoveryREST_getSavedSearch_GET">GET /v2/search/saved/{name}</a></li>
+          <li><a href="#resource_DiscoveryREST_executeSavedSearchByName_GET"><abbr title="GET /v2/search/saved/execute/{name}">GET /v2/search/saved/execute/{...</abbr></a></li>
+          <li><a href="#resource_DiscoveryREST_executeSavedSearchByGuid_GET"><abbr title="GET /v2/search/saved/execute/guid/{guid}">GET /v2/search/saved/execute/g...</abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -190,16 +197,16 @@ Content-Type: application/json
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;GT&quot;,
+      &quot;operator&quot; : &quot;ENDS_WITH&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;LIKE&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
@@ -273,7 +280,7 @@ Content-Type: application/json
     },
     &quot;property2&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -405,7 +412,7 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
-  &quot;queryType&quot; : &quot;FULL_TEXT&quot;,
+  &quot;queryType&quot; : &quot;GREMLIN&quot;,
   &quot;searchParameters&quot; : {
     &quot;query&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
@@ -415,16 +422,16 @@ Content-Type: application/json
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;EQ&quot;,
+      &quot;operator&quot; : &quot;LIKE&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;ENDS_WITH&quot;,
+      &quot;operator&quot; : &quot;GTE&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
@@ -444,7 +451,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -498,7 +505,7 @@ Content-Type: application/json
     },
     &quot;property2&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -599,14 +606,14 @@ Accept: application/json
   &quot;offset&quot; : 12345,
   &quot;entityFilters&quot; : {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;NEQ&quot;,
+    &quot;operator&quot; : &quot;CONTAINS&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
+    &quot;condition&quot; : &quot;OR&quot;,
     &quot;criterion&quot; : [ { }, { } ]
   },
   &quot;tagFilters&quot; : {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+    &quot;operator&quot; : &quot;IN&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
     &quot;condition&quot; : &quot;OR&quot;,
     &quot;criterion&quot; : [ { }, { } ]
@@ -624,7 +631,7 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
-  &quot;queryType&quot; : &quot;DSL&quot;,
+  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
   &quot;searchParameters&quot; : {
     &quot;query&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
@@ -641,7 +648,7 @@ Content-Type: application/json
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;ENDS_WITH&quot;,
+      &quot;operator&quot; : &quot;LIKE&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
@@ -663,7 +670,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -717,7 +724,7 @@ Content-Type: application/json
     },
     &quot;property2&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -853,16 +860,16 @@ Content-Type: application/json
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;operator&quot; : &quot;CONTAINS_ALL&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;LT&quot;,
+      &quot;operator&quot; : &quot;CONTAINS&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
@@ -872,7 +879,7 @@ Content-Type: application/json
   &quot;classification&quot; : &quot;...&quot;,
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -882,7 +889,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -1066,14 +1073,14 @@ Content-Type: application/json
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;IN&quot;,
+      &quot;operator&quot; : &quot;GTE&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;NEQ&quot;,
+      &quot;operator&quot; : &quot;CONTAINS&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
@@ -1095,7 +1102,7 @@ Content-Type: application/json
     }
   }, {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -1111,7 +1118,7 @@ Content-Type: application/json
   &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -1149,7 +1156,7 @@ Content-Type: application/json
     },
     &quot;property2&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -1286,7 +1293,7 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
-  &quot;queryType&quot; : &quot;DSL&quot;,
+  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
   &quot;searchParameters&quot; : {
     &quot;query&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
@@ -1296,14 +1303,14 @@ Content-Type: application/json
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;GTE&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;operator&quot; : &quot;CONTAINS_ALL&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
@@ -1315,7 +1322,7 @@ Content-Type: application/json
   &quot;classification&quot; : &quot;...&quot;,
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -1341,7 +1348,849 @@ Content-Type: application/json
   &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
       &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_getSavedSearches_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/saved <a href="../v2/search/saved" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">user</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">User for whom the search is retrieved</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+            <td><span class="response-description">list of all saved searches for given user</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/search/saved
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;NOT_NULL&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+} ]
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_addSavedSearch_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/search/saved <a href="../v2/search/saved" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the saved search-object</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/search/saved
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;ADVANCED&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LIKE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;EQ&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;ADVANCED&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_updateSavedSearch_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/search/saved <a href="../v2/search/saved" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+            <td><span class="response-description">the updated search-object</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/search/saved
+Content-Type: application/json
+Accept: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;IS_NULL&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_deleteSavedSearch_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/search/saved/{guid} <a href="../v2/search/saved/{guid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">guid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Name of the saved search</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/search/saved/{guid}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_getSavedSearch_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/saved/{name} <a href="../v2/search/saved/{name}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">name</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Name of the saved search</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">user</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">User for whom the search is retrieved</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasUserSavedSearch.html">AtlasUserSavedSearch</a>
+ (JSON)</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/search/saved/{name}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;ownerName&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;searchType&quot; : &quot;ADVANCED&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;CONTAINS_ANY&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;guid&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_executeSavedSearchByName_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/saved/execute/{name} <a href="../v2/search/saved/execute/{name}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Attribute based search for entities satisfying the search parameters</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">name</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">name of saved-search</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">user</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">saved-search owner</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasSearchResult.html">AtlasSearchResult</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Atlas search result</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/search/saved/execute/{name}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;queryType&quot; : &quot;BASIC&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;queryText&quot; : &quot;...&quot;,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;entities&quot; : [ {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  }, {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  } ],
+  &quot;attributes&quot; : {
+    &quot;name&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : [ ]
+  },
+  &quot;fullTextResult&quot; : [ {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;score&quot; : 12345.0
+  } ],
+  &quot;referredEntities&quot; : {
+    &quot;property1&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    },
+    &quot;property2&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      }
+    }
+  }
+}
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_DiscoveryREST_executeSavedSearchByGuid_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/search/saved/execute/guid/{guid} <a href="../v2/search/saved/execute/guid/{guid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Attribute based search for entities satisfying the search parameters</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">guid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Guid identifying saved search</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasSearchResult.html">AtlasSearchResult</a>
+ (JSON)</span></td>
+            <td><span class="response-description">Atlas search result</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/search/saved/execute/guid/{guid}
+Accept: application/json
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;queryType&quot; : &quot;GREMLIN&quot;,
+  &quot;searchParameters&quot; : {
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;GT&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;criterion&quot; : [ { }, { } ]
+    },
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  },
+  &quot;queryText&quot; : &quot;...&quot;,
+  &quot;type&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;entities&quot; : [ {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  }, {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  } ],
+  &quot;attributes&quot; : {
+    &quot;name&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;values&quot; : [ ]
+  },
+  &quot;fullTextResult&quot; : [ {
+    &quot;entity&quot; : {
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -1379,7 +2228,7 @@ Content-Type: application/json
     },
     &quot;property2&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,

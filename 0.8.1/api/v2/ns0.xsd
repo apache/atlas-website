@@ -3,10 +3,18 @@
   
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <xs:element name="atlasBaseModelObject" type="atlasBaseModelObject"/>
   <xs:element name="PList" type="PList"/>
   <xs:element name="searchFilter" type="searchFilter"/>
   <xs:element name="atlasClassification" type="atlasClassification"/>
   <xs:element name="atlasStruct" type="atlasStruct"/>
+<xs:complexType name="atlasBaseModelObject" abstract="true">
+       <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="PList">
   <xs:annotation>
     <xs:documentation>

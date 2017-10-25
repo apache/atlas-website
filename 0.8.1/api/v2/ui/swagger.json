@@ -6,7 +6,7 @@
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.txt",
       "name" : "The Apache Software License, Version 2.0"
     },
-    "version" : "0.8.1",
+    "version" : "0.8.2-SNAPSHOT",
     "title" : "Atlas REST API"
   },
   "schemes" : [],
@@ -27,12 +27,6 @@
       "name" : "LineageREST"
       ,
       "description" : "REST interface for an entity's lineage information."
-    }
-    ,
-    {
-      "name" : "RelationshipREST"
-      ,
-      "description" : "REST interface for entity relationships."
     }
     ,
     {
@@ -78,10 +72,6 @@
 "description" : "",
 "type" : "boolean"
             },
-            "defaultValue" : {
-"description" : "",
-"type" : "string"
-            },
             "constraints" : {
 "description" : "",
 "type" : "array",
@@ -94,12 +84,11 @@
   "name" : "...",
   "typeName" : "...",
   "isOptional" : true,
-  "cardinality" : "SET",
+  "cardinality" : "LIST",
   "valuesMinCount" : 12345,
   "valuesMaxCount" : 12345,
   "isUnique" : true,
   "isIndexable" : true,
-  "defaultValue" : "...",
   "constraints" : [ {
     "type" : "...",
     "params" : {
@@ -115,6 +104,21 @@
   } ]
 },
       "description" : "class that captures details of a struct-attribute."
+    }
+    ,
+    "json_AtlasBaseModelObject" : {
+      "type" : "object",
+      "title" : "AtlasBaseModelObject",
+          "properties" : {
+            "guid" : {
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "guid" : "..."
+},
+      "description" : ""
     }
     ,
     "json_AtlasBaseTypeDef" : {
@@ -233,12 +237,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -256,12 +259,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -276,7 +278,7 @@
       }
     } ]
   } ],
-  "category" : "CLASSIFICATION",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -309,7 +311,7 @@
   "startIndex" : 12345,
   "pageSize" : 12345,
   "totalCount" : 12345,
-  "sortType" : "NONE",
+  "sortType" : "DESC",
   "sortBy" : "..."
 },
       "description" : "REST serialization friendly list."
@@ -369,10 +371,6 @@
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -393,16 +391,12 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -431,10 +425,6 @@
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -456,16 +446,12 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -527,13 +513,6 @@
 "description" : "",
 "type" : "number"
             },
-            "relationshipAttributes" : {
-"description" : "",
-"type" : "object",
-"additionalProperties" : {
-  "type" : "object"
-}
-            },
             "classifications" : {
 "description" : "",
 "type" : "array",
@@ -546,16 +525,12 @@
       ],
       "example" : {
   "guid" : "...",
-  "status" : "DELETED",
+  "status" : "ACTIVE",
   "createdBy" : "...",
   "updatedBy" : "...",
   "createTime" : 12345,
   "updateTime" : 12345,
   "version" : 12345,
-  "relationshipAttributes" : {
-    "property1" : { },
-    "property2" : { }
-  },
   "classifications" : [ {
     "typeName" : "...",
     "attributes" : {
@@ -603,12 +578,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -631,7 +605,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -646,7 +619,7 @@
       }
     } ]
   } ],
-  "category" : "ENTITY",
+  "category" : "MAP",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -686,10 +659,6 @@
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -711,16 +680,12 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -815,10 +780,6 @@
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -841,16 +802,12 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -872,16 +829,12 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -940,7 +893,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ARRAY",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -1049,7 +1002,7 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -1060,7 +1013,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -1077,41 +1030,10 @@
     "fromEntityId" : "...",
     "toEntityId" : "..."
   } ],
-  "lineageDirection" : "BOTH",
+  "lineageDirection" : "INPUT",
   "lineageDepth" : 12345
 },
       "description" : ""
-    }
-    ,
-    "json_AtlasObjectId" : {
-      "type" : "object",
-      "title" : "AtlasObjectId",
-          "properties" : {
-            "guid" : {
-"description" : "",
-"type" : "string"
-            },
-            "typeName" : {
-"description" : "",
-"type" : "string"
-            },
-            "uniqueAttributes" : {
-"description" : "",
-"type" : "object",
-"additionalProperties" : {
-  "type" : "object"
-}
-            }
-          },
-      "example" : {
-  "guid" : "...",
-  "typeName" : "...",
-  "uniqueAttributes" : {
-    "property1" : { },
-    "property2" : { }
-  }
-},
-      "description" : "Reference to an object-instance of an Atlas type - like entity."
     }
     ,
     "json_AtlasQueryType" : {
@@ -1126,242 +1048,6 @@
             "RELATIONSHIP"
           ],
       "description" : ""
-    }
-    ,
-    "json_AtlasRelationship" : {
-      "type" : "object",
-      "title" : "AtlasRelationship",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_AtlasStruct"
-        },
-        {
-          "properties" : {
-            "guid" : {
-"description" : "",
-"type" : "string"
-            },
-            "status" : {
-"description" : "",
-"$ref" : "#/definitions/json_Status_AtlasRelationship"
-            },
-            "createdBy" : {
-"description" : "",
-"type" : "string"
-            },
-            "updatedBy" : {
-"description" : "",
-"type" : "string"
-            },
-            "createTime" : {
-"description" : "",
-"type" : "number"
-            },
-            "updateTime" : {
-"description" : "",
-"type" : "number"
-            },
-            "version" : {
-"description" : "",
-"type" : "number"
-            },
-            "end1" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasObjectId"
-            },
-            "end2" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasObjectId"
-            },
-            "label" : {
-"description" : "",
-"type" : "string"
-            }
-          }
-        }
-      ],
-      "example" : {
-  "guid" : "...",
-  "status" : "ACTIVE",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "end1" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "end2" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "label" : "...",
-  "typeName" : "...",
-  "attributes" : {
-    "property1" : { },
-    "property2" : { }
-  }
-},
-      "description" : "Atlas relationship instance."
-    }
-    ,
-    "json_AtlasRelationshipDef" : {
-      "type" : "object",
-      "title" : "AtlasRelationshipDef",
-      "allOf" : [
-        {
-          "$ref" : "#/definitions/json_AtlasStructDef"
-        },
-        {
-          "properties" : {
-            "relationshipCategory" : {
-"description" : "",
-"$ref" : "#/definitions/json_RelationshipCategory"
-            },
-            "propagateTags" : {
-"description" : "",
-"$ref" : "#/definitions/json_PropagateTags"
-            },
-            "endDef1" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationshipEndDef"
-            },
-            "endDef2" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationshipEndDef"
-            },
-            "relationshipLabel" : {
-"description" : "",
-"type" : "string"
-            }
-          }
-        }
-      ],
-      "example" : {
-  "relationshipCategory" : "COMPOSITION",
-  "propagateTags" : "TWO_TO_ONE",
-  "endDef1" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SET",
-    "isLegacyAttribute" : true
-  },
-  "endDef2" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SET",
-    "isLegacyAttribute" : true
-  },
-  "relationshipLabel" : "...",
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "LIST",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SET",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "ENUM",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-},
-      "description" : "AtlasRelationshipDef is a TypeDef that defines a relationship.\n<p>\nAs with other typeDefs the AtlasRelationshipDef has a name. Once created the RelationshipDef has a guid.\nThe name and the guid are the 2 ways that the RelationshipDef is identified.\n<p>\nRelationshipDefs have 2 ends, each of which specify cardinality, an EntityDef type name and name and optionally\nwhether the end is a container.\n<p>\nRelationshipDefs can have AttributeDefs - though only primitive types are allowed. <br>\nRelationshipDefs have a relationshipCategory specifying the UML type of relationship required <br>\nRelationshipDefs also have a PropogateTag - indicating which way tags could flow over the relationships.\n<p>\nThe way EntityDefs and RelationshipDefs are intended to be used is that EntityDefs will define AttributeDefs these AttributeDefs\nwill not specify an EntityDef type name as their types.\n<p>\nRelationshipDefs introduce new atributes to the entity instances. For example\n<p>\nEntityDef A might have attributes attr1,attr2,attr3 <br>\nEntityDef B might have attributes attr4,attr5,attr6 <br>\nRelationshipDef AtoB might define 2 ends <br>\n\n<pre>\n   end1:  type A, name attr7\n   end2:  type B, name attr8  <\/pre>\n\n<p>\nWhen an instance of EntityDef A is created, it will have attributes attr1,attr2,attr3,attr7 <br>\nWhen an instance of EntityDef B is created, it will have attributes attr4,attr5,attr6,attr8\n<p>\nIn this way relationshipDefs can be authored separately from entityDefs and can inject relationship attributes into\nthe entity instances"
-    }
-    ,
-    "json_AtlasRelationshipEndDef" : {
-      "type" : "object",
-      "title" : "AtlasRelationshipEndDef",
-          "properties" : {
-            "type" : {
-"description" : "",
-"type" : "string"
-            },
-            "name" : {
-"description" : "",
-"type" : "string"
-            },
-            "isContainer" : {
-"description" : "",
-"type" : "boolean"
-            },
-            "cardinality" : {
-"description" : "",
-"$ref" : "#/definitions/json_Cardinality"
-            },
-            "isLegacyAttribute" : {
-"description" : "",
-"type" : "boolean"
-            }
-          },
-      "example" : {
-  "type" : "...",
-  "name" : "...",
-  "isContainer" : true,
-  "cardinality" : "LIST",
-  "isLegacyAttribute" : true
-},
-      "description" : "The relationshipEndDef represents an end of the relationship. The end of the relationship is defined by a type, an\nattribute name, cardinality and whether it  is the container end of the relationship."
     }
     ,
     "json_AtlasSearchResult" : {
@@ -1415,7 +1101,7 @@
             }
           },
       "example" : {
-  "queryType" : "FULL_TEXT",
+  "queryType" : "GREMLIN",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -1425,14 +1111,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "ENDS_WITH",
+      "operator" : "NEQ",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "STARTS_WITH",
+      "operator" : "EQ",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -1444,7 +1130,7 @@
   "classification" : "...",
   "entities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -1454,7 +1140,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -1483,7 +1169,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -1577,7 +1263,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -1600,7 +1285,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -1615,7 +1299,7 @@
       }
     } ]
   } ],
-  "category" : "CLASSIFICATION",
+  "category" : "OBJECT_ID_TYPE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -1653,7 +1337,7 @@
       "example" : {
   "guid" : "...",
   "name" : "...",
-  "category" : "PRIMITIVE"
+  "category" : "CLASSIFICATION"
 },
       "description" : ""
     }
@@ -1690,13 +1374,6 @@
   "$ref" : "#/definitions/json_AtlasEntityDef"
 }
             },
-            "relationshipDefs" : {
-"description" : "",
-"type" : "array",
-"items" : {
-  "$ref" : "#/definitions/json_AtlasRelationshipDef"
-}
-            },
             "empty" : {
 "description" : "",
 "type" : "boolean"
@@ -1714,7 +1391,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1739,7 +1416,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ARRAY",
+    "category" : "CLASSIFICATION",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1764,7 +1441,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -1775,10 +1451,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "STRUCT",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1797,26 +1472,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1842,21 +1515,19 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ARRAY",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1876,23 +1547,21 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "STRUCT",
@@ -1921,21 +1590,19 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "CLASSIFICATION",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -1955,114 +1622,13 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "ARRAY",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "BOTH",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SINGLE",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SINGLE",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "MAP",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "ONE_TO_TWO",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
@@ -2071,21 +1637,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "RELATIONSHIP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -2101,6 +1655,66 @@
     }
   } ],
   "empty" : true
+},
+      "description" : ""
+    }
+    ,
+    "json_AtlasUserSavedSearch" : {
+      "type" : "object",
+      "title" : "AtlasUserSavedSearch",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasBaseModelObject"
+        },
+        {
+          "properties" : {
+            "ownerName" : {
+"description" : "",
+"type" : "string"
+            },
+            "name" : {
+"description" : "",
+"type" : "string"
+            },
+            "searchType" : {
+"description" : "",
+"$ref" : "#/definitions/json_SavedSearchType"
+            },
+            "searchParameters" : {
+"description" : "",
+"$ref" : "#/definitions/json_SearchParameters"
+            }
+          }
+        }
+      ],
+      "example" : {
+  "ownerName" : "...",
+  "name" : "...",
+  "searchType" : "BASIC",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ALL",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "guid" : "..."
 },
       "description" : ""
     }
@@ -2257,7 +1871,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -2294,7 +1908,7 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -2315,7 +1929,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -2357,7 +1971,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -2367,7 +1981,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -2455,20 +2069,20 @@
           },
       "example" : {
   "attributeName" : "...",
-  "operator" : "EQ",
+  "operator" : "IN",
   "attributeValue" : "...",
   "condition" : "OR",
   "criterion" : [ {
     "attributeName" : "...",
-    "operator" : "GTE",
+    "operator" : "CONTAINS_ANY",
     "attributeValue" : "...",
     "condition" : "OR",
     "criterion" : [ { }, { } ]
   }, {
     "attributeName" : "...",
-    "operator" : "GT",
+    "operator" : "LTE",
     "attributeValue" : "...",
-    "condition" : "OR",
+    "condition" : "AND",
     "criterion" : [ { }, { } ]
   } ]
 },
@@ -2520,7 +2134,11 @@
             "LIKE",
             "STARTS_WITH",
             "ENDS_WITH",
-            "CONTAINS"
+            "CONTAINS",
+            "CONTAINS_ANY",
+            "CONTAINS_ALL",
+            "IS_NULL",
+            "NOT_NULL"
           ],
       "description" : "Supported search operations\nLogical comparision operators can only be used with numbers or dates\nIN, LIKE, startsWith, endsWith, CONTAINS can only be used with strings or text"
     }
@@ -2562,33 +2180,20 @@
   "startIndex" : 12345,
   "pageSize" : 12345,
   "totalCount" : 12345,
-  "sortType" : "DESC",
+  "sortType" : "ASC",
   "sortBy" : "..."
 },
       "description" : "Paginated-list, for returning search results."
     }
     ,
-    "json_PropagateTags" : {
+    "json_SavedSearchType" : {
       "type" : "string",
-      "title" : "PropagateTags",
+      "title" : "SavedSearchType",
           "enum" : [
-            "NONE",
-            "ONE_TO_TWO",
-            "TWO_TO_ONE",
-            "BOTH"
+            "BASIC",
+            "ADVANCED"
           ],
-      "description" : "PropagateTags indicates whether tags should propagate across the relationship instance.\n<p>\nTags can propagate:\n<p>\nNONE - not at all <br>\nONE_TO_TWO - from end 1 to 2 <br>\nTWO_TO_ONE - from end 2 to 1  <br>\nBOTH - both ways\n<p>\nCare needs to be taken when specifying. The use cases we are aware of where this flag is useful:\n<p>\n- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here <br>\n- propagating classifications around Glossary synonyms - BOTH could be used here.\n<p>\nThere is an expectation that further enhancements will allow more granular control of tag propagation and will\naddress how to resolve conflicts."
-    }
-    ,
-    "json_RelationshipCategory" : {
-      "type" : "string",
-      "title" : "RelationshipCategory",
-          "enum" : [
-            "ASSOCIATION",
-            "AGGREGATION",
-            "COMPOSITION"
-          ],
-      "description" : "The Relationship category determines the style of relationship around containment and lifecycle.\nUML terminology is used for the values.\n<p>\nASSOCIATION is a relationship with no containment. <br>\nCOMPOSITION and AGGREGATION are containment relationships.\n<p>\nThe difference being in the lifecycles of the container and its children. In the COMPOSITION case,\nthe children cannot exist without the container. For AGGREGATION, the life cycles\nof the container and children are totally independant."
+      "description" : ""
     }
     ,
     "json_SearchParameters" : {
@@ -2644,16 +2249,16 @@
   "offset" : 12345,
   "entityFilters" : {
     "attributeName" : "...",
-    "operator" : "GTE",
+    "operator" : "STARTS_WITH",
     "attributeValue" : "...",
-    "condition" : "OR",
+    "condition" : "AND",
     "criterion" : [ { }, { } ]
   },
   "tagFilters" : {
     "attributeName" : "...",
-    "operator" : "NEQ",
+    "operator" : "STARTS_WITH",
     "attributeValue" : "...",
-    "condition" : "OR",
+    "condition" : "AND",
     "criterion" : [ { }, { } ]
   },
   "attributes" : [ "...", "..." ]
@@ -2682,16 +2287,6 @@
       "description" : "Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store."
     }
     ,
-    "json_Status_AtlasRelationship" : {
-      "type" : "string",
-      "title" : "Status",
-          "enum" : [
-            "ACTIVE",
-            "DELETED"
-          ],
-      "description" : ""
-    }
-    ,
     "json_TypeCategory" : {
       "type" : "string",
       "title" : "TypeCategory",
@@ -2706,6 +2301,25 @@
             "MAP",
             "RELATIONSHIP"
           ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasBaseModelObject" : {
+      "type" : "object",
+      "title" : "atlasBaseModelObject",
+      "allOf" : [
+        {
+          "properties" : {
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
       "description" : ""
     }
     ,
@@ -2917,7 +2531,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "FULL_TEXT",
+  "queryType" : "ATTRIBUTE",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -2927,14 +2541,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "LIKE",
+      "operator" : "NEQ",
       "attributeValue" : "...",
-      "condition" : "OR",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "LIKE",
+      "operator" : "CONTAINS",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -2956,7 +2570,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -2972,7 +2586,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -2985,7 +2599,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3010,7 +2624,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3029,7 +2643,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "ATTRIBUTE",
+  "queryType" : "BASIC",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3048,7 +2662,7 @@
       "attributeName" : "...",
       "operator" : "GTE",
       "attributeValue" : "...",
-      "condition" : "OR",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "attributes" : [ "...", "..." ]
@@ -3058,7 +2672,7 @@
   "classification" : "...",
   "entities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -3084,7 +2698,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3097,7 +2711,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3111,7 +2725,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3195,7 +2809,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "GREMLIN",
+  "queryType" : "ATTRIBUTE",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3205,16 +2819,16 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "CONTAINS",
+      "operator" : "CONTAINS_ALL",
       "attributeValue" : "...",
       "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "ENDS_WITH",
+      "operator" : "CONTAINS",
       "attributeValue" : "...",
-      "condition" : "AND",
+      "condition" : "OR",
       "criterion" : [ { }, { } ]
     },
     "attributes" : [ "...", "..." ]
@@ -3234,7 +2848,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -3250,7 +2864,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3277,7 +2891,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3307,7 +2921,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "FULL_TEXT",
+  "queryType" : "ATTRIBUTE",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3317,16 +2931,16 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "EQ",
+      "operator" : "CONTAINS_ALL",
       "attributeValue" : "...",
       "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "GT",
+      "operator" : "NOT_NULL",
       "attributeValue" : "...",
-      "condition" : "OR",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "attributes" : [ "...", "..." ]
@@ -3362,7 +2976,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3375,7 +2989,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3389,7 +3003,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3400,7 +3014,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3445,7 +3059,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "DSL",
+  "queryType" : "GREMLIN",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3455,126 +3069,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "IN",
-      "attributeValue" : "...",
-      "condition" : "OR",
-      "criterion" : [ { }, { } ]
-    },
-    "tagFilters" : {
-      "attributeName" : "...",
-      "operator" : "IN",
-      "attributeValue" : "...",
-      "condition" : "AND",
-      "criterion" : [ { }, { } ]
-    },
-    "attributes" : [ "...", "..." ]
-  },
-  "queryText" : "...",
-  "type" : "...",
-  "classification" : "...",
-  "entities" : [ {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  }, {
-    "guid" : "...",
-    "status" : "ACTIVE",
-    "displayText" : "...",
-    "classificationNames" : [ "...", "..." ],
-    "typeName" : "...",
-    "attributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  } ],
-  "attributes" : {
-    "name" : [ "...", "..." ],
-    "values" : [ ]
-  },
-  "fullTextResult" : [ {
-    "entity" : {
-      "guid" : "...",
-      "status" : "ACTIVE",
-      "displayText" : "...",
-      "classificationNames" : [ "...", "..." ],
-      "typeName" : "...",
-      "attributes" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    },
-    "score" : 12345.0
-  }, {
-    "entity" : {
-      "guid" : "...",
-      "status" : "DELETED",
-      "displayText" : "...",
-      "classificationNames" : [ "...", "..." ],
-      "typeName" : "...",
-      "attributes" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    },
-    "score" : 12345.0
-  } ],
-  "referredEntities" : {
-    "property1" : {
-      "guid" : "...",
-      "status" : "ACTIVE",
-      "displayText" : "...",
-      "classificationNames" : [ "...", "..." ],
-      "typeName" : "...",
-      "attributes" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    },
-    "property2" : {
-      "guid" : "...",
-      "status" : "DELETED",
-      "displayText" : "...",
-      "classificationNames" : [ "...", "..." ],
-      "typeName" : "...",
-      "attributes" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }
-  }
-}
-            },
-            "description" : "On successful search"
-          },
-          "400" : {
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "queryType" : "RELATIONSHIP",
-  "searchParameters" : {
-    "query" : "...",
-    "typeName" : "...",
-    "classification" : "...",
-    "excludeDeletedEntities" : true,
-    "limit" : 12345,
-    "offset" : 12345,
-    "entityFilters" : {
-      "attributeName" : "...",
-      "operator" : "EQ",
+      "operator" : "GTE",
       "attributeValue" : "...",
       "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "CONTAINS",
+      "operator" : "STARTS_WITH",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -3639,7 +3141,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3650,7 +3152,119 @@
     },
     "property2" : {
       "guid" : "...",
+      "status" : "DELETED",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    }
+  }
+}
+            },
+            "description" : "On successful search"
+          },
+          "400" : {
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "queryType" : "FULL_TEXT",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ALL",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ALL",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "queryText" : "...",
+  "type" : "...",
+  "classification" : "...",
+  "entities" : [ {
+    "guid" : "...",
+    "status" : "ACTIVE",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "attributes" : {
+    "name" : [ "...", "..." ],
+    "values" : [ ]
+  },
+  "fullTextResult" : [ {
+    "entity" : {
+      "guid" : "...",
+      "status" : "DELETED",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  }, {
+    "entity" : {
+      "guid" : "...",
       "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  } ],
+  "referredEntities" : {
+    "property1" : {
+      "guid" : "...",
+      "status" : "DELETED",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "property2" : {
+      "guid" : "...",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3717,7 +3331,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "RELATIONSHIP",
+  "queryType" : "ATTRIBUTE",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3727,14 +3341,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "NEQ",
+      "operator" : "IN",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "EQ",
+      "operator" : "CONTAINS",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -3746,7 +3360,7 @@
   "classification" : "...",
   "entities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -3772,7 +3386,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3829,7 +3443,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "BASIC",
+  "queryType" : "RELATIONSHIP",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3839,14 +3453,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "STARTS_WITH",
+      "operator" : "GT",
       "attributeValue" : "...",
-      "condition" : "OR",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "LIKE",
+      "operator" : "LT",
       "attributeValue" : "...",
       "condition" : "AND",
       "criterion" : [ { }, { } ]
@@ -3911,7 +3525,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -3983,7 +3597,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "BASIC",
+  "queryType" : "ATTRIBUTE",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -3993,16 +3607,16 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "EQ",
+      "operator" : "ENDS_WITH",
       "attributeValue" : "...",
-      "condition" : "AND",
+      "condition" : "OR",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "NEQ",
+      "operator" : "GT",
       "attributeValue" : "...",
-      "condition" : "OR",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "attributes" : [ "...", "..." ]
@@ -4022,7 +3636,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4065,7 +3679,7 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4095,7 +3709,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "BASIC",
+  "queryType" : "FULL_TEXT",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -4105,14 +3719,14 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "ENDS_WITH",
+      "operator" : "STARTS_WITH",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "GTE",
+      "operator" : "CONTAINS_ANY",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -4134,7 +3748,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4150,7 +3764,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4163,7 +3777,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4285,7 +3899,7 @@
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "LIKE",
+      "operator" : "NOT_NULL",
       "attributeValue" : "...",
       "condition" : "OR",
       "criterion" : [ { }, { } ]
@@ -4336,7 +3950,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4361,7 +3975,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4380,7 +3994,7 @@
             },
             "examples" : {
               "application/json" : {
-  "queryType" : "ATTRIBUTE",
+  "queryType" : "RELATIONSHIP",
   "searchParameters" : {
     "query" : "...",
     "typeName" : "...",
@@ -4390,16 +4004,435 @@
     "offset" : 12345,
     "entityFilters" : {
       "attributeName" : "...",
-      "operator" : "ENDS_WITH",
+      "operator" : "NEQ",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "queryText" : "...",
+  "type" : "...",
+  "classification" : "...",
+  "entities" : [ {
+    "guid" : "...",
+    "status" : "ACTIVE",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "ACTIVE",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "attributes" : {
+    "name" : [ "...", "..." ],
+    "values" : [ ]
+  },
+  "fullTextResult" : [ {
+    "entity" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  }, {
+    "entity" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  } ],
+  "referredEntities" : {
+    "property1" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "property2" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    }
+  }
+}
+            },
+            "description" : "guid is not a valid entity type or attributeName is not a valid relationship attribute"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "resource_DiscoveryREST_getSavedSearches_GET",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "User for whom the search is retrieved"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasUserSavedSearch"
+}
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "ownerName" : "...",
+  "name" : "...",
+  "searchType" : "ADVANCED",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "GT",
       "attributeValue" : "...",
       "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "tagFilters" : {
       "attributeName" : "...",
-      "operator" : "LT",
+      "operator" : "ENDS_WITH",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "guid" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "resource_DiscoveryREST_addSavedSearch_POST",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasUserSavedSearch"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasUserSavedSearch"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "ownerName" : "...",
+  "name" : "...",
+  "searchType" : "BASIC",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "GTE",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "IN",
       "attributeValue" : "...",
       "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "guid" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "resource_DiscoveryREST_updateSavedSearch_PUT",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasUserSavedSearch"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasUserSavedSearch"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "ownerName" : "...",
+  "name" : "...",
+  "searchType" : "BASIC",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "NEQ",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ANY",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "guid" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/{guid}" : {
+      "delete" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "resource_DiscoveryREST_deleteSavedSearch_DELETE",
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Name of the saved search"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "headers" : {
+            },
+            "examples" : {
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/{name}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "resource_DiscoveryREST_getSavedSearch_GET",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Name of the saved search"
+          },
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "User for whom the search is retrieved"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasUserSavedSearch"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "ownerName" : "...",
+  "name" : "...",
+  "searchType" : "ADVANCED",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ALL",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "GTE",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "guid" : "..."
+}
+            },
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/execute/{name}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Attribute based search for entities satisfying the search parameters.",
+        "description" : "Attribute based search for entities satisfying the search parameters",
+        "operationId" : "resource_DiscoveryREST_executeSavedSearchByName_GET",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of saved-search"
+          },
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "saved-search owner"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasSearchResult"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "queryType" : "FULL_TEXT",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "GTE",
+      "attributeValue" : "...",
+      "condition" : "OR",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "CONTAINS_ANY",
+      "attributeValue" : "...",
+      "condition" : "AND",
       "criterion" : [ { }, { } ]
     },
     "attributes" : [ "...", "..." ]
@@ -4435,7 +4468,7 @@
   "fullTextResult" : [ {
     "entity" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4448,7 +4481,7 @@
   }, {
     "entity" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4485,7 +4518,144 @@
   }
 }
             },
-            "description" : "guid is not a valid entity type or attributeName is not a valid relationship attribute"
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/execute/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Attribute based search for entities satisfying the search parameters.",
+        "description" : "Attribute based search for entities satisfying the search parameters",
+        "operationId" : "resource_DiscoveryREST_executeSavedSearchByGuid_GET",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Guid identifying saved search"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "",
+"$ref" : "#/definitions/json_AtlasSearchResult"
+            },
+            "headers" : {
+            },
+            "examples" : {
+              "application/json" : {
+  "queryType" : "GREMLIN",
+  "searchParameters" : {
+    "query" : "...",
+    "typeName" : "...",
+    "classification" : "...",
+    "excludeDeletedEntities" : true,
+    "limit" : 12345,
+    "offset" : 12345,
+    "entityFilters" : {
+      "attributeName" : "...",
+      "operator" : "GTE",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "tagFilters" : {
+      "attributeName" : "...",
+      "operator" : "LT",
+      "attributeValue" : "...",
+      "condition" : "AND",
+      "criterion" : [ { }, { } ]
+    },
+    "attributes" : [ "...", "..." ]
+  },
+  "queryText" : "...",
+  "type" : "...",
+  "classification" : "...",
+  "entities" : [ {
+    "guid" : "...",
+    "status" : "ACTIVE",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "guid" : "...",
+    "status" : "DELETED",
+    "displayText" : "...",
+    "classificationNames" : [ "...", "..." ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "attributes" : {
+    "name" : [ "...", "..." ],
+    "values" : [ ]
+  },
+  "fullTextResult" : [ {
+    "entity" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  }, {
+    "entity" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "score" : 12345.0
+  } ],
+  "referredEntities" : {
+    "property1" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    },
+    "property2" : {
+      "guid" : "...",
+      "status" : "ACTIVE",
+      "displayText" : "...",
+      "classificationNames" : [ "...", "..." ],
+      "typeName" : "...",
+      "attributes" : {
+        "property1" : { },
+        "property2" : { }
+      }
+    }
+  }
+}
+            },
+            "description" : "Success"
           }
         }
       }
@@ -4523,7 +4693,7 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4533,7 +4703,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4544,7 +4714,7 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4570,7 +4740,7 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4580,7 +4750,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4591,7 +4761,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4601,7 +4771,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4612,7 +4782,7 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4622,7 +4792,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4633,7 +4803,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4654,7 +4824,7 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4665,7 +4835,7 @@
   },
   "firstEntityUpdated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4746,7 +4916,7 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4756,7 +4926,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -4793,7 +4963,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4803,7 +4973,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4814,7 +4984,7 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4824,7 +4994,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4835,7 +5005,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4856,7 +5026,7 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4867,7 +5037,7 @@
   },
   "firstEntityUpdated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -4924,16 +5094,12 @@
               "application/json" : {
   "entities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -4954,16 +5120,12 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -4992,10 +5154,6 @@
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -5023,10 +5181,6 @@
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -5085,7 +5239,7 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5095,7 +5249,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5116,7 +5270,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5142,7 +5296,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5163,7 +5317,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5184,7 +5338,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5195,7 +5349,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5227,7 +5381,7 @@
   },
   "firstEntityUpdated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5238,7 +5392,7 @@
   },
   "firstEntityPartialUpdated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5314,7 +5468,7 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5345,7 +5499,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5361,7 +5515,7 @@
   },
   "createdEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5371,7 +5525,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5382,7 +5536,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5392,7 +5546,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5413,7 +5567,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5424,7 +5578,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5510,16 +5664,12 @@
               "application/json" : {
   "entity" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -5548,10 +5698,6 @@
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -5573,16 +5719,12 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -5711,7 +5853,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5722,7 +5864,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5732,7 +5874,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5743,7 +5885,7 @@
   } ],
   "partialUpdatedEntities" : [ {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5753,7 +5895,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5785,7 +5927,7 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -5854,7 +5996,7 @@
   "startIndex" : 12345,
   "pageSize" : 12345,
   "totalCount" : 12345,
-  "sortType" : "DESC",
+  "sortType" : "ASC",
   "sortBy" : "..."
 }
             },
@@ -5969,7 +6111,7 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -5990,7 +6132,7 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6000,7 +6142,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6037,7 +6179,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6047,7 +6189,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6100,7 +6242,7 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6111,7 +6253,7 @@
   },
   "firstEntityUpdated" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6165,16 +6307,12 @@
               "application/json" : {
   "entity" : {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "createdBy" : "...",
     "updatedBy" : "...",
     "createTime" : 12345,
     "updateTime" : 12345,
     "version" : 12345,
-    "relationshipAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    },
     "classifications" : [ {
       "typeName" : "...",
       "attributes" : {
@@ -6197,16 +6335,12 @@
   "referredEntities" : {
     "property1" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -6228,16 +6362,12 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "createdBy" : "...",
       "updatedBy" : "...",
       "createTime" : 12345,
       "updateTime" : 12345,
       "version" : 12345,
-      "relationshipAttributes" : {
-        "property1" : { },
-        "property2" : { }
-      },
       "classifications" : [ {
         "typeName" : "...",
         "attributes" : {
@@ -6303,7 +6433,7 @@
   "mutatedEntities" : {
     "property1" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6313,7 +6443,7 @@
       }
     }, {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6324,7 +6454,7 @@
     } ],
     "property2" : [ {
       "guid" : "...",
-      "status" : "ACTIVE",
+      "status" : "DELETED",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6371,7 +6501,7 @@
   } ],
   "updatedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6381,7 +6511,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6413,7 +6543,7 @@
   } ],
   "deletedEntities" : [ {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6423,7 +6553,7 @@
     }
   }, {
     "guid" : "...",
-    "status" : "DELETED",
+    "status" : "ACTIVE",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6434,7 +6564,7 @@
   } ],
   "firstEntityCreated" : {
     "guid" : "...",
-    "status" : "ACTIVE",
+    "status" : "DELETED",
     "displayText" : "...",
     "classificationNames" : [ "...", "..." ],
     "typeName" : "...",
@@ -6607,7 +6737,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6624,7 +6754,7 @@
     "fromEntityId" : "...",
     "toEntityId" : "..."
   } ],
-  "lineageDirection" : "BOTH",
+  "lineageDirection" : "OUTPUT",
   "lineageDepth" : 12345
 }
             },
@@ -6639,7 +6769,7 @@
   "guidEntityMap" : {
     "property1" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6693,7 +6823,7 @@
     },
     "property2" : {
       "guid" : "...",
-      "status" : "DELETED",
+      "status" : "ACTIVE",
       "displayText" : "...",
       "classificationNames" : [ "...", "..." ],
       "typeName" : "...",
@@ -6710,229 +6840,11 @@
     "fromEntityId" : "...",
     "toEntityId" : "..."
   } ],
-  "lineageDirection" : "BOTH",
+  "lineageDirection" : "OUTPUT",
   "lineageDepth" : 12345
 }
             },
             "description" : "If no lineage is found for the given entity"
-          }
-        }
-      }
-    }
-    ,
-    "\/v2/relationship" : {
-      "post" : {
-        "tags" : [ "RelationshipREST" ],
-        "summary" : "Create a new relationship between entities.",
-        "description" : "Create a new relationship between entities.",
-        "operationId" : "resource_RelationshipREST_create_POST",
-        "consumes" : [ "application/json;charset=UTF-8" ],
-        "produces" : [ "application/json;charset=UTF-8" ],
-        "parameters" : [
-          {
-            "name" : "body",
-            "in" : "body",
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationship"
-            },
-            "description" : ""
-          }
-        ],
-        "responses" : {
-          "201" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationship"
-            },
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "guid" : "...",
-  "status" : "ACTIVE",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "end1" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "end2" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "label" : "...",
-  "typeName" : "...",
-  "attributes" : {
-    "property1" : { },
-    "property2" : { }
-  }
-}
-            },
-            "description" : "Success"
-          }
-        }
-      }
-      ,
-      "put" : {
-        "tags" : [ "RelationshipREST" ],
-        "summary" : "Update an existing relationship between entities.",
-        "description" : "Update an existing relationship between entities.",
-        "operationId" : "resource_RelationshipREST_update_PUT",
-        "consumes" : [ "application/json;charset=UTF-8" ],
-        "produces" : [ "application/json;charset=UTF-8" ],
-        "parameters" : [
-          {
-            "name" : "body",
-            "in" : "body",
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationship"
-            },
-            "description" : ""
-          }
-        ],
-        "responses" : {
-          "204" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationship"
-            },
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "guid" : "...",
-  "status" : "ACTIVE",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "end1" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "end2" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "label" : "...",
-  "typeName" : "...",
-  "attributes" : {
-    "property1" : { },
-    "property2" : { }
-  }
-}
-            },
-            "description" : "Success"
-          }
-        }
-      }
-    }
-    ,
-    "\/v2/relationship/guid/{guid}" : {
-      "delete" : {
-        "tags" : [ "RelationshipREST" ],
-        "summary" : "Delete a relationship between entities using guid.",
-        "description" : "Delete a relationship between entities using guid.",
-        "operationId" : "resource_RelationshipREST_deleteById_DELETE",
-        "parameters" : [
-          {
-            "name" : "guid",
-            "in" : "path",
-            "required" : true,
-            "type" : "string",
-            "description" : ""
-          }
-        ],
-        "responses" : {
-          "204" : {
-            "headers" : {
-            },
-            "examples" : {
-            },
-            "description" : "Success"
-          }
-        }
-      }
-      ,
-      "get" : {
-        "tags" : [ "RelationshipREST" ],
-        "summary" : "Get relationship information between entities using guid.",
-        "description" : "Get relationship information between entities using guid.",
-        "operationId" : "resource_RelationshipREST_getById_GET",
-        "produces" : [ "application/json;charset=UTF-8" ],
-        "parameters" : [
-          {
-            "name" : "guid",
-            "in" : "path",
-            "required" : true,
-            "type" : "string",
-            "description" : ""
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationship"
-            },
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "guid" : "...",
-  "status" : "ACTIVE",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "end1" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "end2" : {
-    "guid" : "...",
-    "typeName" : "...",
-    "uniqueAttributes" : {
-      "property1" : { },
-      "property2" : { }
-    }
-  },
-  "label" : "...",
-  "typeName" : "...",
-  "attributes" : {
-    "property1" : { },
-    "property2" : { }
-  }
-}
-            },
-            "description" : "Success"
           }
         }
       }
@@ -7003,7 +6915,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "CLASSIFICATION",
+    "category" : "ENUM",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7028,7 +6940,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "CLASSIFICATION",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7053,7 +6965,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -7064,10 +6975,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENUM",
+    "category" : "OBJECT_ID_TYPE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7091,7 +7001,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -7102,10 +7011,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "MAP",
+    "category" : "RELATIONSHIP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7126,12 +7034,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -7142,86 +7049,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "ENTITY",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "CLASSIFICATION",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "entityDefs" : [ {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "PRIMITIVE",
@@ -7249,21 +7076,19 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ARRAY",
+    "category" : "ENUM",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7278,24 +7103,8 @@
       "property2" : "..."
     }
   } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "AGGREGATION",
-    "propagateTags" : "ONE_TO_TWO",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
+  "entityDefs" : [ {
+    "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
       "name" : "...",
       "typeName" : "...",
@@ -7305,18 +7114,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ARRAY",
@@ -7334,47 +7141,29 @@
       "property2" : "..."
     }
   }, {
-    "relationshipCategory" : "AGGREGATION",
-    "propagateTags" : "NONE",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SINGLE",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
+    "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ARRAY",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7436,7 +7225,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENTITY",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7461,7 +7250,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENTITY",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7481,26 +7270,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "PRIMITIVE",
+    "category" : "OBJECT_ID_TYPE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7519,12 +7306,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -7535,10 +7321,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "CLASSIFICATION",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7564,18 +7349,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ENTITY",
@@ -7598,26 +7381,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "STRUCT",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7638,26 +7419,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SET",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7677,68 +7456,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "STRUCT",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "AGGREGATION",
-    "propagateTags" : "ONE_TO_TWO",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -7749,65 +7471,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "PRIMITIVE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "relationshipCategory" : "AGGREGATION",
-    "propagateTags" : "TWO_TO_ONE",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SINGLE",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7843,7 +7509,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "PRIMITIVE",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7868,7 +7534,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "PRIMITIVE",
+    "category" : "RELATIONSHIP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7888,26 +7554,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENUM",
+    "category" : "RELATIONSHIP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7926,26 +7590,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "LIST",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "RELATIONSHIP",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -7966,26 +7628,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "CLASSIFICATION",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8010,18 +7670,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ARRAY",
@@ -8045,26 +7703,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "MAP",
+    "category" : "PRIMITIVE",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8084,68 +7740,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "PRIMITIVE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "COMPOSITION",
-    "propagateTags" : "TWO_TO_ONE",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -8156,65 +7755,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENTITY",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "NONE",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SINGLE",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SINGLE",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "CLASSIFICATION",
+    "category" : "STRUCT",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8301,7 +7844,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "PRIMITIVE",
+    "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8326,18 +7869,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ENTITY",
@@ -8359,12 +7900,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -8375,10 +7915,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "MAP",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8399,26 +7938,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
+      "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ENUM",
+    "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8438,26 +7975,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "OBJECT_ID_TYPE",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8478,26 +8013,24 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "LIST",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "CLASSIFICATION",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8517,123 +8050,11 @@
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
       "cardinality" : "SINGLE",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "OBJECT_ID_TYPE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "BOTH",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SINGLE",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SINGLE",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "PRIMITIVE",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "TWO_TO_ONE",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -8644,10 +8065,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "RELATIONSHIP",
+    "category" : "MAP",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8683,7 +8103,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "PRIMITIVE",
+    "category" : "CLASSIFICATION",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8708,7 +8128,7 @@
       "ordinal" : 12345
     } ],
     "defaultValue" : "...",
-    "category" : "ENUM",
+    "category" : "ENTITY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8733,18 +8153,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ENUM",
@@ -8771,21 +8189,19 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "ARRAY",
+    "category" : "CLASSIFICATION",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8811,7 +8227,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -8822,86 +8237,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "STRUCT",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  }, {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SINGLE",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "LIST",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    } ],
-    "category" : "RELATIONSHIP",
-    "guid" : "...",
-    "createdBy" : "...",
-    "updatedBy" : "...",
-    "createTime" : 12345,
-    "updateTime" : 12345,
-    "version" : 12345,
-    "name" : "...",
-    "description" : "...",
-    "typeVersion" : "...",
-    "options" : {
-      "property1" : "...",
-      "property2" : "..."
-    }
-  } ],
-  "entityDefs" : [ {
-    "superTypes" : [ "...", "..." ],
-    "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "ENTITY",
@@ -8929,7 +8264,6 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
@@ -8940,10 +8274,9 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
-    "category" : "RELATIONSHIP",
+    "category" : "ARRAY",
     "guid" : "...",
     "createdBy" : "...",
     "updatedBy" : "...",
@@ -8958,45 +8291,27 @@
       "property2" : "..."
     }
   } ],
-  "relationshipDefs" : [ {
-    "relationshipCategory" : "ASSOCIATION",
-    "propagateTags" : "BOTH",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "LIST",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
+  "entityDefs" : [ {
+    "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SET",
+      "cardinality" : "LIST",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
-      "cardinality" : "SINGLE",
+      "cardinality" : "SET",
       "valuesMinCount" : 12345,
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
       "constraints" : [ { }, { } ]
     } ],
     "category" : "PRIMITIVE",
@@ -9014,35 +8329,8 @@
       "property2" : "..."
     }
   }, {
-    "relationshipCategory" : "COMPOSITION",
-    "propagateTags" : "ONE_TO_TWO",
-    "endDef1" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "endDef2" : {
-      "type" : "...",
-      "name" : "...",
-      "isContainer" : true,
-      "cardinality" : "SET",
-      "isLegacyAttribute" : true
-    },
-    "relationshipLabel" : "...",
+    "superTypes" : [ "...", "..." ],
     "attributeDefs" : [ {
-      "name" : "...",
-      "typeName" : "...",
-      "isOptional" : true,
-      "cardinality" : "SET",
-      "valuesMinCount" : 12345,
-      "valuesMaxCount" : 12345,
-      "isUnique" : true,
-      "isIndexable" : true,
-      "defaultValue" : "...",
-      "constraints" : [ { }, { } ]
-    }, {
       "name" : "...",
       "typeName" : "...",
       "isOptional" : true,
@@ -9051,7 +8339,16 @@
       "valuesMaxCount" : 12345,
       "isUnique" : true,
       "isIndexable" : true,
-      "defaultValue" : "...",
+      "constraints" : [ { }, { } ]
+    }, {
+      "name" : "...",
+      "typeName" : "...",
+      "isOptional" : true,
+      "cardinality" : "SINGLE",
+      "valuesMinCount" : 12345,
+      "valuesMaxCount" : 12345,
+      "isUnique" : true,
+      "isIndexable" : true,
       "constraints" : [ { }, { } ]
     } ],
     "category" : "RELATIONSHIP",
@@ -9102,7 +8399,7 @@
               "application/json" : {
   "guid" : "...",
   "name" : "...",
-  "category" : "OBJECT_ID_TYPE"
+  "category" : "RELATIONSHIP"
 }
             },
             "description" : "Returns a list of AtlasTypeDefHeader matching the search criteria\nor an empty list if no match."
@@ -9142,12 +8439,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9170,7 +8466,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9185,7 +8480,7 @@
       }
     } ]
   } ],
-  "category" : "ENUM",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9213,12 +8508,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9241,7 +8535,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9256,7 +8549,7 @@
       }
     } ]
   } ],
-  "category" : "ENUM",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9309,12 +8602,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9332,12 +8624,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9352,7 +8643,7 @@
       }
     } ]
   } ],
-  "category" : "CLASSIFICATION",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9380,12 +8671,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9403,12 +8693,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9476,12 +8765,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9499,12 +8787,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9519,7 +8806,7 @@
       }
     } ]
   } ],
-  "category" : "PRIMITIVE",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9547,12 +8834,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9575,7 +8861,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9590,7 +8875,7 @@
       }
     } ]
   } ],
-  "category" : "RELATIONSHIP",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9648,7 +8933,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9666,12 +8950,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9714,12 +8997,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9737,12 +9019,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -9757,7 +9038,7 @@
       }
     } ]
   } ],
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9815,7 +9096,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "CLASSIFICATION",
+  "category" : "MAP",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9848,7 +9129,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "RELATIONSHIP",
+  "category" : "CLASSIFICATION",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9906,7 +9187,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "MAP",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -9939,405 +9220,7 @@
     "ordinal" : 12345
   } ],
   "defaultValue" : "...",
-  "category" : "ENTITY",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-}
-            },
-            "description" : "On Failed lookup for the given name"
-          }
-        }
-      }
-    }
-    ,
-    "\/v2/types/relationshipdef/guid/{guid}" : {
-      "get" : {
-        "tags" : [ "TypesREST" ],
-        "summary" : "Get the relationship definition for the given guid.",
-        "description" : "Get the relationship definition for the given guid",
-        "operationId" : "resource_TypesREST_getRelationshipDefByGuid_GET",
-        "produces" : [ "application/json;charset=UTF-8" ],
-        "parameters" : [
-          {
-            "name" : "guid",
-            "in" : "path",
-            "required" : true,
-            "type" : "string",
-            "description" : "relationship guid"
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationshipDef"
-            },
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "relationshipCategory" : "ASSOCIATION",
-  "propagateTags" : "TWO_TO_ONE",
-  "endDef1" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SINGLE",
-    "isLegacyAttribute" : true
-  },
-  "endDef2" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "LIST",
-    "isLegacyAttribute" : true
-  },
-  "relationshipLabel" : "...",
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SET",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "OBJECT_ID_TYPE",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-}
-            },
-            "description" : "On successful lookup of the the relationship definition by it's guid"
-          },
-          "404" : {
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "relationshipCategory" : "AGGREGATION",
-  "propagateTags" : "NONE",
-  "endDef1" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "LIST",
-    "isLegacyAttribute" : true
-  },
-  "endDef2" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SINGLE",
-    "isLegacyAttribute" : true
-  },
-  "relationshipLabel" : "...",
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "PRIMITIVE",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-}
-            },
-            "description" : "On Failed lookup for the given guid"
-          }
-        }
-      }
-    }
-    ,
-    "\/v2/types/relationshipdef/name/{name}" : {
-      "get" : {
-        "tags" : [ "TypesREST" ],
-        "summary" : "Get the relationship definition by it's name (unique).",
-        "description" : "Get the relationship definition by it's name (unique)",
-        "operationId" : "resource_TypesREST_getRelationshipDefByName_GET",
-        "produces" : [ "application/json;charset=UTF-8" ],
-        "parameters" : [
-          {
-            "name" : "name",
-            "in" : "path",
-            "required" : true,
-            "type" : "string",
-            "description" : "relationship name"
-          }
-        ],
-        "responses" : {
-          "200" : {
-            "schema" : {
-"description" : "",
-"$ref" : "#/definitions/json_AtlasRelationshipDef"
-            },
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "relationshipCategory" : "COMPOSITION",
-  "propagateTags" : "NONE",
-  "endDef1" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SET",
-    "isLegacyAttribute" : true
-  },
-  "endDef2" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "LIST",
-    "isLegacyAttribute" : true
-  },
-  "relationshipLabel" : "...",
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "LIST",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SINGLE",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "STRUCT",
-  "guid" : "...",
-  "createdBy" : "...",
-  "updatedBy" : "...",
-  "createTime" : 12345,
-  "updateTime" : 12345,
-  "version" : 12345,
-  "name" : "...",
-  "description" : "...",
-  "typeVersion" : "...",
-  "options" : {
-    "property1" : "...",
-    "property2" : "..."
-  }
-}
-            },
-            "description" : "On successful lookup of the the relationship definition by it's name"
-          },
-          "404" : {
-            "headers" : {
-            },
-            "examples" : {
-              "application/json" : {
-  "relationshipCategory" : "COMPOSITION",
-  "propagateTags" : "ONE_TO_TWO",
-  "endDef1" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SET",
-    "isLegacyAttribute" : true
-  },
-  "endDef2" : {
-    "type" : "...",
-    "name" : "...",
-    "isContainer" : true,
-    "cardinality" : "SET",
-    "isLegacyAttribute" : true
-  },
-  "relationshipLabel" : "...",
-  "attributeDefs" : [ {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "LIST",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  }, {
-    "name" : "...",
-    "typeName" : "...",
-    "isOptional" : true,
-    "cardinality" : "SET",
-    "valuesMinCount" : 12345,
-    "valuesMaxCount" : 12345,
-    "isUnique" : true,
-    "isIndexable" : true,
-    "defaultValue" : "...",
-    "constraints" : [ {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    }, {
-      "type" : "...",
-      "params" : {
-        "property1" : { },
-        "property2" : { }
-      }
-    } ]
-  } ],
-  "category" : "ENUM",
+  "category" : "ARRAY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10389,12 +9272,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "LIST",
+    "cardinality" : "SINGLE",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10412,12 +9294,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10432,7 +9313,7 @@
       }
     } ]
   } ],
-  "category" : "ARRAY",
+  "category" : "STRUCT",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10459,12 +9340,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10482,12 +9362,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10559,7 +9438,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10577,12 +9455,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SET",
+    "cardinality" : "LIST",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10597,7 +9474,7 @@
       }
     } ]
   } ],
-  "category" : "ENTITY",
+  "category" : "OBJECT_ID_TYPE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10624,12 +9501,11 @@
     "name" : "...",
     "typeName" : "...",
     "isOptional" : true,
-    "cardinality" : "SINGLE",
+    "cardinality" : "SET",
     "valuesMinCount" : 12345,
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10652,7 +9528,6 @@
     "valuesMaxCount" : 12345,
     "isUnique" : true,
     "isIndexable" : true,
-    "defaultValue" : "...",
     "constraints" : [ {
       "type" : "...",
       "params" : {
@@ -10667,7 +9542,7 @@
       }
     } ]
   } ],
-  "category" : "ARRAY",
+  "category" : "OBJECT_ID_TYPE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10714,7 +9589,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "STRUCT",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10737,7 +9612,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "MAP",
+  "category" : "OBJECT_ID_TYPE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10785,7 +9660,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "OBJECT_ID_TYPE",
+  "category" : "ENTITY",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",
@@ -10808,7 +9683,7 @@
             },
             "examples" : {
               "application/json" : {
-  "category" : "CLASSIFICATION",
+  "category" : "PRIMITIVE",
   "guid" : "...",
   "createdBy" : "...",
   "updatedBy" : "...",

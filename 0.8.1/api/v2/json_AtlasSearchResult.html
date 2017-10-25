@@ -165,7 +165,7 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;queryType&quot; : &quot;BASIC&quot;,
   &quot;searchParameters&quot; : {
     &quot;query&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;,
@@ -175,14 +175,14 @@
     &quot;offset&quot; : 12345,
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;GTE&quot;,
+      &quot;operator&quot; : &quot;EQ&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
     },
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;LTE&quot;,
+      &quot;operator&quot; : &quot;NOT_NULL&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ]
@@ -194,7 +194,7 @@
   &quot;classification&quot; : &quot;...&quot;,
   &quot;entities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;typeName&quot; : &quot;...&quot;,
@@ -220,7 +220,7 @@
   &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -233,7 +233,7 @@
   }, {
     &quot;entity&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
@@ -247,7 +247,7 @@
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;typeName&quot; : &quot;...&quot;,
