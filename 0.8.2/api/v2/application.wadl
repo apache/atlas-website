@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?enunciate-assumed-base-uri ./?>
+<wadl:application xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <wadl:doc xmlns:enunciate="http://enunciate.webcohesion.com/" enunciate:generatedBy="Enunciate-2.0"/>
+  
+  <wadl:grammars>
+    <wadl:include href="ns0.xsd"/>
+  </wadl:grammars>
+
+  <wadl:resources base="./">
+
+    <wadl:resource path="v2/entity">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Create new entity or update existing entity in Atlas.
+Existing entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Bulk API to retrieve list of entities identified by its GUIDs.]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="guid" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Bulk API to create new entities or update existing entities in Atlas.
+Existing entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Bulk API to delete list of entities identified by its GUIDs]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="guid" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/lineage/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Returns lineage info about entity.]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="depth" style="query">
+            <wadl:doc><![CDATA[- number of hops for lineage]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="direction" style="query">
+            <wadl:doc><![CDATA[- input, output or both]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Bad query parameters]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[If no lineage is found for the given entity]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[AtlasLineageInfo]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[- unique entity id]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/attribute">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Retrieve data for the specified attribute search query]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="attrName" style="query">
+            <wadl:doc><![CDATA[Attribute name]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="attrValuePrefix" style="query">
+            <wadl:doc><![CDATA[Attibute value to search on]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc><![CDATA[limit the result set to only include the specified number of entries]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc><![CDATA[start offset of the result set (useful for pagination)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="typeName" style="query">
+            <wadl:doc><![CDATA[limit the result to only entities of specified type or its sub-types]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Invalid wildcard or query parameters]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/basic">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Retrieve data for the specified fulltext query]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="classification" style="query">
+            <wadl:doc><![CDATA[limit the result to only entities tagged with the given classification or or its sub-types]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="excludeDeletedEntities" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc><![CDATA[limit the result set to only include the specified number of entries]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc><![CDATA[start offset of the result set (useful for pagination)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="query" style="query">
+            <wadl:doc><![CDATA[Fulltext query]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="typeName" style="query">
+            <wadl:doc><![CDATA[limit the result to only entities of specified type or its sub-types]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Invalid fulltext or query parameters]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/basic">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Attribute based search for entities satisfying the search parameters]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[Search parameters]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Tag/Entity doesn't exist or Tag/entity filter is present without tag/type name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/dsl">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Retrieve data for the specified DSL]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="classification" style="query">
+            <wadl:doc><![CDATA[limit the result to only entities tagged with the given classification or or its sub-types]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc><![CDATA[limit the result set to only include the specified number of entries]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc><![CDATA[start offset of the result set (useful for pagination)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="query" style="query">
+            <wadl:doc><![CDATA[DSL query]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="typeName" style="query">
+            <wadl:doc><![CDATA[limit the result to only entities of specified type or its sub-types]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Invalid DSL or query parameters]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/fulltext">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Retrieve data for the specified fulltext query]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="excludeDeletedEntities" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc><![CDATA[limit the result set to only include the specified number of entries]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc><![CDATA[start offset of the result set (useful for pagination)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="query" style="query">
+            <wadl:doc><![CDATA[Fulltext query]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[Invalid fulltext or query parameters]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/relationship">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Relationship search to search for related entities satisfying the search parameters]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="excludeDeletedEntities" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="guid" style="query">
+            <wadl:doc><![CDATA[Attribute name]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="limit" style="query">
+            <wadl:doc><![CDATA[limit the result set to only include the specified number of entries]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="offset" style="query">
+            <wadl:doc><![CDATA[start offset of the result set (useful for pagination)]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="relation" style="query">
+            <wadl:doc><![CDATA[relationName]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="sortBy" style="query">
+            <wadl:doc><![CDATA[sort the result using this attribute name, default value is 'name']]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="sortOrder" style="query">
+            <wadl:doc><![CDATA[sorting order]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[guid is not a valid entity type or attributeName is not a valid relationship attribute]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[the saved search-object]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[the updated search-object]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="user" style="query">
+            <wadl:doc><![CDATA[User for whom the search is retrieved]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[list of all saved searches for given user]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedefs">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Bulk retrieval API for retrieving all type definitions in Atlas]]></wadl:doc>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[A composite wrapper object with lists of all type definitions]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedefs">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Bulk create APIs for all atlas type definitions, only new definitions will be created.
+Any changes to the existing definitions will be discarded]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[A composite wrapper object with corresponding lists of the type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[On validation failure for any type definitions]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[A composite wrapper object with lists of type definitions that were successfully
+created]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedefs">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Bulk update API for all types, changes detected in the type definitions would be persisted]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[A composite object that captures all type definition changes]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[On validation failure for any type definitions]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[A composite object with lists of type definitions that were updated]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedefs">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Bulk delete API for all types]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[A composite object that captures all types to be deleted]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[On validation failure for any type definitions]]></wadl:doc>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk/classification">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Bulk API to associate a tag to multiple entities]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Fetch complete definition of an entity given its GUID.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[AtlasEntity]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[GUID for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Entity Partial Update - Add/Update entity attribute identified by its GUID.
+Supports only uprimitive attribute type and entity references.
+does not support updation of complex types like arrays, maps
+Null updates are not possible]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+          <wadl:param name="name" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Delete an entity identified by its GUID.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[GUID for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved/{guid}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[Name of the saved search]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="user" style="query">
+            <wadl:doc><![CDATA[User for whom the search is retrieved]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[Name of the saved search]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedefs/headers">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Bulk retrieval API for all type definitions returned as a list of minimal information header]]></wadl:doc>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[List of AtlasTypeDefHeader AtlasTypeDefHeader]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}/classifications">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Gets the list of classifications for a given entity represented by a guid.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[a list of classifications for the given entity guid]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[globally unique identifier for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}/classifications">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[Adds classifications to an existing entity represented by a guid.]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[globally unique identifier for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}/classifications">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Updates classifications to an existing entity represented by a guid.]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+          <wadl:representation mediaType="application/xml" element="atlasClassification">
+          </wadl:representation>
+        </wadl:request>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[globally unique identifier for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/uniqueAttribute/type/{typeName}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Fetch complete definition of an entity given its type and unique attribute.
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[AtlasEntityWithExtInfo]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="typeName" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/uniqueAttribute/type/{typeName}">
+      <wadl:method name="PUT">
+        <wadl:doc><![CDATA[Entity Partial Update - Allows a subset of attributes to be updated on
+an entity which is identified by its type and unique attribute  eg: Referenceable.qualifiedName.
+Null updates are not possible
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+PUT /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="typeName" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/uniqueAttribute/type/{typeName}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Delete an entity identified by its type and unique attributes.
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="typeName" style="template">
+        <wadl:doc><![CDATA[- entity type to be deleted]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved/execute/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Attribute based search for entities satisfying the search parameters]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="user" style="query">
+            <wadl:doc><![CDATA[saved-search owner]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[name of saved-search]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/classificationdef/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the classification definition for the given guid]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given guid]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[classification definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[classification guid]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/classificationdef/name/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the classification definition by it's name (unique)]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[classification definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[classification name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/entitydef/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the Entity definition for the given guid]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given guid]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Entity definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[entity guid]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/entitydef/name/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the entity definition by it's name (unique)]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Entity definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[entity name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/enumdef/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the enum definition for the given guid]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given guid]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[enum definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[enum guid]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/enumdef/name/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the enum definition by it's name (unique)]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[enum definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[enum name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/structdef/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the struct definition for the given guid]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given guid]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[struct definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[struct guid]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/structdef/name/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get the struct definition by it's name (unique)]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[On Failed lookup for the given name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[struct definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[struct name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedef/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[Failed lookup]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[GUID of the type]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedef/name/{name}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get type definition by it's name]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[Failed lookup by name]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="200">
+          <wadl:doc><![CDATA[Type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="name" style="template">
+        <wadl:doc><![CDATA[Type name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}/classification/{classificationName}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Gets the list of classifications for a given entity represented by a guid.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[classification for the given entity guid]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="classificationName" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+      </wadl:param>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[globally unique identifier for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/guid/{guid}/classification/{classificationName}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Deletes a given classification from an existing entity represented by a guid.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+      </wadl:method>
+      <wadl:param name="classificationName" style="template">
+        <wadl:doc><![CDATA[name of the classifcation]]></wadl:doc>
+      </wadl:param>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[globally unique identifier for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/search/saved/execute/guid/{guid}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Attribute based search for entities satisfying the search parameters]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[Guid identifying saved search]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+  </wadl:resources>
+</wadl:application>
