@@ -1,0 +1,2968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+  <title>Apache Atlas Web Application: GlossaryREST</title>
+
+  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <!--custom css for these pages-->
+  <link rel="stylesheet" href="css/enunciate.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#apinav">
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Apache Atlas Web Application: GlossaryREST</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="data.html">Data Types</a></li>
+          <li><a href="downloads.html">Files and Libraries</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar" id="apinav">
+        <ul class="nav nav-sidebar">
+          <li><a href="#resource_GlossaryREST_getGlossaries_GET"><abbr title="GET /v2/glossary"><span class="sideoverflow">GET /v2/glossary</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_createGlossary_POST"><abbr title="POST /v2/glossary"><span class="sideoverflow">POST /v2/glossary</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_createGlossaryCategories_POST"><abbr title="POST /v2/glossary/categories"><span class="sideoverflow">POST /v2/glossary/categories</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_createGlossaryCategory_POST"><abbr title="POST /v2/glossary/category"><span class="sideoverflow">POST /v2/glossary/category</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_createGlossaryTerm_POST"><abbr title="POST /v2/glossary/term"><span class="sideoverflow">POST /v2/glossary/term</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_createGlossaryTerms_POST"><abbr title="POST /v2/glossary/terms"><span class="sideoverflow">POST /v2/glossary/terms</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_deleteGlossary_DELETE"><abbr title="DELETE /v2/glossary/{glossaryGuid}"><span class="sideoverflow">DELETE /v2/glossary/{glossaryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossary_GET"><abbr title="GET /v2/glossary/{glossaryGuid}"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_updateGlossary_PUT"><abbr title="PUT /v2/glossary/{glossaryGuid}"><span class="sideoverflow">PUT /v2/glossary/{glossaryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_deleteGlossaryCategory_DELETE"><abbr title="DELETE /v2/glossary/category/{categoryGuid}"><span class="sideoverflow">DELETE /v2/glossary/category/{categoryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryCategory_GET"><abbr title="GET /v2/glossary/category/{categoryGuid}"><span class="sideoverflow">GET /v2/glossary/category/{categoryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_updateGlossaryCategory_PUT"><abbr title="PUT /v2/glossary/category/{categoryGuid}"><span class="sideoverflow">PUT /v2/glossary/category/{categoryGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_deleteGlossaryTerm_DELETE"><abbr title="DELETE /v2/glossary/term/{termGuid}"><span class="sideoverflow">DELETE /v2/glossary/term/{termGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryTerm_GET"><abbr title="GET /v2/glossary/term/{termGuid}"><span class="sideoverflow">GET /v2/glossary/term/{termGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_updateGlossaryTerm_PUT"><abbr title="PUT /v2/glossary/term/{termGuid}"><span class="sideoverflow">PUT /v2/glossary/term/{termGuid}</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryCategories_GET"><abbr title="GET /v2/glossary/{glossaryGuid}/categories"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}/categories</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getDetailedGlossary_GET"><abbr title="GET /v2/glossary/{glossaryGuid}/detailed"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}/detailed</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_partialUpdateGlossary_PUT"><abbr title="PUT /v2/glossary/{glossaryGuid}/partial"><span class="sideoverflow">PUT /v2/glossary/{glossaryGuid}/partial</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryTerms_GET"><abbr title="GET /v2/glossary/{glossaryGuid}/terms"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}/terms</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_partialUpdateGlossaryCategory_PUT"><abbr title="PUT /v2/glossary/category/{categoryGuid}/partial"><span class="sideoverflow">PUT /v2/glossary/category/{categoryGuid}/partial</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getRelatedCategories_GET"><abbr title="GET /v2/glossary/category/{categoryGuid}/related"><span class="sideoverflow">GET /v2/glossary/category/{categoryGuid}/related</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getCategoryTerms_GET"><abbr title="GET /v2/glossary/category/{categoryGuid}/terms"><span class="sideoverflow">GET /v2/glossary/category/{categoryGuid}/terms</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_partialUpdateGlossaryTerm_PUT"><abbr title="PUT /v2/glossary/term/{termGuid}/partial"><span class="sideoverflow">PUT /v2/glossary/term/{termGuid}/partial</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_removeTermAssignmentFromEntities_DELETE"><abbr title="DELETE /v2/glossary/terms/{termGuid}/assignedEntities"><span class="sideoverflow">DELETE /v2/glossary/terms/{termGuid}/assignedEntities</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getEntitiesAssignedWithTerm_GET"><abbr title="GET /v2/glossary/terms/{termGuid}/assignedEntities"><span class="sideoverflow">GET /v2/glossary/terms/{termGuid}/assignedEntities</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_assignTermToEntities_POST"><abbr title="POST /v2/glossary/terms/{termGuid}/assignedEntities"><span class="sideoverflow">POST /v2/glossary/terms/{termGuid}/assignedEntities</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getRelatedTerms_GET"><abbr title="GET /v2/glossary/terms/{termGuid}/related"><span class="sideoverflow">GET /v2/glossary/terms/{termGuid}/related</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryCategoriesHeaders_GET"><abbr title="GET /v2/glossary/{glossaryGuid}/categories/headers"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}/categories/headers</span></abbr></a></li>
+          <li><a href="#resource_GlossaryREST_getGlossaryTermHeaders_GET"><abbr title="GET /v2/glossary/{glossaryGuid}/terms/headers"><span class="sideoverflow">GET /v2/glossary/{glossaryGuid}/terms/headers</span></abbr></a></li>
+          <li class="divider"></li>
+          <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
+        </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <ol class="breadcrumb" id="top">
+          <li class="active dropdown"><a href="index.html">Home</a></li>
+          <li class="active dropdown"><a href="resources.html">Resources</a></li>
+          <li class="dropdown"><a href="resource_GlossaryREST.html">GlossaryREST</a></li>
+        </ol>
+
+      <h1 class="page-header">GlossaryREST <small>Resource</small></h1>
+
+      <p></p>
+
+      <div id="resource_GlossaryREST_getGlossaries_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary <a href="../v2/glossary" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Retrieve all glossaries registered with Atlas</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">Sort order, ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of existing glossaries fitting the search criteria or empty list if nothing matches</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of glossary entities fitting the above criteria</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_createGlossary_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary <a href="../v2/glossary" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create a glossary</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Glossary definition, terms & categories can be anchored to a glossary
+using the anchor attribute when creating the Term/Category</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary creation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary definition has invalid or missing information</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">If Glossary definition already exists (duplicate qualifiedName)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_createGlossaryCategories_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary/categories <a href="../v2/glossary/categories" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create glossary category in bulk</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">glossary category definitions</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If BULK glossary category creation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If ANY Glossary category definition has invalid or missing information</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary/categories
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_createGlossaryCategory_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary/category <a href="../v2/glossary/category" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create glossary category</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">glossary category definition, a category must be anchored to a Glossary when creating
+Optionally, terms belonging to the category and the hierarchy can also be defined during creation</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary category creation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary category definition has invalid or missing information</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">If Glossary category already exists (duplicate qualifiedName)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary/category
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_createGlossaryTerm_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary/term <a href="../v2/glossary/term" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create a glossary term</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Glossary term definition, a term must be anchored to a Glossary at the time of creation
+optionally it can be categorized as well</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary term creation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary term definition has invalid or missing information</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">409</span></td>
+            <td><span class="response-condition">If Glossary term already exists (duplicate qualifiedName)</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary/term
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_createGlossaryTerms_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary/terms <a href="../v2/glossary/terms" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Create glossary terms in bulk</p>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">glossary term definitions</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If Bulk glossary terms creation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If any glossary term definition has invalid or missing information</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary/terms
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_deleteGlossary_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/glossary/{glossaryGuid} <a href="../v2/glossary/{glossaryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Delete a glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">If glossary delete was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/glossary/{glossaryGuid}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossary_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid} <a href="../v2/glossary/{glossaryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get a specific Glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique glossary identifier</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary with given guid exists</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary GUID is invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_updateGlossary_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/{glossaryGuid} <a href="../v2/glossary/{glossaryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Update the given glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Updated glossary definition</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary definition has invalid or missing information</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/{glossaryGuid}
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_deleteGlossaryCategory_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/glossary/category/{categoryGuid} <a href="../v2/glossary/category/{categoryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Delete a glossary category</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">If glossary category delete was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary category guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/glossary/category/{categoryGuid}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryCategory_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/category/{categoryGuid} <a href="../v2/glossary/category/{categoryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get specific glossary category</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary category exists for given GUID</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary category GUID is invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/category/{categoryGuid}
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_updateGlossaryCategory_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/category/{categoryGuid} <a href="../v2/glossary/category/{categoryGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Update the given glossary category</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">updated glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary category partial update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary category guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary category definition has invalid or missing information</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/category/{categoryGuid}
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_deleteGlossaryTerm_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/glossary/term/{termGuid} <a href="../v2/glossary/term/{termGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Delete a glossary term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">If glossary term delete was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/glossary/term/{termGuid}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryTerm_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/term/{termGuid} <a href="../v2/glossary/term/{termGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get specific glossary term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary term exists for given GUID</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term GUID is invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/term/{termGuid}
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_updateGlossaryTerm_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/term/{termGuid} <a href="../v2/glossary/term/{termGuid}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Update the given glossary term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">updated glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary term update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If Glossary temr definition has invalid or missing information</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Updated glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/term/{termGuid}
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryCategories_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/categories <a href="../v2/glossary/{glossaryGuid}/categories" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get the categories belonging to a specific glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of glossary categories for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of associated categories</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}/categories
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getDetailedGlossary_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/detailed <a href="../v2/glossary/{glossaryGuid}/detailed" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get a specific Glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique glossary identifier</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary exists for given GUID</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary GUID is invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}/detailed
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_partialUpdateGlossary_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/partial <a href="../v2/glossary/{glossaryGuid}/partial" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Partially update the glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Map containing keys as attribute names and values as corresponding attribute values</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary partial update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If partial update parameters are invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Updated glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/{glossaryGuid}/partial
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryTerms_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/terms <a href="../v2/glossary/{glossaryGuid}/terms" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get terms belonging to a specific glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">starting offset for loading terms</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC(default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of glossary terms for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of terms associated with the glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}/terms
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_partialUpdateGlossaryCategory_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/category/{categoryGuid}/partial <a href="../v2/glossary/category/{categoryGuid}/partial" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Partially update the glossary category</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Map containing keys as attribute names and values as corresponding attribute values</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary category partial update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary category guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If category attributes are invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Updated glossary category</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/category/{categoryGuid}/partial
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getRelatedCategories_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/category/{categoryGuid}/related <a href="../v2/glossary/category/{categoryGuid}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get all related categories (parent and children)</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary category</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of related categories</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/category/{categoryGuid}/related
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getCategoryTerms_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/category/{categoryGuid}/terms <a href="../v2/glossary/category/{categoryGuid}/terms" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get all terms associated with the specific category</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">categoryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary category</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of terms for the given category or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary category guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of associated terms</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/category/{categoryGuid}/terms
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_partialUpdateGlossaryTerm_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/glossary/term/{termGuid}/partial <a href="../v2/glossary/term/{termGuid}/partial" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Partially update the glossary term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Map containing keys as attribute names and values as corresponding attribute values</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">If glossary partial update was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If partial attributes are invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">Updated glossary term</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/glossary/term/{termGuid}/partial
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_removeTermAssignmentFromEntities_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/glossary/terms/{termGuid}/assignedEntities <a href="../v2/glossary/terms/{termGuid}/assignedEntities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Remove the term assignment for the given list of entity headers</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Glossary term GUID</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">List of related entity IDs from which the term has to be dissociated</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">If glossary term dissociation was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If ANY of the entity header is invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/glossary/terms/{termGuid}/assignedEntities
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getEntitiesAssignedWithTerm_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/terms/{termGuid}/assignedEntities <a href="../v2/glossary/terms/{termGuid}/assignedEntities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get all entity headers assigned with the specified term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">GUID of the term</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of entity headers (if any) for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/terms/{termGuid}/assignedEntities
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_assignTermToEntities_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/glossary/terms/{termGuid}/assignedEntities <a href="../v2/glossary/terms/{termGuid}/assignedEntities" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Assign the given term to the provided list of entity headers</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">Glossary term GUID</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="request-description">Related Entity IDs to which the term has to be associated</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">204</span></td>
+            <td><span class="response-condition">If the term assignment was successful</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">400</span></td>
+            <td><span class="response-condition">If ANY of the entity header is invalid</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/glossary/terms/{termGuid}/assignedEntities
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getRelatedTerms_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/terms/{termGuid}/related <a href="../v2/glossary/terms/{termGuid}/related" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get all related terms for a specific term</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">termGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of related glossary terms for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary term guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of all related terms</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/terms/{termGuid}/related
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryCategoriesHeaders_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/categories/headers <a href="../v2/glossary/{glossaryGuid}/categories/headers" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get the categories belonging to a specific glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary term</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">offset for pagination purpose</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC (default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of glossary categories for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of associated categories</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}/categories/headers
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_GlossaryREST_getGlossaryTermHeaders_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/glossary/{glossaryGuid}/terms/headers <a href="../v2/glossary/{glossaryGuid}/terms/headers" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get term headers belonging to a specific glossary</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">glossaryGuid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">unique identifier for glossary</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">limit</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">page size - by default there is no paging</span></td>
+            <td><span class="parameter-default-value">-1</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">offset</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">starting offset for loading terms</span></td>
+            <td><span class="parameter-default-value">0</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">sort</span></td>
+            <td>query</td>
+            <td><span class="parameter-description">ASC(default) or DESC</span></td>
+            <td><span class="parameter-default-value">ASC</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-codes">
+          <caption>Response Codes</caption>
+          <thead>
+          <tr>
+            <th>code</th>
+            <th>condition</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="label label-success response-code">200</span></td>
+            <td><span class="response-condition">List of glossary terms for the given glossary or an empty list</span></td>
+          </tr>
+          <tr>
+            <td><span class="label label-warning response-code">404</span></td>
+            <td><span class="response-condition">If glossary guid in invalid</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">List of terms associated with the glossary</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/glossary/{glossaryGuid}/terms/headers
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <footer class="footer">
+          <div class="container">
+            <p class="text-muted">Generated by <a href="http://enunciate.webcohesion.com">Enunciate</a>.</p>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- JavaScript placed at the end of the document so the pages load faster. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <!-- prettify code blocks. see http://code.google.com/p/google-code-prettify/ -->
+  <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js" type="text/javascript"></script>
+  <script>
+    $(function() {
+      $(".clickable-row").click(function() {
+        window.document.location = $(this).data("href");
+      });
+
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+  </script>
+
+</body>
+</html>

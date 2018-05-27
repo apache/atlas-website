@@ -1,0 +1,5959 @@
+{
+  "swagger": "2.0",
+  "info" : {
+    "description" : "<h1>Apache Atlas Web Application<\/h1><p>Apache Atlas Web Application<\/p>",
+    "license" : {
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.txt",
+      "name" : "The Apache Software License, Version 2.0"
+    },
+    "version" : "1.0.0",
+    "title" : "Apache Atlas Web Application"
+  },
+  "schemes" : [],
+  "tags" : [
+    {
+      "name" : "AdminResource"
+      ,
+      "description" : "Jersey Resource for admin operations."
+    }
+    ,
+    {
+      "name" : "DataSetLineageResource"
+      ,
+      "description" : "Jersey Resource for Hive Table Lineage."
+    }
+    ,
+    {
+      "name" : "DiscoveryREST"
+      ,
+      "description" : "REST interface for data discovery using dsl or full text search."
+    }
+    ,
+    {
+      "name" : "EntityREST"
+      ,
+      "description" : "REST for a single entity."
+    }
+    ,
+    {
+      "name" : "EntityResource"
+      ,
+      "description" : "Entity management operations as REST API."
+    }
+    ,
+    {
+      "name" : "GlossaryREST"
+    }
+    ,
+    {
+      "name" : "LineageREST"
+      ,
+      "description" : "REST interface for an entity's lineage information."
+    }
+    ,
+    {
+      "name" : "LineageResource"
+    }
+    ,
+    {
+      "name" : "MetadataDiscoveryResource"
+      ,
+      "description" : "Jersey Resource for metadata operations."
+    }
+    ,
+    {
+      "name" : "RelationshipREST"
+      ,
+      "description" : "REST interface for entity relationships."
+    }
+    ,
+    {
+      "name" : "TypesREST"
+      ,
+      "description" : "REST interface for CRUD operations on type definitions."
+    }
+    ,
+    {
+      "name" : "TypesResource"
+      ,
+      "description" : "This class provides RESTful API for Types."
+    }
+  ],
+  "definitions" : {
+    "json_AtlasClassification" : {
+      "type" : "object",
+      "title" : "AtlasClassification",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "entityGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagate" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "validityPeriods" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_TimeBoundary"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "entityGuid" : "...",
+  "propagate" : true,
+  "validityPeriods" : [ {
+    "startTime" : "...",
+    "endTime" : "...",
+    "timeZone" : "..."
+  }, {
+    "startTime" : "...",
+    "endTime" : "...",
+    "timeZone" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity."
+    }
+    ,
+    "json_AtlasEntity" : {
+      "type" : "object",
+      "title" : "AtlasEntity",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status"
+            },
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "updateTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "version" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "relationshipAttributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            },
+            "classifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "meanings" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasTermAssignmentHeader"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "ACTIVE",
+  "createdBy" : "...",
+  "updatedBy" : "...",
+  "createTime" : 12345,
+  "updateTime" : 12345,
+  "version" : 12345,
+  "relationshipAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  },
+  "classifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "meanings" : [ {
+    "createdBy" : "...",
+    "status" : "OBSOLETE",
+    "description" : "...",
+    "confidence" : 12345,
+    "source" : "...",
+    "relationGuid" : "...",
+    "termGuid" : "...",
+    "expression" : "...",
+    "displayText" : "...",
+    "steward" : "..."
+  }, {
+    "createdBy" : "...",
+    "status" : "VALIDATED",
+    "description" : "...",
+    "confidence" : 12345,
+    "source" : "...",
+    "relationGuid" : "...",
+    "termGuid" : "...",
+    "expression" : "...",
+    "displayText" : "...",
+    "steward" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "json_AtlasEntityHeader" : {
+      "type" : "object",
+      "title" : "AtlasEntityHeader",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status"
+            },
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "classificationNames" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "classifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "meaningNames" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "meanings" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasTermAssignmentHeader"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "ACTIVE",
+  "displayText" : "...",
+  "classificationNames" : [ "...", "..." ],
+  "classifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "meaningNames" : [ "...", "..." ],
+  "meanings" : [ {
+    "createdBy" : "...",
+    "status" : "DEPRECATED",
+    "description" : "...",
+    "confidence" : 12345,
+    "source" : "...",
+    "relationGuid" : "...",
+    "termGuid" : "...",
+    "expression" : "...",
+    "displayText" : "...",
+    "steward" : "..."
+  }, {
+    "createdBy" : "...",
+    "status" : "IMPORTED",
+    "description" : "...",
+    "confidence" : 12345,
+    "source" : "...",
+    "relationGuid" : "...",
+    "termGuid" : "...",
+    "expression" : "...",
+    "displayText" : "...",
+    "steward" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "json_AtlasObjectId" : {
+      "type" : "object",
+      "title" : "AtlasObjectId",
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "typeName" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uniqueAttributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            }
+          },
+      "example" : {
+  "guid" : "...",
+  "typeName" : "...",
+  "uniqueAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Reference to an object-instance of an Atlas type - like entity."
+    }
+    ,
+    "json_AtlasRelatedObjectId" : {
+      "type" : "object",
+      "title" : "AtlasRelatedObjectId",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasObjectId"
+        },
+        {
+          "properties" : {
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipAttributes" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasStruct"
+            },
+            "relationshipStatus" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status_AtlasRelationship"
+            }
+          }
+        }
+      ],
+      "example" : {
+  "displayText" : "...",
+  "relationshipGuid" : "...",
+  "relationshipAttributes" : {
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "relationshipStatus" : "ACTIVE",
+  "guid" : "...",
+  "typeName" : "...",
+  "uniqueAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Reference to an object-instance of AtlasEntity type used in relationship attribute values"
+    }
+    ,
+    "json_AtlasRelationship" : {
+      "type" : "object",
+      "title" : "AtlasRelationship",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status_AtlasRelationship"
+            },
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "updateTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "version" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "end1" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasObjectId"
+            },
+            "end2" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasObjectId"
+            },
+            "label" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagateTags" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_PropagateTags"
+            },
+            "propagatedClassifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "blockedPropagatedClassifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "DELETED",
+  "createdBy" : "...",
+  "updatedBy" : "...",
+  "createTime" : 12345,
+  "updateTime" : 12345,
+  "version" : 12345,
+  "end1" : {
+    "guid" : "...",
+    "typeName" : "...",
+    "uniqueAttributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "end2" : {
+    "guid" : "...",
+    "typeName" : "...",
+    "uniqueAttributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "label" : "...",
+  "propagateTags" : "BOTH",
+  "propagatedClassifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "blockedPropagatedClassifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Atlas relationship instance."
+    }
+    ,
+    "json_AtlasStruct" : {
+      "type" : "object",
+      "title" : "AtlasStruct",
+          "properties" : {
+            "typeName" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "attributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            }
+          },
+      "example" : {
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification."
+    }
+    ,
+    "json_AtlasTermAssignmentHeader" : {
+      "type" : "object",
+      "title" : "AtlasTermAssignmentHeader",
+          "properties" : {
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasTermAssignmentStatus"
+            },
+            "description" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "confidence" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "source" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "termGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "expression" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "steward" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "createdBy" : "...",
+  "status" : "OBSOLETE",
+  "description" : "...",
+  "confidence" : 12345,
+  "source" : "...",
+  "relationGuid" : "...",
+  "termGuid" : "...",
+  "expression" : "...",
+  "displayText" : "...",
+  "steward" : "..."
+},
+      "description" : ""
+    }
+    ,
+    "json_AtlasTermAssignmentStatus" : {
+      "type" : "string",
+      "title" : "AtlasTermAssignmentStatus",
+          "enum" : [
+            "DISCOVERED",
+            "PROPOSED",
+            "IMPORTED",
+            "VALIDATED",
+            "DEPRECATED",
+            "OBSOLETE",
+            "OTHER"
+          ],
+      "description" : ""
+    }
+    ,
+    "json_ClassificationAssociateRequest" : {
+      "type" : "object",
+      "title" : "ClassificationAssociateRequest",
+          "properties" : {
+            "classification" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasClassification"
+            },
+            "entityGuids" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          },
+      "example" : {
+  "classification" : {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "entityGuids" : [ "...", "..." ]
+},
+      "description" : ""
+    }
+    ,
+    "json_PropagateTags" : {
+      "type" : "string",
+      "title" : "PropagateTags",
+          "enum" : [
+            "NONE",
+            "ONE_TO_TWO",
+            "TWO_TO_ONE",
+            "BOTH"
+          ],
+      "description" : "PropagateTags indicates whether tags should propagate across the relationship instance.\n<p>\nTags can propagate:\n<p>\nNONE - not at all <br>\nONE_TO_TWO - from end 1 to 2 <br>\nTWO_TO_ONE - from end 2 to 1  <br>\nBOTH - both ways\n<p>\nCare needs to be taken when specifying. The use cases we are aware of where this flag is useful:\n<p>\n- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here <br>\n- propagating classifications around Glossary synonyms - BOTH could be used here.\n<p>\nThere is an expectation that further enhancements will allow more granular control of tag propagation and will\naddress how to resolve conflicts."
+    }
+    ,
+    "json_Status_AtlasRelationship" : {
+      "type" : "string",
+      "title" : "Status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : ""
+    }
+    ,
+    "json_Status" : {
+      "type" : "string",
+      "title" : "Status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : "Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store."
+    }
+    ,
+    "json_TimeBoundary" : {
+      "type" : "object",
+      "title" : "TimeBoundary",
+          "properties" : {
+            "startTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "endTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "timeZone" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "startTime" : "...",
+  "endTime" : "...",
+  "timeZone" : "..."
+},
+      "description" : "Captures time-boundary details"
+    }
+    ,
+    "json_AtlasClassification" : {
+      "type" : "object",
+      "title" : "AtlasClassification",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "entityGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagate" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "validityPeriods" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_TimeBoundary"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "entityGuid" : "...",
+  "propagate" : true,
+  "validityPeriods" : [ {
+    "startTime" : "...",
+    "endTime" : "...",
+    "timeZone" : "..."
+  }, {
+    "startTime" : "...",
+    "endTime" : "...",
+    "timeZone" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity."
+    }
+    ,
+    "json_AtlasEntity" : {
+      "type" : "object",
+      "title" : "AtlasEntity",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status"
+            },
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "updateTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "version" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "relationshipAttributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            },
+            "classifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "meanings" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasTermAssignmentHeader"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "DELETED",
+  "createdBy" : "...",
+  "updatedBy" : "...",
+  "createTime" : 12345,
+  "updateTime" : 12345,
+  "version" : 12345,
+  "relationshipAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  },
+  "classifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "meanings" : [ {
+    "confidence" : 12345,
+    "relationGuid" : "...",
+    "source" : "...",
+    "createdBy" : "...",
+    "status" : "IMPORTED",
+    "displayText" : "...",
+    "termGuid" : "...",
+    "steward" : "...",
+    "expression" : "...",
+    "description" : "..."
+  }, {
+    "confidence" : 12345,
+    "relationGuid" : "...",
+    "source" : "...",
+    "createdBy" : "...",
+    "status" : "VALIDATED",
+    "displayText" : "...",
+    "termGuid" : "...",
+    "steward" : "...",
+    "expression" : "...",
+    "description" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "json_AtlasEntityHeader" : {
+      "type" : "object",
+      "title" : "AtlasEntityHeader",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status"
+            },
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "classificationNames" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "classifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "meaningNames" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "meanings" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasTermAssignmentHeader"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "DELETED",
+  "displayText" : "...",
+  "classificationNames" : [ "...", "..." ],
+  "classifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "meaningNames" : [ "...", "..." ],
+  "meanings" : [ {
+    "confidence" : 12345,
+    "relationGuid" : "...",
+    "source" : "...",
+    "createdBy" : "...",
+    "status" : "VALIDATED",
+    "displayText" : "...",
+    "termGuid" : "...",
+    "steward" : "...",
+    "expression" : "...",
+    "description" : "..."
+  }, {
+    "confidence" : 12345,
+    "relationGuid" : "...",
+    "source" : "...",
+    "createdBy" : "...",
+    "status" : "OBSOLETE",
+    "displayText" : "...",
+    "termGuid" : "...",
+    "steward" : "...",
+    "expression" : "...",
+    "description" : "..."
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "json_AtlasObjectId" : {
+      "type" : "object",
+      "title" : "AtlasObjectId",
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "typeName" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uniqueAttributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            }
+          },
+      "example" : {
+  "guid" : "...",
+  "typeName" : "...",
+  "uniqueAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Reference to an object-instance of an Atlas type - like entity."
+    }
+    ,
+    "json_AtlasRelatedObjectId" : {
+      "type" : "object",
+      "title" : "AtlasRelatedObjectId",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasObjectId"
+        },
+        {
+          "properties" : {
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipAttributes" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasStruct"
+            },
+            "relationshipStatus" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status_AtlasRelationship"
+            }
+          }
+        }
+      ],
+      "example" : {
+  "displayText" : "...",
+  "relationshipGuid" : "...",
+  "relationshipAttributes" : {
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "relationshipStatus" : "DELETED",
+  "guid" : "...",
+  "typeName" : "...",
+  "uniqueAttributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Reference to an object-instance of AtlasEntity type used in relationship attribute values"
+    }
+    ,
+    "json_AtlasRelationship" : {
+      "type" : "object",
+      "title" : "AtlasRelationship",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/json_AtlasStruct"
+        },
+        {
+          "properties" : {
+            "guid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_Status_AtlasRelationship"
+            },
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "updateTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "version" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "end1" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasObjectId"
+            },
+            "end2" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasObjectId"
+            },
+            "label" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagateTags" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_PropagateTags"
+            },
+            "propagatedClassifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "blockedPropagatedClassifications" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            }
+          }
+        }
+      ],
+      "example" : {
+  "guid" : "...",
+  "status" : "ACTIVE",
+  "createdBy" : "...",
+  "updatedBy" : "...",
+  "createTime" : 12345,
+  "updateTime" : 12345,
+  "version" : 12345,
+  "end1" : {
+    "guid" : "...",
+    "typeName" : "...",
+    "uniqueAttributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "end2" : {
+    "guid" : "...",
+    "typeName" : "...",
+    "uniqueAttributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "label" : "...",
+  "propagateTags" : "TWO_TO_ONE",
+  "propagatedClassifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "blockedPropagatedClassifications" : [ {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  }, {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  } ],
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Atlas relationship instance."
+    }
+    ,
+    "json_AtlasStruct" : {
+      "type" : "object",
+      "title" : "AtlasStruct",
+          "properties" : {
+            "typeName" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "attributes" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "object",
+"additionalProperties" : {
+  "type" : "object"
+}
+            }
+          },
+      "example" : {
+  "typeName" : "...",
+  "attributes" : {
+    "property1" : { },
+    "property2" : { }
+  }
+},
+      "description" : "Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification."
+    }
+    ,
+    "json_AtlasTermAssignmentHeader" : {
+      "type" : "object",
+      "title" : "AtlasTermAssignmentHeader",
+          "properties" : {
+            "confidence" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "number"
+            },
+            "relationGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "source" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasTermAssignmentStatus"
+            },
+            "displayText" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "termGuid" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "steward" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "expression" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "description" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "confidence" : 12345,
+  "relationGuid" : "...",
+  "source" : "...",
+  "createdBy" : "...",
+  "status" : "DEPRECATED",
+  "displayText" : "...",
+  "termGuid" : "...",
+  "steward" : "...",
+  "expression" : "...",
+  "description" : "..."
+},
+      "description" : ""
+    }
+    ,
+    "json_AtlasTermAssignmentStatus" : {
+      "type" : "string",
+      "title" : "AtlasTermAssignmentStatus",
+          "enum" : [
+            "DISCOVERED",
+            "PROPOSED",
+            "IMPORTED",
+            "VALIDATED",
+            "DEPRECATED",
+            "OBSOLETE",
+            "OTHER"
+          ],
+      "description" : ""
+    }
+    ,
+    "json_ClassificationAssociateRequest" : {
+      "type" : "object",
+      "title" : "ClassificationAssociateRequest",
+          "properties" : {
+            "classification" : {
+            "readOnly" : false,
+"$ref" : "#/definitions/json_AtlasClassification"
+            },
+            "entityGuids" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            }
+          },
+      "example" : {
+  "classification" : {
+    "entityGuid" : "...",
+    "propagate" : true,
+    "validityPeriods" : [ {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    }, {
+      "startTime" : "...",
+      "endTime" : "...",
+      "timeZone" : "..."
+    } ],
+    "typeName" : "...",
+    "attributes" : {
+      "property1" : { },
+      "property2" : { }
+    }
+  },
+  "entityGuids" : [ "...", "..." ]
+},
+      "description" : ""
+    }
+    ,
+    "json_PropagateTags" : {
+      "type" : "string",
+      "title" : "PropagateTags",
+          "enum" : [
+            "NONE",
+            "ONE_TO_TWO",
+            "TWO_TO_ONE",
+            "BOTH"
+          ],
+      "description" : "PropagateTags indicates whether tags should propagate across the relationship instance.\n<p>\nTags can propagate:\n<p>\nNONE - not at all <br>\nONE_TO_TWO - from end 1 to 2 <br>\nTWO_TO_ONE - from end 2 to 1  <br>\nBOTH - both ways\n<p>\nCare needs to be taken when specifying. The use cases we are aware of where this flag is useful:\n<p>\n- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here <br>\n- propagating classifications around Glossary synonyms - BOTH could be used here.\n<p>\nThere is an expectation that further enhancements will allow more granular control of tag propagation and will\naddress how to resolve conflicts."
+    }
+    ,
+    "json_Status_AtlasRelationship" : {
+      "type" : "string",
+      "title" : "Status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : ""
+    }
+    ,
+    "json_Status" : {
+      "type" : "string",
+      "title" : "Status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : "Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store."
+    }
+    ,
+    "json_TimeBoundary" : {
+      "type" : "object",
+      "title" : "TimeBoundary",
+          "properties" : {
+            "startTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "endTime" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "timeZone" : {
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          },
+      "example" : {
+  "startTime" : "...",
+  "endTime" : "...",
+  "timeZone" : "..."
+},
+      "description" : "Captures time-boundary details"
+    }
+    ,
+    "xml_ns0_timeBoundary" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "timeBoundary",
+        "namespace" : ""
+      },
+      "title" : "timeBoundary",
+      "allOf" : [
+        {
+          "properties" : {
+            "endTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "startTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "timeZone" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "Captures time-boundary details"
+    }
+    ,
+    "xml_ns0_atlasTermAssignmentStatus" : {
+      "type" : "string",
+      "title" : "atlasTermAssignmentStatus",
+          "enum" : [
+            "DISCOVERED",
+            "PROPOSED",
+            "IMPORTED",
+            "VALIDATED",
+            "DEPRECATED",
+            "OBSOLETE",
+            "OTHER"
+          ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasTermAssignmentHeader" : {
+      "type" : "object",
+      "title" : "atlasTermAssignmentHeader",
+      "allOf" : [
+        {
+          "properties" : {
+            "confidence" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int32"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "description" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "displayText" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "expression" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationGuid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "source" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_atlasTermAssignmentStatus"
+            },
+            "steward" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "termGuid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : ""
+    }
+    ,
+    "xml_ns0_atlasClassification" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasClassification",
+        "namespace" : ""
+      },
+      "title" : "atlasClassification",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "entityGuid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagate" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "boolean"
+            },
+            "validityPeriods" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_timeBoundary"
+}
+            }
+          }
+        }
+      ],
+      "description" : "An instance of a classification; it doesn't have an identity, this object exists only when associated with an entity."
+    }
+    ,
+    "xml_ns0_atlasEntity" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasEntity",
+        "namespace" : ""
+      },
+      "title" : "atlasEntity",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "classifications" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasClassification"
+}
+            },
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "meanings" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasTermAssignmentHeader"
+}
+            },
+            "relationshipAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_status"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "xml_ns0_status" : {
+      "type" : "string",
+      "title" : "status",
+          "enum" : [
+            "ACTIVE",
+            "DELETED"
+          ],
+      "description" : "Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store."
+    }
+    ,
+    "xml_ns0_atlasEntityHeader" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasEntityHeader",
+        "namespace" : ""
+      },
+      "title" : "atlasEntityHeader",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "classificationNames" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "classifications" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasClassification"
+}
+            },
+            "displayText" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "meaningNames" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "type" : "string"
+}
+            },
+            "meanings" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasTermAssignmentHeader"
+}
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_status"
+            }
+          }
+        }
+      ],
+      "description" : "An instance of an entity - like hive_table, hive_database."
+    }
+    ,
+    "xml_ns0_atlasObjectId" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasObjectId",
+        "namespace" : ""
+      },
+      "title" : "atlasObjectId",
+      "allOf" : [
+        {
+          "properties" : {
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "typeName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "uniqueAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : "Reference to an object-instance of an Atlas type - like entity."
+    }
+    ,
+    "xml_ns0_atlasRelatedObjectId" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasRelatedObjectId",
+        "namespace" : ""
+      },
+      "title" : "atlasRelatedObjectId",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasObjectId"
+        },
+        {
+          "properties" : {
+            "displayText" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipAttributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_atlasStruct"
+            },
+            "relationshipGuid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "relationshipStatus" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            }
+          }
+        }
+      ],
+      "description" : "Reference to an object-instance of AtlasEntity type used in relationship attribute values"
+    }
+    ,
+    "xml_ns0_atlasRelationship" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasRelationship",
+        "namespace" : ""
+      },
+      "title" : "atlasRelationship",
+      "allOf" : [
+        {
+          "$ref" : "#/definitions/xml_ns0_atlasStruct"
+        },
+        {
+          "properties" : {
+            "blockedPropagatedClassifications" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasClassification"
+}
+            },
+            "createTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "createdBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "end1" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_atlasObjectId"
+            },
+            "end2" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_atlasObjectId"
+            },
+            "guid" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "label" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "propagateTags" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"$ref" : "#/definitions/xml_ns0_propagateTags"
+            },
+            "propagatedClassifications" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/xml_ns0_atlasClassification"
+}
+            },
+            "status" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "updateTime" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "updatedBy" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            },
+            "version" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "integer",
+"format" : "int64"
+            }
+          }
+        }
+      ],
+      "description" : "Atlas relationship instance."
+    }
+    ,
+    "xml_ns0_atlasStruct" : {
+      "type" : "object",
+      "xml" : {
+        "name" : "atlasStruct",
+        "namespace" : ""
+      },
+      "title" : "atlasStruct",
+      "allOf" : [
+        {
+          "properties" : {
+            "attributes" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "object"
+            },
+            "typeName" : {
+              "xml" : {
+                "namespace" : ""
+              },
+            "readOnly" : false,
+"description" : "",
+"type" : "string"
+            }
+          }
+        }
+      ],
+      "description" : "Captures details of struct contents. Not instantiated directly, used only via AtlasEntity, AtlasClassification."
+    }
+    ,
+    "xml_ns0_propagateTags" : {
+      "type" : "string",
+      "title" : "propagateTags",
+          "enum" : [
+            "NONE",
+            "ONE_TO_TWO",
+            "TWO_TO_ONE",
+            "BOTH"
+          ],
+      "description" : "PropagateTags indicates whether tags should propagate across the relationship instance.\n<p>\nTags can propagate:\n<p>\nNONE - not at all <br>\nONE_TO_TWO - from end 1 to 2 <br>\nTWO_TO_ONE - from end 2 to 1  <br>\nBOTH - both ways\n<p>\nCare needs to be taken when specifying. The use cases we are aware of where this flag is useful:\n<p>\n- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here <br>\n- propagating classifications around Glossary synonyms - BOTH could be used here.\n<p>\nThere is an expectation that further enhancements will allow more granular control of tag propagation and will\naddress how to resolve conflicts."
+    }
+  },
+  "paths": {
+    "\/admin/activeSearches" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "getActiveSearches",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/activeSearches/{id}" : {
+      "delete" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "terminateActiveSearch",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "id",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/export" : {
+      "post" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "export",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "schema" : {
+"description" : "",
+"type" : "file"
+            },
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/import" : {
+      "post" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "importData",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "inputStream",
+            "in" : "formData",
+            "type" : "file",
+            "description" : ""
+          },
+          {
+            "name" : "jsonData",
+            "in" : "formData",
+            "default" : "{}",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/importfile" : {
+      "post" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "importFile",
+        "consumes" : [ "application/xml", "application/json" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "string"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/metrics" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "getMetrics",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "ignoreCache",
+            "in" : "query",
+            "type" : "boolean",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/session" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "getUserProfile",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/stack" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "summary" : "Fetches the thread stack dump for this application.",
+        "description" : "Fetches the thread stack dump for this application.",
+        "operationId" : "getThreadDump",
+        "produces" : [ "text/plain" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+"description" : "json representing the thread stack dump.",
+"type" : "string"
+            },
+            "description" : "json representing the thread stack dump."
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/status" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "description" : "",
+        "operationId" : "getStatus",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/admin/version" : {
+      "get" : {
+        "tags" : [ "AdminResource" ],
+        "summary" : "Fetches the version for this application.",
+        "description" : "Fetches the version for this application.",
+        "operationId" : "getVersion",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "json representing the version."
+          }
+        }
+      }
+    }
+    ,
+    "\/discovery/search" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "MetadataDiscoveryResource" ],
+        "summary" : "Search using a given query.",
+        "description" : "Search using a given query.",
+        "operationId" : "search",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "search query in DSL format falling back to full text."
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "JSON representing the type and results."
+          }
+        }
+      }
+    }
+    ,
+    "\/discovery/search/dsl" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "MetadataDiscoveryResource" ],
+        "summary" : "Search using query DSL format.",
+        "description" : "Search using query DSL format.",
+        "operationId" : "searchUsingQueryDSL",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0\nLimit and offset in API are used in conjunction with limit and offset in DSL query\nFinal limit = min(API limit, max(query limit - API offset, 0))\nFinal offset = API offset + query offset"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "search query in DSL format."
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "JSON representing the type and results."
+          }
+        }
+      }
+    }
+    ,
+    "\/discovery/search/fulltext" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "MetadataDiscoveryResource" ],
+        "summary" : "Search using full text search.",
+        "description" : "Search using full text search.",
+        "operationId" : "searchUsingFullText",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "number of rows to be returned in the result, used for pagination. maxlimit > limit > 0. -1 maps to atlas.search.defaultlimit property value"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "offset to the results returned, used for pagination. offset >= 0. -1 maps to offset 0"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "search query."
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "JSON representing the type and results."
+          }
+        }
+      }
+    }
+    ,
+    "\/entities" : {
+      "delete" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Delete entities from the repository identified by their guids (including their composite references)\nor\nDeletes a single entity identified by its type and unique attribute value from the repository (including their composite references).",
+        "description" : "Delete entities from the repository identified by their guids (including their composite references)\nor\nDeletes a single entity identified by its type and unique attribute value from the repository (including their composite references)",
+        "operationId" : "deleteEntities",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "query",
+            "type" : "array",
+            "items" : {
+            "type" : "string"
+            },
+            "collectionFormat" : "multi",
+            "description" : "list of deletion candidate guids\nor"
+          },
+          {
+            "name" : "property",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the unique attribute used to identify the entity"
+          },
+          {
+            "name" : "type",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the entity type"
+          },
+          {
+            "name" : "value",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the unique attribute value used to identify the entity"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "response payload as json - including guids of entities(including composite references from that entity) that were deleted"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "description" : "",
+        "operationId" : "getEntity",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "property",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "type",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "value",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "post" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Submits the entity definitions (instances).",
+        "description" : "Submits the entity definitions (instances).\nThe body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any\nunique attribute for the give type.",
+        "operationId" : "submit",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "put" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Complete update of a set of entities - the values not specified will be replaced with null/removed\nAdds/Updates given entities identified by its GUID or unique attribute.",
+        "description" : "Complete update of a set of entities - the values not specified will be replaced with null/removed\nAdds/Updates given entities identified by its GUID or unique attribute",
+        "operationId" : "updateEntities",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "response payload as json"
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/qualifiedName" : {
+      "post" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Adds/Updates given entity identified by its unique attribute( entityType, attributeName and value)\nUpdates support only partial update of an entity - Adds/updates any new values specified\nUpdates do not support removal of attribute values.",
+        "description" : "Adds/Updates given entity identified by its unique attribute( entityType, attributeName and value)\nUpdates support only partial update of an entity - Adds/updates any new values specified\nUpdates do not support removal of attribute values",
+        "operationId" : "updateByUniqueAttribute",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "property",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the unique attribute used to identify the entity"
+          },
+          {
+            "name" : "type",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the entity type"
+          },
+          {
+            "name" : "value",
+            "in" : "query",
+            "type" : "string",
+            "description" : "the unique attributes value"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "response payload as json\nThe body contains the JSONArray of entity json. The service takes care of de-duping the entities based on any\nunique attribute for the give type."
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Fetch the complete definition of an entity given its GUID.",
+        "description" : "Fetch the complete definition of an entity given its GUID.",
+        "operationId" : "getEntityDefinition",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "GUID for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "post" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Updates entity identified by its GUID\nSupport Partial update of an entity - Adds/updates any new values specified\nDoes not support removal of attribute values.",
+        "description" : "Updates entity identified by its GUID\nSupport Partial update of an entity - Adds/updates any new values specified\nDoes not support removal of attribute values",
+        "operationId" : "updateEntityByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "property",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}/audit" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Returns the entity audit events for a given entity id.",
+        "description" : "Returns the entity audit events for a given entity id. The events are returned in the decreasing order of timestamp.",
+        "operationId" : "getAuditEvents",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "entity id"
+          },
+          {
+            "name" : "count",
+            "in" : "query",
+            "default" : "100",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "number of events required"
+          },
+          {
+            "name" : "startKey",
+            "in" : "query",
+            "type" : "string",
+            "description" : "used for pagination. Startkey is inclusive, the returned results contain the event with the given startkey.\nFirst time getAuditEvents() is called for an entity, startKey should be null,\nwith count = (number of events required + 1). Next time getAuditEvents() is called for the same entity,\nstartKey should be equal to the entityKey of the last event returned in the previous call."
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}/traitDefinitions" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Fetches the trait definitions of all the traits associated to the given entity.",
+        "description" : "Fetches the trait definitions of all the traits associated to the given entity",
+        "operationId" : "getTraitDefinitionsForEntity",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}/traitDefinitions/{traitName}" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Fetches the trait definition for an entity given its guid and trait name.",
+        "description" : "Fetches the trait definition for an entity given its guid and trait name",
+        "operationId" : "getTraitDefinitionForEntity",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          },
+          {
+            "name" : "traitName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of the trait"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}/traits" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Gets the list of trait names for a given entity represented by a guid.",
+        "description" : "Gets the list of trait names for a given entity represented by a guid.",
+        "operationId" : "getTraitNames",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "a list of trait names for the given entity guid"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Adds a new trait to an existing entity represented by a guid.",
+        "description" : "Adds a new trait to an existing entity represented by a guid.",
+        "operationId" : "addTrait",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/entities/{guid}/traits/{traitName}" : {
+      "delete" : {
+        "deprecated":true,
+        "tags" : [ "EntityResource" ],
+        "summary" : "Deletes a given trait from an existing entity represented by a guid.",
+        "description" : "Deletes a given trait from an existing entity represented by a guid.",
+        "operationId" : "deleteTrait",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          },
+          {
+            "name" : "traitName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of the trait"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/hive/table/{tableName}/inputs/graph" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "DataSetLineageResource" ],
+        "summary" : "Returns the inputs graph for a given entity.",
+        "description" : "Returns the inputs graph for a given entity.",
+        "operationId" : "inputsGraph",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "tableName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "table name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/hive/table/{tableName}/outputs/graph" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "DataSetLineageResource" ],
+        "summary" : "Returns the outputs graph for a given entity.",
+        "description" : "Returns the outputs graph for a given entity.",
+        "operationId" : "outputsGraph",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "tableName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "table name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/hive/table/{tableName}/schema" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "DataSetLineageResource" ],
+        "summary" : "Return the schema for the given tableName.",
+        "description" : "Return the schema for the given tableName.",
+        "operationId" : "schema",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "tableName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "table name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/{guid}/inputs/graph" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "LineageResource" ],
+        "summary" : "Returns input lineage graph for the given entity id.",
+        "description" : "Returns input lineage graph for the given entity id.",
+        "operationId" : "inputsGraph2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "dataset entity id"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/{guid}/outputs/graph" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "LineageResource" ],
+        "summary" : "Returns the outputs graph for a given entity id.",
+        "description" : "Returns the outputs graph for a given entity id.",
+        "operationId" : "outputsGraph2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "dataset entity id"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/lineage/{guid}/schema" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "LineageResource" ],
+        "summary" : "Returns the schema for the given dataset id.",
+        "description" : "Returns the schema for the given dataset id.",
+        "operationId" : "schema2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "dataset entity id"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/types" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "TypesResource" ],
+        "summary" : "Return the list of type names in the type system which match the specified filter.",
+        "description" : "Return the list of type names in the type system which match the specified filter.",
+        "operationId" : "getTypesByFilter",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "notsupertype",
+            "in" : "query",
+            "type" : "string",
+            "description" : "returns types which do not contain the given supertype\n\nIts possible to specify combination of these filters in one request and the conditions are combined with AND\nFor example, typeCategory = TRAIT && supertype contains 'X' && supertype !contains 'Y'\nIf there is no filter, all the types are returned"
+          },
+          {
+            "name" : "supertype",
+            "in" : "query",
+            "type" : "string",
+            "description" : "returns types which contain the given supertype"
+          },
+          {
+            "name" : "type",
+            "in" : "query",
+            "type" : "string",
+            "description" : "returns types whose relationshipCategory is the given typeCategory"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "list of type names"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "deprecated":true,
+        "tags" : [ "TypesResource" ],
+        "summary" : "Submits a type definition corresponding to a given type representing a meta model of a\ndomain.",
+        "description" : "Submits a type definition corresponding to a given type representing a meta model of a\ndomain. Could represent things like Hive Database, Hive Table, etc.",
+        "operationId" : "submit2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "put" : {
+        "deprecated":true,
+        "tags" : [ "TypesResource" ],
+        "summary" : "Update of existing types - if the given type doesn't exist, creates new type\nAllowed updates are:\n1.",
+        "description" : "Update of existing types - if the given type doesn't exist, creates new type\nAllowed updates are:\n1. Add optional attribute\n2. Change required to optional attribute\n3. Add super types - super types shouldn't contain any required attributes",
+        "operationId" : "update",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/types/{typeName}" : {
+      "get" : {
+        "deprecated":true,
+        "tags" : [ "TypesResource" ],
+        "summary" : "Fetch the complete definition of a given type name which is unique.",
+        "description" : "Fetch the complete definition of a given type name which is unique.",
+        "operationId" : "getDefinition",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of a type which is unique."
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity" : {
+      "post" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Create new entity or update existing entity in Atlas.",
+        "description" : "Create new entity or update existing entity in Atlas.\nExisting entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName",
+        "operationId" : "createOrUpdate",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "EntityMutationResponse"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/bulk" : {
+      "delete" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Bulk API to delete list of entities identified by its GUIDs.",
+        "description" : "Bulk API to delete list of entities identified by its GUIDs",
+        "operationId" : "deleteByGuids",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "query",
+            "type" : "array",
+            "items" : {
+            "type" : "string"
+            },
+            "collectionFormat" : "multi",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Bulk API to retrieve list of entities identified by its GUIDs.",
+        "description" : "Bulk API to retrieve list of entities identified by its GUIDs.",
+        "operationId" : "getByGuids",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "query",
+            "type" : "array",
+            "items" : {
+            "type" : "string"
+            },
+            "collectionFormat" : "multi",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Bulk API to create new entities or update existing entities in Atlas.",
+        "description" : "Bulk API to create new entities or update existing entities in Atlas.\nExisting entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName",
+        "operationId" : "createOrUpdate",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/bulk/classification" : {
+      "post" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Bulk API to associate a tag to multiple entities.",
+        "description" : "Bulk API to associate a tag to multiple entities",
+        "operationId" : "addClassification",
+        "consumes" : [ "application/json", "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"$ref" : "#/definitions/json_ClassificationAssociateRequest"
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/guid/{guid}" : {
+      "delete" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Delete an entity identified by its GUID.",
+        "description" : "Delete an entity identified by its GUID.",
+        "operationId" : "deleteByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "GUID for the entity"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "EntityMutationResponse"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Fetch complete definition of an entity given its GUID.",
+        "description" : "Fetch complete definition of an entity given its GUID.",
+        "operationId" : "getById",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "GUID for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "AtlasEntity"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Entity Partial Update - Add/Update entity attribute identified by its GUID.",
+        "description" : "Entity Partial Update - Add/Update entity attribute identified by its GUID.\nSupports only uprimitive attribute type and entity references.\ndoes not support updation of complex types like arrays, maps\nNull updates are not possible",
+        "operationId" : "partialUpdateEntityAttrByGuid",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "name",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/guid/{guid}/classification/{classificationName}" : {
+      "delete" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Deletes a given classification from an existing entity represented by a guid.",
+        "description" : "Deletes a given classification from an existing entity represented by a guid.",
+        "operationId" : "deleteClassification",
+        "parameters" : [
+          {
+            "name" : "classificationName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of the classifcation"
+          },
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Gets the list of classifications for a given entity represented by a guid.",
+        "description" : "Gets the list of classifications for a given entity represented by a guid.",
+        "operationId" : "getClassification",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "classificationName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "classification for the given entity guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/guid/{guid}/classifications" : {
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Gets the list of classifications for a given entity represented by a guid.",
+        "description" : "Gets the list of classifications for a given entity represented by a guid.",
+        "operationId" : "getClassifications",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "a list of classifications for the given entity guid"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Adds classifications to an existing entity represented by a guid.",
+        "description" : "Adds classifications to an existing entity represented by a guid.",
+        "operationId" : "addClassifications",
+        "consumes" : [ "application/json", "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Updates classifications to an existing entity represented by a guid.",
+        "description" : "Updates classifications to an existing entity represented by a guid.",
+        "operationId" : "updateClassifications",
+        "consumes" : [ "application/xml", "application/json" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "globally unique identifier for the entity"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/uniqueAttribute/type/{typeName}" : {
+      "delete" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Delete an entity identified by its type and unique attributes.",
+        "description" : "Delete an entity identified by its type and unique attributes.\n\nIn addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format\n\nattr:<attrName>=<attrValue>\n\nNOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName\n\nThe REST request would look something like this\n\nDELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue",
+        "operationId" : "deleteByUniqueAttribute",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "- entity type to be deleted"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "EntityMutationResponse"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Fetch complete definition of an entity given its type and unique attribute.",
+        "description" : "Fetch complete definition of an entity given its type and unique attribute.\n\nIn addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format\n\nattr:<attrName>=<attrValue>\n\nNOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName\n\nThe REST request would look something like this\n\nGET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue",
+        "operationId" : "getByUniqueAttributes",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "AtlasEntityWithExtInfo"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Entity Partial Update - Allows a subset of attributes to be updated on\nan entity which is identified by its type and unique attribute  eg: Referenceable.",
+        "description" : "Entity Partial Update - Allows a subset of attributes to be updated on\nan entity which is identified by its type and unique attribute  eg: Referenceable.qualifiedName.\nNull updates are not possible\n\nIn addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format\n\nattr:<attrName>=<attrValue>\n\nNOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName\n\nThe REST request would look something like this\n\nPUT /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue",
+        "operationId" : "partialUpdateEntityByUniqueAttrs",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}" : {
+      "delete" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Deletes a given classification from an entity identified by its type and unique attributes.",
+        "description" : "Deletes a given classification from an entity identified by its type and unique attributes.",
+        "operationId" : "deleteClassificationByUniqueAttribute",
+        "parameters" : [
+          {
+            "name" : "classificationName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of the classification"
+          },
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/uniqueAttribute/type/{typeName}/classifications" : {
+      "post" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Adds classification to the entity identified by its type and unique attributes.",
+        "description" : "Adds classification to the entity identified by its type and unique attributes.",
+        "operationId" : "addClassificationsByUniqueAttribute",
+        "consumes" : [ "application/json", "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "EntityREST" ],
+        "summary" : "Updates classification on an entity identified by its type and unique attributes.",
+        "description" : "Updates classification on an entity identified by its type and unique attributes.",
+        "operationId" : "updateClassificationsByUniqueAttribute",
+        "consumes" : [ "application/json", "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "typeName",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "schema" : {
+"description" : "",
+"type" : "array",
+"items" : {
+  "$ref" : "#/definitions/json_AtlasClassification"
+}
+            },
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/entity/{guid}/audit" : {
+      "get" : {
+        "tags" : [ "EntityREST" ],
+        "description" : "",
+        "operationId" : "getAuditEvents2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "count",
+            "in" : "query",
+            "default" : "100",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : ""
+          },
+          {
+            "name" : "startKey",
+            "in" : "query",
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Retrieve all glossaries registered with Atlas.",
+        "description" : "Retrieve all glossaries registered with Atlas",
+        "operationId" : "getGlossaries",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "Sort order, ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of existing glossaries fitting the search criteria or empty list if nothing matches"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Create a glossary.",
+        "description" : "Create a glossary",
+        "operationId" : "createGlossary",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Glossary definition, terms & categories can be anchored to a glossary\nusing the anchor attribute when creating the Term/Category"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary creation was successful"
+          },
+          "400" : {
+            "description" : "If Glossary definition has invalid or missing information"
+          },
+          "409" : {
+            "description" : "If Glossary definition already exists (duplicate qualifiedName)"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/categories" : {
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Create glossary category in bulk.",
+        "description" : "Create glossary category in bulk",
+        "operationId" : "createGlossaryCategories",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "glossary category definitions"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If BULK glossary category creation was successful"
+          },
+          "400" : {
+            "description" : "If ANY Glossary category definition has invalid or missing information"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/category" : {
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Create glossary category.",
+        "description" : "Create glossary category",
+        "operationId" : "createGlossaryCategory",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "glossary category definition, a category must be anchored to a Glossary when creating\nOptionally, terms belonging to the category and the hierarchy can also be defined during creation"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary category creation was successful"
+          },
+          "400" : {
+            "description" : "If Glossary category definition has invalid or missing information"
+          },
+          "409" : {
+            "description" : "If Glossary category already exists (duplicate qualifiedName)"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/category/{categoryGuid}" : {
+      "delete" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Delete a glossary category.",
+        "description" : "Delete a glossary category",
+        "operationId" : "deleteGlossaryCategory",
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary category"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "If glossary category delete was successful"
+          },
+          "404" : {
+            "description" : "If glossary category guid in invalid"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get specific glossary category.",
+        "description" : "Get specific glossary category",
+        "operationId" : "getGlossaryCategory",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary category"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary category exists for given GUID"
+          },
+          "404" : {
+            "description" : "If glossary category GUID is invalid"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Update the given glossary category.",
+        "description" : "Update the given glossary category",
+        "operationId" : "updateGlossaryCategory",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary category"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "updated glossary category"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary category partial update was successful"
+          },
+          "404" : {
+            "description" : "If glossary category guid in invalid"
+          },
+          "400" : {
+            "description" : "If Glossary category definition has invalid or missing information"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/category/{categoryGuid}/partial" : {
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Partially update the glossary category.",
+        "description" : "Partially update the glossary category",
+        "operationId" : "partialUpdateGlossaryCategory",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Map containing keys as attribute names and values as corresponding attribute values"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary category partial update was successful"
+          },
+          "404" : {
+            "description" : "If glossary category guid in invalid"
+          },
+          "400" : {
+            "description" : "If category attributes are invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/category/{categoryGuid}/related" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get all related categories (parent and children).",
+        "description" : "Get all related categories (parent and children)",
+        "operationId" : "getRelatedCategories",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary category"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of related categories"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/category/{categoryGuid}/terms" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get all terms associated with the specific category.",
+        "description" : "Get all terms associated with the specific category",
+        "operationId" : "getCategoryTerms",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "categoryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary category"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of terms for the given category or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary category guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/term" : {
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Create a glossary term.",
+        "description" : "Create a glossary term",
+        "operationId" : "createGlossaryTerm",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Glossary term definition, a term must be anchored to a Glossary at the time of creation\noptionally it can be categorized as well"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary term creation was successful"
+          },
+          "400" : {
+            "description" : "If Glossary term definition has invalid or missing information"
+          },
+          "409" : {
+            "description" : "If Glossary term already exists (duplicate qualifiedName)"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/term/{termGuid}" : {
+      "delete" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Delete a glossary term.",
+        "description" : "Delete a glossary term",
+        "operationId" : "deleteGlossaryTerm",
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "If glossary term delete was successful"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get specific glossary term.",
+        "description" : "Get specific glossary term",
+        "operationId" : "getGlossaryTerm",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary term exists for given GUID"
+          },
+          "404" : {
+            "description" : "If glossary term GUID is invalid"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Update the given glossary term.",
+        "description" : "Update the given glossary term",
+        "operationId" : "updateGlossaryTerm",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "updated glossary term"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary term update was successful"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          },
+          "400" : {
+            "description" : "If Glossary temr definition has invalid or missing information"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/term/{termGuid}/partial" : {
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Partially update the glossary term.",
+        "description" : "Partially update the glossary term",
+        "operationId" : "partialUpdateGlossaryTerm",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Map containing keys as attribute names and values as corresponding attribute values"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary partial update was successful"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          },
+          "400" : {
+            "description" : "If partial attributes are invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/terms" : {
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Create glossary terms in bulk.",
+        "description" : "Create glossary terms in bulk",
+        "operationId" : "createGlossaryTerms",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "glossary term definitions"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If Bulk glossary terms creation was successful"
+          },
+          "400" : {
+            "description" : "If any glossary term definition has invalid or missing information"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/terms/{termGuid}/assignedEntities" : {
+      "delete" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Remove the term assignment for the given list of entity headers.",
+        "description" : "Remove the term assignment for the given list of entity headers",
+        "operationId" : "removeTermAssignmentFromEntities",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Glossary term GUID"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "List of related entity IDs from which the term has to be dissociated"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "If glossary term dissociation was successful"
+          },
+          "400" : {
+            "description" : "If ANY of the entity header is invalid"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get all entity headers assigned with the specified term.",
+        "description" : "Get all entity headers assigned with the specified term",
+        "operationId" : "getEntitiesAssignedWithTerm",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "GUID of the term"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of entity headers (if any) for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Assign the given term to the provided list of entity headers.",
+        "description" : "Assign the given term to the provided list of entity headers",
+        "operationId" : "assignTermToEntities",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Glossary term GUID"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Related Entity IDs to which the term has to be associated"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "If the term assignment was successful"
+          },
+          "400" : {
+            "description" : "If ANY of the entity header is invalid"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/terms/{termGuid}/related" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get all related terms for a specific term.",
+        "description" : "Get all related terms for a specific term",
+        "operationId" : "getRelatedTerms",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "termGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of related glossary terms for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary term guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}" : {
+      "delete" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Delete a glossary.",
+        "description" : "Delete a glossary",
+        "operationId" : "deleteGlossary",
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "If glossary delete was successful"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get a specific Glossary.",
+        "description" : "Get a specific Glossary",
+        "operationId" : "getGlossary",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique glossary identifier"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary with given guid exists"
+          },
+          "404" : {
+            "description" : "If glossary GUID is invalid"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Update the given glossary.",
+        "description" : "Update the given glossary",
+        "operationId" : "updateGlossary",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Updated glossary definition"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary update was successful"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          },
+          "400" : {
+            "description" : "If Glossary definition has invalid or missing information"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/categories" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get the categories belonging to a specific glossary.",
+        "description" : "Get the categories belonging to a specific glossary",
+        "operationId" : "getGlossaryCategories",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of glossary categories for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/categories/headers" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get the categories belonging to a specific glossary.",
+        "description" : "Get the categories belonging to a specific glossary",
+        "operationId" : "getGlossaryCategoriesHeaders",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "offset for pagination purpose"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC (default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of glossary categories for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/detailed" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get a specific Glossary.",
+        "description" : "Get a specific Glossary",
+        "operationId" : "getDetailedGlossary",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique glossary identifier"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary exists for given GUID"
+          },
+          "404" : {
+            "description" : "If glossary GUID is invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/partial" : {
+      "put" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Partially update the glossary.",
+        "description" : "Partially update the glossary",
+        "operationId" : "partialUpdateGlossary",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary term"
+          },
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Map containing keys as attribute names and values as corresponding attribute values"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If glossary partial update was successful"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          },
+          "400" : {
+            "description" : "If partial update parameters are invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/terms" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get terms belonging to a specific glossary.",
+        "description" : "Get terms belonging to a specific glossary",
+        "operationId" : "getGlossaryTerms",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "starting offset for loading terms"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC(default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of glossary terms for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/glossary/{glossaryGuid}/terms/headers" : {
+      "get" : {
+        "tags" : [ "GlossaryREST" ],
+        "summary" : "Get term headers belonging to a specific glossary.",
+        "description" : "Get term headers belonging to a specific glossary",
+        "operationId" : "getGlossaryTermHeaders",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "glossaryGuid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "unique identifier for glossary"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "default" : "-1",
+            "type" : "string",
+            "description" : "page size - by default there is no paging"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "default" : "0",
+            "type" : "string",
+            "description" : "starting offset for loading terms"
+          },
+          {
+            "name" : "sort",
+            "in" : "query",
+            "default" : "ASC",
+            "type" : "string",
+            "description" : "ASC(default) or DESC"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "List of glossary terms for the given glossary or an empty list"
+          },
+          "404" : {
+            "description" : "If glossary guid in invalid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/lineage/{guid}" : {
+      "get" : {
+        "tags" : [ "LineageREST" ],
+        "summary" : "Returns lineage info about entity.",
+        "description" : "Returns lineage info about entity.",
+        "operationId" : "getLineageGraph",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "- unique entity id"
+          },
+          {
+            "name" : "depth",
+            "in" : "query",
+            "default" : "3",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "- number of hops for lineage"
+          },
+          {
+            "name" : "direction",
+            "in" : "query",
+            "default" : "BOTH",
+            "type" : "string",
+            "enum" : ["BOTH", "INPUT", "OUTPUT"],
+            "description" : "- input, output or both"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "If Lineage exists for the given entity"
+          },
+          "400" : {
+            "description" : "Bad query parameters"
+          },
+          "404" : {
+            "description" : "If no lineage is found for the given entity"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/relationship" : {
+      "post" : {
+        "tags" : [ "RelationshipREST" ],
+        "summary" : "Create a new relationship between entities.",
+        "description" : "Create a new relationship between entities.",
+        "operationId" : "create",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : ""
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "RelationshipREST" ],
+        "summary" : "Update an existing relationship between entities.",
+        "description" : "Update an existing relationship between entities.",
+        "operationId" : "update2",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/relationship/guid/{guid}" : {
+      "delete" : {
+        "tags" : [ "RelationshipREST" ],
+        "summary" : "Delete a relationship between entities using guid.",
+        "description" : "Delete a relationship between entities using guid.",
+        "operationId" : "deleteById",
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "RelationshipREST" ],
+        "summary" : "Get relationship information between entities using guid.",
+        "description" : "Get relationship information between entities using guid.",
+        "operationId" : "getById2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : ""
+          },
+          {
+            "name" : "extendedInfo",
+            "in" : "query",
+            "default" : "false",
+            "type" : "boolean",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/attribute" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Retrieve data for the specified attribute search query.",
+        "description" : "Retrieve data for the specified attribute search query",
+        "operationId" : "searchUsingAttribute",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "attrName",
+            "in" : "query",
+            "type" : "string",
+            "description" : "Attribute name"
+          },
+          {
+            "name" : "attrValuePrefix",
+            "in" : "query",
+            "type" : "string",
+            "description" : "Attibute value to search on"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "limit the result set to only include the specified number of entries"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "start offset of the result set (useful for pagination)"
+          },
+          {
+            "name" : "typeName",
+            "in" : "query",
+            "type" : "string",
+            "description" : "limit the result to only entities of specified type or its sub-types"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful FullText lookup with some results, might return an empty list if execution succeeded\nwithout any results"
+          },
+          "400" : {
+            "description" : "Invalid wildcard or query parameters"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/basic" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Retrieve data for the specified fulltext query.",
+        "description" : "Retrieve data for the specified fulltext query",
+        "operationId" : "searchUsingBasic",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "classification",
+            "in" : "query",
+            "type" : "string",
+            "description" : "limit the result to only entities tagged with the given classification or or its sub-types"
+          },
+          {
+            "name" : "excludeDeletedEntities",
+            "in" : "query",
+            "type" : "boolean",
+            "description" : ""
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "limit the result set to only include the specified number of entries"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "start offset of the result set (useful for pagination)"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "Fulltext query"
+          },
+          {
+            "name" : "typeName",
+            "in" : "query",
+            "type" : "string",
+            "description" : "limit the result to only entities of specified type or its sub-types"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful FullText lookup with some results, might return an empty list if execution succeeded\nwithout any results"
+          },
+          "400" : {
+            "description" : "Invalid fulltext or query parameters"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Attribute based search for entities satisfying the search parameters.",
+        "description" : "Attribute based search for entities satisfying the search parameters",
+        "operationId" : "searchWithParameters",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "Search parameters"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful search"
+          },
+          "400" : {
+            "description" : "Tag/Entity doesn't exist or Tag/entity filter is present without tag/type name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/dsl" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Retrieve data for the specified DSL.",
+        "description" : "Retrieve data for the specified DSL",
+        "operationId" : "searchUsingDSL",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "classification",
+            "in" : "query",
+            "type" : "string",
+            "description" : "limit the result to only entities tagged with the given classification or or its sub-types"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "limit the result set to only include the specified number of entries"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "start offset of the result set (useful for pagination)"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "DSL query"
+          },
+          {
+            "name" : "typeName",
+            "in" : "query",
+            "type" : "string",
+            "description" : "limit the result to only entities of specified type or its sub-types"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful DSL execution with some results, might return an empty list if execution succeeded\nwithout any results"
+          },
+          "400" : {
+            "description" : "Invalid DSL or query parameters"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/fulltext" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Retrieve data for the specified fulltext query.",
+        "description" : "Retrieve data for the specified fulltext query",
+        "operationId" : "searchUsingFullText2",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "excludeDeletedEntities",
+            "in" : "query",
+            "type" : "boolean",
+            "description" : ""
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "limit the result set to only include the specified number of entries"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "start offset of the result set (useful for pagination)"
+          },
+          {
+            "name" : "query",
+            "in" : "query",
+            "type" : "string",
+            "description" : "Fulltext query"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful FullText lookup with some results, might return an empty list if execution succeeded\nwithout any results"
+          },
+          "400" : {
+            "description" : "Invalid fulltext or query parameters"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/relationship" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Relationship search to search for related entities satisfying the search parameters.",
+        "description" : "Relationship search to search for related entities satisfying the search parameters",
+        "operationId" : "searchRelatedEntities",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "excludeDeletedEntities",
+            "in" : "query",
+            "type" : "boolean",
+            "description" : ""
+          },
+          {
+            "name" : "guid",
+            "in" : "query",
+            "type" : "string",
+            "description" : "Attribute name"
+          },
+          {
+            "name" : "limit",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "limit the result set to only include the specified number of entries"
+          },
+          {
+            "name" : "offset",
+            "in" : "query",
+            "type" : "integer",
+            "format" : "int32",
+            "description" : "start offset of the result set (useful for pagination)"
+          },
+          {
+            "name" : "relation",
+            "in" : "query",
+            "type" : "string",
+            "description" : "relationName"
+          },
+          {
+            "name" : "sortBy",
+            "in" : "query",
+            "type" : "string",
+            "description" : "sort the result using this attribute name, default value is 'name'"
+          },
+          {
+            "name" : "sortOrder",
+            "in" : "query",
+            "type" : "string",
+            "enum" : ["ASCENDING", "DESCENDING"],
+            "description" : "sorting order"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful search"
+          },
+          "400" : {
+            "description" : "guid is not a valid entity type or attributeName is not a valid relationship attribute"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "getSavedSearches",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "User for whom the search is retrieved"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "list of all saved searches for given user"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "addSavedSearch",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "201" : {
+            "description" : "the saved search-object"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "updateSavedSearch",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : ""
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "the updated search-object"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/execute/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Attribute based search for entities satisfying the search parameters.",
+        "description" : "Attribute based search for entities satisfying the search parameters",
+        "operationId" : "executeSavedSearchByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Guid identifying saved search"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Atlas search result"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/execute/{name}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "summary" : "Attribute based search for entities satisfying the search parameters.",
+        "description" : "Attribute based search for entities satisfying the search parameters",
+        "operationId" : "executeSavedSearchByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "name of saved-search"
+          },
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "saved-search owner"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Atlas search result"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/{guid}" : {
+      "delete" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "deleteSavedSearch",
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Name of the saved search"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "Success"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/search/saved/{name}" : {
+      "get" : {
+        "tags" : [ "DiscoveryREST" ],
+        "description" : "",
+        "operationId" : "getSavedSearch",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Name of the saved search"
+          },
+          {
+            "name" : "user",
+            "in" : "query",
+            "type" : "string",
+            "description" : "User for whom the search is retrieved"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : ""
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/classificationdef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the classification definition for the given guid.",
+        "description" : "Get the classification definition for the given guid",
+        "operationId" : "getClassificationDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "classification guid"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the classification definition by it's guid"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/classificationdef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the classification definition by it's name (unique).",
+        "description" : "Get the classification definition by it's name (unique)",
+        "operationId" : "getClassificationDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "classification name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the classification definition by it's name"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/entitydef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the Entity definition for the given guid.",
+        "description" : "Get the Entity definition for the given guid",
+        "operationId" : "getEntityDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "entity guid"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the entity definition by it's guid"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/entitydef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the entity definition by it's name (unique).",
+        "description" : "Get the entity definition by it's name (unique)",
+        "operationId" : "getEntityDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "entity name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the entity definition by it's name"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/enumdef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the enum definition for the given guid.",
+        "description" : "Get the enum definition for the given guid",
+        "operationId" : "getEnumDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "enum guid"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the enum definition by it's guid"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/enumdef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the enum definition by it's name (unique).",
+        "description" : "Get the enum definition by it's name (unique)",
+        "operationId" : "getEnumDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "enum name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the enum definition by it's name"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/relationshipdef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the relationship definition for the given guid.",
+        "description" : "Get the relationship definition for the given guid",
+        "operationId" : "getRelationshipDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "relationship guid"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the relationship definition by it's guid"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/relationshipdef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the relationship definition by it's name (unique).",
+        "description" : "Get the relationship definition by it's name (unique)",
+        "operationId" : "getRelationshipDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "relationship name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the relationship definition by it's name"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/structdef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the struct definition for the given guid.",
+        "description" : "Get the struct definition for the given guid",
+        "operationId" : "getStructDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "struct guid"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the struct definition by it's guid"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given guid"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/structdef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get the struct definition by it's name (unique).",
+        "description" : "Get the struct definition by it's name (unique)",
+        "operationId" : "getStructDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "struct name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful lookup of the the struct definition by it's name"
+          },
+          "404" : {
+            "description" : "On Failed lookup for the given name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/typedef/guid/{guid}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "description" : "",
+        "operationId" : "getTypeDefByGuid",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "guid",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "GUID of the type"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful lookup"
+          },
+          "404" : {
+            "description" : "Failed lookup"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/typedef/name/{name}" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Get type definition by it's name.",
+        "description" : "Get type definition by it's name",
+        "operationId" : "getTypeDefByName",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "name",
+            "in" : "path",
+            "required" : true,
+            "type" : "string",
+            "description" : "Type name"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful lookup by name"
+          },
+          "404" : {
+            "description" : "Failed lookup by name"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/typedefs" : {
+      "delete" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Bulk delete API for all types.",
+        "description" : "Bulk delete API for all types",
+        "operationId" : "deleteAtlasTypeDefs",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "A composite object that captures all types to be deleted"
+          }
+        ],
+        "responses" : {
+          "204" : {
+            "description" : "On successful deletion of the requested type definitions"
+          },
+          "400" : {
+            "description" : "On validation failure for any type definitions"
+          }
+        }
+      }
+      ,
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Bulk retrieval API for retrieving all type definitions in Atlas.",
+        "description" : "Bulk retrieval API for retrieving all type definitions in Atlas",
+        "operationId" : "getAllTypeDefs",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "AtlasTypesDef with type definitions matching the search criteria or else returns empty list of type definitions"
+          }
+        }
+      }
+      ,
+      "post" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Bulk create APIs for all atlas type definitions, only new definitions will be created.",
+        "description" : "Bulk create APIs for all atlas type definitions, only new definitions will be created.\nAny changes to the existing definitions will be discarded",
+        "operationId" : "createAtlasTypeDefs",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "A composite wrapper object with corresponding lists of the type definition"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful update of requested type definitions"
+          },
+          "400" : {
+            "description" : "On validation failure for any type definitions"
+          }
+        }
+      }
+      ,
+      "put" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Bulk update API for all types, changes detected in the type definitions would be persisted.",
+        "description" : "Bulk update API for all types, changes detected in the type definitions would be persisted",
+        "operationId" : "updateAtlasTypeDefs",
+        "consumes" : [ "application/json;charset=UTF-8" ],
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+          {
+            "name" : "body",
+            "in" : "body",
+            "type" : "file",
+            "description" : "A composite object that captures all type definition changes"
+          }
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "On successful update of requested type definitions"
+          },
+          "400" : {
+            "description" : "On validation failure for any type definitions"
+          }
+        }
+      }
+    }
+    ,
+    "\/v2/types/typedefs/headers" : {
+      "get" : {
+        "tags" : [ "TypesREST" ],
+        "summary" : "Bulk retrieval API for all type definitions returned as a list of minimal information header.",
+        "description" : "Bulk retrieval API for all type definitions returned as a list of minimal information header",
+        "operationId" : "getTypeDefHeaders",
+        "produces" : [ "application/json;charset=UTF-8" ],
+        "parameters" : [
+        ],
+        "responses" : {
+          "200" : {
+            "description" : "Returns a list of AtlasTypeDefHeader matching the search criteria\nor an empty list if no match."
+          }
+        }
+      }
+    }
+  }
+}
