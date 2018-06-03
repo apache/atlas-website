@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,7 +50,7 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_LineageREST_getLineageGraph_GET">GET /v2/lineage/{guid}</a></li>
+          <li><a href="#resource_LineageREST_getLineageGraph_GET"><abbr title="GET /v2/lineage/{guid}"><span class="sideoverflow">GET /v2/lineage/{guid}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -143,9 +143,9 @@
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasLineageInfo.html">AtlasLineageInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">AtlasLineageInfo</span></td>
           </tr>
           </tbody>
@@ -158,7 +158,7 @@
               <h5>Request</h5>
               <pre>
 GET /v2/lineage/{guid}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -166,45 +166,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;baseEntityGuid&quot; : &quot;...&quot;,
-  &quot;guidEntityMap&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  },
-  &quot;relations&quot; : [ {
-    &quot;fromEntityId&quot; : &quot;...&quot;,
-    &quot;toEntityId&quot; : &quot;...&quot;
-  }, {
-    &quot;fromEntityId&quot; : &quot;...&quot;,
-    &quot;toEntityId&quot; : &quot;...&quot;
-  } ],
-  &quot;lineageDirection&quot; : &quot;BOTH&quot;,
-  &quot;lineageDepth&quot; : 12345
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>

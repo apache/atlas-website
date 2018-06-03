@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Atlas REST API: SearchFilter</title>
+  <title>Atlas REST API: TimeBoundary</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Atlas REST API: SearchFilter</a>
+        <a class="navbar-brand" href="index.html">Atlas REST API: TimeBoundary</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -58,12 +58,12 @@
         <ol class="breadcrumb" id="top">
           <li class="active dropdown"><a href="index.html">Home</a></li>
           <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
-          <li class="dropdown"><a href="json_SearchFilter.html">SearchFilter</a></li>
+          <li class="dropdown"><a href="json_TimeBoundary.html">TimeBoundary</a></li>
         </ol>
 
-      <h1 class="page-header">SearchFilter <small>Data Type</small></h1>
+      <h1 class="page-header">TimeBoundary <small>Data Type</small></h1>
 
-      <p>Generic filter, to specify search criteria using name/value pairs.</p>
+      <p>Captures time-boundary details</p>
 
       <dl class="dl-horizontal">
       </dl>
@@ -79,43 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">params</span>
-</td>
-          <td>  <span class="datatype-reference">map of array of string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">startIndex</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">maxRows</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">getCount</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">sortBy</span>
+          <td>  <span class="property-name">startTime</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -124,9 +88,18 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">sortType</span>
+          <td>  <span class="property-name">endTime</span>
 </td>
-          <td>  <span class="datatype-reference"><a href="json_SortType.html">SortType</a>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">timeZone</span>
+</td>
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -138,15 +111,9 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;params&quot; : {
-    &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
-  },
-  &quot;startIndex&quot; : 12345,
-  &quot;maxRows&quot; : 12345,
-  &quot;getCount&quot; : true,
-  &quot;sortBy&quot; : &quot;...&quot;,
-  &quot;sortType&quot; : &quot;ASC&quot;
+  &quot;startTime&quot; : &quot;...&quot;,
+  &quot;endTime&quot; : &quot;...&quot;,
+  &quot;timeZone&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

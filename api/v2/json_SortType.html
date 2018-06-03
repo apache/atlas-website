@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#NONE"><abbr title="NONE"><span class="sideoverflow">NONE</span></abbr></a></li>
+          <li><a href="#ASC"><abbr title="ASC"><span class="sideoverflow">ASC</span></abbr></a></li>
+          <li><a href="#DESC"><abbr title="DESC"><span class="sideoverflow">DESC</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,15 +82,15 @@
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">NONE</span></td>
+          <td><span class="value-value" id="NONE">NONE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">ASC</span></td>
+          <td><span class="value-value" id="ASC">ASC</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">DESC</span></td>
+          <td><span class="value-value" id="DESC">DESC</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

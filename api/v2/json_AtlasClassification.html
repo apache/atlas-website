@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -78,6 +78,33 @@
         </tr>
         </thead>
         <tbody>
+        <tr>
+          <td>  <span class="property-name">entityGuid</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">propagate</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span class="property-name">validityPeriods</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_TimeBoundary.html">TimeBoundary</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
         </tbody>
         <tr>
           <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_AtlasStruct.html">AtlasStruct</a></h5></td>
@@ -101,6 +128,17 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
+  &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;propagate&quot; : true,
+  &quot;validityPeriods&quot; : [ {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  }, {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  } ],
   &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },

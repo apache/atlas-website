@@ -5,6 +5,7 @@
 
   <xs:element name="PList" type="PList"/>
   <xs:element name="searchFilter" type="searchFilter"/>
+  <xs:element name="timeBoundary" type="timeBoundary"/>
   <xs:element name="atlasClassification" type="atlasClassification"/>
   <xs:element name="atlasStruct" type="atlasStruct"/>
 <xs:complexType name="PList">
@@ -79,6 +80,22 @@
   </xs:restriction>
 </xs:simpleType>
 
+<xs:complexType name="timeBoundary">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Captures time-boundary details]]>
+    </xs:documentation>
+  </xs:annotation>
+       <xs:sequence>
+              <xs:element name="startTime" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="endTime" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="timeZone" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="atlasClassification">
   <xs:annotation>
     <xs:documentation>
@@ -87,6 +104,14 @@
   </xs:annotation>
    <xs:complexContent>
     <xs:extension base="atlasStruct">
+      <xs:sequence>
+              <xs:element name="entityGuid" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="propagate" type="xs:boolean" minOccurs="0">
+              </xs:element>
+              <xs:element name="validityPeriods" type="timeBoundary" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+      </xs:sequence>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>

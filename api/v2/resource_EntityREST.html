@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,22 +50,26 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
-          <li><a href="#resource_EntityREST_createOrUpdate_POST">POST /v2/entity</a></li>
-          <li><a href="#resource_EntityREST_deleteByGuids_DELETE">DELETE /v2/entity/bulk</a></li>
-          <li><a href="#resource_EntityREST_getByGuids_GET">GET /v2/entity/bulk</a></li>
-          <li><a href="#resource_EntityREST_createOrUpdate_POST">POST /v2/entity/bulk</a></li>
-          <li><a href="#resource_EntityREST_addClassification_POST"><abbr title="POST /v2/entity/bulk/classification">POST /v2/entity/bulk/classific...</abbr></a></li>
-          <li><a href="#resource_EntityREST_deleteByGuid_DELETE">DELETE /v2/entity/guid/{guid}</a></li>
-          <li><a href="#resource_EntityREST_getById_GET">GET /v2/entity/guid/{guid}</a></li>
-          <li><a href="#resource_EntityREST_partialUpdateEntityAttrByGuid_PUT">PUT /v2/entity/guid/{guid}</a></li>
-          <li><a href="#resource_EntityREST_getClassifications_GET"><abbr title="GET /v2/entity/guid/{guid}/classifications">GET /v2/entity/guid/{guid}/cla...</abbr></a></li>
-          <li><a href="#resource_EntityREST_addClassifications_POST"><abbr title="POST /v2/entity/guid/{guid}/classifications">POST /v2/entity/guid/{guid}/cl...</abbr></a></li>
-          <li><a href="#resource_EntityREST_updateClassification_PUT"><abbr title="PUT /v2/entity/guid/{guid}/classifications">PUT /v2/entity/guid/{guid}/cla...</abbr></a></li>
-          <li><a href="#resource_EntityREST_deleteByUniqueAttribute_DELETE"><abbr title="DELETE /v2/entity/uniqueAttribute/type/{typeName}">DELETE /v2/entity/uniqueAttrib...</abbr></a></li>
-          <li><a href="#resource_EntityREST_getByUniqueAttributes_GET"><abbr title="GET /v2/entity/uniqueAttribute/type/{typeName}">GET /v2/entity/uniqueAttribute...</abbr></a></li>
-          <li><a href="#resource_EntityREST_partialUpdateEntityByUniqueAttrs_PUT"><abbr title="PUT /v2/entity/uniqueAttribute/type/{typeName}">PUT /v2/entity/uniqueAttribute...</abbr></a></li>
-          <li><a href="#resource_EntityREST_deleteClassification_DELETE"><abbr title="DELETE /v2/entity/guid/{guid}/classification/{classificationName}">DELETE /v2/entity/guid/{guid}/...</abbr></a></li>
-          <li><a href="#resource_EntityREST_getClassification_GET"><abbr title="GET /v2/entity/guid/{guid}/classification/{classificationName}">GET /v2/entity/guid/{guid}/cla...</abbr></a></li>
+          <li><a href="#resource_EntityREST_createOrUpdate_POST"><abbr title="POST /v2/entity"><span class="sideoverflow">POST /v2/entity</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_deleteByGuids_DELETE"><abbr title="DELETE /v2/entity/bulk"><span class="sideoverflow">DELETE /v2/entity/bulk</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getByGuids_GET"><abbr title="GET /v2/entity/bulk"><span class="sideoverflow">GET /v2/entity/bulk</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_createOrUpdate_POST"><abbr title="POST /v2/entity/bulk"><span class="sideoverflow">POST /v2/entity/bulk</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_addClassification_POST"><abbr title="POST /v2/entity/bulk/classification"><span class="sideoverflow">POST /v2/entity/bulk/classification</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_deleteByGuid_DELETE"><abbr title="DELETE /v2/entity/guid/{guid}"><span class="sideoverflow">DELETE /v2/entity/guid/{guid}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getById_GET"><abbr title="GET /v2/entity/guid/{guid}"><span class="sideoverflow">GET /v2/entity/guid/{guid}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_partialUpdateEntityAttrByGuid_PUT"><abbr title="PUT /v2/entity/guid/{guid}"><span class="sideoverflow">PUT /v2/entity/guid/{guid}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getAuditEvents_GET"><abbr title="GET /v2/entity/{guid}/audit"><span class="sideoverflow">GET /v2/entity/{guid}/audit</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getClassifications_GET"><abbr title="GET /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">GET /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_addClassifications_POST"><abbr title="POST /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">POST /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_updateClassifications_PUT"><abbr title="PUT /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">PUT /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_deleteByUniqueAttribute_DELETE"><abbr title="DELETE /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">DELETE /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getByUniqueAttributes_GET"><abbr title="GET /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">GET /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_partialUpdateEntityByUniqueAttrs_PUT"><abbr title="PUT /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">PUT /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_deleteClassification_DELETE"><abbr title="DELETE /v2/entity/guid/{guid}/classification/{classificationName}"><span class="sideoverflow">DELETE /v2/entity/guid/{guid}/classification/{classificationName}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getClassification_GET"><abbr title="GET /v2/entity/guid/{guid}/classification/{classificationName}"><span class="sideoverflow">GET /v2/entity/guid/{guid}/classification/{classificationName}</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_addClassificationsByUniqueAttribute_POST"><abbr title="POST /v2/entity/uniqueAttribute/type/{typeName}/classifications"><span class="sideoverflow">POST /v2/entity/uniqueAttribute/type/{typeName}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_updateClassificationsByUniqueAttribute_PUT"><abbr title="PUT /v2/entity/uniqueAttribute/type/{typeName}/classifications"><span class="sideoverflow">PUT /v2/entity/uniqueAttribute/type/{typeName}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_deleteClassificationByUniqueAttribute_DELETE"><abbr title="DELETE /v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}"><span class="sideoverflow">DELETE /v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}</span></abbr></a></li>
           <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
@@ -98,9 +102,9 @@ Existing entity is matched using its unique guid if supplied or by its unique at
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntityWithExtInfo.html">AtlasEntityWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
           </tr>
           </tbody>
         </table>
@@ -116,9 +120,9 @@ Existing entity is matched using its unique guid if supplied or by its unique at
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">EntityMutationResponse</span></td>
           </tr>
           </tbody>
@@ -131,107 +135,11 @@ Existing entity is matched using its unique guid if supplied or by its unique at
               <h5>Request</h5>
               <pre>
 POST /v2/entity
-Content-Type: application/json
-Accept: application/json
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entity&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -239,176 +147,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -447,13 +189,15 @@ Content-Type: application/json
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -465,7 +209,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/bulk
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -473,176 +217,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 204 No Content
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -681,13 +259,15 @@ Content-Type: application/json
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntitiesWithExtInfo.html">AtlasEntitiesWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -699,7 +279,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 GET /v2/entity/bulk
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -707,136 +287,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -860,9 +314,9 @@ Existing entity is matched using its unique guid if supplied or by its unique at
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntitiesWithExtInfo.html">AtlasEntitiesWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
           </tr>
           </tbody>
         </table>
@@ -873,13 +327,15 @@ Existing entity is matched using its unique guid if supplied or by its unique at
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -891,137 +347,11 @@ Existing entity is matched using its unique guid if supplied or by its unique at
               <h5>Request</h5>
               <pre>
 POST /v2/entity/bulk
-Content-Type: application/json
-Accept: application/json
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -1029,176 +359,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 201 Created
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -1225,6 +389,11 @@ Content-Type: application/json
             <td><span class="datatype-reference"><a href="json_ClassificationAssociateRequest.html">ClassificationAssociateRequest</a>
  (JSON)</span></td>
           </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
           </tbody>
         </table>
         <h4>Example</h4>
@@ -1240,6 +409,17 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 {
   &quot;classification&quot; : {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;propagate&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
     &quot;typeName&quot; : &quot;...&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
@@ -1296,9 +476,9 @@ HTTP/1.1 201 Created
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">EntityMutationResponse</span></td>
           </tr>
           </tbody>
@@ -1311,7 +491,7 @@ HTTP/1.1 201 Created
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/guid/{guid}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -1319,176 +499,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 204 No Content
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -1530,9 +544,9 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntityWithExtInfo.html">AtlasEntityWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">AtlasEntity</span></td>
           </tr>
           </tbody>
@@ -1545,7 +559,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -1553,106 +567,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entity&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -1701,9 +619,9 @@ Null updates are not possible</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference">object
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
           </tr>
           </tbody>
         </table>
@@ -1714,13 +632,15 @@ Null updates are not possible</p>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -1732,8 +652,8 @@ Null updates are not possible</p>
               <h5>Request</h5>
               <pre>
 PUT /v2/entity/guid/{guid}
-Content-Type: application/json
-Accept: application/json
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
 
                 <code class="prettyprint language-txt">
 ...
@@ -1744,176 +664,96 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 204 No Content
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_EntityREST_getAuditEvents_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/entity/{guid}/audit <a href="../v2/entity/{guid}/audit" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p></p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">guid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">count</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">100</span></td>
+            <td><span class="parameter-constraints">short</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">startKey</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/entity/{guid}/audit
+Accept: application/json;charset=UTF-8
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -1955,9 +795,9 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasClassifications.html">AtlasClassifications</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">a list of classifications for the given entity guid</span></td>
           </tr>
           </tbody>
@@ -1970,7 +810,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}/classifications
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -1978,17 +818,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;list&quot; : [ { }, { } ],
-  &quot;startIndex&quot; : 12345,
-  &quot;pageSize&quot; : 12345,
-  &quot;totalCount&quot; : 12345,
-  &quot;sortType&quot; : &quot;ASC&quot;,
-  &quot;sortBy&quot; : &quot;...&quot;
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -2033,6 +866,11 @@ Content-Type: application/json
             <td><span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
  (JSON)</span></td>
           </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
           </tbody>
         </table>
         <h4>Example</h4>
@@ -2047,6 +885,17 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 [ {
+  &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;propagate&quot; : true,
+  &quot;validityPeriods&quot; : [ {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  }, {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  } ],
   &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
@@ -2067,7 +916,7 @@ HTTP/1.1 201 Created
         </div>
       </div>
 
-      <div id="resource_EntityREST_updateClassification_PUT">
+      <div id="resource_EntityREST_updateClassifications_PUT">
         <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/entity/guid/{guid}/classifications <a href="../v2/entity/guid/{guid}/classifications" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
         <p>Updates classifications to an existing entity represented by a guid.</p>
@@ -2123,6 +972,17 @@ Content-Type: application/json
 
                 <code class="prettyprint language-js">
 [ {
+  &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;propagate&quot; : true,
+  &quot;validityPeriods&quot; : [ {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  }, {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  } ],
   &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
@@ -2146,7 +1006,17 @@ HTTP/1.1 204 No Content
       <div id="resource_EntityREST_deleteByUniqueAttribute_DELETE">
         <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName} <a href="../v2/entity/uniqueAttribute/type/{typeName}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Delete an entity identified by its type and unique attributes.</p>
+        <p>Delete an entity identified by its type and unique attributes.
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -2177,9 +1047,9 @@ HTTP/1.1 204 No Content
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">EntityMutationResponse</span></td>
           </tr>
           </tbody>
@@ -2192,7 +1062,7 @@ HTTP/1.1 204 No Content
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/uniqueAttribute/type/{typeName}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -2200,176 +1070,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 204 No Content
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -2380,7 +1084,17 @@ Content-Type: application/json
       <div id="resource_EntityREST_getByUniqueAttributes_GET">
         <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName} <a href="../v2/entity/uniqueAttribute/type/{typeName}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
 
-        <p>Fetch complete definition of an entity given its type and unique attribute.</p>
+        <p>Fetch complete definition of an entity given its type and unique attribute.
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -2411,9 +1125,9 @@ Content-Type: application/json
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntityWithExtInfo.html">AtlasEntityWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">AtlasEntityWithExtInfo</span></td>
           </tr>
           </tbody>
@@ -2426,7 +1140,7 @@ Content-Type: application/json
               <h5>Request</h5>
               <pre>
 GET /v2/entity/uniqueAttribute/type/{typeName}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -2434,106 +1148,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entity&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -2546,7 +1164,17 @@ Content-Type: application/json
 
         <p>Entity Partial Update - Allows a subset of attributes to be updated on
 an entity which is identified by its type and unique attribute  eg: Referenceable.qualifiedName.
-Null updates are not possible</p>
+Null updates are not possible
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+attr:<attrName>=<attrValue>
+
+NOTE: The attrName and attrValue should be unique across entities, eg. qualifiedName
+
+The REST request would look something like this
+
+PUT /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
 
         <table class="table resource-parameters">
           <caption>Request Parameters</caption>
@@ -2576,9 +1204,9 @@ Null updates are not possible</p>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasEntityWithExtInfo.html">AtlasEntityWithExtInfo</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
           </tr>
           </tbody>
         </table>
@@ -2589,13 +1217,15 @@ Null updates are not possible</p>
           <tr>
             <th>media type</th>
             <th>data type</th>
+            <th>description</th>
           </tr>
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_EntityMutationResponse.html">EntityMutationResponse</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description"></span></td>
           </tr>
           </tbody>
         </table>
@@ -2607,107 +1237,11 @@ Null updates are not possible</p>
               <h5>Request</h5>
               <pre>
 PUT /v2/entity/uniqueAttribute/type/{typeName}
-Content-Type: application/json
-Accept: application/json
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;entity&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;relationshipAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;classifications&quot; : [ {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;referredEntities&quot; : {
-    &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    },
-    &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;updatedBy&quot; : &quot;...&quot;,
-      &quot;createTime&quot; : 12345,
-      &quot;updateTime&quot; : 12345,
-      &quot;version&quot; : 12345,
-      &quot;relationshipAttributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;classifications&quot; : [ {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      }, {
-        &quot;typeName&quot; : &quot;...&quot;,
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        }
-      } ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -2715,176 +1249,10 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 204 No Content
-Content-Type: application/json
+Content-Type: application/json;charset=UTF-8
 
-                <code class="prettyprint language-js">
-{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
-  &quot;guidAssignments&quot; : {
-    &quot;property1&quot; : &quot;...&quot;,
-    &quot;property2&quot; : &quot;...&quot;
-  },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
-}
+                <code class="prettyprint language-txt">
+...
                 </code>
               </pre>
             </div>
@@ -2980,9 +1348,9 @@ HTTP/1.1 204 No Content
           </thead>
           <tbody>
           <tr>
-            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
-            <td><span class="datatype-reference"><a href="json_AtlasClassification.html">AtlasClassification</a>
- (JSON)</span></td>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
             <td><span class="response-description">classification for the given entity guid</span></td>
           </tr>
           </tbody>
@@ -2995,7 +1363,7 @@ HTTP/1.1 204 No Content
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}/classification/{classificationName}
-Accept: application/json
+Accept: application/json;charset=UTF-8
 
               </pre>
             </div>
@@ -3003,17 +1371,234 @@ Accept: application/json
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_EntityREST_addClassificationsByUniqueAttribute_POST">
+        <h3><span class="label label-default resource-method">POST</span> <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classifications <a href="../v2/entity/uniqueAttribute/type/{typeName}/classifications" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Adds classification to the entity identified by its type and unique attributes.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">typeName</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+POST /v2/entity/uniqueAttribute/type/{typeName}/classifications
 Content-Type: application/json
 
                 <code class="prettyprint language-js">
-{
+[ {
+  &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;propagate&quot; : true,
+  &quot;validityPeriods&quot; : [ {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  }, {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  } ],
   &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
   }
-}
+} ]
                 </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 201 Created
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_EntityREST_updateClassificationsByUniqueAttribute_PUT">
+        <h3><span class="label label-default resource-method">PUT</span> <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classifications <a href="../v2/entity/uniqueAttribute/type/{typeName}/classifications" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Updates classification on an entity identified by its type and unique attributes.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">typeName</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-request-body">
+          <caption>Request Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
+ (JSON)</span></td>
+          </tr>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Content-Type: application/json;charset=UTF-8&quot; HTTP header to specify this media type to the server."><span class="request-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+PUT /v2/entity/uniqueAttribute/type/{typeName}/classifications
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+[ {
+  &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;propagate&quot; : true,
+  &quot;validityPeriods&quot; : [ {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  }, {
+    &quot;startTime&quot; : &quot;...&quot;,
+    &quot;endTime&quot; : &quot;...&quot;,
+    &quot;timeZone&quot; : &quot;...&quot;
+  } ],
+  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;attributes&quot; : {
+    &quot;property1&quot; : { },
+    &quot;property2&quot; : { }
+  }
+} ]
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_EntityREST_deleteClassificationByUniqueAttribute_DELETE">
+        <h3><span class="label label-default resource-method">DELETE</span> <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName} <a href="../v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Deletes a given classification from an entity identified by its type and unique attributes.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">classificationName</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">name of the classification</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">typeName</span></td>
+            <td>path</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+DELETE /v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}
+
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+
               </pre>
             </div>
           </div>

@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -88,9 +88,21 @@
 </samp></li><li><samp>  <span class="resource-path">/v2/search/basic</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/search/dsl</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/search/fulltext</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/relationship</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/saved</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/saved/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/saved/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/saved/execute/{name}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/search/saved/execute/guid/{guid}</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li></ul></td>
@@ -104,19 +116,73 @@
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk/classification</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/{guid}/audit</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}/classifications</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}/classification/{classificationName}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classifications</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}</span>
 </samp></li></ul></td>
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
 </samp></li></ul></td>
       <td>  <span class="resource-description">REST for a single entity</span>
+</td>
+    </tr>
+    <tr class="clickable-row" data-href="resource_GlossaryREST.html">
+      <td>  <span class="resource-name">GlossaryREST</span>
+</td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/v2/glossary</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/categories</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/category</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/term</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/terms</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/category/{categoryGuid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/term/{termGuid}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/categories</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/detailed</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/partial</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/terms</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/category/{categoryGuid}/partial</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/category/{categoryGuid}/related</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/category/{categoryGuid}/terms</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/term/{termGuid}/partial</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/terms/{termGuid}/assignedEntities</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/terms/{termGuid}/related</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/categories/headers</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/glossary/{glossaryGuid}/terms/headers</span>
+</samp></li></ul></td>
+      <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li></ul></td>
+      <td>  <span class="resource-description"></span>
 </td>
     </tr>
     <tr class="clickable-row" data-href="resource_LineageREST.html">
