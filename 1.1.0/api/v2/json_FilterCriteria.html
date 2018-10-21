@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">attributeName</span>
+          <td>  <span id="prop-attributeName" class="property-name">attributeName</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,16 +88,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">operator</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_Operator.html">Operator</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">attributeValue</span>
+          <td>  <span id="prop-attributeValue" class="property-name">attributeValue</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -106,7 +97,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">condition</span>
+          <td>  <span id="prop-condition" class="property-name">condition</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_Condition.html">Condition</a>
 </span>
@@ -115,9 +106,18 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">criterion</span>
+          <td>  <span id="prop-criterion" class="property-name">criterion</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_FilterCriteria.html">FilterCriteria</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-operator" class="property-name">operator</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_Operator.html">Operator</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -130,22 +130,22 @@
       
       <pre class="prettyprint language-js example">{
   &quot;attributeName&quot; : &quot;...&quot;,
-  &quot;operator&quot; : &quot;GTE&quot;,
   &quot;attributeValue&quot; : &quot;...&quot;,
   &quot;condition&quot; : &quot;OR&quot;,
   &quot;criterion&quot; : [ {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;ENDS_WITH&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
     &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
+    &quot;criterion&quot; : [ { }, { } ],
+    &quot;operator&quot; : &quot;CONTAINS_ANY&quot;
   }, {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;GTE&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;OR&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
-  } ]
+    &quot;condition&quot; : &quot;AND&quot;,
+    &quot;criterion&quot; : [ { }, { } ],
+    &quot;operator&quot; : &quot;ENDS_WITH&quot;
+  } ],
+  &quot;operator&quot; : &quot;GTE&quot;
 }</pre>
 
         <footer class="footer">

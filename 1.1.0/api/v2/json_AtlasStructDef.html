@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -81,7 +81,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">attributeDefs</span>
+          <td>  <span id="prop-attributeDefs" class="property-name">attributeDefs</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasAttributeDef.html">AtlasAttributeDef</a>
 </span>
@@ -101,8 +101,8 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">guid</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">createTime</span></td>
+          <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -113,32 +113,8 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">updatedBy</span></td>
-          <td><span class="datatype-reference">string
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">createTime</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">updateTime</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">version</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">name</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">dateFormatter</span></td>
+          <td><span class="datatype-reference"><a href="json_DateFormat.html">DateFormat</a>
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -149,7 +125,13 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">typeVersion</span></td>
+          <td><span class="property-name">guid</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">name</span></td>
           <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
@@ -160,6 +142,30 @@
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
+        <tr>
+          <td><span class="property-name">typeVersion</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updateTime</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updatedBy</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
         </tbody>
       </table>
 
@@ -167,66 +173,111 @@
       
       <pre class="prettyprint language-js example">{
   &quot;attributeDefs&quot; : [ {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;isOptional&quot; : true,
-    &quot;cardinality&quot; : &quot;SINGLE&quot;,
-    &quot;valuesMinCount&quot; : 12345,
-    &quot;valuesMaxCount&quot; : 12345,
-    &quot;isUnique&quot; : true,
-    &quot;isIndexable&quot; : true,
-    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;SET&quot;,
     &quot;constraints&quot; : [ {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;type&quot; : &quot;...&quot;
     }, {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
-    } ]
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
   }, {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;isOptional&quot; : true,
-    &quot;cardinality&quot; : &quot;SINGLE&quot;,
-    &quot;valuesMinCount&quot; : 12345,
-    &quot;valuesMaxCount&quot; : 12345,
-    &quot;isUnique&quot; : true,
-    &quot;isIndexable&quot; : true,
-    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;SET&quot;,
     &quot;constraints&quot; : [ {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;type&quot; : &quot;...&quot;
     }, {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
-    } ]
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
   } ],
   &quot;category&quot; : &quot;RELATIONSHIP&quot;,
-  &quot;guid&quot; : &quot;...&quot;,
-  &quot;createdBy&quot; : &quot;...&quot;,
-  &quot;updatedBy&quot; : &quot;...&quot;,
   &quot;createTime&quot; : 12345,
-  &quot;updateTime&quot; : 12345,
-  &quot;version&quot; : 12345,
-  &quot;name&quot; : &quot;...&quot;,
+  &quot;createdBy&quot; : &quot;...&quot;,
+  &quot;dateFormatter&quot; : {
+    &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;calendar&quot; : 12345,
+    &quot;dateInstance&quot; : { },
+    &quot;dateTimeInstance&quot; : { },
+    &quot;instance&quot; : { },
+    &quot;lenient&quot; : true,
+    &quot;numberFormat&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;currency&quot; : &quot;...&quot;,
+      &quot;currencyInstance&quot; : { },
+      &quot;groupingUsed&quot; : true,
+      &quot;instance&quot; : { },
+      &quot;integerInstance&quot; : { },
+      &quot;maximumFractionDigits&quot; : 12345,
+      &quot;maximumIntegerDigits&quot; : 12345,
+      &quot;minimumFractionDigits&quot; : 12345,
+      &quot;minimumIntegerDigits&quot; : 12345,
+      &quot;numberInstance&quot; : { },
+      &quot;parseIntegerOnly&quot; : true,
+      &quot;percentInstance&quot; : { },
+      &quot;roundingMode&quot; : &quot;FLOOR&quot;
+    },
+    &quot;timeInstance&quot; : { },
+    &quot;timeZone&quot; : {
+      &quot;DSTSavings&quot; : 12345,
+      &quot;ID&quot; : &quot;...&quot;,
+      &quot;availableIDs&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;default&quot; : { },
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;rawOffset&quot; : 12345
+    }
+  },
   &quot;description&quot; : &quot;...&quot;,
-  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
   &quot;options&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
-  }
+  },
+  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;updateTime&quot; : 12345,
+  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345
 }</pre>
 
         <footer class="footer">

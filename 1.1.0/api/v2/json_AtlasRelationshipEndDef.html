@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -80,34 +80,7 @@ attribute name, cardinality and whether it  is the container end of the relation
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">type</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">name</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">isContainer</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">cardinality</span>
+          <td>  <span id="prop-cardinality" class="property-name">cardinality</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_Cardinality.html">Cardinality</a>
 </span>
@@ -116,9 +89,45 @@ attribute name, cardinality and whether it  is the container end of the relation
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">isLegacyAttribute</span>
+          <td>  <span id="prop-description" class="property-name">description</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isContainer" class="property-name">isContainer</span>
 </td>
           <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isLegacyAttribute" class="property-name">isLegacyAttribute</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-name" class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-type" class="property-name">type</span>
+</td>
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -130,11 +139,12 @@ attribute name, cardinality and whether it  is the container end of the relation
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;type&quot; : &quot;...&quot;,
-  &quot;name&quot; : &quot;...&quot;,
+  &quot;cardinality&quot; : &quot;LIST&quot;,
+  &quot;description&quot; : &quot;...&quot;,
   &quot;isContainer&quot; : true,
-  &quot;cardinality&quot; : &quot;SET&quot;,
-  &quot;isLegacyAttribute&quot; : true
+  &quot;isLegacyAttribute&quot; : true,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;type&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

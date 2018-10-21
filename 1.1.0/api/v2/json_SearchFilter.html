@@ -79,34 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">params</span>
-</td>
-          <td>  <span class="datatype-reference">map of array of string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">startIndex</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">maxRows</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">getCount</span>
+          <td>  <span id="prop-getCount" class="property-name">getCount</span>
 </td>
           <td>  <span class="datatype-reference">boolean
 </span>
@@ -115,7 +88,25 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">sortBy</span>
+          <td>  <span id="prop-maxRows" class="property-name">maxRows</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-params" class="property-name">params</span>
+</td>
+          <td>  <span class="datatype-reference">map of array of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-sortBy" class="property-name">sortBy</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -124,9 +115,18 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">sortType</span>
+          <td>  <span id="prop-sortType" class="property-name">sortType</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_SortType.html">SortType</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-startIndex" class="property-name">startIndex</span>
+</td>
+          <td>  <span class="datatype-reference">number
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -138,15 +138,15 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
+  &quot;getCount&quot; : true,
+  &quot;maxRows&quot; : 12345,
   &quot;params&quot; : {
     &quot;property1&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;property2&quot; : [ &quot;...&quot;, &quot;...&quot; ]
   },
-  &quot;startIndex&quot; : 12345,
-  &quot;maxRows&quot; : 12345,
-  &quot;getCount&quot; : true,
   &quot;sortBy&quot; : &quot;...&quot;,
-  &quot;sortType&quot; : &quot;ASC&quot;
+  &quot;sortType&quot; : &quot;DESC&quot;,
+  &quot;startIndex&quot; : 12345
 }</pre>
 
         <footer class="footer">

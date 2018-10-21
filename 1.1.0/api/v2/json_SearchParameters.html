@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,7 +79,16 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">query</span>
+          <td>  <span id="prop-attributes" class="property-name">attributes</span>
+</td>
+          <td>  <span class="datatype-reference">array of string
+</span>
+</td>
+          <td>  <span class="property-description">Attribute values included in the results</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-classification" class="property-name">classification</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,52 +97,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">typeName</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">classification</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">excludeDeletedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">limit</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">offset</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">entityFilters</span>
+          <td>  <span id="prop-entityFilters" class="property-name">entityFilters</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
 </span>
@@ -142,7 +106,70 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">tagFilters</span>
+          <td>  <span id="prop-excludeDeletedEntities" class="property-name">excludeDeletedEntities</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-includeClassificationAttributes" class="property-name">includeClassificationAttributes</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-includeSubClassifications" class="property-name">includeSubClassifications</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-includeSubTypes" class="property-name">includeSubTypes</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-limit" class="property-name">limit</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-offset" class="property-name">offset</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-query" class="property-name">query</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-tagFilters" class="property-name">tagFilters</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_FilterCriteria.html">FilterCriteria</a>
 </span>
@@ -151,12 +178,21 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">attributes</span>
+          <td>  <span id="prop-termName" class="property-name">termName</span>
 </td>
-          <td>  <span class="datatype-reference">array of string
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
-          <td>  <span class="property-description">Attribute values included in the results</span>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-typeName" class="property-name">typeName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
 </td>
         </tr>
         </tbody>
@@ -165,27 +201,31 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;query&quot; : &quot;...&quot;,
-  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;classification&quot; : &quot;...&quot;,
-  &quot;excludeDeletedEntities&quot; : true,
-  &quot;limit&quot; : 12345,
-  &quot;offset&quot; : 12345,
   &quot;entityFilters&quot; : {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;EQ&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
     &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
+    &quot;criterion&quot; : [ { }, { } ],
+    &quot;operator&quot; : &quot;LIKE&quot;
   },
+  &quot;excludeDeletedEntities&quot; : true,
+  &quot;includeClassificationAttributes&quot; : true,
+  &quot;includeSubClassifications&quot; : true,
+  &quot;includeSubTypes&quot; : true,
+  &quot;limit&quot; : 12345,
+  &quot;offset&quot; : 12345,
+  &quot;query&quot; : &quot;...&quot;,
   &quot;tagFilters&quot; : {
     &quot;attributeName&quot; : &quot;...&quot;,
-    &quot;operator&quot; : &quot;IN&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;AND&quot;,
-    &quot;criterion&quot; : [ { }, { } ]
+    &quot;condition&quot; : &quot;OR&quot;,
+    &quot;criterion&quot; : [ { }, { } ],
+    &quot;operator&quot; : &quot;LT&quot;
   },
-  &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
+  &quot;termName&quot; : &quot;...&quot;,
+  &quot;typeName&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

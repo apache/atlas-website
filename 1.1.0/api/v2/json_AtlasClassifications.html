@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -90,20 +90,14 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">startIndex</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
           <td><span class="property-name">pageSize</span></td>
           <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">totalCount</span></td>
-          <td><span class="datatype-reference">number
+          <td><span class="property-name">sortBy</span></td>
+          <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -114,8 +108,14 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">sortBy</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">startIndex</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">totalCount</span></td>
+          <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -126,11 +126,11 @@
       
       <pre class="prettyprint language-js example">{
   &quot;list&quot; : [ { }, { } ],
-  &quot;startIndex&quot; : 12345,
   &quot;pageSize&quot; : 12345,
-  &quot;totalCount&quot; : 12345,
-  &quot;sortType&quot; : &quot;DESC&quot;,
-  &quot;sortBy&quot; : &quot;...&quot;
+  &quot;sortBy&quot; : &quot;...&quot;,
+  &quot;sortType&quot; : &quot;ASC&quot;,
+  &quot;startIndex&quot; : 12345,
+  &quot;totalCount&quot; : 12345
 }</pre>
 
         <footer class="footer">

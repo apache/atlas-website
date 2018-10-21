@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">entityGuid</span>
+          <td>  <span id="prop-entityGuid" class="property-name">entityGuid</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,7 +88,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">propagate</span>
+          <td>  <span id="prop-entityStatus" class="property-name">entityStatus</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_Status.html">Status</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-propagate" class="property-name">propagate</span>
 </td>
           <td>  <span class="datatype-reference">boolean
 </span>
@@ -97,7 +106,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">validityPeriods</span>
+          <td>  <span id="prop-removePropagationsOnEntityDelete" class="property-name">removePropagationsOnEntityDelete</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-validityPeriods" class="property-name">validityPeriods</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_TimeBoundary.html">TimeBoundary</a>
 </span>
@@ -111,14 +129,14 @@
         </tr>
         <tbody>
         <tr>
-          <td><span class="property-name">typeName</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">attributes</span></td>
+          <td><span class="datatype-reference">map of object
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">attributes</span></td>
-          <td><span class="datatype-reference">map of object
+          <td><span class="property-name">typeName</span></td>
+          <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -129,21 +147,23 @@
       
       <pre class="prettyprint language-js example">{
   &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
   &quot;propagate&quot; : true,
+  &quot;removePropagationsOnEntityDelete&quot; : true,
   &quot;validityPeriods&quot; : [ {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   }, {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   } ],
-  &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">classification</span>
+          <td>  <span id="prop-classification" class="property-name">classification</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_AtlasClassification.html">AtlasClassification</a>
 </span>
@@ -88,7 +88,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">entityGuids</span>
+          <td>  <span id="prop-entityGuids" class="property-name">entityGuids</span>
 </td>
           <td>  <span class="datatype-reference">array of string
 </span>
@@ -104,21 +104,23 @@
       <pre class="prettyprint language-js example">{
   &quot;classification&quot; : {
     &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
-      &quot;startTime&quot; : &quot;...&quot;,
       &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
       &quot;timeZone&quot; : &quot;...&quot;
     }, {
-      &quot;startTime&quot; : &quot;...&quot;,
       &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
       &quot;timeZone&quot; : &quot;...&quot;
     } ],
-    &quot;typeName&quot; : &quot;...&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
   },
   &quot;entityGuids&quot; : [ &quot;...&quot;, &quot;...&quot; ]
 }</pre>

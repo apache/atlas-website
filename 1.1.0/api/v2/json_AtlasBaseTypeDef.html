@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -69,7 +69,7 @@
         <dt>Abstract Type</dt>
         <dd></dd>
         <dt>Subtypes</dt>
-        <dd><a href="json_AtlasEntityDef.html">AtlasEntityDef</a>, <a href="json_AtlasStructDef.html">AtlasStructDef</a>, <a href="json_AtlasRelationshipDef.html">AtlasRelationshipDef</a>, <a href="json_AtlasEnumDef.html">AtlasEnumDef</a>, <a href="json_AtlasClassificationDef.html">AtlasClassificationDef</a></dd>
+        <dd><a href="json_AtlasEntityDef.html">AtlasEntityDef</a>, <a href="json_AtlasEnumDef.html">AtlasEnumDef</a>, <a href="json_AtlasStructDef.html">AtlasStructDef</a>, <a href="json_AtlasRelationshipDef.html">AtlasRelationshipDef</a>, <a href="json_AtlasClassificationDef.html">AtlasClassificationDef</a></dd>
       </dl>
 
       <table class="table datatype-properties">
@@ -83,7 +83,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">category</span>
+          <td>  <span id="prop-category" class="property-name">category</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_TypeCategory.html">TypeCategory</a>
 </span>
@@ -92,34 +92,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">guid</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">createdBy</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">updatedBy</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">createTime</span>
+          <td>  <span id="prop-createTime" class="property-name">createTime</span>
 </td>
           <td>  <span class="datatype-reference">number
 </span>
@@ -128,25 +101,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">updateTime</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">version</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">name</span>
+          <td>  <span id="prop-createdBy" class="property-name">createdBy</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -155,7 +110,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">description</span>
+          <td>  <span id="prop-dateFormatter" class="property-name">dateFormatter</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_DateFormat.html">DateFormat</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-description" class="property-name">description</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -164,7 +128,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">typeVersion</span>
+          <td>  <span id="prop-guid" class="property-name">guid</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -173,9 +137,54 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">options</span>
+          <td>  <span id="prop-name" class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-options" class="property-name">options</span>
 </td>
           <td>  <span class="datatype-reference">map of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-typeVersion" class="property-name">typeVersion</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updateTime" class="property-name">updateTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updatedBy" class="property-name">updatedBy</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-version" class="property-name">version</span>
+</td>
+          <td>  <span class="datatype-reference">number
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -189,20 +198,53 @@
       <div class="alert alert-warning">This data type is abstract. The example below may be incomplete. More accurate examples can be found in subtypes pages.</div>
       
       <pre class="prettyprint language-js example">{
-  &quot;category&quot; : &quot;ENUM&quot;,
-  &quot;guid&quot; : &quot;...&quot;,
-  &quot;createdBy&quot; : &quot;...&quot;,
-  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;category&quot; : &quot;PRIMITIVE&quot;,
   &quot;createTime&quot; : 12345,
-  &quot;updateTime&quot; : 12345,
-  &quot;version&quot; : 12345,
-  &quot;name&quot; : &quot;...&quot;,
+  &quot;createdBy&quot; : &quot;...&quot;,
+  &quot;dateFormatter&quot; : {
+    &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;calendar&quot; : 12345,
+    &quot;dateInstance&quot; : { },
+    &quot;dateTimeInstance&quot; : { },
+    &quot;instance&quot; : { },
+    &quot;lenient&quot; : true,
+    &quot;numberFormat&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;currency&quot; : &quot;...&quot;,
+      &quot;currencyInstance&quot; : { },
+      &quot;groupingUsed&quot; : true,
+      &quot;instance&quot; : { },
+      &quot;integerInstance&quot; : { },
+      &quot;maximumFractionDigits&quot; : 12345,
+      &quot;maximumIntegerDigits&quot; : 12345,
+      &quot;minimumFractionDigits&quot; : 12345,
+      &quot;minimumIntegerDigits&quot; : 12345,
+      &quot;numberInstance&quot; : { },
+      &quot;parseIntegerOnly&quot; : true,
+      &quot;percentInstance&quot; : { },
+      &quot;roundingMode&quot; : &quot;UNNECESSARY&quot;
+    },
+    &quot;timeInstance&quot; : { },
+    &quot;timeZone&quot; : {
+      &quot;DSTSavings&quot; : 12345,
+      &quot;ID&quot; : &quot;...&quot;,
+      &quot;availableIDs&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;default&quot; : { },
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;rawOffset&quot; : 12345
+    }
+  },
   &quot;description&quot; : &quot;...&quot;,
-  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
   &quot;options&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
-  }
+  },
+  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;updateTime&quot; : 12345,
+  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345
 }</pre>
 
         <footer class="footer">

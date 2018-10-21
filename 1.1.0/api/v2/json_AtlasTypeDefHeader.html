@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,27 +79,27 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">guid</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">name</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">category</span>
+          <td>  <span id="prop-category" class="property-name">category</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_TypeCategory.html">TypeCategory</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-guid" class="property-name">guid</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-name" class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -111,9 +111,9 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
+  &quot;category&quot; : &quot;CLASSIFICATION&quot;,
   &quot;guid&quot; : &quot;...&quot;,
-  &quot;name&quot; : &quot;...&quot;,
-  &quot;category&quot; : &quot;STRUCT&quot;
+  &quot;name&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

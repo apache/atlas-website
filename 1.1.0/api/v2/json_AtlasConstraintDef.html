@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,18 +79,18 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">type</span>
+          <td>  <span id="prop-params" class="property-name">params</span>
 </td>
-          <td>  <span class="datatype-reference">string
+          <td>  <span class="datatype-reference">map of object
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">params</span>
+          <td>  <span id="prop-type" class="property-name">type</span>
 </td>
-          <td>  <span class="datatype-reference">map of object
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -102,11 +102,11 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;type&quot; : &quot;...&quot;,
   &quot;params&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;type&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,61 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">queryType</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasQueryType.html">AtlasQueryType</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">searchParameters</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_SearchParameters.html">SearchParameters</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">queryText</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">type</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">classification</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">entities</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">attributes</span>
+          <td>  <span id="prop-attributes" class="property-name">attributes</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_AttributeSearchResult.html">AttributeSearchResult</a>
 </span>
@@ -142,7 +88,25 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">fullTextResult</span>
+          <td>  <span id="prop-classification" class="property-name">classification</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-entities" class="property-name">entities</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-fullTextResult" class="property-name">fullTextResult</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasFullTextResult.html">AtlasFullTextResult</a>
 </span>
@@ -151,9 +115,45 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">referredEntities</span>
+          <td>  <span id="prop-queryText" class="property-name">queryText</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-queryType" class="property-name">queryType</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_AtlasQueryType.html">AtlasQueryType</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-referredEntities" class="property-name">referredEntities</span>
 </td>
           <td>  <span class="datatype-reference">map of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-searchParameters" class="property-name">searchParameters</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_SearchParameters.html">SearchParameters</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-type" class="property-name">type</span>
+</td>
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -165,109 +165,307 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
-  &quot;searchParameters&quot; : {
-    &quot;query&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;classification&quot; : &quot;...&quot;,
-    &quot;excludeDeletedEntities&quot; : true,
-    &quot;limit&quot; : 12345,
-    &quot;offset&quot; : 12345,
-    &quot;entityFilters&quot; : {
-      &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
-      &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
-      &quot;criterion&quot; : [ { }, { } ]
-    },
-    &quot;tagFilters&quot; : {
-      &quot;attributeName&quot; : &quot;...&quot;,
-      &quot;operator&quot; : &quot;STARTS_WITH&quot;,
-      &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
-      &quot;criterion&quot; : [ { }, { } ]
-    },
-    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ]
-  },
-  &quot;queryText&quot; : &quot;...&quot;,
-  &quot;type&quot; : &quot;...&quot;,
-  &quot;classification&quot; : &quot;...&quot;,
-  &quot;entities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
   &quot;attributes&quot; : {
     &quot;name&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;values&quot; : [ ]
   },
-  &quot;fullTextResult&quot; : [ {
-    &quot;entity&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+  &quot;classification&quot; : &quot;...&quot;,
+  &quot;entities&quot; : [ {
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;IMPORTED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;IMPORTED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  } ],
+  &quot;fullTextResult&quot; : [ {
+    &quot;entity&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ { }, { } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ { }, { } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;score&quot; : 12345.0
   }, {
     &quot;entity&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;classifications&quot; : [ { }, { } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ { }, { } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;score&quot; : 12345.0
   } ],
+  &quot;queryText&quot; : &quot;...&quot;,
+  &quot;queryType&quot; : &quot;DSL&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     }
-  }
+  },
+  &quot;searchParameters&quot; : {
+    &quot;attributes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classification&quot; : &quot;...&quot;,
+    &quot;entityFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ],
+      &quot;operator&quot; : &quot;GTE&quot;
+    },
+    &quot;excludeDeletedEntities&quot; : true,
+    &quot;includeClassificationAttributes&quot; : true,
+    &quot;includeSubClassifications&quot; : true,
+    &quot;includeSubTypes&quot; : true,
+    &quot;limit&quot; : 12345,
+    &quot;offset&quot; : 12345,
+    &quot;query&quot; : &quot;...&quot;,
+    &quot;tagFilters&quot; : {
+      &quot;attributeName&quot; : &quot;...&quot;,
+      &quot;attributeValue&quot; : &quot;...&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;criterion&quot; : [ { }, { } ],
+      &quot;operator&quot; : &quot;NOT_NULL&quot;
+    },
+    &quot;termName&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;
+  },
+  &quot;type&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

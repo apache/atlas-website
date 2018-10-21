@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">baseEntityGuid</span>
+          <td>  <span id="prop-baseEntityGuid" class="property-name">baseEntityGuid</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,7 +88,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">guidEntityMap</span>
+          <td>  <span id="prop-guidEntityMap" class="property-name">guidEntityMap</span>
 </td>
           <td>  <span class="datatype-reference">map of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
 </span>
@@ -97,16 +97,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">relations</span>
+          <td>  <span id="prop-lineageDepth" class="property-name">lineageDepth</span>
 </td>
-          <td>  <span class="datatype-reference">array of <a href="json_LineageRelation.html">LineageRelation</a>
+          <td>  <span class="datatype-reference">number
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">lineageDirection</span>
+          <td>  <span id="prop-lineageDirection" class="property-name">lineageDirection</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_LineageDirection.html">LineageDirection</a>
 </span>
@@ -115,9 +115,9 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">lineageDepth</span>
+          <td>  <span id="prop-relations" class="property-name">relations</span>
 </td>
-          <td>  <span class="datatype-reference">number
+          <td>  <span class="datatype-reference">array of <a href="json_LineageRelation.html">LineageRelation</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -132,37 +132,133 @@
   &quot;baseEntityGuid&quot; : &quot;...&quot;,
   &quot;guidEntityMap&quot; : {
     &quot;property1&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;property2&quot; : {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     }
   },
+  &quot;lineageDepth&quot; : 12345,
+  &quot;lineageDirection&quot; : &quot;INPUT&quot;,
   &quot;relations&quot; : [ {
     &quot;fromEntityId&quot; : &quot;...&quot;,
+    &quot;relationshipId&quot; : &quot;...&quot;,
     &quot;toEntityId&quot; : &quot;...&quot;
   }, {
     &quot;fromEntityId&quot; : &quot;...&quot;,
+    &quot;relationshipId&quot; : &quot;...&quot;,
     &quot;toEntityId&quot; : &quot;...&quot;
-  } ],
-  &quot;lineageDirection&quot; : &quot;INPUT&quot;,
-  &quot;lineageDepth&quot; : 12345
+  } ]
 }</pre>
 
         <footer class="footer">

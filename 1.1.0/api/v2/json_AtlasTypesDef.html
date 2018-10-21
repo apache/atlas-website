@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,25 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">enumDefs</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasEnumDef.html">AtlasEnumDef</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">structDefs</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasStructDef.html">AtlasStructDef</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">classificationDefs</span>
+          <td>  <span id="prop-classificationDefs" class="property-name">classificationDefs</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasClassificationDef.html">AtlasClassificationDef</a>
 </span>
@@ -106,7 +88,7 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">entityDefs</span>
+          <td>  <span id="prop-entityDefs" class="property-name">entityDefs</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityDef.html">AtlasEntityDef</a>
 </span>
@@ -115,7 +97,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">relationshipDefs</span>
+          <td>  <span id="prop-enumDefs" class="property-name">enumDefs</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasEnumDef.html">AtlasEnumDef</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-relationshipDefs" class="property-name">relationshipDefs</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasRelationshipDef.html">AtlasRelationshipDef</a>
 </span>
@@ -124,9 +115,9 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">empty</span>
+          <td>  <span id="prop-structDefs" class="property-name">structDefs</span>
 </td>
-          <td>  <span class="datatype-reference">boolean
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasStructDef.html">AtlasStructDef</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -138,404 +129,619 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;enumDefs&quot; : [ {
-    &quot;elementDefs&quot; : [ {
-      &quot;value&quot; : &quot;...&quot;,
+  &quot;classificationDefs&quot; : [ {
+    &quot;entityTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
-      &quot;ordinal&quot; : 12345
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;value&quot; : &quot;...&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
-      &quot;ordinal&quot; : 12345
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
     &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
     &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;options&quot; : {
       &quot;property1&quot; : &quot;...&quot;,
       &quot;property2&quot; : &quot;...&quot;
-    }
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
   }, {
-    &quot;elementDefs&quot; : [ {
-      &quot;value&quot; : &quot;...&quot;,
+    &quot;entityTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
-      &quot;ordinal&quot; : 12345
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;value&quot; : &quot;...&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
-      &quot;ordinal&quot; : 12345
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;category&quot; : &quot;PRIMITIVE&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
     &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
     &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;options&quot; : {
       &quot;property1&quot; : &quot;...&quot;,
       &quot;property2&quot; : &quot;...&quot;
-    }
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  } ],
+  &quot;entityDefs&quot; : [ {
+    &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    }, {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    } ],
+    &quot;category&quot; : &quot;MAP&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  }, {
+    &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    }, {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    } ],
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  } ],
+  &quot;enumDefs&quot; : [ {
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;elementDefs&quot; : [ {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;ordinal&quot; : 12345,
+      &quot;value&quot; : &quot;...&quot;
+    }, {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;ordinal&quot; : 12345,
+      &quot;value&quot; : &quot;...&quot;
+    } ],
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  }, {
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;elementDefs&quot; : [ {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;ordinal&quot; : 12345,
+      &quot;value&quot; : &quot;...&quot;
+    }, {
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;ordinal&quot; : 12345,
+      &quot;value&quot; : &quot;...&quot;
+    } ],
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  } ],
+  &quot;relationshipDefs&quot; : [ {
+    &quot;endDef1&quot; : {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;isLegacyAttribute&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;endDef2&quot; : {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;isLegacyAttribute&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;propagateTags&quot; : &quot;TWO_TO_ONE&quot;,
+    &quot;relationshipCategory&quot; : &quot;AGGREGATION&quot;,
+    &quot;relationshipLabel&quot; : &quot;...&quot;,
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    }, {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    } ],
+    &quot;category&quot; : &quot;STRUCT&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  }, {
+    &quot;endDef1&quot; : {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;isLegacyAttribute&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;endDef2&quot; : {
+      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;isLegacyAttribute&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;propagateTags&quot; : &quot;BOTH&quot;,
+    &quot;relationshipCategory&quot; : &quot;AGGREGATION&quot;,
+    &quot;relationshipLabel&quot; : &quot;...&quot;,
+    &quot;attributeDefs&quot; : [ {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    }, {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
+      &quot;defaultValue&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
+    } ],
+    &quot;category&quot; : &quot;RELATIONSHIP&quot;,
+    &quot;createTime&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
   } ],
   &quot;structDefs&quot; : [ {
     &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
+      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
       &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
+      &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;RELATIONSHIP&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
     &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
+    },
     &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;options&quot; : {
       &quot;property1&quot; : &quot;...&quot;,
       &quot;property2&quot; : &quot;...&quot;
-    }
+    },
+    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
   }, {
     &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SET&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
       &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
+      &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;PRIMITIVE&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  } ],
-  &quot;classificationDefs&quot; : [ {
-    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
       &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
       &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
       &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
+      &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;includeInNotification&quot; : true,
+      &quot;isIndexable&quot; : true,
+      &quot;isOptional&quot; : true,
+      &quot;isUnique&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;options&quot; : {
+        &quot;property1&quot; : &quot;...&quot;,
+        &quot;property2&quot; : &quot;...&quot;
+      },
+      &quot;typeName&quot; : &quot;...&quot;,
+      &quot;valuesMaxCount&quot; : 12345,
+      &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;STRUCT&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;category&quot; : &quot;ARRAY&quot;,
     &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  }, {
-    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;ENTITY&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
     &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  } ],
-  &quot;entityDefs&quot; : [ {
-    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SET&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;ENTITY&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  }, {
-    &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  } ],
-  &quot;relationshipDefs&quot; : [ {
-    &quot;relationshipCategory&quot; : &quot;ASSOCIATION&quot;,
-    &quot;propagateTags&quot; : &quot;ONE_TO_TWO&quot;,
-    &quot;endDef1&quot; : {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;isContainer&quot; : true,
-      &quot;cardinality&quot; : &quot;SET&quot;,
-      &quot;isLegacyAttribute&quot; : true
+    &quot;dateFormatter&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;calendar&quot; : 12345,
+      &quot;dateInstance&quot; : { },
+      &quot;dateTimeInstance&quot; : { },
+      &quot;instance&quot; : { },
+      &quot;lenient&quot; : true,
+      &quot;numberFormat&quot; : { },
+      &quot;timeInstance&quot; : { },
+      &quot;timeZone&quot; : { }
     },
-    &quot;endDef2&quot; : {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;isContainer&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;isLegacyAttribute&quot; : true
-    },
-    &quot;relationshipLabel&quot; : &quot;...&quot;,
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;ENTITY&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
     &quot;description&quot; : &quot;...&quot;,
-    &quot;typeVersion&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;name&quot; : &quot;...&quot;,
     &quot;options&quot; : {
       &quot;property1&quot; : &quot;...&quot;,
       &quot;property2&quot; : &quot;...&quot;
-    }
-  }, {
-    &quot;relationshipCategory&quot; : &quot;COMPOSITION&quot;,
-    &quot;propagateTags&quot; : &quot;NONE&quot;,
-    &quot;endDef1&quot; : {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;isContainer&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;isLegacyAttribute&quot; : true
     },
-    &quot;endDef2&quot; : {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;isContainer&quot; : true,
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;isLegacyAttribute&quot; : true
-    },
-    &quot;relationshipLabel&quot; : &quot;...&quot;,
-    &quot;attributeDefs&quot; : [ {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    }, {
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;isOptional&quot; : true,
-      &quot;cardinality&quot; : &quot;SET&quot;,
-      &quot;valuesMinCount&quot; : 12345,
-      &quot;valuesMaxCount&quot; : 12345,
-      &quot;isUnique&quot; : true,
-      &quot;isIndexable&quot; : true,
-      &quot;defaultValue&quot; : &quot;...&quot;,
-      &quot;constraints&quot; : [ { }, { } ]
-    } ],
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;createdBy&quot; : &quot;...&quot;,
-    &quot;updatedBy&quot; : &quot;...&quot;,
-    &quot;createTime&quot; : 12345,
-    &quot;updateTime&quot; : 12345,
-    &quot;version&quot; : 12345,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
     &quot;typeVersion&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    }
-  } ],
-  &quot;empty&quot; : true
+    &quot;updateTime&quot; : 12345,
+    &quot;updatedBy&quot; : &quot;...&quot;,
+    &quot;version&quot; : 12345
+  } ]
 }</pre>
 
         <footer class="footer">

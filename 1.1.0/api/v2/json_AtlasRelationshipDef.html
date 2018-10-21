@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -64,29 +64,34 @@
       <h1 class="page-header">AtlasRelationshipDef <small>Data Type</small></h1>
 
       <p>AtlasRelationshipDef is a TypeDef that defines a relationship.
-
+<p>
 As with other typeDefs the AtlasRelationshipDef has a name. Once created the RelationshipDef has a guid.
 The name and the guid are the 2 ways that the RelationshipDef is identified.
-
+<p>
 RelationshipDefs have 2 ends, each of which specify cardinality, an EntityDef type name and name and optionally
 whether the end is a container.
-RelationshipDefs can have AttributeDefs - though only primitive types are allowed.
-RelationshipDefs have a relationshipCategory specifying the UML type of relationship required
+<p>
+RelationshipDefs can have AttributeDefs - though only primitive types are allowed. <br>
+RelationshipDefs have a relationshipCategory specifying the UML type of relationship required <br>
 RelationshipDefs also have a PropogateTag - indicating which way tags could flow over the relationships.
-
+<p>
 The way EntityDefs and RelationshipDefs are intended to be used is that EntityDefs will define AttributeDefs these AttributeDefs
 will not specify an EntityDef type name as their types.
-
+<p>
 RelationshipDefs introduce new atributes to the entity instances. For example
-EntityDef A might have attributes attr1,attr2,attr3
-EntityDef B might have attributes attr4,attr5,attr6
-RelationshipDef AtoB might define 2 ends
-end1:  type A, name attr7
-end1:  type B, name attr8
+<p>
+EntityDef A might have attributes attr1,attr2,attr3 <br>
+EntityDef B might have attributes attr4,attr5,attr6 <br>
+RelationshipDef AtoB might define 2 ends <br>
 
-When an instance of EntityDef A is created, it will have attributes attr1,attr2,attr3,attr7
+<pre>
+   end1:  type A, name attr7
+   end2:  type B, name attr8  </pre>
+
+<p>
+When an instance of EntityDef A is created, it will have attributes attr1,attr2,attr3,attr7 <br>
 When an instance of EntityDef B is created, it will have attributes attr4,attr5,attr6,attr8
-
+<p>
 In this way relationshipDefs can be authored separately from entityDefs and can inject relationship attributes into
 the entity instances</p>
 
@@ -104,16 +109,25 @@ the entity instances</p>
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">relationshipCategory</span>
+          <td>  <span id="prop-endDef1" class="property-name">endDef1</span>
 </td>
-          <td>  <span class="datatype-reference"><a href="json_RelationshipCategory.html">RelationshipCategory</a>
+          <td>  <span class="datatype-reference"><a href="json_AtlasRelationshipEndDef.html">AtlasRelationshipEndDef</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">propagateTags</span>
+          <td>  <span id="prop-endDef2" class="property-name">endDef2</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="json_AtlasRelationshipEndDef.html">AtlasRelationshipEndDef</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-propagateTags" class="property-name">propagateTags</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_PropagateTags.html">PropagateTags</a>
 </span>
@@ -122,25 +136,16 @@ the entity instances</p>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">endDef1</span>
+          <td>  <span id="prop-relationshipCategory" class="property-name">relationshipCategory</span>
 </td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasRelationshipEndDef.html">AtlasRelationshipEndDef</a>
+          <td>  <span class="datatype-reference"><a href="json_RelationshipCategory.html">RelationshipCategory</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">endDef2</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasRelationshipEndDef.html">AtlasRelationshipEndDef</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">relationshipLabel</span>
+          <td>  <span id="prop-relationshipLabel" class="property-name">relationshipLabel</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -171,8 +176,8 @@ the entity instances</p>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">guid</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">createTime</span></td>
+          <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -183,32 +188,8 @@ the entity instances</p>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">updatedBy</span></td>
-          <td><span class="datatype-reference">string
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">createTime</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">updateTime</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">version</span></td>
-          <td><span class="datatype-reference">number
-</span></td>
-          <td><span class="property-description"></span></td>
-        </tr>
-        <tr>
-          <td><span class="property-name">name</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">dateFormatter</span></td>
+          <td><span class="datatype-reference"><a href="json_DateFormat.html">DateFormat</a>
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -219,7 +200,13 @@ the entity instances</p>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">typeVersion</span></td>
+          <td><span class="property-name">guid</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">name</span></td>
           <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
@@ -230,90 +217,161 @@ the entity instances</p>
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
+        <tr>
+          <td><span class="property-name">typeVersion</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updateTime</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">updatedBy</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">version</span></td>
+          <td><span class="datatype-reference">number
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
         </tbody>
       </table>
 
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;relationshipCategory&quot; : &quot;AGGREGATION&quot;,
-  &quot;propagateTags&quot; : &quot;ONE_TO_TWO&quot;,
   &quot;endDef1&quot; : {
-    &quot;type&quot; : &quot;...&quot;,
-    &quot;name&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;SET&quot;,
+    &quot;description&quot; : &quot;...&quot;,
     &quot;isContainer&quot; : true,
-    &quot;cardinality&quot; : &quot;LIST&quot;,
-    &quot;isLegacyAttribute&quot; : true
+    &quot;isLegacyAttribute&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;
   },
   &quot;endDef2&quot; : {
-    &quot;type&quot; : &quot;...&quot;,
-    &quot;name&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;LIST&quot;,
+    &quot;description&quot; : &quot;...&quot;,
     &quot;isContainer&quot; : true,
-    &quot;cardinality&quot; : &quot;SET&quot;,
-    &quot;isLegacyAttribute&quot; : true
+    &quot;isLegacyAttribute&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;type&quot; : &quot;...&quot;
   },
+  &quot;propagateTags&quot; : &quot;BOTH&quot;,
+  &quot;relationshipCategory&quot; : &quot;ASSOCIATION&quot;,
   &quot;relationshipLabel&quot; : &quot;...&quot;,
   &quot;attributeDefs&quot; : [ {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;isOptional&quot; : true,
-    &quot;cardinality&quot; : &quot;SET&quot;,
-    &quot;valuesMinCount&quot; : 12345,
-    &quot;valuesMaxCount&quot; : 12345,
-    &quot;isUnique&quot; : true,
-    &quot;isIndexable&quot; : true,
-    &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;constraints&quot; : [ {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;params&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;type&quot; : &quot;...&quot;,
-      &quot;params&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  }, {
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;isOptional&quot; : true,
     &quot;cardinality&quot; : &quot;LIST&quot;,
-    &quot;valuesMinCount&quot; : 12345,
-    &quot;valuesMaxCount&quot; : 12345,
-    &quot;isUnique&quot; : true,
-    &quot;isIndexable&quot; : true,
-    &quot;defaultValue&quot; : &quot;...&quot;,
     &quot;constraints&quot; : [ {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
+      },
+      &quot;type&quot; : &quot;...&quot;
     }, {
-      &quot;type&quot; : &quot;...&quot;,
       &quot;params&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
-      }
-    } ]
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
+  }, {
+    &quot;cardinality&quot; : &quot;LIST&quot;,
+    &quot;constraints&quot; : [ {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    }, {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
   } ],
-  &quot;category&quot; : &quot;STRUCT&quot;,
-  &quot;guid&quot; : &quot;...&quot;,
-  &quot;createdBy&quot; : &quot;...&quot;,
-  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;category&quot; : &quot;CLASSIFICATION&quot;,
   &quot;createTime&quot; : 12345,
-  &quot;updateTime&quot; : 12345,
-  &quot;version&quot; : 12345,
-  &quot;name&quot; : &quot;...&quot;,
+  &quot;createdBy&quot; : &quot;...&quot;,
+  &quot;dateFormatter&quot; : {
+    &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;calendar&quot; : 12345,
+    &quot;dateInstance&quot; : { },
+    &quot;dateTimeInstance&quot; : { },
+    &quot;instance&quot; : { },
+    &quot;lenient&quot; : true,
+    &quot;numberFormat&quot; : {
+      &quot;availableLocales&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;currency&quot; : &quot;...&quot;,
+      &quot;currencyInstance&quot; : { },
+      &quot;groupingUsed&quot; : true,
+      &quot;instance&quot; : { },
+      &quot;integerInstance&quot; : { },
+      &quot;maximumFractionDigits&quot; : 12345,
+      &quot;maximumIntegerDigits&quot; : 12345,
+      &quot;minimumFractionDigits&quot; : 12345,
+      &quot;minimumIntegerDigits&quot; : 12345,
+      &quot;numberInstance&quot; : { },
+      &quot;parseIntegerOnly&quot; : true,
+      &quot;percentInstance&quot; : { },
+      &quot;roundingMode&quot; : &quot;HALF_DOWN&quot;
+    },
+    &quot;timeInstance&quot; : { },
+    &quot;timeZone&quot; : {
+      &quot;DSTSavings&quot; : 12345,
+      &quot;ID&quot; : &quot;...&quot;,
+      &quot;availableIDs&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;default&quot; : { },
+      &quot;displayName&quot; : &quot;...&quot;,
+      &quot;rawOffset&quot; : 12345
+    }
+  },
   &quot;description&quot; : &quot;...&quot;,
-  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;name&quot; : &quot;...&quot;,
   &quot;options&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
-  }
+  },
+  &quot;typeVersion&quot; : &quot;...&quot;,
+  &quot;updateTime&quot; : 12345,
+  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345
 }</pre>
 
         <footer class="footer">

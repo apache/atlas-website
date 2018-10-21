@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,13 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#DSL"><abbr title="DSL"><span class="sideoverflow">DSL</span></abbr></a></li>
+          <li><a href="#FULL_TEXT"><abbr title="FULL_TEXT"><span class="sideoverflow">FULL_TEXT</span></abbr></a></li>
+          <li><a href="#GREMLIN"><abbr title="GREMLIN"><span class="sideoverflow">GREMLIN</span></abbr></a></li>
+          <li><a href="#BASIC"><abbr title="BASIC"><span class="sideoverflow">BASIC</span></abbr></a></li>
+          <li><a href="#ATTRIBUTE"><abbr title="ATTRIBUTE"><span class="sideoverflow">ATTRIBUTE</span></abbr></a></li>
+          <li><a href="#RELATIONSHIP"><abbr title="RELATIONSHIP"><span class="sideoverflow">RELATIONSHIP</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,23 +85,27 @@
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">DSL</span></td>
+          <td><span class="value-value" id="DSL">DSL</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">FULL_TEXT</span></td>
+          <td><span class="value-value" id="FULL_TEXT">FULL_TEXT</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">GREMLIN</span></td>
+          <td><span class="value-value" id="GREMLIN">GREMLIN</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">BASIC</span></td>
+          <td><span class="value-value" id="BASIC">BASIC</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">ATTRIBUTE</span></td>
+          <td><span class="value-value" id="ATTRIBUTE">ATTRIBUTE</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="RELATIONSHIP">RELATIONSHIP</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

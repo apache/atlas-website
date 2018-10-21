@@ -62,6 +62,7 @@
           <li><a href="#resource_EntityREST_getClassifications_GET"><abbr title="GET /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">GET /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
           <li><a href="#resource_EntityREST_addClassifications_POST"><abbr title="POST /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">POST /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
           <li><a href="#resource_EntityREST_updateClassifications_PUT"><abbr title="PUT /v2/entity/guid/{guid}/classifications"><span class="sideoverflow">PUT /v2/entity/guid/{guid}/classifications</span></abbr></a></li>
+          <li><a href="#resource_EntityREST_getHeaderById_GET"><abbr title="GET /v2/entity/guid/{guid}/header"><span class="sideoverflow">GET /v2/entity/guid/{guid}/header</span></abbr></a></li>
           <li><a href="#resource_EntityREST_deleteByUniqueAttribute_DELETE"><abbr title="DELETE /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">DELETE /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
           <li><a href="#resource_EntityREST_getByUniqueAttributes_GET"><abbr title="GET /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">GET /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
           <li><a href="#resource_EntityREST_partialUpdateEntityByUniqueAttrs_PUT"><abbr title="PUT /v2/entity/uniqueAttribute/type/{typeName}"><span class="sideoverflow">PUT /v2/entity/uniqueAttribute/type/{typeName}</span></abbr></a></li>
@@ -209,8 +210,12 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/bulk
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -240,6 +245,8 @@ Content-Type: application/json;charset=UTF-8
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
             <th>multivalued</th>
           </tr>
           </thead>
@@ -248,7 +255,17 @@ Content-Type: application/json;charset=UTF-8
             <td><span class="parameter-name">guid</span></td>
             <td>query</td>
             <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
             <td><span class="parameter-multivalued">yes</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">minExtInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
+            <td><span class="parameter-multivalued">no</span></td>
           </tr>
           </tbody>
         </table>
@@ -279,8 +296,12 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 GET /v2/entity/bulk
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -410,21 +431,23 @@ Content-Type: application/json
 {
   &quot;classification&quot; : {
     &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
-      &quot;startTime&quot; : &quot;...&quot;,
       &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
       &quot;timeZone&quot; : &quot;...&quot;
     }, {
-      &quot;startTime&quot; : &quot;...&quot;,
       &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
       &quot;timeZone&quot; : &quot;...&quot;
     } ],
-    &quot;typeName&quot; : &quot;...&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
   },
   &quot;entityGuids&quot; : [ &quot;...&quot;, &quot;...&quot; ]
 }
@@ -491,8 +514,12 @@ HTTP/1.1 201 Created
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/guid/{guid}
+Content-Type: application/json
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -522,6 +549,8 @@ Content-Type: application/json;charset=UTF-8
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
           </tr>
           </thead>
           <tbody>
@@ -529,6 +558,15 @@ Content-Type: application/json;charset=UTF-8
             <td><span class="parameter-name">guid</span></td>
             <td>path</td>
             <td><span class="parameter-description">GUID for the entity</span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">minExtInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
@@ -559,8 +597,12 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -742,8 +784,12 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 GET /v2/entity/{guid}/audit
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -810,8 +856,12 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}/classifications
+Content-Type: */*
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -886,21 +936,23 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 [ {
   &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;entityStatus&quot; : &quot;DELETED&quot;,
   &quot;propagate&quot; : true,
+  &quot;removePropagationsOnEntityDelete&quot; : true,
   &quot;validityPeriods&quot; : [ {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   }, {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   } ],
-  &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 } ]
                 </code>
               </pre>
@@ -973,21 +1025,23 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 [ {
   &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
   &quot;propagate&quot; : true,
+  &quot;removePropagationsOnEntityDelete&quot; : true,
   &quot;validityPeriods&quot; : [ {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   }, {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   } ],
-  &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 } ]
                 </code>
               </pre>
@@ -997,6 +1051,78 @@ Content-Type: application/json
               <pre>
 HTTP/1.1 204 No Content
 
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="resource_EntityREST_getHeaderById_GET">
+        <h3><span class="label label-default resource-method">GET</span> <span class="resource-path">/v2/entity/guid/{guid}/header <a href="../v2/entity/guid/{guid}/header" class="glyphicon glyphicon-new-window" target="_blank"></a></span></h3>
+
+        <p>Get entity header given its GUID.</p>
+
+        <table class="table resource-parameters">
+          <caption>Request Parameters</caption>
+          <thead>
+          <tr>
+            <th>name</th>
+            <th>type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><span class="parameter-name">guid</span></td>
+            <td>path</td>
+            <td><span class="parameter-description">GUID for the entity</span></td>
+          </tr>
+          </tbody>
+        </table>
+
+        <table class="table resource-response-body">
+          <caption>Response Body</caption>
+          <thead>
+          <tr>
+            <th>media type</th>
+            <th>data type</th>
+            <th>description</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
+            <td><span class="datatype-reference">(custom)
+</span></td>
+            <td><span class="response-description">AtlasEntity</span></td>
+          </tr>
+          </tbody>
+        </table>
+        <h4>Example</h4>
+
+        <div class="container-fluid example panel">
+          <div class="row panel-body">
+            <div class="col-md-6">
+              <h5>Request</h5>
+              <pre>
+GET /v2/entity/guid/{guid}/header
+Content-Type: application/json;charset=UTF-8
+Accept: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 200 OK
+Content-Type: application/json;charset=UTF-8
+
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
           </div>
@@ -1062,8 +1188,12 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/uniqueAttribute/type/{typeName}
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -1103,6 +1233,8 @@ GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
             <th>name</th>
             <th>type</th>
             <th>description</th>
+            <th>default</th>
+            <th>constraints</th>
           </tr>
           </thead>
           <tbody>
@@ -1110,6 +1242,15 @@ GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
             <td><span class="parameter-name">typeName</span></td>
             <td>path</td>
             <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">&nbsp;</span></td>
+            <td><span class="parameter-constraints">&nbsp;</span></td>
+          </tr>
+          <tr>
+            <td><span class="parameter-name">minExtInfo</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+            <td><span class="parameter-default-value">false</span></td>
+            <td><span class="parameter-constraints">boolean</span></td>
           </tr>
           </tbody>
         </table>
@@ -1140,8 +1281,12 @@ GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue</p>
               <h5>Request</h5>
               <pre>
 GET /v2/entity/uniqueAttribute/type/{typeName}
+Content-Type: application/json;charset=UTF-8
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -1285,6 +1430,11 @@ Content-Type: application/json;charset=UTF-8
             <td>path</td>
             <td><span class="parameter-description">globally unique identifier for the entity</span></td>
           </tr>
+          <tr>
+            <td><span class="parameter-name">associatedEntityGuid</span></td>
+            <td>query</td>
+            <td><span class="parameter-description"></span></td>
+          </tr>
           </tbody>
         </table>
         <h4>Example</h4>
@@ -1295,7 +1445,11 @@ Content-Type: application/json;charset=UTF-8
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/guid/{guid}/classification/{classificationName}
+Content-Type: */*
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -1363,8 +1517,12 @@ HTTP/1.1 204 No Content
               <h5>Request</h5>
               <pre>
 GET /v2/entity/guid/{guid}/classification/{classificationName}
+Content-Type: */*
 Accept: application/json;charset=UTF-8
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">
@@ -1439,21 +1597,23 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 [ {
   &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;entityStatus&quot; : &quot;DELETED&quot;,
   &quot;propagate&quot; : true,
+  &quot;removePropagationsOnEntityDelete&quot; : true,
   &quot;validityPeriods&quot; : [ {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   }, {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   } ],
-  &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 } ]
                 </code>
               </pre>
@@ -1526,21 +1686,23 @@ Content-Type: application/json
                 <code class="prettyprint language-js">
 [ {
   &quot;entityGuid&quot; : &quot;...&quot;,
+  &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
   &quot;propagate&quot; : true,
+  &quot;removePropagationsOnEntityDelete&quot; : true,
   &quot;validityPeriods&quot; : [ {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   }, {
-    &quot;startTime&quot; : &quot;...&quot;,
     &quot;endTime&quot; : &quot;...&quot;,
+    &quot;startTime&quot; : &quot;...&quot;,
     &quot;timeZone&quot; : &quot;...&quot;
   } ],
-  &quot;typeName&quot; : &quot;...&quot;,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 } ]
                 </code>
               </pre>
@@ -1591,7 +1753,11 @@ HTTP/1.1 204 No Content
               <h5>Request</h5>
               <pre>
 DELETE /v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}
+Content-Type: application/json
 
+                <code class="prettyprint language-txt">
+...
+                </code>
               </pre>
             </div>
             <div class="col-md-6">

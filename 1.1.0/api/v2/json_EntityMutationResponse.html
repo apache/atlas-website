@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,16 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">mutatedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">map of array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">guidAssignments</span>
+          <td>  <span id="prop-guidAssignments" class="property-name">guidAssignments</span>
 </td>
           <td>  <span class="datatype-reference">map of string
 </span>
@@ -97,63 +88,18 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">createdEntities</span>
+          <td>  <span id="prop-mutatedEntities" class="property-name">mutatedEntities</span>
+</td>
+          <td>  <span class="datatype-reference">map of array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-partialUpdatedEntities" class="property-name">partialUpdatedEntities</span>
 </td>
           <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">updatedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">partialUpdatedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">deletedEntities</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">firstEntityCreated</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">firstEntityUpdated</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">firstEntityPartialUpdated</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_AtlasEntityHeader.html">AtlasEntityHeader</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -165,171 +111,357 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;mutatedEntities&quot; : {
-    &quot;property1&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ],
-    &quot;property2&quot; : [ {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    }, {
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;typeName&quot; : &quot;...&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      }
-    } ]
-  },
   &quot;guidAssignments&quot; : {
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
   },
-  &quot;createdEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;updatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
+  &quot;mutatedEntities&quot; : {
+    &quot;property1&quot; : [ {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;property2&quot; : [ {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ]
+  },
   &quot;partialUpdatedEntities&quot; : [ {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
     &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;deletedEntities&quot; : [ {
     &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
     &quot;status&quot; : &quot;DELETED&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;firstEntityCreated&quot; : {
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;displayText&quot; : &quot;...&quot;,
     &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
     &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;firstEntityPartialUpdated&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  } ]
 }</pre>
 
         <footer class="footer">

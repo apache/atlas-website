@@ -103,6 +103,9 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
           <wadl:param name="guid" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
+          <wadl:param name="minExtInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
@@ -599,6 +602,9 @@ created]]></wadl:doc>
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Fetch complete definition of an entity given its GUID.]]></wadl:doc>
         <wadl:request>
+          <wadl:param name="minExtInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[AtlasEntity]]></wadl:doc>
@@ -990,6 +996,21 @@ Null updates are not possible]]></wadl:doc>
       </wadl:param>
     </wadl:resource>
 
+    <wadl:resource path="v2/entity/guid/{guid}/header">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Get entity header given its GUID.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[AtlasEntity]]></wadl:doc>
+          <wadl:representation mediaType="application/json;charset=UTF-8"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="guid" style="template">
+        <wadl:doc><![CDATA[GUID for the entity]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
     <wadl:resource path="v2/entity/uniqueAttribute/type/{typeName}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Fetch complete definition of an entity given its type and unique attribute.
@@ -1004,6 +1025,9 @@ The REST request would look something like this
 
 GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
         <wadl:request>
+          <wadl:param name="minExtInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[AtlasEntityWithExtInfo]]></wadl:doc>
@@ -1572,6 +1596,9 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
       <wadl:method name="DELETE">
         <wadl:doc><![CDATA[Deletes a given classification from an existing entity represented by a guid.]]></wadl:doc>
         <wadl:request>
+          <wadl:param name="associatedEntityGuid" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
         </wadl:request>
       </wadl:method>
       <wadl:param name="classificationName" style="template">

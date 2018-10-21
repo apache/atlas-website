@@ -111,10 +111,28 @@
               </xs:element>
               <xs:element name="validityPeriods" type="timeBoundary" minOccurs="0" maxOccurs="unbounded">
               </xs:element>
+              <xs:element name="entityStatus" type="status" minOccurs="0">
+              </xs:element>
+              <xs:element name="removePropagationsOnEntityDelete" type="xs:boolean" minOccurs="0">
+              </xs:element>
       </xs:sequence>
     </xs:extension>
   </xs:complexContent>
 </xs:complexType>
+
+<xs:simpleType name="status">
+  <xs:annotation>
+    <xs:documentation>
+      <![CDATA[Status of the entity - can be active or deleted. Deleted entities are not removed from Atlas store.]]>
+    </xs:documentation>
+  </xs:annotation>
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="ACTIVE"/>
+ 
+    <xs:enumeration value="DELETED"/>
+  </xs:restriction>
+</xs:simpleType>
 
 <xs:complexType name="atlasStruct">
   <xs:annotation>

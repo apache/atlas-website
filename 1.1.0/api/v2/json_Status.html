@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,9 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#ACTIVE"><abbr title="ACTIVE"><span class="sideoverflow">ACTIVE</span></abbr></a></li>
+          <li><a href="#DELETED"><abbr title="DELETED"><span class="sideoverflow">DELETED</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,11 +81,11 @@
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">ACTIVE</span></td>
+          <td><span class="value-value" id="ACTIVE">ACTIVE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">DELETED</span></td>
+          <td><span class="value-value" id="DELETED">DELETED</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

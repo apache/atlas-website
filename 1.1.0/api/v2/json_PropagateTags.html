@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#NONE"><abbr title="NONE"><span class="sideoverflow">NONE</span></abbr></a></li>
+          <li><a href="#ONE_TO_TWO"><abbr title="ONE_TO_TWO"><span class="sideoverflow">ONE_TO_TWO</span></abbr></a></li>
+          <li><a href="#TWO_TO_ONE"><abbr title="TWO_TO_ONE"><span class="sideoverflow">TWO_TO_ONE</span></abbr></a></li>
+          <li><a href="#BOTH"><abbr title="BOTH"><span class="sideoverflow">BOTH</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -64,17 +69,19 @@
       <h1 class="page-header">PropagateTags <small>Data Type</small></h1>
 
       <p>PropagateTags indicates whether tags should propagate across the relationship instance.
+<p>
 Tags can propagate:
-NONE - not at all
-ONE_TO_TWO - from end 1 to 2
-TWO_TO_ONE - from end 2 to 1
+<p>
+NONE - not at all <br>
+ONE_TO_TWO - from end 1 to 2 <br>
+TWO_TO_ONE - from end 2 to 1  <br>
 BOTH - both ways
-
+<p>
 Care needs to be taken when specifying. The use cases we are aware of where this flag is useful:
-
-- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here
+<p>
+- propagating confidentiality classifications from a table to columns - ONE_TO_TWO could be used here <br>
 - propagating classifications around Glossary synonyms - BOTH could be used here.
-
+<p>
 There is an expectation that further enhancements will allow more granular control of tag propagation and will
 address how to resolve conflicts.</p>
 
@@ -91,19 +98,19 @@ address how to resolve conflicts.</p>
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">NONE</span></td>
+          <td><span class="value-value" id="NONE">NONE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">ONE_TO_TWO</span></td>
+          <td><span class="value-value" id="ONE_TO_TWO">ONE_TO_TWO</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">TWO_TO_ONE</span></td>
+          <td><span class="value-value" id="TWO_TO_ONE">TWO_TO_ONE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">BOTH</span></td>
+          <td><span class="value-value" id="BOTH">BOTH</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

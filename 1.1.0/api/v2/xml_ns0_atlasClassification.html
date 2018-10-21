@@ -86,7 +86,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">entityGuid</span>
+          <td>  <span id="prop-entityGuid" class="property-name">entityGuid</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -104,7 +104,25 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">propagate</span>
+          <td>  <span id="prop-entityStatus" class="property-name">entityStatus</span>
+</td>
+          <td>  <span class="datatype-reference"><a href="xml_ns0_status.html">status</a>
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">&nbsp;</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-propagate" class="property-name">propagate</span>
 </td>
           <td>  <span class="datatype-reference">boolean
 </span>
@@ -122,7 +140,25 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">validityPeriods</span>
+          <td>  <span id="prop-removePropagationsOnEntityDelete" class="property-name">removePropagationsOnEntityDelete</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-type">element
+</span>
+</td>
+          <td>  <span class="property-namespaceInfo">
+</span>
+</td>
+          <td>  <span class="property-minMaxOccurs">0/1
+</span>
+</td>
+          <td>  <span class="property-description">&nbsp;</span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-validityPeriods" class="property-name">validityPeriods</span>
 </td>
           <td>  <span class="datatype-reference">list of <a href="xml_ns0_timeBoundary.html">timeBoundary</a>
 </span>
@@ -181,6 +217,8 @@
     &lt;endTime&gt;...&lt;/endTime&gt;
     &lt;timeZone&gt;...&lt;/timeZone&gt;
   &lt;/validityPeriods&gt;
+  &lt;entityStatus&gt;...&lt;/entityStatus&gt;
+  &lt;removePropagationsOnEntityDelete&gt;...&lt;/removePropagationsOnEntityDelete&gt;
   &lt;typeName&gt;...&lt;/typeName&gt;
   &lt;attributes&gt;...&lt;/attributes&gt;
 &lt;/atlasClassification&gt;

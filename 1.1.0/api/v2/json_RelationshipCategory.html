@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,10 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#ASSOCIATION"><abbr title="ASSOCIATION"><span class="sideoverflow">ASSOCIATION</span></abbr></a></li>
+          <li><a href="#AGGREGATION"><abbr title="AGGREGATION"><span class="sideoverflow">AGGREGATION</span></abbr></a></li>
+          <li><a href="#COMPOSITION"><abbr title="COMPOSITION"><span class="sideoverflow">COMPOSITION</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -65,8 +69,10 @@
 
       <p>The Relationship category determines the style of relationship around containment and lifecycle.
 UML terminology is used for the values.
-ASSOCIATION is a relationship with no containment.
+<p>
+ASSOCIATION is a relationship with no containment. <br>
 COMPOSITION and AGGREGATION are containment relationships.
+<p>
 The difference being in the lifecycles of the container and its children. In the COMPOSITION case,
 the children cannot exist without the container. For AGGREGATION, the life cycles
 of the container and children are totally independant.</p>
@@ -84,15 +90,15 @@ of the container and children are totally independant.</p>
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">ASSOCIATION</span></td>
+          <td><span class="value-value" id="ASSOCIATION">ASSOCIATION</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">AGGREGATION</span></td>
+          <td><span class="value-value" id="AGGREGATION">AGGREGATION</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">COMPOSITION</span></td>
+          <td><span class="value-value" id="COMPOSITION">COMPOSITION</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

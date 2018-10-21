@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,34 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">name</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">typeName</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">isOptional</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">cardinality</span>
+          <td>  <span id="prop-cardinality" class="property-name">cardinality</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_Cardinality.html">Cardinality</a>
 </span>
@@ -115,43 +88,16 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">valuesMinCount</span>
+          <td>  <span id="prop-constraints" class="property-name">constraints</span>
 </td>
-          <td>  <span class="datatype-reference">number
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasConstraintDef.html">AtlasConstraintDef</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">valuesMaxCount</span>
-</td>
-          <td>  <span class="datatype-reference">number
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">isUnique</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">isIndexable</span>
-</td>
-          <td>  <span class="datatype-reference">boolean
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">defaultValue</span>
+          <td>  <span id="prop-defaultValue" class="property-name">defaultValue</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -160,9 +106,90 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">constraints</span>
+          <td>  <span id="prop-description" class="property-name">description</span>
 </td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasConstraintDef.html">AtlasConstraintDef</a>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-includeInNotification" class="property-name">includeInNotification</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isIndexable" class="property-name">isIndexable</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isOptional" class="property-name">isOptional</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-isUnique" class="property-name">isUnique</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-name" class="property-name">name</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-options" class="property-name">options</span>
+</td>
+          <td>  <span class="datatype-reference">map of string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-typeName" class="property-name">typeName</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-valuesMaxCount" class="property-name">valuesMaxCount</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-valuesMinCount" class="property-name">valuesMinCount</span>
+</td>
+          <td>  <span class="datatype-reference">number
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -174,28 +201,34 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;name&quot; : &quot;...&quot;,
-  &quot;typeName&quot; : &quot;...&quot;,
-  &quot;isOptional&quot; : true,
-  &quot;cardinality&quot; : &quot;SINGLE&quot;,
-  &quot;valuesMinCount&quot; : 12345,
-  &quot;valuesMaxCount&quot; : 12345,
-  &quot;isUnique&quot; : true,
-  &quot;isIndexable&quot; : true,
-  &quot;defaultValue&quot; : &quot;...&quot;,
+  &quot;cardinality&quot; : &quot;SET&quot;,
   &quot;constraints&quot; : [ {
-    &quot;type&quot; : &quot;...&quot;,
     &quot;params&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
+    },
+    &quot;type&quot; : &quot;...&quot;
   }, {
-    &quot;type&quot; : &quot;...&quot;,
     &quot;params&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
-    }
-  } ]
+    },
+    &quot;type&quot; : &quot;...&quot;
+  } ],
+  &quot;defaultValue&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;includeInNotification&quot; : true,
+  &quot;isIndexable&quot; : true,
+  &quot;isOptional&quot; : true,
+  &quot;isUnique&quot; : true,
+  &quot;name&quot; : &quot;...&quot;,
+  &quot;options&quot; : {
+    &quot;property1&quot; : &quot;...&quot;,
+    &quot;property2&quot; : &quot;...&quot;
+  },
+  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;valuesMaxCount&quot; : 12345,
+  &quot;valuesMinCount&quot; : 12345
 }</pre>
 
         <footer class="footer">

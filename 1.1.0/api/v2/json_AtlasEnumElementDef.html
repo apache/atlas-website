@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,7 +79,7 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">value</span>
+          <td>  <span id="prop-description" class="property-name">description</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -88,18 +88,18 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">description</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">ordinal</span>
+          <td>  <span id="prop-ordinal" class="property-name">ordinal</span>
 </td>
           <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-value" class="property-name">value</span>
+</td>
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -111,9 +111,9 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;value&quot; : &quot;...&quot;,
   &quot;description&quot; : &quot;...&quot;,
-  &quot;ordinal&quot; : 12345
+  &quot;ordinal&quot; : 12345,
+  &quot;value&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

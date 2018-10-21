@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -79,43 +79,16 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span class="property-name">guid</span>
+          <td>  <span id="prop-classifications" class="property-name">classifications</span>
 </td>
-          <td>  <span class="datatype-reference">string
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">status</span>
-</td>
-          <td>  <span class="datatype-reference"><a href="json_Status.html">Status</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">createdBy</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">updatedBy</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span class="property-name">createTime</span>
+          <td>  <span id="prop-createTime" class="property-name">createTime</span>
 </td>
           <td>  <span class="datatype-reference">number
 </span>
@@ -124,25 +97,52 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">updateTime</span>
+          <td>  <span id="prop-createdBy" class="property-name">createdBy</span>
 </td>
-          <td>  <span class="datatype-reference">number
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">version</span>
+          <td>  <span id="prop-guid" class="property-name">guid</span>
 </td>
-          <td>  <span class="datatype-reference">number
+          <td>  <span class="datatype-reference">string
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">relationshipAttributes</span>
+          <td>  <span id="prop-homeId" class="property-name">homeId</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-meanings" class="property-name">meanings</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasTermAssignmentHeader.html">AtlasTermAssignmentHeader</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-proxy" class="property-name">proxy</span>
+</td>
+          <td>  <span class="datatype-reference">boolean
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-relationshipAttributes" class="property-name">relationshipAttributes</span>
 </td>
           <td>  <span class="datatype-reference">map of object
 </span>
@@ -151,9 +151,36 @@
 </td>
         </tr>
         <tr>
-          <td>  <span class="property-name">classifications</span>
+          <td>  <span id="prop-status" class="property-name">status</span>
 </td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
+          <td>  <span class="datatype-reference"><a href="json_Status.html">Status</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updateTime" class="property-name">updateTime</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-updatedBy" class="property-name">updatedBy</span>
+</td>
+          <td>  <span class="datatype-reference">string
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
+          <td>  <span id="prop-version" class="property-name">version</span>
+</td>
+          <td>  <span class="datatype-reference">number
 </span>
 </td>
           <td>  <span class="property-description"></span>
@@ -165,14 +192,14 @@
         </tr>
         <tbody>
         <tr>
-          <td><span class="property-name">typeName</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">attributes</span></td>
+          <td><span class="datatype-reference">map of object
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">attributes</span></td>
-          <td><span class="datatype-reference">map of object
+          <td><span class="property-name">typeName</span></td>
+          <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -182,35 +209,86 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;guid&quot; : &quot;...&quot;,
-  &quot;status&quot; : &quot;DELETED&quot;,
-  &quot;createdBy&quot; : &quot;...&quot;,
-  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;classifications&quot; : [ {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  } ],
   &quot;createTime&quot; : 12345,
-  &quot;updateTime&quot; : 12345,
-  &quot;version&quot; : 12345,
+  &quot;createdBy&quot; : &quot;...&quot;,
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;homeId&quot; : &quot;...&quot;,
+  &quot;meanings&quot; : [ {
+    &quot;confidence&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;expression&quot; : &quot;...&quot;,
+    &quot;relationGuid&quot; : &quot;...&quot;,
+    &quot;source&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;PROPOSED&quot;,
+    &quot;steward&quot; : &quot;...&quot;,
+    &quot;termGuid&quot; : &quot;...&quot;
+  }, {
+    &quot;confidence&quot; : 12345,
+    &quot;createdBy&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;expression&quot; : &quot;...&quot;,
+    &quot;relationGuid&quot; : &quot;...&quot;,
+    &quot;source&quot; : &quot;...&quot;,
+    &quot;status&quot; : &quot;OBSOLETE&quot;,
+    &quot;steward&quot; : &quot;...&quot;,
+    &quot;termGuid&quot; : &quot;...&quot;
+  } ],
+  &quot;proxy&quot; : true,
   &quot;relationshipAttributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
   },
-  &quot;classifications&quot; : [ {
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  }, {
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  } ],
-  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;status&quot; : &quot;ACTIVE&quot;,
+  &quot;updateTime&quot; : 12345,
+  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345,
   &quot;attributes&quot; : {
     &quot;property1&quot; : { },
     &quot;property2&quot; : { }
-  }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
 }</pre>
 
         <footer class="footer">

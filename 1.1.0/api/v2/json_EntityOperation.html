@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,11 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#CREATE"><abbr title="CREATE"><span class="sideoverflow">CREATE</span></abbr></a></li>
+          <li><a href="#UPDATE"><abbr title="UPDATE"><span class="sideoverflow">UPDATE</span></abbr></a></li>
+          <li><a href="#PARTIAL_UPDATE"><abbr title="PARTIAL_UPDATE"><span class="sideoverflow">PARTIAL_UPDATE</span></abbr></a></li>
+          <li><a href="#DELETE"><abbr title="DELETE"><span class="sideoverflow">DELETE</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -78,19 +83,19 @@
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">CREATE</span></td>
+          <td><span class="value-value" id="CREATE">CREATE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">UPDATE</span></td>
+          <td><span class="value-value" id="UPDATE">UPDATE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">PARTIAL_UPDATE</span></td>
+          <td><span class="value-value" id="PARTIAL_UPDATE">PARTIAL_UPDATE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">DELETE</span></td>
+          <td><span class="value-value" id="DELETE">DELETE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>

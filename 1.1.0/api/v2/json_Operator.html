@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
   <!--custom css for these pages-->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/enunciate.css">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -50,6 +50,22 @@
     <div class="row">
       <div class="col-sm-3 col-md-2 sidebar" id="apinav">
         <ul class="nav nav-sidebar">
+          <li><a href="#LT"><abbr title="LT"><span class="sideoverflow">LT</span></abbr></a></li>
+          <li><a href="#GT"><abbr title="GT"><span class="sideoverflow">GT</span></abbr></a></li>
+          <li><a href="#LTE"><abbr title="LTE"><span class="sideoverflow">LTE</span></abbr></a></li>
+          <li><a href="#GTE"><abbr title="GTE"><span class="sideoverflow">GTE</span></abbr></a></li>
+          <li><a href="#EQ"><abbr title="EQ"><span class="sideoverflow">EQ</span></abbr></a></li>
+          <li><a href="#NEQ"><abbr title="NEQ"><span class="sideoverflow">NEQ</span></abbr></a></li>
+          <li><a href="#IN"><abbr title="IN"><span class="sideoverflow">IN</span></abbr></a></li>
+          <li><a href="#LIKE"><abbr title="LIKE"><span class="sideoverflow">LIKE</span></abbr></a></li>
+          <li><a href="#STARTS_WITH"><abbr title="STARTS_WITH"><span class="sideoverflow">STARTS_WITH</span></abbr></a></li>
+          <li><a href="#ENDS_WITH"><abbr title="ENDS_WITH"><span class="sideoverflow">ENDS_WITH</span></abbr></a></li>
+          <li><a href="#CONTAINS"><abbr title="CONTAINS"><span class="sideoverflow">CONTAINS</span></abbr></a></li>
+          <li><a href="#CONTAINS_ANY"><abbr title="CONTAINS_ANY"><span class="sideoverflow">CONTAINS_ANY</span></abbr></a></li>
+          <li><a href="#CONTAINS_ALL"><abbr title="CONTAINS_ALL"><span class="sideoverflow">CONTAINS_ALL</span></abbr></a></li>
+          <li><a href="#IS_NULL"><abbr title="IS_NULL"><span class="sideoverflow">IS_NULL</span></abbr></a></li>
+          <li><a href="#NOT_NULL"><abbr title="NOT_NULL"><span class="sideoverflow">NOT_NULL</span></abbr></a></li>
+          <li class="divider"></li>
           <li class="text-right"><a href="#top"><small>Back to Top</small></a></li>
         </ul>
       </div>
@@ -80,47 +96,63 @@ IN, LIKE, startsWith, endsWith, CONTAINS can only be used with strings or text</
         </thead>
         <tbody>
         <tr>
-          <td><span class="value-value">LT</span></td>
+          <td><span class="value-value" id="LT">LT</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">GT</span></td>
+          <td><span class="value-value" id="GT">GT</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">LTE</span></td>
+          <td><span class="value-value" id="LTE">LTE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">GTE</span></td>
+          <td><span class="value-value" id="GTE">GTE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">EQ</span></td>
+          <td><span class="value-value" id="EQ">EQ</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">NEQ</span></td>
+          <td><span class="value-value" id="NEQ">NEQ</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">IN</span></td>
+          <td><span class="value-value" id="IN">IN</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">LIKE</span></td>
+          <td><span class="value-value" id="LIKE">LIKE</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">STARTS_WITH</span></td>
+          <td><span class="value-value" id="STARTS_WITH">STARTS_WITH</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">ENDS_WITH</span></td>
+          <td><span class="value-value" id="ENDS_WITH">ENDS_WITH</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         <tr>
-          <td><span class="value-value">CONTAINS</span></td>
+          <td><span class="value-value" id="CONTAINS">CONTAINS</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="CONTAINS_ANY">CONTAINS_ANY</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="CONTAINS_ALL">CONTAINS_ALL</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="IS_NULL">IS_NULL</span></td>
+          <td><span class="value-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="value-value" id="NOT_NULL">NOT_NULL</span></td>
           <td><span class="value-description"></span></td>
         </tr>
         </tbody>
