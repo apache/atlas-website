@@ -168,7 +168,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -215,7 +215,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -232,7 +232,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -262,7 +262,7 @@
     &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;attributeDefs&quot; : [ {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -279,7 +279,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -296,7 +296,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;MAP&quot;,
+    &quot;category&quot; : &quot;PRIMITIVE&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -325,7 +325,7 @@
     &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;attributeDefs&quot; : [ {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -342,7 +342,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -359,7 +359,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;PRIMITIVE&quot;,
+    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -396,7 +396,7 @@
       &quot;ordinal&quot; : 12345,
       &quot;value&quot; : &quot;...&quot;
     } ],
-    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+    &quot;category&quot; : &quot;OBJECT_ID_TYPE&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -432,7 +432,7 @@
       &quot;ordinal&quot; : 12345,
       &quot;value&quot; : &quot;...&quot;
     } ],
-    &quot;category&quot; : &quot;PRIMITIVE&quot;,
+    &quot;category&quot; : &quot;STRUCT&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -460,7 +460,7 @@
   } ],
   &quot;relationshipDefs&quot; : [ {
     &quot;endDef1&quot; : {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;description&quot; : &quot;...&quot;,
       &quot;isContainer&quot; : true,
       &quot;isLegacyAttribute&quot; : true,
@@ -468,14 +468,14 @@
       &quot;type&quot; : &quot;...&quot;
     },
     &quot;endDef2&quot; : {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;description&quot; : &quot;...&quot;,
       &quot;isContainer&quot; : true,
       &quot;isLegacyAttribute&quot; : true,
       &quot;name&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;propagateTags&quot; : &quot;TWO_TO_ONE&quot;,
+    &quot;propagateTags&quot; : &quot;BOTH&quot;,
     &quot;relationshipCategory&quot; : &quot;AGGREGATION&quot;,
     &quot;relationshipLabel&quot; : &quot;...&quot;,
     &quot;attributeDefs&quot; : [ {
@@ -513,7 +513,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;STRUCT&quot;,
+    &quot;category&quot; : &quot;CLASSIFICATION&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -540,14 +540,6 @@
     &quot;version&quot; : 12345
   }, {
     &quot;endDef1&quot; : {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;isContainer&quot; : true,
-      &quot;isLegacyAttribute&quot; : true,
-      &quot;name&quot; : &quot;...&quot;,
-      &quot;type&quot; : &quot;...&quot;
-    },
-    &quot;endDef2&quot; : {
       &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;description&quot; : &quot;...&quot;,
       &quot;isContainer&quot; : true,
@@ -555,11 +547,19 @@
       &quot;name&quot; : &quot;...&quot;,
       &quot;type&quot; : &quot;...&quot;
     },
-    &quot;propagateTags&quot; : &quot;BOTH&quot;,
+    &quot;endDef2&quot; : {
+      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;isContainer&quot; : true,
+      &quot;isLegacyAttribute&quot; : true,
+      &quot;name&quot; : &quot;...&quot;,
+      &quot;type&quot; : &quot;...&quot;
+    },
+    &quot;propagateTags&quot; : &quot;TWO_TO_ONE&quot;,
     &quot;relationshipCategory&quot; : &quot;AGGREGATION&quot;,
     &quot;relationshipLabel&quot; : &quot;...&quot;,
     &quot;attributeDefs&quot; : [ {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -576,7 +576,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -593,7 +593,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;RELATIONSHIP&quot;,
+    &quot;category&quot; : &quot;ENTITY&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {
@@ -621,7 +621,7 @@
   } ],
   &quot;structDefs&quot; : [ {
     &quot;attributeDefs&quot; : [ {
-      &quot;cardinality&quot; : &quot;SET&quot;,
+      &quot;cardinality&quot; : &quot;LIST&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -638,7 +638,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -682,7 +682,7 @@
     &quot;version&quot; : 12345
   }, {
     &quot;attributeDefs&quot; : [ {
-      &quot;cardinality&quot; : &quot;SINGLE&quot;,
+      &quot;cardinality&quot; : &quot;SET&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -699,7 +699,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     }, {
-      &quot;cardinality&quot; : &quot;LIST&quot;,
+      &quot;cardinality&quot; : &quot;SINGLE&quot;,
       &quot;constraints&quot; : [ { }, { } ],
       &quot;defaultValue&quot; : &quot;...&quot;,
       &quot;description&quot; : &quot;...&quot;,
@@ -716,7 +716,7 @@
       &quot;valuesMaxCount&quot; : 12345,
       &quot;valuesMinCount&quot; : 12345
     } ],
-    &quot;category&quot; : &quot;ARRAY&quot;,
+    &quot;category&quot; : &quot;ENTITY&quot;,
     &quot;createTime&quot; : 12345,
     &quot;createdBy&quot; : &quot;...&quot;,
     &quot;dateFormatter&quot; : {

@@ -143,10 +143,15 @@
           </thead>
           <tbody>
           <tr>
+            <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json</span></abbr></td>
+            <td><span class="datatype-reference"><a href="json_AtlasLineageInfo.html">AtlasLineageInfo</a>
+ (JSON)</span></td>
+            <td rowspan="2" class="multi-row-description"><span class="response-description">AtlasLineageInfo</span></td>
+          </tr>
+          <tr>
             <td><abbr data-toggle="tooltip" data-placement="top" title="Use the &quot;Accept: application/json;charset=UTF-8&quot; HTTP header to request that this media type be provided by the server."><span class="response-type">application/json;charset=UTF-8</span></abbr></td>
             <td><span class="datatype-reference">(custom)
 </span></td>
-            <td><span class="response-description">AtlasLineageInfo</span></td>
           </tr>
           </tbody>
         </table>
@@ -158,8 +163,8 @@
               <h5>Request</h5>
               <pre>
 GET /v2/lineage/{guid}
-Content-Type: application/json;charset=UTF-8
-Accept: application/json;charset=UTF-8
+Content-Type: application/json
+Accept: application/json
 
                 <code class="prettyprint language-txt">
 ...
@@ -170,10 +175,141 @@ Accept: application/json;charset=UTF-8
               <h5>Response</h5>
               <pre>
 HTTP/1.1 200 OK
-Content-Type: application/json;charset=UTF-8
+Content-Type: application/json
 
-                <code class="prettyprint language-txt">
-...
+                <code class="prettyprint language-js">
+{
+  &quot;baseEntityGuid&quot; : &quot;...&quot;,
+  &quot;guidEntityMap&quot; : {
+    &quot;property1&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    },
+    &quot;property2&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }
+  },
+  &quot;lineageDepth&quot; : 12345,
+  &quot;lineageDirection&quot; : &quot;OUTPUT&quot;,
+  &quot;relations&quot; : [ {
+    &quot;fromEntityId&quot; : &quot;...&quot;,
+    &quot;relationshipId&quot; : &quot;...&quot;,
+    &quot;toEntityId&quot; : &quot;...&quot;
+  }, {
+    &quot;fromEntityId&quot; : &quot;...&quot;,
+    &quot;relationshipId&quot; : &quot;...&quot;,
+    &quot;toEntityId&quot; : &quot;...&quot;
+  } ]
+}
                 </code>
               </pre>
             </div>

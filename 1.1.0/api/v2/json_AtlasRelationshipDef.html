@@ -256,18 +256,18 @@ the entity instances</p>
     &quot;type&quot; : &quot;...&quot;
   },
   &quot;endDef2&quot; : {
-    &quot;cardinality&quot; : &quot;LIST&quot;,
+    &quot;cardinality&quot; : &quot;SET&quot;,
     &quot;description&quot; : &quot;...&quot;,
     &quot;isContainer&quot; : true,
     &quot;isLegacyAttribute&quot; : true,
     &quot;name&quot; : &quot;...&quot;,
     &quot;type&quot; : &quot;...&quot;
   },
-  &quot;propagateTags&quot; : &quot;BOTH&quot;,
-  &quot;relationshipCategory&quot; : &quot;ASSOCIATION&quot;,
+  &quot;propagateTags&quot; : &quot;NONE&quot;,
+  &quot;relationshipCategory&quot; : &quot;COMPOSITION&quot;,
   &quot;relationshipLabel&quot; : &quot;...&quot;,
   &quot;attributeDefs&quot; : [ {
-    &quot;cardinality&quot; : &quot;LIST&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
     &quot;constraints&quot; : [ {
       &quot;params&quot; : {
         &quot;property1&quot; : { },
@@ -325,7 +325,7 @@ the entity instances</p>
     &quot;valuesMaxCount&quot; : 12345,
     &quot;valuesMinCount&quot; : 12345
   } ],
-  &quot;category&quot; : &quot;CLASSIFICATION&quot;,
+  &quot;category&quot; : &quot;MAP&quot;,
   &quot;createTime&quot; : 12345,
   &quot;createdBy&quot; : &quot;...&quot;,
   &quot;dateFormatter&quot; : {
@@ -349,7 +349,7 @@ the entity instances</p>
       &quot;numberInstance&quot; : { },
       &quot;parseIntegerOnly&quot; : true,
       &quot;percentInstance&quot; : { },
-      &quot;roundingMode&quot; : &quot;HALF_DOWN&quot;
+      &quot;roundingMode&quot; : &quot;HALF_UP&quot;
     },
     &quot;timeInstance&quot; : { },
     &quot;timeZone&quot; : {

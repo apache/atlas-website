@@ -156,7 +156,7 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;action&quot; : &quot;PROPAGATED_CLASSIFICATION_ADD&quot;,
+  &quot;action&quot; : &quot;ENTITY_IMPORT_DELETE&quot;,
   &quot;details&quot; : &quot;...&quot;,
   &quot;entity&quot; : {
     &quot;classifications&quot; : [ {
@@ -172,7 +172,7 @@
       &quot;typeName&quot; : &quot;...&quot;
     }, {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -194,7 +194,7 @@
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DISCOVERED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -205,7 +205,7 @@
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;IMPORTED&quot;,
+      &quot;status&quot; : &quot;DISCOVERED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -214,7 +214,7 @@
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
     },
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;updateTime&quot; : 12345,
     &quot;updatedBy&quot; : &quot;...&quot;,
     &quot;version&quot; : 12345,

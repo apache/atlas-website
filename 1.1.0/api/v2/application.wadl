@@ -15,11 +15,14 @@
         <wadl:doc><![CDATA[Create new entity or update existing entity in Atlas.
 Existing entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -41,6 +44,7 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         </wadl:request>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of glossary entities fitting the above criteria]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -52,6 +56,8 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         <wadl:request>
           <wadl:doc><![CDATA[Glossary definition, terms & categories can be anchored to a glossary
 using the anchor attribute when creating the Term/Category]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -63,6 +69,7 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -72,11 +79,14 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
       <wadl:method name="POST">
         <wadl:doc><![CDATA[Create a new relationship between entities.]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -86,11 +96,14 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
       <wadl:method name="PUT">
         <wadl:doc><![CDATA[Update an existing relationship between entities.]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -109,6 +122,7 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -119,11 +133,14 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
         <wadl:doc><![CDATA[Bulk API to create new entities or update existing entities in Atlas.
 Existing entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -139,6 +156,7 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -149,6 +167,8 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         <wadl:doc><![CDATA[Create glossary category in bulk]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[glossary category definitions]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -157,6 +177,7 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -168,6 +189,8 @@ Existing entity is matched using its unique guid if supplied or by its unique at
         <wadl:request>
           <wadl:doc><![CDATA[glossary category definition, a category must be anchored to a Glossary when creating
 Optionally, terms belonging to the category and the hierarchy can also be defined during creation]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -179,6 +202,7 @@ Optionally, terms belonging to the category and the hierarchy can also be define
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -190,6 +214,8 @@ Optionally, terms belonging to the category and the hierarchy can also be define
         <wadl:request>
           <wadl:doc><![CDATA[Glossary term definition, a term must be anchored to a Glossary at the time of creation
 optionally it can be categorized as well]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -201,6 +227,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -211,6 +238,8 @@ optionally it can be categorized as well]]></wadl:doc>
         <wadl:doc><![CDATA[Create glossary terms in bulk]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[glossary term definitions]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -219,6 +248,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -234,6 +264,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -247,6 +278,8 @@ optionally it can be categorized as well]]></wadl:doc>
         <wadl:doc><![CDATA[Update the given glossary]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Updated glossary definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -258,6 +291,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -299,6 +333,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[AtlasLineageInfo]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -332,6 +367,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -365,6 +401,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -375,6 +412,8 @@ optionally it can be categorized as well]]></wadl:doc>
         <wadl:doc><![CDATA[Attribute based search for entities satisfying the search parameters]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Search parameters]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -383,6 +422,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -413,6 +453,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -440,6 +481,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Search results]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -476,6 +518,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -485,11 +528,14 @@ optionally it can be categorized as well]]></wadl:doc>
       <wadl:method name="POST">
         <wadl:doc><![CDATA[]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[the saved search-object]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -499,11 +545,14 @@ optionally it can be categorized as well]]></wadl:doc>
       <wadl:method name="PUT">
         <wadl:doc><![CDATA[]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[the updated search-object]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -519,6 +568,7 @@ optionally it can be categorized as well]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[list of all saved searches for given user]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -529,6 +579,7 @@ optionally it can be categorized as well]]></wadl:doc>
         <wadl:doc><![CDATA[Bulk retrieval API for retrieving all type definitions in Atlas]]></wadl:doc>
         <wadl:response status="200">
           <wadl:doc><![CDATA[A composite wrapper object with lists of all type definitions]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -540,6 +591,8 @@ optionally it can be categorized as well]]></wadl:doc>
 Any changes to the existing definitions will be discarded]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[A composite wrapper object with corresponding lists of the type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -549,6 +602,7 @@ Any changes to the existing definitions will be discarded]]></wadl:doc>
         <wadl:response status="200">
           <wadl:doc><![CDATA[A composite wrapper object with lists of type definitions that were successfully
 created]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -559,6 +613,8 @@ created]]></wadl:doc>
         <wadl:doc><![CDATA[Bulk update API for all types, changes detected in the type definitions would be persisted]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[A composite object that captures all type definition changes]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -567,6 +623,7 @@ created]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[A composite object with lists of type definitions that were updated]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -577,6 +634,8 @@ created]]></wadl:doc>
         <wadl:doc><![CDATA[Bulk delete API for all types]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[A composite object that captures all types to be deleted]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -608,6 +667,7 @@ created]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[AtlasEntity]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -623,6 +683,8 @@ Supports only uprimitive attribute type and entity references.
 does not support updation of complex types like arrays, maps
 Null updates are not possible]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
           <wadl:param name="name" style="query">
@@ -631,6 +693,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -646,6 +709,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -667,6 +731,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -685,6 +750,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Glossary category]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -698,6 +764,8 @@ Null updates are not possible]]></wadl:doc>
         <wadl:doc><![CDATA[Update the given glossary category]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[updated glossary category]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -709,6 +777,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[glossary category]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -741,6 +810,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Glossary term]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -754,6 +824,8 @@ Null updates are not possible]]></wadl:doc>
         <wadl:doc><![CDATA[Update the given glossary term]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[updated glossary term]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -765,6 +837,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Updated glossary term]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -806,6 +879,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of associated categories]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -824,6 +898,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -837,6 +912,8 @@ Null updates are not possible]]></wadl:doc>
         <wadl:doc><![CDATA[Partially update the glossary]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Map containing keys as attribute names and values as corresponding attribute values]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -848,6 +925,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Updated glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -875,6 +953,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of terms associated with the glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -893,6 +972,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -933,6 +1013,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -946,6 +1027,7 @@ Null updates are not possible]]></wadl:doc>
         <wadl:doc><![CDATA[Bulk retrieval API for all type definitions returned as a list of minimal information header]]></wadl:doc>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of AtlasTypeDefHeader AtlasTypeDefHeader]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -958,6 +1040,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[a list of classifications for the given entity guid]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -987,7 +1070,7 @@ Null updates are not possible]]></wadl:doc>
         <wadl:request>
           <wadl:representation mediaType="application/json">
           </wadl:representation>
-          <wadl:representation mediaType="application/xml" element="atlasClassification">
+          <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
       </wadl:method>
@@ -1003,6 +1086,7 @@ Null updates are not possible]]></wadl:doc>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[AtlasEntity]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1031,6 +1115,7 @@ GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[AtlasEntityWithExtInfo]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1055,11 +1140,14 @@ The REST request would look something like this
 
 PUT /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
         <wadl:request>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1085,6 +1173,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[EntityMutationResponse]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1098,6 +1187,8 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         <wadl:doc><![CDATA[Partially update the glossary category]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Map containing keys as attribute names and values as corresponding attribute values]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -1109,6 +1200,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Updated glossary category]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1133,6 +1225,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[List of related categories]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1160,6 +1253,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of associated terms]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1173,6 +1267,8 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         <wadl:doc><![CDATA[Partially update the glossary term]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Map containing keys as attribute names and values as corresponding attribute values]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -1184,6 +1280,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Updated glossary term]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1211,6 +1308,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1224,6 +1322,8 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         <wadl:doc><![CDATA[Assign the given term to the provided list of entity headers]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[Related Entity IDs to which the term has to be associated]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -1244,6 +1344,8 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         <wadl:doc><![CDATA[Remove the term assignment for the given list of entity headers]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[List of related entity IDs from which the term has to be dissociated]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
           <wadl:representation mediaType="application/json;charset=UTF-8">
           </wadl:representation>
         </wadl:request>
@@ -1278,6 +1380,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of all related terms]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1305,6 +1408,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of associated categories]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1332,6 +1436,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[List of terms associated with the glossary]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1350,6 +1455,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1368,6 +1474,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[classification definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1386,6 +1493,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[classification definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1404,6 +1512,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Entity definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1422,6 +1531,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Entity definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1440,6 +1550,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[enum definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1458,6 +1569,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[enum definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1476,6 +1588,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[relationship definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1494,6 +1607,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[relationship definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1512,6 +1626,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[struct definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1530,6 +1645,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[struct definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1548,6 +1664,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1566,11 +1683,26 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:response>
         <wadl:response status="200">
           <wadl:doc><![CDATA[Type definition]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
       <wadl:param name="name" style="template">
         <wadl:doc><![CDATA[Type name]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/types/typedef/name/{typeName}">
+      <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Delete API for type identified by its name.]]></wadl:doc>
+        <wadl:request>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[On validation failure for any type definitions]]></wadl:doc>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="typeName" style="template">
+        <wadl:doc><![CDATA[Name of the type to be deleted.]]></wadl:doc>
       </wadl:param>
     </wadl:resource>
 
@@ -1581,6 +1713,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[classification for the given entity guid]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
@@ -1646,6 +1779,7 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
         </wadl:request>
         <wadl:response>
           <wadl:doc><![CDATA[Atlas search result]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
           <wadl:representation mediaType="application/json;charset=UTF-8"/>
         </wadl:response>
       </wadl:method>
