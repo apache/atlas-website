@@ -79,6 +79,15 @@
         </thead>
         <tbody>
         <tr>
+          <td>  <span id="prop-relationshipAttributeDefs" class="property-name">relationshipAttributeDefs</span>
+</td>
+          <td>  <span class="datatype-reference">array of <a href="json_AtlasRelationshipAttributeDef.html">AtlasRelationshipAttributeDef</a>
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
           <td>  <span id="prop-subTypes" class="property-name">subTypes</span>
 </td>
           <td>  <span class="datatype-reference">array of string
@@ -161,6 +170,12 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
+          <td><span class="property-name">serviceType</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
           <td><span class="property-name">typeVersion</span></td>
           <td><span class="datatype-reference">string
 </span></td>
@@ -190,10 +205,73 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
+  &quot;relationshipAttributeDefs&quot; : [ {
+    &quot;isLegacyAttribute&quot; : true,
+    &quot;relationshipTypeName&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
+    &quot;constraints&quot; : [ {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    }, {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
+  }, {
+    &quot;isLegacyAttribute&quot; : true,
+    &quot;relationshipTypeName&quot; : &quot;...&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
+    &quot;constraints&quot; : [ {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    }, {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
+  } ],
   &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;attributeDefs&quot; : [ {
-    &quot;cardinality&quot; : &quot;SET&quot;,
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
     &quot;constraints&quot; : [ {
       &quot;params&quot; : {
         &quot;property1&quot; : { },
@@ -251,7 +329,7 @@
     &quot;valuesMaxCount&quot; : 12345,
     &quot;valuesMinCount&quot; : 12345
   } ],
-  &quot;category&quot; : &quot;ARRAY&quot;,
+  &quot;category&quot; : &quot;CLASSIFICATION&quot;,
   &quot;createTime&quot; : 12345,
   &quot;createdBy&quot; : &quot;...&quot;,
   &quot;dateFormatter&quot; : {
@@ -275,7 +353,7 @@
       &quot;numberInstance&quot; : { },
       &quot;parseIntegerOnly&quot; : true,
       &quot;percentInstance&quot; : { },
-      &quot;roundingMode&quot; : &quot;DOWN&quot;
+      &quot;roundingMode&quot; : &quot;CEILING&quot;
     },
     &quot;timeInstance&quot; : { },
     &quot;timeZone&quot; : {
@@ -294,6 +372,7 @@
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
   },
+  &quot;serviceType&quot; : &quot;...&quot;,
   &quot;typeVersion&quot; : &quot;...&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,

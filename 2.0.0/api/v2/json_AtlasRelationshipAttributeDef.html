@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-  <title>Atlas REST API: AtlasGlossary</title>
+  <title>Atlas REST API: AtlasRelationshipAttributeDef</title>
 
   <!-- Mobile viewport optimized: j.mp/bplateviewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,7 +35,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Atlas REST API: AtlasGlossary</a>
+        <a class="navbar-brand" href="index.html">Atlas REST API: AtlasRelationshipAttributeDef</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
@@ -58,16 +58,14 @@
         <ol class="breadcrumb" id="top">
           <li class="active dropdown"><a href="index.html">Home</a></li>
           <li class="active dropdown"><a href="syntax_json.html">JSON</a></li>
-          <li class="dropdown"><a href="json_AtlasGlossary.html">AtlasGlossary</a></li>
+          <li class="dropdown"><a href="json_AtlasRelationshipAttributeDef.html">AtlasRelationshipAttributeDef</a></li>
         </ol>
 
-      <h1 class="page-header">AtlasGlossary <small>Data Type</small></h1>
+      <h1 class="page-header">AtlasRelationshipAttributeDef <small>Data Type</small></h1>
 
-      <p></p>
+      <p>class that captures details of a struct-attribute.</p>
 
       <dl class="dl-horizontal">
-        <dt>Subtypes</dt>
-        <dd><a href="json_AtlasGlossaryExtInfo.html">AtlasGlossaryExtInfo</a></dd>
       </dl>
 
       <table class="table datatype-properties">
@@ -81,34 +79,16 @@
         </thead>
         <tbody>
         <tr>
-          <td>  <span id="prop-categories" class="property-name">categories</span>
+          <td>  <span id="prop-isLegacyAttribute" class="property-name">isLegacyAttribute</span>
 </td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasRelatedCategoryHeader.html">AtlasRelatedCategoryHeader</a>
+          <td>  <span class="datatype-reference">boolean
 </span>
 </td>
           <td>  <span class="property-description"></span>
 </td>
         </tr>
         <tr>
-          <td>  <span id="prop-language" class="property-name">language</span>
-</td>
-          <td>  <span class="datatype-reference">string
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span id="prop-terms" class="property-name">terms</span>
-</td>
-          <td>  <span class="datatype-reference">array of <a href="json_AtlasRelatedTermHeader.html">AtlasRelatedTermHeader</a>
-</span>
-</td>
-          <td>  <span class="property-description"></span>
-</td>
-        </tr>
-        <tr>
-          <td>  <span id="prop-usage" class="property-name">usage</span>
+          <td>  <span id="prop-relationshipTypeName" class="property-name">relationshipTypeName</span>
 </td>
           <td>  <span class="datatype-reference">string
 </span>
@@ -118,18 +98,54 @@
         </tr>
         </tbody>
         <tr>
-          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_AtlasGlossaryBaseObject.html">AtlasGlossaryBaseObject</a></h5></td>
+          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_AtlasAttributeDef.html">AtlasAttributeDef</a></h5></td>
         </tr>
         <tbody>
         <tr>
-          <td><span class="property-name">classifications</span></td>
-          <td><span class="datatype-reference">array of <a href="json_AtlasClassification.html">AtlasClassification</a>
+          <td><span class="property-name">cardinality</span></td>
+          <td><span class="datatype-reference"><a href="json_Cardinality.html">Cardinality</a>
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">longDescription</span></td>
+          <td><span class="property-name">constraints</span></td>
+          <td><span class="datatype-reference">array of <a href="json_AtlasConstraintDef.html">AtlasConstraintDef</a>
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">defaultValue</span></td>
           <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">description</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">includeInNotification</span></td>
+          <td><span class="datatype-reference">boolean
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">isIndexable</span></td>
+          <td><span class="datatype-reference">boolean
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">isOptional</span></td>
+          <td><span class="datatype-reference">boolean
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">isUnique</span></td>
+          <td><span class="datatype-reference">boolean
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -140,25 +156,26 @@
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">qualifiedName</span></td>
+          <td><span class="property-name">options</span></td>
+          <td><span class="datatype-reference">map of string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
+          <td><span class="property-name">typeName</span></td>
           <td><span class="datatype-reference">string
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
-          <td><span class="property-name">shortDescription</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">valuesMaxCount</span></td>
+          <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
-        </tbody>
         <tr>
-          <td colspan="3"><h5 class="text-muted">Properties inherited from <a href="json_AtlasBaseModelObject.html">AtlasBaseModelObject</a></h5></td>
-        </tr>
-        <tbody>
-        <tr>
-          <td><span class="property-name">guid</span></td>
-          <td><span class="datatype-reference">string
+          <td><span class="property-name">valuesMinCount</span></td>
+          <td><span class="datatype-reference">number
 </span></td>
           <td><span class="property-description"></span></td>
         </tr>
@@ -168,84 +185,36 @@
       <p class="lead">Example</p>
       
       <pre class="prettyprint language-js example">{
-  &quot;categories&quot; : [ {
-    &quot;categoryGuid&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;parentCategoryGuid&quot; : &quot;...&quot;,
-    &quot;relationGuid&quot; : &quot;...&quot;
-  }, {
-    &quot;categoryGuid&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;parentCategoryGuid&quot; : &quot;...&quot;,
-    &quot;relationGuid&quot; : &quot;...&quot;
-  } ],
-  &quot;language&quot; : &quot;...&quot;,
-  &quot;terms&quot; : [ {
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;expression&quot; : &quot;...&quot;,
-    &quot;relationGuid&quot; : &quot;...&quot;,
-    &quot;source&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;OBSOLETE&quot;,
-    &quot;steward&quot; : &quot;...&quot;,
-    &quot;termGuid&quot; : &quot;...&quot;
-  }, {
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;expression&quot; : &quot;...&quot;,
-    &quot;relationGuid&quot; : &quot;...&quot;,
-    &quot;source&quot; : &quot;...&quot;,
-    &quot;status&quot; : &quot;DEPRECATED&quot;,
-    &quot;steward&quot; : &quot;...&quot;,
-    &quot;termGuid&quot; : &quot;...&quot;
-  } ],
-  &quot;usage&quot; : &quot;...&quot;,
-  &quot;classifications&quot; : [ {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
+  &quot;isLegacyAttribute&quot; : true,
+  &quot;relationshipTypeName&quot; : &quot;...&quot;,
+  &quot;cardinality&quot; : &quot;SET&quot;,
+  &quot;constraints&quot; : [ {
+    &quot;params&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
     },
-    &quot;typeName&quot; : &quot;...&quot;
+    &quot;type&quot; : &quot;...&quot;
   }, {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
+    &quot;params&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
     },
-    &quot;typeName&quot; : &quot;...&quot;
+    &quot;type&quot; : &quot;...&quot;
   } ],
-  &quot;longDescription&quot; : &quot;...&quot;,
+  &quot;defaultValue&quot; : &quot;...&quot;,
+  &quot;description&quot; : &quot;...&quot;,
+  &quot;includeInNotification&quot; : true,
+  &quot;isIndexable&quot; : true,
+  &quot;isOptional&quot; : true,
+  &quot;isUnique&quot; : true,
   &quot;name&quot; : &quot;...&quot;,
-  &quot;qualifiedName&quot; : &quot;...&quot;,
-  &quot;shortDescription&quot; : &quot;...&quot;,
-  &quot;guid&quot; : &quot;...&quot;
+  &quot;options&quot; : {
+    &quot;property1&quot; : &quot;...&quot;,
+    &quot;property2&quot; : &quot;...&quot;
+  },
+  &quot;typeName&quot; : &quot;...&quot;,
+  &quot;valuesMaxCount&quot; : 12345,
+  &quot;valuesMinCount&quot; : 12345
 }</pre>
 
         <footer class="footer">

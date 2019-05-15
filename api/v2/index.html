@@ -124,11 +124,14 @@
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="resource-path">/v2/entity</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk/classification</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk/headers</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk/setClassifications</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/{guid}/audit</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}/classifications</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}/header</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}</span>
+</samp></li><li><samp>  <span class="resource-path">/v2/entity/bulk/uniqueAttribute/type/{typeName}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/guid/{guid}/classification/{classificationName}</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classifications</span>
 </samp></li><li><samp>  <span class="resource-path">/v2/entity/uniqueAttribute/type/{typeName}/classification/{classificationName}</span>
@@ -136,11 +139,14 @@
       <td class="text-nowrap"><ul class="list-unstyled"><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">POST</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">PUT</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> 
@@ -188,7 +194,7 @@
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">PUT</span> 
-</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> 
+</samp></li><li><samp>  <span class="label label-default resource-method">DELETE</span> <span class="label label-default resource-method">GET</span> <span class="label label-default resource-method">POST</span> <span class="label label-default resource-method">PUT</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
 </samp></li><li><samp>  <span class="label label-default resource-method">GET</span> 
@@ -343,6 +349,12 @@
       <td>  <span class="datatype-description">An instance of an entity - like hive_table, hive_database.</span>
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_AtlasEntityHeaders.html">
+      <td>  <span class="datatype-name">AtlasEntityHeaders</span>
+</td>
+      <td>  <span class="datatype-description"></span>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_AtlasEntityWithExtInfo.html">
       <td>  <span class="datatype-name">AtlasEntityWithExtInfo</span>
 </td>
@@ -445,6 +457,12 @@
       <td>  <span class="datatype-description">Atlas relationship instance.</span>
 </td>
     </tr>
+    <tr class="clickable-row" data-href="json_AtlasRelationshipAttributeDef.html">
+      <td>  <span class="datatype-name">AtlasRelationshipAttributeDef</span>
+</td>
+      <td>  <span class="datatype-description">class that captures details of a struct-attribute.</span>
+</td>
+    </tr>
     <tr class="clickable-row" data-href="json_AtlasRelationshipDef.html">
       <td>  <span class="datatype-name">AtlasRelationshipDef</span>
 </td>
@@ -463,7 +481,7 @@ RelationshipDefs also have a PropogateTag - indicating which way tags could flow
 The way EntityDefs and RelationshipDefs are intended to be used is that EntityDefs will define AttributeDefs these AttributeDefs
 will not specify an EntityDef type name as their types.
 <p>
-RelationshipDefs introduce new atributes to the entity instances. For example
+RelationshipDefs introduce new attributes to the entity instances. For example
 <p>
 EntityDef A might have attributes attr1,attr2,attr3 <br>
 EntityDef B might have attributes attr4,attr5,attr6 <br>

@@ -169,6 +169,15 @@
 </td>
         </tr>
         <tr>
+          <td>  <span id="prop-provenanceType" class="property-name">provenanceType</span>
+</td>
+          <td>  <span class="datatype-reference">number
+</span>
+</td>
+          <td>  <span class="property-description"></span>
+</td>
+        </tr>
+        <tr>
           <td>  <span id="prop-status" class="property-name">status</span>
 </td>
           <td>  <span class="datatype-reference"><a href="json_Status_AtlasRelationship.html">Status</a>
@@ -229,7 +238,7 @@
       <pre class="prettyprint language-js example">{
   &quot;blockedPropagatedClassifications&quot; : [ {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -248,7 +257,7 @@
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -287,10 +296,10 @@
   &quot;guid&quot; : &quot;...&quot;,
   &quot;homeId&quot; : &quot;...&quot;,
   &quot;label&quot; : &quot;...&quot;,
-  &quot;propagateTags&quot; : &quot;BOTH&quot;,
+  &quot;propagateTags&quot; : &quot;NONE&quot;,
   &quot;propagatedClassifications&quot; : [ {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -309,7 +318,7 @@
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -327,7 +336,8 @@
     },
     &quot;typeName&quot; : &quot;...&quot;
   } ],
-  &quot;status&quot; : &quot;ACTIVE&quot;,
+  &quot;provenanceType&quot; : 12345,
+  &quot;status&quot; : &quot;DELETED&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,
   &quot;version&quot; : 12345,

@@ -205,7 +205,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -237,7 +237,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;status&quot; : &quot;DISCOVERED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -248,11 +248,11 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -262,7 +262,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -294,7 +294,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;status&quot; : &quot;IMPORTED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -305,7 +305,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -324,7 +324,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -350,71 +350,13 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;queryType&quot; : &quot;DSL&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
-        &quot;propagate&quot; : true,
-        &quot;removePropagationsOnEntityDelete&quot; : true,
-        &quot;validityPeriods&quot; : [ { }, { } ],
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        },
-        &quot;typeName&quot; : &quot;...&quot;
-      }, {
-        &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
-        &quot;propagate&quot; : true,
-        &quot;removePropagationsOnEntityDelete&quot; : true,
-        &quot;validityPeriods&quot; : [ { }, { } ],
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        },
-        &quot;typeName&quot; : &quot;...&quot;
-      } ],
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;meanings&quot; : [ {
-        &quot;confidence&quot; : 12345,
-        &quot;createdBy&quot; : &quot;...&quot;,
-        &quot;description&quot; : &quot;...&quot;,
-        &quot;displayText&quot; : &quot;...&quot;,
-        &quot;expression&quot; : &quot;...&quot;,
-        &quot;relationGuid&quot; : &quot;...&quot;,
-        &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OBSOLETE&quot;,
-        &quot;steward&quot; : &quot;...&quot;,
-        &quot;termGuid&quot; : &quot;...&quot;
-      }, {
-        &quot;confidence&quot; : 12345,
-        &quot;createdBy&quot; : &quot;...&quot;,
-        &quot;description&quot; : &quot;...&quot;,
-        &quot;displayText&quot; : &quot;...&quot;,
-        &quot;expression&quot; : &quot;...&quot;,
-        &quot;relationGuid&quot; : &quot;...&quot;,
-        &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;PROPOSED&quot;,
-        &quot;steward&quot; : &quot;...&quot;,
-        &quot;termGuid&quot; : &quot;...&quot;
-      } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    },
-    &quot;property2&quot; : {
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;classifications&quot; : [ {
-        &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -446,7 +388,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -457,11 +399,69 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    },
+    &quot;property2&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -475,9 +475,9 @@ Content-Type: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;LIKE&quot;
+      &quot;operator&quot; : &quot;LTE&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -489,9 +489,9 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GTE&quot;
+      &quot;operator&quot; : &quot;LT&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -648,63 +648,6 @@ Content-Type: application/json
       &quot;typeName&quot; : &quot;...&quot;
     }, {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
-      &quot;propagate&quot; : true,
-      &quot;removePropagationsOnEntityDelete&quot; : true,
-      &quot;validityPeriods&quot; : [ { }, { } ],
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    } ],
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;meanings&quot; : [ {
-      &quot;confidence&quot; : 12345,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;expression&quot; : &quot;...&quot;,
-      &quot;relationGuid&quot; : &quot;...&quot;,
-      &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OBSOLETE&quot;,
-      &quot;steward&quot; : &quot;...&quot;,
-      &quot;termGuid&quot; : &quot;...&quot;
-    }, {
-      &quot;confidence&quot; : 12345,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;expression&quot; : &quot;...&quot;,
-      &quot;relationGuid&quot; : &quot;...&quot;,
-      &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OBSOLETE&quot;,
-      &quot;steward&quot; : &quot;...&quot;,
-      &quot;termGuid&quot; : &quot;...&quot;
-    } ],
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  }, {
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;classifications&quot; : [ {
-      &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-      &quot;propagate&quot; : true,
-      &quot;removePropagationsOnEntityDelete&quot; : true,
-      &quot;validityPeriods&quot; : [ { }, { } ],
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    }, {
-      &quot;entityGuid&quot; : &quot;...&quot;,
       &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
@@ -737,11 +680,68 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -749,22 +749,6 @@ Content-Type: application/json
     &quot;typeName&quot; : &quot;...&quot;
   } ],
   &quot;fullTextResult&quot; : [ {
-    &quot;entity&quot; : {
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;classifications&quot; : [ { }, { } ],
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    },
-    &quot;score&quot; : 12345.0
-  }, {
     &quot;entity&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ { }, { } ],
@@ -780,9 +764,25 @@ Content-Type: application/json
       &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ { }, { } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ { }, { } ],
+      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    },
+    &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;BASIC&quot;,
+  &quot;queryType&quot; : &quot;DSL&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
@@ -799,7 +799,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -820,7 +820,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -831,7 +831,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -857,7 +857,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -878,7 +878,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OBSOLETE&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -889,7 +889,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;PROPOSED&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -909,7 +909,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS&quot;
+      &quot;operator&quot; : &quot;NEQ&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -921,9 +921,9 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;IN&quot;
+      &quot;operator&quot; : &quot;CONTAINS_ALL&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -1027,9 +1027,9 @@ Accept: application/json
   &quot;entityFilters&quot; : {
     &quot;attributeName&quot; : &quot;...&quot;,
     &quot;attributeValue&quot; : &quot;...&quot;,
-    &quot;condition&quot; : &quot;OR&quot;,
+    &quot;condition&quot; : &quot;AND&quot;,
     &quot;criterion&quot; : [ { }, { } ],
-    &quot;operator&quot; : &quot;EQ&quot;
+    &quot;operator&quot; : &quot;STARTS_WITH&quot;
   },
   &quot;excludeDeletedEntities&quot; : true,
   &quot;includeClassificationAttributes&quot; : true,
@@ -1043,7 +1043,7 @@ Accept: application/json
     &quot;attributeValue&quot; : &quot;...&quot;,
     &quot;condition&quot; : &quot;OR&quot;,
     &quot;criterion&quot; : [ { }, { } ],
-    &quot;operator&quot; : &quot;LTE&quot;
+    &quot;operator&quot; : &quot;LIKE&quot;
   },
   &quot;termName&quot; : &quot;...&quot;,
   &quot;typeName&quot; : &quot;...&quot;
@@ -1068,63 +1068,6 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-      &quot;propagate&quot; : true,
-      &quot;removePropagationsOnEntityDelete&quot; : true,
-      &quot;validityPeriods&quot; : [ { }, { } ],
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    }, {
-      &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-      &quot;propagate&quot; : true,
-      &quot;removePropagationsOnEntityDelete&quot; : true,
-      &quot;validityPeriods&quot; : [ { }, { } ],
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    } ],
-    &quot;displayText&quot; : &quot;...&quot;,
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;meanings&quot; : [ {
-      &quot;confidence&quot; : 12345,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;expression&quot; : &quot;...&quot;,
-      &quot;relationGuid&quot; : &quot;...&quot;,
-      &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;IMPORTED&quot;,
-      &quot;steward&quot; : &quot;...&quot;,
-      &quot;termGuid&quot; : &quot;...&quot;
-    }, {
-      &quot;confidence&quot; : 12345,
-      &quot;createdBy&quot; : &quot;...&quot;,
-      &quot;description&quot; : &quot;...&quot;,
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;expression&quot; : &quot;...&quot;,
-      &quot;relationGuid&quot; : &quot;...&quot;,
-      &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
-      &quot;steward&quot; : &quot;...&quot;,
-      &quot;termGuid&quot; : &quot;...&quot;
-    } ],
-    &quot;status&quot; : &quot;ACTIVE&quot;,
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  }, {
-    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-    &quot;classifications&quot; : [ {
-      &quot;entityGuid&quot; : &quot;...&quot;,
       &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
@@ -1136,7 +1079,7 @@ Content-Type: application/json
       &quot;typeName&quot; : &quot;...&quot;
     }, {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -1157,7 +1100,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -1168,7 +1111,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OBSOLETE&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -1178,24 +1121,65 @@ Content-Type: application/json
       &quot;property2&quot; : { }
     },
     &quot;typeName&quot; : &quot;...&quot;
-  } ],
-  &quot;fullTextResult&quot; : [ {
-    &quot;entity&quot; : {
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;classifications&quot; : [ { }, { } ],
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+  }, {
+    &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;classifications&quot; : [ {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
       },
       &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    } ],
+    &quot;displayText&quot; : &quot;...&quot;,
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+    &quot;meanings&quot; : [ {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    }, {
+      &quot;confidence&quot; : 12345,
+      &quot;createdBy&quot; : &quot;...&quot;,
+      &quot;description&quot; : &quot;...&quot;,
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;expression&quot; : &quot;...&quot;,
+      &quot;relationGuid&quot; : &quot;...&quot;,
+      &quot;source&quot; : &quot;...&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;steward&quot; : &quot;...&quot;,
+      &quot;termGuid&quot; : &quot;...&quot;
+    } ],
+    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
     },
-    &quot;score&quot; : 12345.0
-  }, {
+    &quot;typeName&quot; : &quot;...&quot;
+  } ],
+  &quot;fullTextResult&quot; : [ {
     &quot;entity&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ { }, { } ],
@@ -1211,15 +1195,31 @@ Content-Type: application/json
       &quot;typeName&quot; : &quot;...&quot;
     },
     &quot;score&quot; : 12345.0
+  }, {
+    &quot;entity&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ { }, { } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ { }, { } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    },
+    &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;queryType&quot; : &quot;BASIC&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -1251,7 +1251,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -1262,7 +1262,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;status&quot; : &quot;IMPORTED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -1309,7 +1309,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -1320,11 +1320,11 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -1340,7 +1340,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS_ANY&quot;
+      &quot;operator&quot; : &quot;GTE&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -1352,9 +1352,9 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;ENDS_WITH&quot;
+      &quot;operator&quot; : &quot;LIKE&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -1494,7 +1494,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -1526,7 +1526,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OBSOLETE&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -1537,11 +1537,11 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DISCOVERED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -1583,7 +1583,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -1594,11 +1594,11 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -1629,7 +1629,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -1639,13 +1639,13 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;FULL_TEXT&quot;,
+  &quot;queryType&quot; : &quot;RELATIONSHIP&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -1656,7 +1656,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -1677,7 +1677,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -1735,7 +1735,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -1746,11 +1746,11 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -1766,7 +1766,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GTE&quot;
+      &quot;operator&quot; : &quot;LIKE&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -1780,7 +1780,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;ENDS_WITH&quot;
+      &quot;operator&quot; : &quot;NEQ&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -1946,7 +1946,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -1957,7 +1957,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -1971,7 +1971,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2014,7 +2014,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;status&quot; : &quot;VALIDATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -2033,7 +2033,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -2059,13 +2059,13 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;queryType&quot; : &quot;GREMLIN&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2097,7 +2097,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -2108,7 +2108,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -2123,7 +2123,7 @@ Content-Type: application/json
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2134,7 +2134,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2155,7 +2155,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -2166,11 +2166,11 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;PROPOSED&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -2198,9 +2198,9 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS&quot;
+      &quot;operator&quot; : &quot;GTE&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -2351,7 +2351,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2394,7 +2394,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;status&quot; : &quot;DISCOVERED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -2408,7 +2408,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2440,7 +2440,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DISCOVERED&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -2451,11 +2451,11 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;OTHER&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;ACTIVE&quot;,
+    &quot;status&quot; : &quot;DELETED&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -2470,7 +2470,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -2496,7 +2496,7 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
+  &quot;queryType&quot; : &quot;DSL&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
@@ -2513,7 +2513,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2534,7 +2534,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -2545,7 +2545,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -2571,7 +2571,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -2592,7 +2592,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;IMPORTED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -2603,7 +2603,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -2623,7 +2623,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;LTE&quot;
+      &quot;operator&quot; : &quot;EQ&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -2637,7 +2637,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;ENDS_WITH&quot;
+      &quot;operator&quot; : &quot;GTE&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -2729,9 +2729,9 @@ Content-Type: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GT&quot;
+      &quot;operator&quot; : &quot;LIKE&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -2743,9 +2743,9 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS&quot;
+      &quot;operator&quot; : &quot;ENDS_WITH&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -2832,9 +2832,9 @@ Accept: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;LIKE&quot;
+      &quot;operator&quot; : &quot;NEQ&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -2848,12 +2848,12 @@ Accept: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS_ALL&quot;
+      &quot;operator&quot; : &quot;NEQ&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
   },
-  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchType&quot; : &quot;ADVANCED&quot;,
   &quot;uiParameters&quot; : &quot;...&quot;,
   &quot;guid&quot; : &quot;...&quot;
 }
@@ -2878,7 +2878,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;LTE&quot;
+      &quot;operator&quot; : &quot;LIKE&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -2892,12 +2892,12 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS&quot;
+      &quot;operator&quot; : &quot;ENDS_WITH&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
   },
-  &quot;searchType&quot; : &quot;BASIC&quot;,
+  &quot;searchType&quot; : &quot;ADVANCED&quot;,
   &quot;uiParameters&quot; : &quot;...&quot;,
   &quot;guid&quot; : &quot;...&quot;
 }
@@ -2979,9 +2979,9 @@ Accept: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GTE&quot;
+      &quot;operator&quot; : &quot;LT&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -2995,7 +2995,7 @@ Accept: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;NEQ&quot;
+      &quot;operator&quot; : &quot;CONTAINS_ANY&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -3025,7 +3025,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GTE&quot;
+      &quot;operator&quot; : &quot;STARTS_WITH&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -3037,14 +3037,14 @@ Content-Type: application/json
     &quot;tagFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;OR&quot;,
+      &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS_ANY&quot;
+      &quot;operator&quot; : &quot;NOT_NULL&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
   },
-  &quot;searchType&quot; : &quot;ADVANCED&quot;,
+  &quot;searchType&quot; : &quot;BASIC&quot;,
   &quot;uiParameters&quot; : &quot;...&quot;,
   &quot;guid&quot; : &quot;...&quot;
 }
@@ -3186,9 +3186,9 @@ Content-Type: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;NEQ&quot;
+      &quot;operator&quot; : &quot;GT&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -3202,7 +3202,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;EQ&quot;
+      &quot;operator&quot; : &quot;GT&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -3302,7 +3302,7 @@ Content-Type: application/json
     &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
     &quot;classifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -3334,7 +3334,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;status&quot; : &quot;OTHER&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -3345,11 +3345,11 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DISCOVERED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
-    &quot;status&quot; : &quot;DELETED&quot;,
+    &quot;status&quot; : &quot;ACTIVE&quot;,
     &quot;attributes&quot; : {
       &quot;property1&quot; : { },
       &quot;property2&quot; : { }
@@ -3391,7 +3391,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -3402,7 +3402,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;status&quot; : &quot;OBSOLETE&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -3421,7 +3421,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -3437,7 +3437,7 @@ Content-Type: application/json
       &quot;guid&quot; : &quot;...&quot;,
       &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;meanings&quot; : [ { }, { } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -3447,7 +3447,7 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;FULL_TEXT&quot;,
+  &quot;queryType&quot; : &quot;BASIC&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
@@ -3485,7 +3485,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -3496,11 +3496,11 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;status&quot; : &quot;ACTIVE&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -3543,7 +3543,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;OBSOLETE&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -3554,7 +3554,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -3574,7 +3574,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GTE&quot;
+      &quot;operator&quot; : &quot;IS_NULL&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -3588,7 +3588,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;GT&quot;
+      &quot;operator&quot; : &quot;LTE&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;
@@ -3724,7 +3724,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;PROPOSED&quot;,
+      &quot;status&quot; : &quot;DEPRECATED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -3749,7 +3749,7 @@ Content-Type: application/json
       &quot;typeName&quot; : &quot;...&quot;
     }, {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -3770,7 +3770,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;DEPRECATED&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     }, {
@@ -3781,7 +3781,7 @@ Content-Type: application/json
       &quot;expression&quot; : &quot;...&quot;,
       &quot;relationGuid&quot; : &quot;...&quot;,
       &quot;source&quot; : &quot;...&quot;,
-      &quot;status&quot; : &quot;VALIDATED&quot;,
+      &quot;status&quot; : &quot;PROPOSED&quot;,
       &quot;steward&quot; : &quot;...&quot;,
       &quot;termGuid&quot; : &quot;...&quot;
     } ],
@@ -3826,7 +3826,7 @@ Content-Type: application/json
     &quot;score&quot; : 12345.0
   } ],
   &quot;queryText&quot; : &quot;...&quot;,
-  &quot;queryType&quot; : &quot;DSL&quot;,
+  &quot;queryType&quot; : &quot;ATTRIBUTE&quot;,
   &quot;referredEntities&quot; : {
     &quot;property1&quot; : {
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
@@ -3843,7 +3843,65 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      } ],
+      &quot;displayText&quot; : &quot;...&quot;,
+      &quot;guid&quot; : &quot;...&quot;,
+      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;meanings&quot; : [ {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;IMPORTED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      }, {
+        &quot;confidence&quot; : 12345,
+        &quot;createdBy&quot; : &quot;...&quot;,
+        &quot;description&quot; : &quot;...&quot;,
+        &quot;displayText&quot; : &quot;...&quot;,
+        &quot;expression&quot; : &quot;...&quot;,
+        &quot;relationGuid&quot; : &quot;...&quot;,
+        &quot;source&quot; : &quot;...&quot;,
+        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;steward&quot; : &quot;...&quot;,
+        &quot;termGuid&quot; : &quot;...&quot;
+      } ],
+      &quot;status&quot; : &quot;DELETED&quot;,
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
+    },
+    &quot;property2&quot; : {
+      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
+      &quot;classifications&quot; : [ {
+        &quot;entityGuid&quot; : &quot;...&quot;,
         &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;propagate&quot; : true,
+        &quot;removePropagationsOnEntityDelete&quot; : true,
+        &quot;validityPeriods&quot; : [ { }, { } ],
+        &quot;attributes&quot; : {
+          &quot;property1&quot; : { },
+          &quot;property2&quot; : { }
+        },
+        &quot;typeName&quot; : &quot;...&quot;
+      }, {
+        &quot;entityGuid&quot; : &quot;...&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -3875,65 +3933,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
-        &quot;steward&quot; : &quot;...&quot;,
-        &quot;termGuid&quot; : &quot;...&quot;
-      } ],
-      &quot;status&quot; : &quot;DELETED&quot;,
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    },
-    &quot;property2&quot; : {
-      &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;classifications&quot; : [ {
-        &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-        &quot;propagate&quot; : true,
-        &quot;removePropagationsOnEntityDelete&quot; : true,
-        &quot;validityPeriods&quot; : [ { }, { } ],
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        },
-        &quot;typeName&quot; : &quot;...&quot;
-      }, {
-        &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-        &quot;propagate&quot; : true,
-        &quot;removePropagationsOnEntityDelete&quot; : true,
-        &quot;validityPeriods&quot; : [ { }, { } ],
-        &quot;attributes&quot; : {
-          &quot;property1&quot; : { },
-          &quot;property2&quot; : { }
-        },
-        &quot;typeName&quot; : &quot;...&quot;
-      } ],
-      &quot;displayText&quot; : &quot;...&quot;,
-      &quot;guid&quot; : &quot;...&quot;,
-      &quot;meaningNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
-      &quot;meanings&quot; : [ {
-        &quot;confidence&quot; : 12345,
-        &quot;createdBy&quot; : &quot;...&quot;,
-        &quot;description&quot; : &quot;...&quot;,
-        &quot;displayText&quot; : &quot;...&quot;,
-        &quot;expression&quot; : &quot;...&quot;,
-        &quot;relationGuid&quot; : &quot;...&quot;,
-        &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;PROPOSED&quot;,
-        &quot;steward&quot; : &quot;...&quot;,
-        &quot;termGuid&quot; : &quot;...&quot;
-      }, {
-        &quot;confidence&quot; : 12345,
-        &quot;createdBy&quot; : &quot;...&quot;,
-        &quot;description&quot; : &quot;...&quot;,
-        &quot;displayText&quot; : &quot;...&quot;,
-        &quot;expression&quot; : &quot;...&quot;,
-        &quot;relationGuid&quot; : &quot;...&quot;,
-        &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;VALIDATED&quot;,
+        &quot;status&quot; : &quot;DEPRECATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -3951,9 +3951,9 @@ Content-Type: application/json
     &quot;entityFilters&quot; : {
       &quot;attributeName&quot; : &quot;...&quot;,
       &quot;attributeValue&quot; : &quot;...&quot;,
-      &quot;condition&quot; : &quot;AND&quot;,
+      &quot;condition&quot; : &quot;OR&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;NOT_NULL&quot;
+      &quot;operator&quot; : &quot;LT&quot;
     },
     &quot;excludeDeletedEntities&quot; : true,
     &quot;includeClassificationAttributes&quot; : true,
@@ -3967,7 +3967,7 @@ Content-Type: application/json
       &quot;attributeValue&quot; : &quot;...&quot;,
       &quot;condition&quot; : &quot;AND&quot;,
       &quot;criterion&quot; : [ { }, { } ],
-      &quot;operator&quot; : &quot;CONTAINS&quot;
+      &quot;operator&quot; : &quot;LTE&quot;
     },
     &quot;termName&quot; : &quot;...&quot;,
     &quot;typeName&quot; : &quot;...&quot;

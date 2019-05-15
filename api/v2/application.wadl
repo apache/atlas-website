@@ -116,6 +116,9 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
           <wadl:param name="guid" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
+          <wadl:param name="ignoreRelationships" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
           <wadl:param name="minExtInfo" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
@@ -130,7 +133,7 @@ using the anchor attribute when creating the Term/Category]]></wadl:doc>
 
     <wadl:resource path="v2/entity/bulk">
       <wadl:method name="POST">
-        <wadl:doc><![CDATA[Bulk API to create new entities or update existing entities in Atlas.
+        <wadl:doc><![CDATA[Bulk API to create new entities or updates existing entities in Atlas.
 Existing entity is matched using its unique guid if supplied or by its unique attributes eg: qualifiedName]]></wadl:doc>
         <wadl:request>
           <wadl:representation mediaType="application/json">
@@ -657,10 +660,42 @@ created]]></wadl:doc>
       </wadl:method>
     </wadl:resource>
 
+    <wadl:resource path="v2/entity/bulk/headers">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="tagUpdateStartTime" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json;charset=UTF-8"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk/setClassifications">
+      <wadl:method name="POST">
+        <wadl:doc><![CDATA[]]></wadl:doc>
+        <wadl:request>
+          <wadl:representation mediaType="application/json;charset=UTF-8">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[]]></wadl:doc>
+          <wadl:representation mediaType="application/json;charset=UTF-8"/>
+        </wadl:response>
+      </wadl:method>
+    </wadl:resource>
+
     <wadl:resource path="v2/entity/guid/{guid}">
       <wadl:method name="GET">
         <wadl:doc><![CDATA[Fetch complete definition of an entity given its GUID.]]></wadl:doc>
         <wadl:request>
+          <wadl:param name="ignoreRelationships" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
           <wadl:param name="minExtInfo" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
@@ -1109,6 +1144,9 @@ The REST request would look something like this
 
 GET /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></wadl:doc>
         <wadl:request>
+          <wadl:param name="ignoreRelationships" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
           <wadl:param name="minExtInfo" style="query">
             <wadl:doc><![CDATA[]]></wadl:doc>
           </wadl:param>
@@ -1341,6 +1379,28 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
 
     <wadl:resource path="v2/glossary/terms/{termGuid}/assignedEntities">
       <wadl:method name="DELETE">
+        <wadl:doc><![CDATA[Remove the term assignment for the given list of entity headers]]></wadl:doc>
+        <wadl:request>
+          <wadl:doc><![CDATA[List of related entity IDs from which the term has to be dissociated]]></wadl:doc>
+          <wadl:representation mediaType="application/json">
+          </wadl:representation>
+          <wadl:representation mediaType="application/json;charset=UTF-8">
+          </wadl:representation>
+        </wadl:request>
+        <wadl:response status="400">
+          <wadl:doc><![CDATA[If ANY of the entity header is invalid]]></wadl:doc>
+        </wadl:response>
+        <wadl:response status="404">
+          <wadl:doc><![CDATA[If glossary term guid in invalid]]></wadl:doc>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="termGuid" style="template">
+        <wadl:doc><![CDATA[Glossary term GUID]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/glossary/terms/{termGuid}/assignedEntities">
+      <wadl:method name="PUT">
         <wadl:doc><![CDATA[Remove the term assignment for the given list of entity headers]]></wadl:doc>
         <wadl:request>
           <wadl:doc><![CDATA[List of related entity IDs from which the term has to be dissociated]]></wadl:doc>
@@ -1703,6 +1763,38 @@ DELETE /v2/entity/uniqueAttribute/type/aType?attr:aTypeAttribute=someValue]]></w
       </wadl:method>
       <wadl:param name="typeName" style="template">
         <wadl:doc><![CDATA[Name of the type to be deleted.]]></wadl:doc>
+      </wadl:param>
+    </wadl:resource>
+
+    <wadl:resource path="v2/entity/bulk/uniqueAttribute/type/{typeName}">
+      <wadl:method name="GET">
+        <wadl:doc><![CDATA[Bulk API to retrieve list of entities identified by its unique attributes.
+
+In addition to the typeName path parameter, attribute key-value pair(s) can be provided in the following format
+
+typeName=<typeName>&attr_1:<attrName>=<attrValue>&attr_2:<attrName>=<attrValue>&attr_3:<attrName>=<attrValue>
+
+NOTE: The attrName should be an unique attribute for the given entity-type
+
+The REST request would look something like this
+
+GET /v2/entity/bulk/uniqueAttribute/type/hive_db?attrs_0:qualifiedName=db1@cl1&attrs_2:qualifiedName=db2@cl1]]></wadl:doc>
+        <wadl:request>
+          <wadl:param name="ignoreRelationships" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+          <wadl:param name="minExtInfo" style="query">
+            <wadl:doc><![CDATA[]]></wadl:doc>
+          </wadl:param>
+        </wadl:request>
+        <wadl:response>
+          <wadl:doc><![CDATA[AtlasEntitiesWithExtInfo]]></wadl:doc>
+          <wadl:representation mediaType="application/json"/>
+          <wadl:representation mediaType="application/json;charset=UTF-8"/>
+        </wadl:response>
+      </wadl:method>
+      <wadl:param name="typeName" style="template">
+        <wadl:doc><![CDATA[]]></wadl:doc>
       </wadl:param>
     </wadl:resource>
 

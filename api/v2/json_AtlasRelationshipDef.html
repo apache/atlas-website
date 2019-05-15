@@ -78,7 +78,7 @@ RelationshipDefs also have a PropogateTag - indicating which way tags could flow
 The way EntityDefs and RelationshipDefs are intended to be used is that EntityDefs will define AttributeDefs these AttributeDefs
 will not specify an EntityDef type name as their types.
 <p>
-RelationshipDefs introduce new atributes to the entity instances. For example
+RelationshipDefs introduce new attributes to the entity instances. For example
 <p>
 EntityDef A might have attributes attr1,attr2,attr3 <br>
 EntityDef B might have attributes attr4,attr5,attr6 <br>
@@ -218,6 +218,12 @@ the entity instances</p>
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
+          <td><span class="property-name">serviceType</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
           <td><span class="property-name">typeVersion</span></td>
           <td><span class="datatype-reference">string
 </span></td>
@@ -256,7 +262,7 @@ the entity instances</p>
     &quot;type&quot; : &quot;...&quot;
   },
   &quot;endDef2&quot; : {
-    &quot;cardinality&quot; : &quot;SET&quot;,
+    &quot;cardinality&quot; : &quot;LIST&quot;,
     &quot;description&quot; : &quot;...&quot;,
     &quot;isContainer&quot; : true,
     &quot;isLegacyAttribute&quot; : true,
@@ -264,38 +270,9 @@ the entity instances</p>
     &quot;type&quot; : &quot;...&quot;
   },
   &quot;propagateTags&quot; : &quot;NONE&quot;,
-  &quot;relationshipCategory&quot; : &quot;COMPOSITION&quot;,
+  &quot;relationshipCategory&quot; : &quot;ASSOCIATION&quot;,
   &quot;relationshipLabel&quot; : &quot;...&quot;,
   &quot;attributeDefs&quot; : [ {
-    &quot;cardinality&quot; : &quot;SINGLE&quot;,
-    &quot;constraints&quot; : [ {
-      &quot;params&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;type&quot; : &quot;...&quot;
-    }, {
-      &quot;params&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;type&quot; : &quot;...&quot;
-    } ],
-    &quot;defaultValue&quot; : &quot;...&quot;,
-    &quot;description&quot; : &quot;...&quot;,
-    &quot;includeInNotification&quot; : true,
-    &quot;isIndexable&quot; : true,
-    &quot;isOptional&quot; : true,
-    &quot;isUnique&quot; : true,
-    &quot;name&quot; : &quot;...&quot;,
-    &quot;options&quot; : {
-      &quot;property1&quot; : &quot;...&quot;,
-      &quot;property2&quot; : &quot;...&quot;
-    },
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;valuesMaxCount&quot; : 12345,
-    &quot;valuesMinCount&quot; : 12345
-  }, {
     &quot;cardinality&quot; : &quot;LIST&quot;,
     &quot;constraints&quot; : [ {
       &quot;params&quot; : {
@@ -324,8 +301,37 @@ the entity instances</p>
     &quot;typeName&quot; : &quot;...&quot;,
     &quot;valuesMaxCount&quot; : 12345,
     &quot;valuesMinCount&quot; : 12345
+  }, {
+    &quot;cardinality&quot; : &quot;SINGLE&quot;,
+    &quot;constraints&quot; : [ {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    }, {
+      &quot;params&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;type&quot; : &quot;...&quot;
+    } ],
+    &quot;defaultValue&quot; : &quot;...&quot;,
+    &quot;description&quot; : &quot;...&quot;,
+    &quot;includeInNotification&quot; : true,
+    &quot;isIndexable&quot; : true,
+    &quot;isOptional&quot; : true,
+    &quot;isUnique&quot; : true,
+    &quot;name&quot; : &quot;...&quot;,
+    &quot;options&quot; : {
+      &quot;property1&quot; : &quot;...&quot;,
+      &quot;property2&quot; : &quot;...&quot;
+    },
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;valuesMaxCount&quot; : 12345,
+    &quot;valuesMinCount&quot; : 12345
   } ],
-  &quot;category&quot; : &quot;MAP&quot;,
+  &quot;category&quot; : &quot;PRIMITIVE&quot;,
   &quot;createTime&quot; : 12345,
   &quot;createdBy&quot; : &quot;...&quot;,
   &quot;dateFormatter&quot; : {
@@ -349,7 +355,7 @@ the entity instances</p>
       &quot;numberInstance&quot; : { },
       &quot;parseIntegerOnly&quot; : true,
       &quot;percentInstance&quot; : { },
-      &quot;roundingMode&quot; : &quot;HALF_UP&quot;
+      &quot;roundingMode&quot; : &quot;FLOOR&quot;
     },
     &quot;timeInstance&quot; : { },
     &quot;timeZone&quot; : {
@@ -368,6 +374,7 @@ the entity instances</p>
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
   },
+  &quot;serviceType&quot; : &quot;...&quot;,
   &quot;typeVersion&quot; : &quot;...&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,

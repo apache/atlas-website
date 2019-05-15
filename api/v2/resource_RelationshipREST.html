@@ -135,7 +135,7 @@ Accept: application/json
 {
   &quot;blockedPropagatedClassifications&quot; : [ {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -193,10 +193,10 @@ Accept: application/json
   &quot;guid&quot; : &quot;...&quot;,
   &quot;homeId&quot; : &quot;...&quot;,
   &quot;label&quot; : &quot;...&quot;,
-  &quot;propagateTags&quot; : &quot;BOTH&quot;,
+  &quot;propagateTags&quot; : &quot;NONE&quot;,
   &quot;propagatedClassifications&quot; : [ {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -215,7 +215,7 @@ Accept: application/json
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -233,6 +233,7 @@ Accept: application/json
     },
     &quot;typeName&quot; : &quot;...&quot;
   } ],
+  &quot;provenanceType&quot; : 12345,
   &quot;status&quot; : &quot;ACTIVE&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,
@@ -275,7 +276,7 @@ Content-Type: application/json
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -336,7 +337,7 @@ Content-Type: application/json
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -354,6 +355,7 @@ Content-Type: application/json
     },
     &quot;typeName&quot; : &quot;...&quot;
   } ],
+  &quot;provenanceType&quot; : 12345,
   &quot;status&quot; : &quot;DELETED&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,
@@ -431,127 +433,6 @@ Content-Type: application/json
 PUT /v2/relationship
 Content-Type: application/json
 Accept: application/json
-
-                <code class="prettyprint language-js">
-{
-  &quot;blockedPropagatedClassifications&quot; : [ {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  }, {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;DELETED&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  } ],
-  &quot;createTime&quot; : 12345,
-  &quot;createdBy&quot; : &quot;...&quot;,
-  &quot;end1&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;uniqueAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;end2&quot; : {
-    &quot;guid&quot; : &quot;...&quot;,
-    &quot;typeName&quot; : &quot;...&quot;,
-    &quot;uniqueAttributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    }
-  },
-  &quot;guid&quot; : &quot;...&quot;,
-  &quot;homeId&quot; : &quot;...&quot;,
-  &quot;label&quot; : &quot;...&quot;,
-  &quot;propagateTags&quot; : &quot;BOTH&quot;,
-  &quot;propagatedClassifications&quot; : [ {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  }, {
-    &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
-    &quot;propagate&quot; : true,
-    &quot;removePropagationsOnEntityDelete&quot; : true,
-    &quot;validityPeriods&quot; : [ {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    }, {
-      &quot;endTime&quot; : &quot;...&quot;,
-      &quot;startTime&quot; : &quot;...&quot;,
-      &quot;timeZone&quot; : &quot;...&quot;
-    } ],
-    &quot;attributes&quot; : {
-      &quot;property1&quot; : { },
-      &quot;property2&quot; : { }
-    },
-    &quot;typeName&quot; : &quot;...&quot;
-  } ],
-  &quot;status&quot; : &quot;ACTIVE&quot;,
-  &quot;updateTime&quot; : 12345,
-  &quot;updatedBy&quot; : &quot;...&quot;,
-  &quot;version&quot; : 12345,
-  &quot;attributes&quot; : {
-    &quot;property1&quot; : { },
-    &quot;property2&quot; : { }
-  },
-  &quot;typeName&quot; : &quot;...&quot;
-}
-                </code>
-              </pre>
-            </div>
-            <div class="col-md-6">
-              <h5>Response</h5>
-              <pre>
-HTTP/1.1 204 No Content
-Content-Type: application/json
 
                 <code class="prettyprint language-js">
 {
@@ -637,7 +518,7 @@ Content-Type: application/json
     &quot;typeName&quot; : &quot;...&quot;
   }, {
     &quot;entityGuid&quot; : &quot;...&quot;,
-    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
     &quot;propagate&quot; : true,
     &quot;removePropagationsOnEntityDelete&quot; : true,
     &quot;validityPeriods&quot; : [ {
@@ -655,6 +536,129 @@ Content-Type: application/json
     },
     &quot;typeName&quot; : &quot;...&quot;
   } ],
+  &quot;provenanceType&quot; : 12345,
+  &quot;status&quot; : &quot;DELETED&quot;,
+  &quot;updateTime&quot; : 12345,
+  &quot;updatedBy&quot; : &quot;...&quot;,
+  &quot;version&quot; : 12345,
+  &quot;attributes&quot; : {
+    &quot;property1&quot; : { },
+    &quot;property2&quot; : { }
+  },
+  &quot;typeName&quot; : &quot;...&quot;
+}
+                </code>
+              </pre>
+            </div>
+            <div class="col-md-6">
+              <h5>Response</h5>
+              <pre>
+HTTP/1.1 204 No Content
+Content-Type: application/json
+
+                <code class="prettyprint language-js">
+{
+  &quot;blockedPropagatedClassifications&quot; : [ {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  } ],
+  &quot;createTime&quot; : 12345,
+  &quot;createdBy&quot; : &quot;...&quot;,
+  &quot;end1&quot; : {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;uniqueAttributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  },
+  &quot;end2&quot; : {
+    &quot;guid&quot; : &quot;...&quot;,
+    &quot;typeName&quot; : &quot;...&quot;,
+    &quot;uniqueAttributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    }
+  },
+  &quot;guid&quot; : &quot;...&quot;,
+  &quot;homeId&quot; : &quot;...&quot;,
+  &quot;label&quot; : &quot;...&quot;,
+  &quot;propagateTags&quot; : &quot;BOTH&quot;,
+  &quot;propagatedClassifications&quot; : [ {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  }, {
+    &quot;entityGuid&quot; : &quot;...&quot;,
+    &quot;entityStatus&quot; : &quot;DELETED&quot;,
+    &quot;propagate&quot; : true,
+    &quot;removePropagationsOnEntityDelete&quot; : true,
+    &quot;validityPeriods&quot; : [ {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    }, {
+      &quot;endTime&quot; : &quot;...&quot;,
+      &quot;startTime&quot; : &quot;...&quot;,
+      &quot;timeZone&quot; : &quot;...&quot;
+    } ],
+    &quot;attributes&quot; : {
+      &quot;property1&quot; : { },
+      &quot;property2&quot; : { }
+    },
+    &quot;typeName&quot; : &quot;...&quot;
+  } ],
+  &quot;provenanceType&quot; : 12345,
   &quot;status&quot; : &quot;DELETED&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,
@@ -806,7 +810,7 @@ Content-Type: application/json
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
+        &quot;entityStatus&quot; : &quot;DELETED&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -849,7 +853,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DEPRECATED&quot;,
+        &quot;status&quot; : &quot;OTHER&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
@@ -864,7 +868,7 @@ Content-Type: application/json
       &quot;classificationNames&quot; : [ &quot;...&quot;, &quot;...&quot; ],
       &quot;classifications&quot; : [ {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -875,7 +879,7 @@ Content-Type: application/json
         &quot;typeName&quot; : &quot;...&quot;
       }, {
         &quot;entityGuid&quot; : &quot;...&quot;,
-        &quot;entityStatus&quot; : &quot;DELETED&quot;,
+        &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
         &quot;propagate&quot; : true,
         &quot;removePropagationsOnEntityDelete&quot; : true,
         &quot;validityPeriods&quot; : [ { }, { } ],
@@ -896,7 +900,7 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;DISCOVERED&quot;,
+        &quot;status&quot; : &quot;PROPOSED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       }, {
@@ -907,11 +911,11 @@ Content-Type: application/json
         &quot;expression&quot; : &quot;...&quot;,
         &quot;relationGuid&quot; : &quot;...&quot;,
         &quot;source&quot; : &quot;...&quot;,
-        &quot;status&quot; : &quot;OTHER&quot;,
+        &quot;status&quot; : &quot;VALIDATED&quot;,
         &quot;steward&quot; : &quot;...&quot;,
         &quot;termGuid&quot; : &quot;...&quot;
       } ],
-      &quot;status&quot; : &quot;ACTIVE&quot;,
+      &quot;status&quot; : &quot;DELETED&quot;,
       &quot;attributes&quot; : {
         &quot;property1&quot; : { },
         &quot;property2&quot; : { }
@@ -922,7 +926,7 @@ Content-Type: application/json
   &quot;relationship&quot; : {
     &quot;blockedPropagatedClassifications&quot; : [ {
       &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
       &quot;removePropagationsOnEntityDelete&quot; : true,
       &quot;validityPeriods&quot; : [ { }, { } ],
@@ -964,19 +968,8 @@ Content-Type: application/json
     &quot;guid&quot; : &quot;...&quot;,
     &quot;homeId&quot; : &quot;...&quot;,
     &quot;label&quot; : &quot;...&quot;,
-    &quot;propagateTags&quot; : &quot;NONE&quot;,
+    &quot;propagateTags&quot; : &quot;BOTH&quot;,
     &quot;propagatedClassifications&quot; : [ {
-      &quot;entityGuid&quot; : &quot;...&quot;,
-      &quot;entityStatus&quot; : &quot;DELETED&quot;,
-      &quot;propagate&quot; : true,
-      &quot;removePropagationsOnEntityDelete&quot; : true,
-      &quot;validityPeriods&quot; : [ { }, { } ],
-      &quot;attributes&quot; : {
-        &quot;property1&quot; : { },
-        &quot;property2&quot; : { }
-      },
-      &quot;typeName&quot; : &quot;...&quot;
-    }, {
       &quot;entityGuid&quot; : &quot;...&quot;,
       &quot;entityStatus&quot; : &quot;ACTIVE&quot;,
       &quot;propagate&quot; : true,
@@ -987,7 +980,19 @@ Content-Type: application/json
         &quot;property2&quot; : { }
       },
       &quot;typeName&quot; : &quot;...&quot;
+    }, {
+      &quot;entityGuid&quot; : &quot;...&quot;,
+      &quot;entityStatus&quot; : &quot;DELETED&quot;,
+      &quot;propagate&quot; : true,
+      &quot;removePropagationsOnEntityDelete&quot; : true,
+      &quot;validityPeriods&quot; : [ { }, { } ],
+      &quot;attributes&quot; : {
+        &quot;property1&quot; : { },
+        &quot;property2&quot; : { }
+      },
+      &quot;typeName&quot; : &quot;...&quot;
     } ],
+    &quot;provenanceType&quot; : 12345,
     &quot;status&quot; : &quot;DELETED&quot;,
     &quot;updateTime&quot; : 12345,
     &quot;updatedBy&quot; : &quot;...&quot;,

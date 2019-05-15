@@ -179,6 +179,12 @@ only be applied to those entityTypes.
           <td><span class="property-description"></span></td>
         </tr>
         <tr>
+          <td><span class="property-name">serviceType</span></td>
+          <td><span class="datatype-reference">string
+</span></td>
+          <td><span class="property-description"></span></td>
+        </tr>
+        <tr>
           <td><span class="property-name">typeVersion</span></td>
           <td><span class="datatype-reference">string
 </span></td>
@@ -212,7 +218,7 @@ only be applied to those entityTypes.
   &quot;subTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;superTypes&quot; : [ &quot;...&quot;, &quot;...&quot; ],
   &quot;attributeDefs&quot; : [ {
-    &quot;cardinality&quot; : &quot;SINGLE&quot;,
+    &quot;cardinality&quot; : &quot;SET&quot;,
     &quot;constraints&quot; : [ {
       &quot;params&quot; : {
         &quot;property1&quot; : { },
@@ -270,7 +276,7 @@ only be applied to those entityTypes.
     &quot;valuesMaxCount&quot; : 12345,
     &quot;valuesMinCount&quot; : 12345
   } ],
-  &quot;category&quot; : &quot;STRUCT&quot;,
+  &quot;category&quot; : &quot;CLASSIFICATION&quot;,
   &quot;createTime&quot; : 12345,
   &quot;createdBy&quot; : &quot;...&quot;,
   &quot;dateFormatter&quot; : {
@@ -294,7 +300,7 @@ only be applied to those entityTypes.
       &quot;numberInstance&quot; : { },
       &quot;parseIntegerOnly&quot; : true,
       &quot;percentInstance&quot; : { },
-      &quot;roundingMode&quot; : &quot;DOWN&quot;
+      &quot;roundingMode&quot; : &quot;HALF_EVEN&quot;
     },
     &quot;timeInstance&quot; : { },
     &quot;timeZone&quot; : {
@@ -313,6 +319,7 @@ only be applied to those entityTypes.
     &quot;property1&quot; : &quot;...&quot;,
     &quot;property2&quot; : &quot;...&quot;
   },
+  &quot;serviceType&quot; : &quot;...&quot;,
   &quot;typeVersion&quot; : &quot;...&quot;,
   &quot;updateTime&quot; : 12345,
   &quot;updatedBy&quot; : &quot;...&quot;,
