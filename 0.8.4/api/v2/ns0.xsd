@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema version="1.0"
+  
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="atlasBaseModelObject" type="atlasBaseModelObject"/>
+  <xs:element name="PList" type="PList"/>
+  <xs:element name="searchFilter" type="searchFilter"/>
+  <xs:element name="atlasClassification" type="atlasClassification"/>
+  <xs:element name="atlasStruct" type="atlasStruct"/>
+<xs:complexType name="atlasBaseModelObject" abstract="true">
+       <xs:sequence>
+              <xs:element name="guid" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PList">
+       <xs:sequence>
+              <xs:element name="list" type="xs:anyType" minOccurs="0" maxOccurs="unbounded">
+              </xs:element>
+              <xs:element name="pageSize" type="xs:int" minOccurs="1">
+              </xs:element>
+              <xs:element name="sortBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="startIndex" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="totalCount" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="sortType" type="sortType" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchFilter">
+       <xs:sequence>
+              <xs:element name="maxRows" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="getCount" type="xs:boolean" minOccurs="1">
+              </xs:element>
+              <xs:element name="params" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="startIndex" type="xs:long" minOccurs="1">
+              </xs:element>
+              <xs:element name="sortBy" type="xs:string" minOccurs="0">
+              </xs:element>
+              <xs:element name="sortType" type="sortType" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+<xs:simpleType name="sortType">
+  <xs:restriction base="xs:string">
+     
+    <xs:enumeration value="NONE"/>
+ 
+    <xs:enumeration value="ASC"/>
+ 
+    <xs:enumeration value="DESC"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:complexType name="atlasClassification">
+   <xs:complexContent>
+    <xs:extension base="atlasStruct">
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="atlasStruct">
+       <xs:sequence>
+              <xs:element name="attributes" minOccurs="0">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="key" minOccurs="1" type="xs:string"/>
+            <xs:element name="value" minOccurs="1" type="xs:anyType"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+              </xs:element>
+              <xs:element name="typeName" type="xs:string" minOccurs="0">
+              </xs:element>
+      </xs:sequence>
+</xs:complexType>
+
+</xs:schema>
