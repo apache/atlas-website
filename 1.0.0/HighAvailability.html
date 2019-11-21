@@ -25,7 +25,7 @@
         <ul class="dropdown-menu">
             <li><a href="index.html" title="Overview">Overview</a></li>
             <li><a href="license.html" title="License">License</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="Downloads">Downloads</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="Downloads">Downloads</a></li>
             <li><a href="https://cwiki.apache.org/confluence/display/ATLAS" title="Wiki">Wiki</a></li>
             <li><a href="https://git-wip-us.apache.org/repos/asf/atlas.git" title="Git">Git</a></li>
             <li><a href="https://issues.apache.org/jira/browse/ATLAS" title="Jira">Jira</a></li>
@@ -45,14 +45,14 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Downloads <b class="caret"></b></a>
         <ul class="dropdown-menu">
-            <li><a href="../Downloads.html" target="_blank" title="1.0.0">1.0.0</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.8.2">0.8.2</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.8.1">0.8.1</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.8-incubating">0.8-incubating</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.7.1-incubating">0.7.1-incubating</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.7-incubating">0.7-incubating</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.6-incubating">0.6-incubating</a></li>
-            <li><a href="../Downloads.html" target="_blank" title="0.5-incubating">0.5-incubating</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="1.0.0">1.0.0</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.8.2">0.8.2</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.8.1">0.8.1</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.8-incubating">0.8-incubating</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.7.1-incubating">0.7.1-incubating</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.7-incubating">0.7-incubating</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.6-incubating">0.6-incubating</a></li>
+            <li><a href="http://atlas.apache.org/#/Downloads" target="_blank" title="0.5-incubating">0.5-incubating</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -151,14 +151,14 @@
       atlas.server.ids=id1,id2
       atlas.server.address.id1=host1.company.com:21000
       atlas.server.address.id2=host2.company.com:21000
-      
+
 </pre></div>
 <p></p>
 <ul>
 <li>Define the Zookeeper quorum which will be used by the Atlas High Availability feature.</li></ul>
 <div class="source"><pre class="prettyprint">
       atlas.server.ha.zookeeper.connect=zk1.company.com:2181,zk2.company.com:2181,zk3.company.com:2181
-      
+
 </pre></div>
 <p></p>
 <ul>
@@ -279,7 +279,7 @@ listen atlas
       $KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper &lt;list of zookeeper host:port entries&gt; --topic ATLAS_HOOK --replication-factor &lt;numReplicas&gt; --partitions 1
       $KAFKA_HOME/bin/kafka-topics.sh --create --zookeeper &lt;list of zookeeper host:port entries&gt; --topic ATLAS_ENTITIES --replication-factor &lt;numReplicas&gt; --partitions 1
       Here KAFKA_HOME points to the Kafka installation directory.
-      
+
 </pre></div>
 <p></p>
 <ul>
@@ -288,7 +288,7 @@ listen atlas
      atlas.notification.embedded=false
      atlas.kafka.zookeeper.connect=&lt;comma separated list of servers forming Zookeeper quorum used by Kafka&gt;
      atlas.kafka.bootstrap.servers=&lt;comma separated list of Kafka broker endpoints in host:port form&gt; - Give at least 2 for redundancy.
-     
+
 </pre></div></div>
 <div class="section">
 <h3><a name="Known_Issues"></a>Known Issues</h3>
